@@ -280,7 +280,7 @@ section.block{padding-block:clamp(48px,8vw,104px);border-top:1px solid var(--rul
 /* Story mode: the whole case study reads as one continuous sheet, chapters marked by section headings */
 .case-story .case-section{padding-block:0}
 .case-story .case-section > .wide{--ink:#17151E;--ink-2:#5A5566;--rule:#E2E0E7;--surface:#FFFFFF;--paper:#F8F7FA;--cobalt:#5B37A8;
-  box-sizing:border-box;width:min(calc(100% - 2 * clamp(0px, 3vw, 40px)), var(--max-wide), calc((100svh - var(--head-h) - 84px) * 1.7778));max-width:none;margin-inline:auto;
+  box-sizing:border-box;width:min(calc(100% - 2 * clamp(0px, 3vw, 40px)), 1442px);max-width:none;margin-inline:auto;
   padding:0;background:#FFFFFF;color:var(--ink);border-inline:1px solid #E2E0E7}
 .case-story .case-section:first-of-type{margin-top:clamp(16px,2.4vw,32px)}
 .case-story .case-section:first-of-type > .wide{border-top:1px solid #E2E0E7;border-radius:20px 20px 0 0;overflow:hidden}
@@ -291,14 +291,16 @@ section.block{padding-block:clamp(48px,8vw,104px);border-top:1px solid var(--rul
 #case:has(#case-body.case-story) .case-head{display:none}
 .case-story .boards{gap:0}
 .case-story .board{position:relative;gap:0;scroll-margin-top:calc(var(--head-h) + 52px)}
+.case-story .board[style]{max-width:100%!important}
 .case-story .board .plate{border:0;border-radius:0}
 .case-story .board figcaption{position:absolute;top:12px;right:12px;opacity:0;transition:opacity .2s}
 .case-story .board figcaption > span{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .case-story .board:hover figcaption,.case-story .board:focus-within figcaption{opacity:1}
-.case-story .board .fullsize{background:rgba(255,255,255,.94);box-shadow:0 1px 2px rgba(23,21,30,.08),0 4px 12px rgba(23,21,30,.08)}
+.case-story .board .fullsize{width:36px;height:36px;min-height:36px;padding:0;justify-content:center;gap:0;font-size:0;background:rgba(255,255,255,.94);box-shadow:0 1px 2px rgba(23,21,30,.08),0 4px 12px rgba(23,21,30,.08)}
+.case-story .board figcaption{top:10px;right:10px}
 .case-story .mcar{padding-block:clamp(8px,1.2vw,16px) clamp(16px,2.4vw,32px)}
 #case:has(#case-body.case-story){padding-top:clamp(12px,2vw,24px)}
-@media (hover:none){.case-story .board figcaption{opacity:1}.case-story .board .fullsize{font-size:0;gap:0;padding:4px 10px}}
+@media (hover:none){.case-story .board figcaption{opacity:1}}
 @media (prefers-reduced-motion: reduce){.case-story .board figcaption{transition:none}}
 .mac-lid{position:relative;width:86%;margin:0 auto;padding:clamp(9px,1.4vw,20px) clamp(9px,1.4vw,20px) clamp(11px,1.8vw,26px);background:#16171A;border-radius:clamp(12px,1.9vw,28px) clamp(12px,1.9vw,28px) 0 0;box-shadow:0 0 0 2px #2E3036}
 .mac-cam{position:absolute;left:50%;top:calc(clamp(9px,1.4vw,20px) / 2 - 2px);width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#34363C}
