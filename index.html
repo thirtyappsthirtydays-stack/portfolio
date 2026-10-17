@@ -273,6 +273,8 @@ section.block{padding-block:clamp(48px,8vw,104px);border-top:1px solid var(--rul
 /* ---------- MacBook carousel ---------- */
 .mcar{display:grid;gap:clamp(18px,2.6vw,32px)}
 .mac{width:100%;max-width:1040px;margin:0 auto}
+/* Case studies marked fit: every canvas, and the laptop frame, fits the screen below the sticky bars */
+.case-fit .mac,.case-fit .mcar-bar{max-width:min(1040px, calc((100svh - var(--head-h) - 156px) / .5375))}
 .mac-lid{position:relative;width:86%;margin:0 auto;padding:clamp(9px,1.4vw,20px) clamp(9px,1.4vw,20px) clamp(11px,1.8vw,26px);background:#16171A;border-radius:clamp(12px,1.9vw,28px) clamp(12px,1.9vw,28px) 0 0;box-shadow:0 0 0 2px #2E3036}
 .mac-cam{position:absolute;left:50%;top:calc(clamp(9px,1.4vw,20px) / 2 - 2px);width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#34363C}
 .mac-display{position:relative;aspect-ratio:16 / 10;overflow:hidden;border-radius:3px;background:#fff}
@@ -1051,6 +1053,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     if(current !== c.id) return;
     ensureFonts(d.fonts);
     var body = document.getElementById('case-body');
+    body.classList.toggle('case-fit', !!d.fit);
     var html = '';
     var labels = [], firstOf = {};
     d.sections.forEach(function(s, i){ var l = navLabel(s.label); if(firstOf[l] === undefined){ firstOf[l] = i; labels.push({label:l, i:i}); } });
@@ -1069,7 +1072,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       if(d.carousel && d.carousel.section === si) html += carouselBlock(d.carousel, d);
       var row = null;
       bs.forEach(function(b, bi){
-        var fig = '<figure class="board" id="b-' + c.id + '-' + esc(b.id) + '" data-k="' + d.boards.indexOf(b) + '"' + (!b.device ? ' style="max-width:' + b.w + 'px"' : '') + '>' +
+        var fig = '<figure class="board" id="b-' + c.id + '-' + esc(b.id) + '" data-k="' + d.boards.indexOf(b) + '"' + (!b.device ? ' style="max-width:' + b.w + 'px' + (d.fit ? ';max-width:min(' + b.w + 'px, calc((100svh - var(--head-h) - 84px) * ' + (b.w / b.h).toFixed(4) + '))' : '') + '"' : '') + '>' +
           '<div class="plate"></div>' +
           '<figcaption>' + (b.device
             ? '<b>' + esc(b.title) + '</b>' + (b.caption ? '<span class="note">' + esc(b.caption) + '</span>' : '') + '<button type="button" class="fullsize" data-full="' + d.boards.indexOf(b) + '">' + EXPAND + 'View full size</button>'
