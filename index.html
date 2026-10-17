@@ -275,6 +275,8 @@ section.block{padding-block:clamp(48px,8vw,104px);border-top:1px solid var(--rul
 .mac{width:100%;max-width:1040px;margin:0 auto}
 /* Case studies marked fit: every canvas, and the laptop frame, fits the screen below the sticky bars */
 .case-fit .mac,.case-fit .mcar-bar{max-width:min(1040px, calc((100svh - var(--head-h) - 156px) / .5375))}
+.case-fit .case-section > .wide{max-width:min(var(--max-wide), calc((100svh - var(--head-h) - 84px) * 1.7778 + 2 * clamp(16px,4vw,40px)))}
+.case-fit .board{width:100%;margin-inline:auto}
 .mac-lid{position:relative;width:86%;margin:0 auto;padding:clamp(9px,1.4vw,20px) clamp(9px,1.4vw,20px) clamp(11px,1.8vw,26px);background:#16171A;border-radius:clamp(12px,1.9vw,28px) clamp(12px,1.9vw,28px) 0 0;box-shadow:0 0 0 2px #2E3036}
 .mac-cam{position:absolute;left:50%;top:calc(clamp(9px,1.4vw,20px) / 2 - 2px);width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#34363C}
 .mac-display{position:relative;aspect-ratio:16 / 10;overflow:hidden;border-radius:3px;background:#fff}
