@@ -277,6 +277,29 @@ section.block{padding-block:clamp(48px,8vw,104px);border-top:1px solid var(--rul
 .case-fit .mac,.case-fit .mcar-bar{max-width:min(1040px, calc((100svh - var(--head-h) - 156px) / .5375))}
 .case-fit .case-section > .wide{max-width:min(var(--max-wide), calc((100svh - var(--head-h) - 84px) * 1.7778 + 2 * clamp(16px,4vw,40px)))}
 .case-fit .board{width:100%;margin-inline:auto}
+/* Story mode: the whole case study reads as one continuous sheet, chapters marked by section headings */
+.case-story .case-section{padding-block:0}
+.case-story .case-section > .wide{--ink:#17151E;--ink-2:#5A5566;--rule:#E2E0E7;--surface:#FFFFFF;--paper:#F8F7FA;--cobalt:#5B37A8;
+  box-sizing:border-box;width:min(calc(100% - 2 * clamp(0px, 3vw, 40px)), var(--max-wide), calc((100svh - var(--head-h) - 84px) * 1.7778));max-width:none;margin-inline:auto;
+  padding:0;background:#FFFFFF;color:var(--ink);border-inline:1px solid #E2E0E7}
+.case-story .case-section:first-of-type{margin-top:clamp(16px,2.4vw,32px)}
+.case-story .case-section:first-of-type > .wide{border-top:1px solid #E2E0E7;border-radius:20px 20px 0 0;overflow:hidden}
+.case-story .case-section:last-of-type > .wide{border-bottom:1px solid #E2E0E7;border-radius:0 0 20px 20px;overflow:hidden;padding-bottom:clamp(8px,1.6vw,24px)}
+.case-story .sec-head{position:relative;z-index:1;margin:0 var(--inset,48px) calc(12px - var(--inset,48px) * .6667);padding-top:clamp(28px,3.6vw,48px);border-top:1px solid var(--rule);display:grid;gap:12px}
+.case-story .sec-head h2{margin:0;font-family:var(--f-text);font-size:.8125rem;line-height:1.3;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#4A2A8E}
+.case-story .sec-intro{max-width:44em;margin-bottom:calc(var(--inset,48px) * .6667);font-family:'Newsreader',Georgia,serif;font-size:clamp(1.2rem,1.9vw,1.6rem);line-height:1.35;letter-spacing:-.01em;color:var(--ink);text-wrap:pretty}
+#case:has(#case-body.case-story) .case-head{display:none}
+.case-story .boards{gap:0}
+.case-story .board{position:relative;gap:0;scroll-margin-top:calc(var(--head-h) + 52px)}
+.case-story .board .plate{border:0;border-radius:0}
+.case-story .board figcaption{position:absolute;top:12px;right:12px;opacity:0;transition:opacity .2s}
+.case-story .board figcaption > span{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.case-story .board:hover figcaption,.case-story .board:focus-within figcaption{opacity:1}
+.case-story .board .fullsize{background:rgba(255,255,255,.94);box-shadow:0 1px 2px rgba(23,21,30,.08),0 4px 12px rgba(23,21,30,.08)}
+.case-story .mcar{padding-block:clamp(8px,1.2vw,16px) clamp(16px,2.4vw,32px)}
+#case:has(#case-body.case-story){padding-top:clamp(12px,2vw,24px)}
+@media (hover:none){.case-story .board figcaption{opacity:1}.case-story .board .fullsize{font-size:0;gap:0;padding:4px 10px}}
+@media (prefers-reduced-motion: reduce){.case-story .board figcaption{transition:none}}
 .mac-lid{position:relative;width:86%;margin:0 auto;padding:clamp(9px,1.4vw,20px) clamp(9px,1.4vw,20px) clamp(11px,1.8vw,26px);background:#16171A;border-radius:clamp(12px,1.9vw,28px) clamp(12px,1.9vw,28px) 0 0;box-shadow:0 0 0 2px #2E3036}
 .mac-cam{position:absolute;left:50%;top:calc(clamp(9px,1.4vw,20px) / 2 - 2px);width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#34363C}
 .mac-display{position:relative;aspect-ratio:16 / 10;overflow:hidden;border-radius:3px;background:#fff}
@@ -697,6 +720,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     var st = plate.firstElementChild; if(!st) return;
     var w = +plate.dataset.w; var s = plate.clientWidth / w;
     if(s > 0) st.style.transform = 'scale(' + s + ')';
+    if(s > 0 && +w === 1440 && plate.parentNode && plate.parentNode.classList.contains('board')){ var cb = plate.closest('.case-story'); if(cb) cb.style.setProperty('--inset', Math.round(72 * s) + 'px'); }
     if(plate.dataset.r) plate.style.borderRadius = (plate.dataset.r * s) + 'px';
   }
   function makeStage(b){
@@ -1056,6 +1080,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     ensureFonts(d.fonts);
     var body = document.getElementById('case-body');
     body.classList.toggle('case-fit', !!d.fit);
+    body.classList.toggle('case-story', !!d.story);
     var html = '';
     var labels = [], firstOf = {};
     d.sections.forEach(function(s, i){ var l = navLabel(s.label); if(firstOf[l] === undefined){ firstOf[l] = i; labels.push({label:l, i:i}); } });
@@ -1067,7 +1092,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     d.sections.forEach(function(s, si){
       var bs = d.boards.filter(function(b){ return b.section === si; });
       html += '<section class="case-section" id="sec-' + si + '" data-nav="' + firstOf[navLabel(s.label)] + '"><div class="wide">';
-      if(d.sections.length > 1) html += '<h2>' + esc(s.label) + '</h2>';
+      if(d.story){ if(si > 0) html += '<header class="sec-head"><h2>' + esc(s.label) + '</h2>' + (s.intro ? '<p class="sec-intro">' + esc(s.intro) + '</p>' : '') + '</header>'; }
+      else if(d.sections.length > 1) html += '<h2>' + esc(s.label) + '</h2>';
       html += '<div class="boards">';
       if(d.live && d.live.section === si) html += liveBlock(d.live);
       if(d.proto && d.proto.section === si) html += protoBlock(d.proto);
