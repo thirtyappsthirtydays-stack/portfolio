@@ -11,7 +11,7 @@
       <p class="cs-sub">Fund discovery among thousands available to trade</p>
     </div>
     <div class="r">
-      <p class="cs-lead">How I designed the ETF and Mutual Fund Screener for Citi Self Invest, so self-directed investors could filter, compare and act on funds without researching the whole catalogue by hand.</p>
+      <p class="cs-lead">The ETF and Mutual Fund Screener I designed for Citi Self Invest, so self-directed investors could filter, compare and act on funds in one place.</p>
       <div class="cs-actions">
         <button type="button" class="cs-btn" data-jump="deliver" style="border:0;cursor:pointer;font-family:inherit">See the Screener<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></button>
         <span class="cs-note">Fund data in the screens is illustrative.</span>
@@ -35,7 +35,7 @@
 <section class="cs-process" aria-labelledby="si-process">
   <div class="cs-head">
     <h2 class="cs-h3" id="si-process">My Design Approach: The UX Double Diamond</h2>
-    <p>The first diamond settled what investors actually struggled with. The second settled how the Screener would solve it, on web and then on iOS.</p>
+    <p>The first diamond found what investors struggled with. The second shaped the Screener, on web and then iOS.</p>
   </div>
   <div class="cs-dd" aria-hidden="true">
     <svg viewBox="0 0 1000 72" preserveAspectRatio="none"><path d="M1 36 L250 2 L500 36 L250 70 Z" fill="#E6F1F9" stroke="#056DAE" vector-effect="non-scaling-stroke"/><path d="M500 36 L750 2 L999 36 L750 70 Z" fill="#DCE6F5" stroke="#056DAE" vector-effect="non-scaling-stroke"/></svg>
@@ -44,10 +44,10 @@
     <span class="pill" style="left:50%">Core insight</span>
   </div>
   <div class="cs-steps">
-    <button type="button" class="cs-step" data-jump="discover"><span class="cs-eyebrow">01 · Open up</span><b>Discover</b><span>Morningstar, Fidelity and Schwab reviewed, the existing product studied, research with UX.</span></button>
+    <button type="button" class="cs-step" data-jump="discover"><span class="cs-eyebrow">01 · Open up</span><b>Discover</b><span>3 competitors, the existing product and 15 investor interviews</span></button>
     <button type="button" class="cs-step" data-jump="define"><span class="cs-eyebrow">02 · Narrow down</span><b>Define</b><span>Investors needed a way to narrow thousands of options.</span></button>
-    <button type="button" class="cs-step" data-jump="develop"><span class="cs-eyebrow">03 · Open up</span><b>Develop</b><span>Three directions weighed, then each user need paired with a design solution in greyscale.</span></button>
-    <button type="button" class="cs-step" data-jump="deliver"><span class="cs-eyebrow">04 · Narrow down</span><b>Deliver</b><span>The Screener in Citi’s design system, on web and iOS, with two ways in for new investors.</span></button>
+    <button type="button" class="cs-step" data-jump="develop"><span class="cs-eyebrow">03 · Open up</span><b>Develop</b><span>Three directions, then one greyscale screen per user need</span></button>
+    <button type="button" class="cs-step" data-jump="deliver"><span class="cs-eyebrow">04 · Narrow down</span><b>Deliver</b><span>Citi’s design system, on web and iOS</span></button>
   </div>
 </section>
 
@@ -56,13 +56,14 @@
     <div class="cs-side">
       <p class="cs-eyebrow">01 · Discover</p>
       <h2 class="cs-h2" id="si-discover">Too many funds to research one by one</h2>
-      <p class="cs-lead">Modern investment platforms offer thousands of ETFs and mutual funds. Without good filtering, a self-directed investor has to research them one by one, and that friction sits right at the start of building a portfolio.</p>
+      <p class="cs-lead">Investment platforms offer thousands of ETFs and mutual funds. Without good filtering, investors research them one by one, right at the start of building a portfolio.</p>
     </div>
     <div class="cs-main">
-      <div class="cs-card" style="gap:10px">
+      <div class="cs-card" style="gap:14px">
         <span class="cs-eyebrow">Business context</span>
-        <p style="font-size:16px;line-height:1.55">For a wealth platform like Citi, better discovery tools can raise investor confidence, encourage more portfolio activity and lift the whole digital wealth experience. The Screener was part of Citi Self Invest, Citi’s platform for self-directed investors.</p>
-        <div class="cs-flow" style="margin-top:4px"><span class="cs-xs" style="font-weight:600;margin-right:4px">What investors want to screen on</span><span class="node">Asset class</span><span class="node">Sector</span><span class="node">Expense ratio</span><span class="node">Performance</span><span class="node">Risk profile</span></div>
+        <p style="font-size:16px;line-height:1.55">Better discovery could lift the whole of Citi Self Invest, Citi’s platform for self-directed investors.</p>
+        <dl class="cs-dl" style="--dm:140px"><div><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><dt>Confidence</dt><dd>Investors who trust their picks</dd></div><div><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i><dt>Activity</dt><dd>More portfolio activity</dd></div><div><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg></i><dt>Experience</dt><dd>A stronger digital wealth offer</dd></div></dl>
+        <div class="cs-stack" style="gap:8px;margin-top:6px"><span class="cs-xs" style="font-weight:600">What investors want to screen on</span><div class="cs-flow"><span class="node"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v9h9"/><path d="M20.5 15.5A9 9 0 1 1 8.5 3.7"/></svg>Asset class</span><span class="node"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Sector</span><span class="node"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M14.5 9.5c-.5-1-1.4-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2 0 2.6 5 1.4 5 4 0 1.2-1 2-2.5 2-1.1 0-2-.5-2.5-1.5M12 6.5V8M12 16v1.5"/></svg>Expense ratio</span><span class="node"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Performance</span><span class="node"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Risk profile</span></div></div>
       </div>
       <div class="cs-card" style="gap:16px">
         <div class="cs-head" style="margin:0"><span class="cs-h4">Competitive review</span><span class="cs-xs">Three answers to the same problem</span></div>
@@ -91,26 +92,27 @@
       <p>From observing the existing product and 3 rounds of user interviews with 15 investors.</p>
     </div>
     <div class="cs-g" style="--m:190px">
-      <div class="cs-card"><span class="cs-eyebrow">01</span><p class="cs-t">Too many options</p><p class="cs-p">Thousands of funds, and no quick way to rule most of them out.</p></div>
-      <div class="cs-card"><span class="cs-eyebrow">02</span><p class="cs-t">Unclear criteria</p><p class="cs-p">Terms like equity style or target asset mix meant little without an explanation.</p></div>
-      <div class="cs-card"><span class="cs-eyebrow">03</span><p class="cs-t">Hard to compare</p><p class="cs-p">Weighing fees against returns across several funds meant a lot of back and forth.</p></div>
-      <div class="cs-card"><span class="cs-eyebrow">04</span><p class="cs-t">No guidance</p><p class="cs-p">Newer investors didn’t know where to start, or which filter to pick first.</p></div>
-      <div class="cs-card dark"><span class="cs-eyebrow">Core insight</span><p class="cs-t">Investors needed a way to narrow the list</p><p class="cs-p">Thousands of funds had to come down to the few that fit their goals.</p></div>
+      <div class="cs-card"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></i><span class="cs-eyebrow">01</span><p class="cs-t">Too many options</p><p class="cs-p">Thousands of funds, and no quick way to rule most of them out.</p></div>
+      <div class="cs-card"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .9-1 1.6v.4"/><path d="M12 17.2v.3"/></svg></i><span class="cs-eyebrow">02</span><p class="cs-t">Unclear criteria</p><p class="cs-p">Terms like equity style or target asset mix meant little without an explanation.</p></div>
+      <div class="cs-card"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V11M11 20V5M16 20v-6M20 20V8"/></svg></i><span class="cs-eyebrow">03</span><p class="cs-t">Hard to compare</p><p class="cs-p">Weighing fees against returns across several funds meant a lot of back and forth.</p></div>
+      <div class="cs-card"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-6M12 9V3"/><path d="M5 5h11l3 2-3 2H5z"/><path d="M19 11H8l-3 2 3 2h11z"/></svg></i><span class="cs-eyebrow">04</span><p class="cs-t">No guidance</p><p class="cs-p">Newer investors didn’t know where to start, or which filter to pick first.</p></div>
+      <div class="cs-card dark"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h17l-6.5 7.5V19l-4-2v-4.5z"/></svg></i><span class="cs-eyebrow">Core insight</span><p class="cs-t">Investors needed a way to narrow the list</p><p class="cs-p">Thousands of funds had to come down to the few that fit their goals.</p></div>
     </div>
   </div>
 
   <div class="cs-block">
     <div class="cs-head">
       <h3 class="cs-h3">Current User Journey</h3>
-      <p>From “I want to invest” to owning a fund. The low points sit in the middle, where the catalogue gave thousands of options and no way to cut them down.</p>
+      <p>From “I want to invest” to owning a fund, before the Screener.</p>
     </div>
     <div class="cs-scroll" tabindex="0" role="region" aria-label="Current-state journey">
       <div class="cs-journey" style="--n:6">
         <div class="cs-jrow"><span>Moment</span><span><span class="n">1</span><b>Decide</b></span><span><span class="n">2</span><b>Browse</b></span><span><span class="n">3</span><b>Narrow</b></span><span><span class="n">4</span><b>Compare</b></span><span><span class="n">5</span><b>Check</b></span><span><span class="n">6</span><b>Act</b></span></div>
-        <div class="cs-jrow"><span>Doing</span><span>Decides to put money into a fund, with only a rough idea which kind.</span><span>Opens the list of ETFs and mutual funds and starts scrolling.</span><span>Tries to cut the list down by type, cost or sector.</span><span>Weighs fees against returns across a few candidates.</span><span>Looks up unfamiliar terms and opens fund details.</span><span>Buys, sets up recurring investing, or saves it for later.</span></div>
+        <div class="cs-jrow"><span>Doing</span><span>Decides to invest in a fund.</span><span>Opens the fund list and scrolls.</span><span>Cuts it down by type, cost or sector.</span><span>Weighs fees against returns.</span><span>Looks up terms and fund details.</span><span>Buys, auto-invests or saves it.</span></div>
+        <div class="cs-jrow cs-mood"><span>Mood</span><span class="curve"><svg viewBox="0 0 600 64" preserveAspectRatio="none" aria-hidden="true"><polyline points="50.0,13.8 150.0,50.2 250.0,53.8 350.0,47.6 450.0,34.6 550.0,16.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg><i style="left:8.33%;top:13.8px"></i><i style="left:25.00%;top:50.2px" class=low></i><i style="left:41.67%;top:53.8px" class=low></i><i style="left:58.33%;top:47.6px" class=low></i><i style="left:75.00%;top:34.6px"></i><i style="left:91.67%;top:16.4px"></i></span></div>
         <div class="cs-jrow mid"><span>Feeling</span><span class="cs-chip">Motivated</span><span class="cs-chip low">Overwhelmed</span><span class="cs-chip low">Stuck</span><span class="cs-chip low">Tedious</span><span class="cs-chip">Unsure</span><span class="cs-chip">Relieved</span></div>
-        <div class="cs-jrow"><span>Pain point</span><span>No obvious first step for someone new to funds.</span><span>Thousands of funds, in one long list.</span><span>Filtering criteria are unclear or missing.</span><span>Hard to compare funds on the same measures.</span><span>Jargon with no explanation nearby.</span><span>Acting on a choice means leaving the list.</span></div>
-        <div class="cs-jrow dark"><span>Screener</span><span><b>Pre-screen questions</b><small>Two questions to get a newer investor started.</small></span><span><b>Live results count</b><small>Every filter shows how many funds are left.</small></span><span><b>Grouped filters</b><small>Grouped by what investors care about.</small></span><span><b>Results grid and sort</b><small>Cost and returns side by side, sortable.</small></span><span><b>Plain-language help</b><small>Descriptions and a glossary beside every choice.</small></span><span><b>Row actions</b><small>Buy, sell, auto-invest or watch from the row.</small></span></div>
+        <div class="cs-jrow"><span>Pain point</span><span>No obvious first step.</span><span>Thousands of funds in one list.</span><span>Criteria unclear or missing.</span><span>No common measures.</span><span>Jargon, unexplained.</span><span>Acting means leaving the list.</span></div>
+        <div class="cs-jrow dark"><span>Screener</span><span><b>Pre-screen questions</b></span><span><b>Live results count</b></span><span><b>Grouped filters</b></span><span><b>Results grid and sort</b></span><span><b>Plain-language help</b></span><span><b>Row actions</b></span></div>
       </div>
     </div>
   </div>
@@ -121,30 +123,26 @@
     <div class="cs-side">
       <p class="cs-eyebrow">02 · Define</p>
       <h2 class="cs-h2" id="si-define">Designing for new and experienced investors</h2>
-      <p class="cs-lead">The research pointed to two ends of the same audience: people new to funds who needed a place to start, and experienced investors who wanted full control. The Screener had to work for both without slowing either down.</p>
-      <div class="cs-card dark" style="margin-top:8px;gap:12px">
-        <span class="cs-eyebrow">Problem statement</span>
-        <p style="font-size:16px;line-height:1.55">Self-directed investors need to narrow thousands of funds to the few that match their goals, quickly and with confidence, instead of researching funds one by one.</p>
-        <div class="cs-sep"></div>
-        <span class="cs-eyebrow">How might we</span>
-        <p style="font-size:19px;line-height:1.35;font-weight:600;letter-spacing:-.01em">Give investors control over the whole fund universe, and a clear place to start?</p>
-      </div>
+      <p class="cs-lead">Research pointed to two ends of one audience: people new to funds, and experienced investors who wanted full control.</p>
     </div>
     <div class="cs-main">
       <div class="cs-g" style="--m:280px">
         <div class="cs-card" style="padding:24px;gap:16px">
           <div class="cs-persona"><img src="img/persona-jordan-ellis.jpg" alt="Stock photo used for the Jordan proto-persona"><span><span class="cs-eyebrow">New to funds</span><b>Jordan Ellis, 29</b><span class="cs-s">Marketing manager · Citi banking customer</span></span></div>
           <p class="cs-quote-line">Needs a place to start.</p>
-          <dl class="cs-pdl"><dt>Goal</dt><dd>Put savings into a few low-cost funds and understand what she owns</dd><dt>Blocked by</dt><dd>Jargon, and too many choices to know where to begin</dd><dt>Design for</dt><dd>A guided first step and plain explanations</dd></dl>
+          <dl class="cs-pdl"><dt>Goal</dt><dd>A few low-cost, easy-to-understand funds</dd><dt>Blocked by</dt><dd>Jargon and too many choices</dd><dt>Design for</dt><dd>A guided first step</dd></dl>
         </div>
         <div class="cs-card" style="padding:24px;gap:16px">
           <div class="cs-persona"><img src="img/persona-daniel-ortiz.jpg" alt="Stock photo used for the Daniel proto-persona"><span><span class="cs-eyebrow">Hands-on researcher</span><b>Daniel Ortiz, 46</b><span class="cs-s">Engineer · investing on his own for years</span></span></div>
           <p class="cs-quote-line">Needs control, and speed.</p>
-          <dl class="cs-pdl"><dt>Goal</dt><dd>Find funds that meet exact criteria, then compare cost and long-term returns</dd><dt>Blocked by</dt><dd>Hidden criteria, and extra steps between finding a fund and trading it</dd><dt>Design for</dt><dd>Every filter within reach, dense comparable data and quick actions</dd></dl>
+          <dl class="cs-pdl"><dt>Goal</dt><dd>Funds that meet exact criteria</dd><dt>Blocked by</dt><dd>Hidden criteria and extra steps to trade</dd><dt>Design for</dt><dd>Every filter in reach and quick actions</dd></dl>
         </div>
       </div>
       <p class="cs-xs" style="font-size:12px">Proto-personas from research synthesis. Stock photos, not real people.</p>
-      <div class="cs-card"><span class="cs-eyebrow">How we’d know it worked</span><ul class="cs-ul md"><li>Faster fund discovery</li><li>More engagement with research tools</li><li>Greater confidence in investment decisions</li></ul></div>
+      <div class="cs-card dark cs-g" style="--m:240px;gap:16px 32px;padding:24px">
+        <div class="cs-stack" style="gap:10px"><span class="cs-eyebrow">Problem statement</span><p style="font-size:16px;line-height:1.55">Self-directed investors need to narrow thousands of funds to the few that match their goals, quickly and with confidence, instead of researching funds one by one.</p></div>
+        <div class="cs-stack" style="gap:10px"><span class="cs-eyebrow">How might we</span><p style="font-size:19px;line-height:1.35;font-weight:600;letter-spacing:-.01em">Give investors control over the whole fund universe, and a clear place to start?</p></div>
+      </div>
     </div>
   </div>
 
@@ -154,28 +152,24 @@
       <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h17l-6.5 7.5V19l-4-2v-4.5z"/></svg></i>01</span><p class="cs-t">Narrow thousands, fast</p><p class="cs-p">Every choice cuts the list right away and shows how many funds are left.</p></div>
       <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg></i>02</span><p class="cs-t">Criteria you can see and understand</p><p class="cs-p">Active filters stay visible, and every category says what it means.</p></div>
       <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V11M11 20V5M16 20v-6M20 20V8"/></svg></i>03</span><p class="cs-t">Compare on the same measures</p><p class="cs-p">Price, cost and returns line up in columns across every fund.</p></div>
-      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l9 7-9 7z"/><path d="M18 5v14"/></svg></i>04</span><p class="cs-t">Guidance you can skip</p><p class="cs-p">Help is offered at the start and stays one click away, and it can always be skipped.</p></div>
+      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l9 7-9 7z"/><path d="M18 5v14"/></svg></i>04</span><p class="cs-t">Guidance you can skip</p><p class="cs-p">Help at the start, one click away, always skippable.</p></div>
     </div>
   </div>
 
   <div class="cs-block">
     <div class="cs-head">
       <h3 class="cs-h3">Choosing a direction, then a filter model</h3>
-      <p>We weighed three product directions. The one we chose put investors in charge of their own criteria, so the next job was a filter model they could understand at a glance.</p>
+      <p>We weighed three product directions, then designed the filter model.</p>
     </div>
     <div class="cs-g" style="--m:220px">
-      <div class="cs-card"><span class="cs-eyebrow muted">Option 1</span><p class="cs-t">Redesign the fund catalogue</p><p class="cs-s">Better hierarchy and progressive disclosure on the existing list.</p><div class="foot"><span class="cs-tag">Not chosen</span><span class="cs-xs">Easier to read, but still a list to scroll. Investors couldn’t say what they were looking for.</span></div></div>
-      <div class="cs-card"><span class="cs-eyebrow muted">Option 2</span><p class="cs-t">AI-driven recommendations</p><p class="cs-s">Suggest funds from investor profiles and behavioural signals.</p><div class="foot"><span class="cs-tag tint">Parked for later</span><span class="cs-xs">Less effort, but it takes the decision away from people who chose a self-directed product.</span></div></div>
-      <div class="cs-card dark"><span class="cs-eyebrow">Option 3</span><p class="cs-t">A flexible screener</p><p class="cs-s">Investors define their own criteria and compare funds side by side.</p><div class="foot"><span class="cs-tag line">Chosen</span><span class="cs-xs">It fits self-directed investors, who want control over their investment decisions.</span></div></div>
+      <div class="cs-card"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></i><span class="cs-eyebrow muted">Option 1</span><p class="cs-t">Redesign the fund catalogue</p><p class="cs-s">Better hierarchy on the existing list.</p><div class="foot"><span class="cs-tag">Not chosen</span><span class="cs-xs">Still a list to scroll.</span></div></div>
+      <div class="cs-card"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg></i><span class="cs-eyebrow muted">Option 2</span><p class="cs-t">AI-driven recommendations</p><p class="cs-s">Suggest funds from investor profiles.</p><div class="foot"><span class="cs-tag tint">Parked for later</span><span class="cs-xs">It takes the decision away from self-directed investors.</span></div></div>
+      <div class="cs-card dark"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h17l-6.5 7.5V19l-4-2v-4.5z"/></svg></i><span class="cs-eyebrow">Option 3</span><p class="cs-t">A flexible screener</p><p class="cs-s">Investors set criteria and compare funds side by side.</p><div class="foot"><span class="cs-tag line">Chosen</span><span class="cs-xs">It fits investors who want control.</span></div></div>
     </div>
-    <div class="cs-card" style="margin-top:16px;gap:14px">
-      <div class="cs-head" style="margin:0"><span class="cs-h4">The filter model</span><p class="cs-xs" style="font-size:13px">11 filters in 3 groups, chosen by researching which categories mattered most</p></div>
-      <div class="cs-g" style="--m:190px;gap:16px 24px">
-        <div class="cs-stack" style="gap:6px"><span class="cs-eyebrow muted">Fund categories · 6</span><span class="cs-s" style="color:var(--c-ink)">Asset class, equity style, market cap, target asset mix, target date, US equity sectors</span></div>
-        <div class="cs-stack" style="gap:6px"><span class="cs-eyebrow muted">Management and expenses · 3</span><span class="cs-s" style="color:var(--c-ink)">Active vs. passive, benchmark index, expense ratio as a range slider</span></div>
-        <div class="cs-stack" style="gap:6px"><span class="cs-eyebrow muted">Additional · 2</span><span class="cs-s" style="color:var(--c-ink)">Asset style as a searchable list, fund type: ETFs and mutual funds</span></div>
-      </div>
-      <dl class="cs-pdl" style="padding-top:12px;border-top:1px solid var(--c-rule)"><dt>Every result shows</dt><dd>Symbol and name, last price, expense ratio, 1, 3, 5 and 10 year return, and actions</dd><dt>Sort by</dt><dd>Performance, highest first, or expense ratio, lowest first</dd></dl>
+    <div class="cs-card" style="margin-top:16px;gap:16px">
+      <div class="cs-head" style="margin:0"><span class="cs-h4">The filter model</span><p class="cs-xs" style="font-size:13px">11 filters in 3 groups, chosen by research</p></div>
+      <div class="cs-g" style="--m:220px;gap:20px 28px"><div class="cs-stack" style="gap:10px"><div style="display:flex;align-items:baseline;gap:10px"><span class="cs-stat" style="font-size:34px">6</span><span class="cs-eyebrow muted">Fund categories</span></div><div class="cs-toolchips" style="flex:none"><span class="cs-toolchip">Asset class</span><span class="cs-toolchip">Equity style</span><span class="cs-toolchip">Market cap</span><span class="cs-toolchip">Target asset mix</span><span class="cs-toolchip">Target date</span><span class="cs-toolchip">US equity sectors</span></div></div><div class="cs-stack" style="gap:10px"><div style="display:flex;align-items:baseline;gap:10px"><span class="cs-stat" style="font-size:34px">3</span><span class="cs-eyebrow muted">Management and expenses</span></div><div class="cs-toolchips" style="flex:none"><span class="cs-toolchip">Active vs. passive</span><span class="cs-toolchip">Benchmark index</span><span class="cs-toolchip">Expense ratio</span></div></div><div class="cs-stack" style="gap:10px"><div style="display:flex;align-items:baseline;gap:10px"><span class="cs-stat" style="font-size:34px">2</span><span class="cs-eyebrow muted">Additional</span></div><div class="cs-toolchips" style="flex:none"><span class="cs-toolchip">Asset style</span><span class="cs-toolchip">Fund type</span></div></div></div>
+      <dl class="cs-pdl" style="padding-top:12px;border-top:1px solid var(--c-rule)"><dt>Every result shows</dt><dd>Name, price, expense ratio, 1, 3, 5 and 10 year return, actions</dd><dt>Sort by</dt><dd>Performance or expense ratio</dd></dl>
     </div>
   </div>
 </section>
@@ -193,23 +187,23 @@
   <div class="cs-block tight imgcar" data-imgcar>
     <div class="imgcar-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Greyscale designs, one per user need">
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="1 of 5: Only the categories that matter, grouped">
-        <figcaption class="cs-need"><span class="k">Need</span><span class="v">A comprehensive list of filters</span><span class="k">Solution</span><span class="v sol">Only the categories that matter, grouped</span><span class="cs-s" style="margin-top:6px">The list keeps the categories research showed mattered most. One chip per filter: a plus adds it, a tick shows it’s on, and nothing changes until Apply.</span></figcaption>
+        <figcaption class="cs-need"><span class="k">Need</span><span class="v">A comprehensive list of filters</span><span class="k">Solution</span><span class="v sol">Only the categories that matter, grouped</span><span class="cs-s" style="margin-top:6px">One chip per filter. A plus adds it, a tick shows it’s on, and nothing changes until Apply.</span></figcaption>
         <div class="imgcar-shot"><img src="img/2bb2af60269c6165c17b1346d48fba64.png" alt="Greyscale Add Filters panel: three labelled groups of filter chips, a glossary link, and Apply and Reset" loading="lazy"></div>
       </figure>
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Pills that show every active filter">
-        <figcaption class="cs-need"><span class="k">Need</span><span class="v">Intuitive filter design</span><span class="k">Solution</span><span class="v sol">Pills that show every active filter</span><span class="cs-s" style="margin-top:6px">A pill for each active group, right above the results it shapes. The × removes it in one click, and Clear Filters starts over.</span></figcaption>
+        <figcaption class="cs-need"><span class="k">Need</span><span class="v">Intuitive filter design</span><span class="k">Solution</span><span class="v sol">Pills that show every active filter</span><span class="cs-s" style="margin-top:6px">A pill per active group, above the results. The × removes it.</span></figcaption>
         <div class="imgcar-shot"><img src="img/a1890a3e2ede6918c72530224cd2a0b8.png" alt="Greyscale screener with active filter pills highlighted above the results" loading="lazy"></div>
       </figure>
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: An actions menu on every row">
-        <figcaption class="cs-need"><span class="k">Need</span><span class="v">The ability to buy funds</span><span class="k">Solution</span><span class="v sol">An actions menu on every row</span><span class="cs-s" style="margin-top:6px">A single menu button per row keeps the focus on the numbers. Buy and Sell are the only buttons; Auto Invest and Watchlist sit in the same menu.</span></figcaption>
+        <figcaption class="cs-need"><span class="k">Need</span><span class="v">The ability to buy funds</span><span class="k">Solution</span><span class="v sol">An actions menu on every row</span><span class="cs-s" style="margin-top:6px">One menu per row keeps the focus on the numbers.</span></figcaption>
         <div class="imgcar-shot"><img src="img/430cda0144c78ad2d0d1450c982fe407.png" alt="Greyscale results grid with an open row menu: Buy, Sell, set up Auto Invest, manage investments, add to watchlist" loading="lazy"></div>
       </figure>
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: A · Tutorial tooltips">
-        <figcaption class="cs-need"><span class="k">Need</span><span class="v">Clear onboarding</span><span class="k">Solution</span><span class="v sol">A · Tutorial tooltips</span><span class="cs-s" style="margin-top:6px">For people who’d rather explore: a four-step tour of the real controls, with Exit on every step, ending at Add Filters.</span></figcaption>
+        <figcaption class="cs-need"><span class="k">Need</span><span class="v">Clear onboarding</span><span class="k">Solution</span><span class="v sol">A · Tutorial tooltips</span><span class="cs-s" style="margin-top:6px">A four-step tour of the real controls, with Exit on every step.</span></figcaption>
         <div class="imgcar-shot"><img src="img/bae7794e1af596cc227fd74846b47d26.png" alt="Greyscale tour tooltips pointing at the screener’s controls" loading="lazy"></div>
       </figure>
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: B · A two-step questionnaire">
-        <figcaption class="cs-need"><span class="k">Need</span><span class="v">Clear onboarding</span><span class="k">Solution</span><span class="v sol">B · A two-step questionnaire</span><span class="cs-s" style="margin-top:6px">For people who want a starting point: pick a category, then narrow within it. “Set my own filters instead” skips straight to the Screener.</span></figcaption>
+        <figcaption class="cs-need"><span class="k">Need</span><span class="v">Clear onboarding</span><span class="k">Solution</span><span class="v sol">B · A two-step questionnaire</span><span class="cs-s" style="margin-top:6px">Pick a category, then narrow within it, or skip to your own filters.</span></figcaption>
         <div class="imgcar-shot"><img src="img/50a69822709168263fdc21d40a707a09.png" alt="Greyscale two-step pre-screening questionnaire" loading="lazy"></div>
       </figure>
     </div>
@@ -219,23 +213,19 @@
   <div class="cs-block">
     <div class="cs-head">
       <h3 class="cs-h3">Left to right, in the order of the task</h3>
-      <p>Set criteria, scan the results, act on one. Here it is in Citi’s design system, ready for build.</p>
+      <p>Set criteria, scan, act. In Citi’s design system, ready for build.</p>
     </div>
     <div class="cs-split" style="gap:32px 40px;align-items:center">
       <div class="cs-laptop" style="flex:999 1 480px"><div class="scr"><div class="cs-pinned"><div class="plate" data-screen="ScreenerWeb"></div><span class="cs-pin" aria-hidden="true" style="left:2.4%;top:30.4%">1</span><span class="cs-pin" aria-hidden="true" style="left:28.2%;top:23.1%">2</span><span class="cs-pin" aria-hidden="true" style="left:28.2%;top:42%">3</span><span class="cs-pin" aria-hidden="true" style="left:28.2%;top:51.7%">4</span><span class="cs-pin" aria-hidden="true" style="left:74.1%;top:66.6%">5</span></div></div><div class="base"></div></div>
       <ol class="cs-levels" style="flex:1 1 300px;grid-template-columns:minmax(0,1fr);gap:14px">
-        <li><span class="cs-num">1</span><span><b>Criteria on the left</b><span class="cs-s">Fund categories first, extra filters below, Add Filters at the end.</span></span></li>
-        <li><span class="cs-num">2</span><span><b>Investment Lookup</b><span class="cs-s">For investors who already know the symbol, so they skip filtering.</span></span></li>
-        <li><span class="cs-num">3</span><span><b>Pills and the count</b><span class="cs-s">Confirm what’s applied, in Citi blue, above the list they change.</span></span></li>
-        <li><span class="cs-num">4</span><span><b>The grid</b><span class="cs-s">Price, expense ratio and four return periods in fixed columns.</span></span></li>
-        <li><span class="cs-num">5</span><span><b>Row actions</b><span class="cs-s">Open over the grid and close without losing the investor’s place.</span></span></li>
+        <li><span class="cs-num">1</span><span><b>Criteria on the left</b><span class="cs-s">Categories first, Add Filters at the end.</span></span></li>
+        <li><span class="cs-num">2</span><span><b>Investment Lookup</b><span class="cs-s">For investors who already know the symbol.</span></span></li>
+        <li><span class="cs-num">3</span><span><b>Pills and the count</b><span class="cs-s">What’s applied, above the list it changes.</span></span></li>
+        <li><span class="cs-num">4</span><span><b>The grid</b><span class="cs-s">Price, cost and four return periods in fixed columns.</span></span></li>
+        <li><span class="cs-num">5</span><span><b>Row actions</b><span class="cs-s">Opens over the grid without losing your place.</span></span></li>
       </ol>
     </div>
-    <dl class="cs-dl plain" style="margin-top:24px">
-      <div><dt>Same measure, same place</dt><dd>Figures in fixed columns, so two funds compare at a glance down the grid.</dd></div>
-      <div><dt>Signs as well as colour</dt><dd>Every return carries a + or − sign, so gains and losses are clear without relying on green and red.</dd></div>
-      <div><dt>Part of the account</dt><dd>Citi’s global navigation and a breadcrumb, so the Screener feels like home.</dd></div>
-    </dl>
+    <dl class="cs-dl plain" style="margin-top:24px;--dm:180px"><div><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V11M11 20V5M16 20v-6M20 20V8"/></svg></i><dt>Same measure, same place</dt><dd>Fixed columns compare at a glance</dd></div><div><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h7M7.5 4.5v7"/><path d="M13 17h7"/><path d="M19 5L5 19" opacity=".5"/></svg></i><dt>Signs as well as colour</dt><dd>+ or − on every return</dd></div><div><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/></svg></i><dt>Part of the account</dt><dd>Citi’s navigation and a breadcrumb</dd></div></dl>
   </div>
 </section>
 
@@ -244,7 +234,7 @@
     <div class="cs-side">
       <p class="cs-eyebrow">Design system</p>
       <h2 class="cs-h2" id="si-system">New patterns, inside an existing system</h2>
-      <p class="cs-lead">As one of the designers maintaining Citi’s design system and component library, I fitted the Screener’s new patterns into it instead of inventing a new look. Two blues are used across the product.</p>
+      <p class="cs-lead">As one of the designers maintaining Citi’s design system, I fitted the Screener’s new patterns into it.</p>
     </div>
     <div class="cs-main" data-tabs>
       <div class="cs-tabs" role="tablist" aria-label="Design system">
@@ -254,10 +244,10 @@
       </div>
       <div class="cs-panels">
         <div class="cs-panel" role="tabpanel" id="si-p1" aria-labelledby="si-t1">
-          <div class="intro"><b>Blue to act, dark blue for structure</b><p>Citi Blue appears only on chips, pills, checkboxes and the Buy, Sell and Apply buttons. Everything else stays neutral, so the eye goes to choices and actions.</p></div>
+          <div class="intro"><b>Blue to act, dark blue for structure</b><p>Citi Blue only marks choices and actions. Everything else stays neutral.</p></div>
           <div class="cs-g" style="--m:220px">
-            <div class="cs-sw"><i style="background:#056DAE;color:#fff;height:110px">5.5:1 with white · AA</i><b>Citi Blue #056DAE</b><span>Acting and selecting: buttons, links, selected tiles and checkboxes, filter pills, tickers</span></div>
-            <div class="cs-sw"><i style="background:#002D72;color:#fff;height:110px">13.0:1 with white · AAA</i><b>Citi Dark Blue #002D72</b><span>Structure and brand: global navigation on web</span></div>
+            <div class="cs-sw"><i style="background:#056DAE;color:#fff;height:110px">5.5:1 with white · AA</i><b>Citi Blue #056DAE</b><span>Buttons, links, selections, pills, tickers</span></div>
+            <div class="cs-sw"><i style="background:#002D72;color:#fff;height:110px">13.0:1 with white · AAA</i><b>Citi Dark Blue #002D72</b><span>Global navigation on web</span></div>
           </div>
           <div class="cs-g" style="--m:140px">
             <div class="cs-sw"><i style="background:#fff;border-color:#C3CDDA;color:#4A5A70">Surface</i><b>Surface</b><span>Cards, sheets, the grid</span></div>
@@ -280,12 +270,12 @@
           <p class="cs-xs">The roles on the iOS results screen.</p>
         </div>
         <div class="cs-panel" role="tabpanel" id="si-p3" aria-labelledby="si-t3" hidden>
-          <div class="intro"><b>The patterns the Screener added</b><p>A small set of pieces carries the whole experience, shown from the final iOS design, except the range slider and tour tooltip, shown from their greyscale specs.</p></div>
+          <div class="intro"><b>The patterns the Screener added</b><p>From the final iOS design. The range and tooltip come from greyscale specs.</p></div>
           <div class="cs-g" style="--m:220px;align-items:start">
-            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/bfc07bd66aae90ecc1da99d70c363e36.png" alt="Category tiles, two selected" loading="lazy"><img class="cs-img bare" src="img/1898b77cd16df9b1bb6a4893d414dc13.png" alt="View 1,786 Results button" loading="lazy"><figcaption><b>Category tile and results button</b>Selected tiles fill with Citi Blue and count the choices. The pinned button carries the live number of matching funds.</figcaption></figure>
-            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/a84a00044022dcf56ef8598525743e9d.png" alt="Sort by and Filter controls with two removable pills" loading="lazy"><img class="cs-img bare" src="img/999884aa3ddcf3df87e451b9352f157e.png" alt="Fund row with ticker, price, expense ratio and return" loading="lazy"><figcaption><b>Control bar, pills and fund row</b>A removable pill per active filter. Each row pairs ticker and name with price, expense ratio and 1-year return.</figcaption></figure>
-            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/4b2f412207cd95d31c3e5f4d1957a937.png" alt="Expense ratio range over a histogram of funds" loading="lazy"><figcaption><b>Range with distribution</b>Expense ratio as a range over a histogram, so investors see where most funds sit before they drag.</figcaption></figure>
-            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/c8487526ad7b3b3da163ec6a022edacd.png" alt="Tour tooltip with progress dots, Exit and Next" loading="lazy"><figcaption><b>Tour tooltip</b>A title, one sentence, progress dots, Exit and Next. Short enough to read in passing.</figcaption></figure>
+            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/bfc07bd66aae90ecc1da99d70c363e36.png" alt="Category tiles, two selected" loading="lazy"><img class="cs-img bare" src="img/1898b77cd16df9b1bb6a4893d414dc13.png" alt="View 1,786 Results button" loading="lazy"><figcaption><b>Category tile and results button</b>Selected tiles fill blue. The button carries the live count.</figcaption></figure>
+            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/a84a00044022dcf56ef8598525743e9d.png" alt="Sort by and Filter controls with two removable pills" loading="lazy"><img class="cs-img bare" src="img/999884aa3ddcf3df87e451b9352f157e.png" alt="Fund row with ticker, price, expense ratio and return" loading="lazy"><figcaption><b>Control bar, pills and fund row</b>A removable pill per filter, and a two-line fund row.</figcaption></figure>
+            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/4b2f412207cd95d31c3e5f4d1957a937.png" alt="Expense ratio range over a histogram of funds" loading="lazy"><figcaption><b>Range with distribution</b>Investors see where most funds sit before they drag.</figcaption></figure>
+            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/c8487526ad7b3b3da163ec6a022edacd.png" alt="Tour tooltip with progress dots, Exit and Next" loading="lazy"><figcaption><b>Tour tooltip</b>A title, one sentence, progress dots, Exit and Next.</figcaption></figure>
           </div>
         </div>
       </div>
@@ -298,11 +288,11 @@
     <div class="cs-side">
       <p class="cs-eyebrow">04 · Deliver</p>
       <h2 class="cs-h2" id="si-deliver">The Screener on web and iPhone</h2>
-      <p class="cs-lead">The greyscale structure carried straight into Citi’s design system. On iPhone, each desktop pattern was replaced with its native phone equivalent.</p>
+      <p class="cs-lead">The greyscale structure carried into Citi’s design system. On iPhone, each desktop pattern became its native equivalent.</p>
       <dl class="cs-pdl" style="margin-top:4px"><dt>Left filter panel</dt><dd>→ a grid of filter tiles</dd><dt>Modal dialog</dt><dd>→ a bottom sheet</dd><dt>Seven-column grid</dt><dd>→ a two-line fund card</dd></dl>
     </div>
     <div class="cs-main">
-      <figure class="cs-fig"><div class="cs-laptop" role="img" aria-label="Web Add Filters dialog over the Screener"><div class="scr"><div class="plate" data-screen="ScreenerWebFilters"></div></div><div class="base"></div></div><figcaption><b>Add Filters, in Citi’s design system</b>The grouped chips from the greyscale spec. A filled blue chip with a tick means the filter is on. Citi Blue appears only on chips, pills, checkboxes and the Buy, Sell and Apply buttons.</figcaption></figure>
+      <figure class="cs-fig"><div class="cs-laptop" role="img" aria-label="Web Add Filters dialog over the Screener"><div class="scr"><div class="plate" data-screen="ScreenerWebFilters"></div></div><div class="base"></div></div><figcaption><b>Add Filters, in Citi’s design system</b>A filled blue chip with a tick means the filter is on.</figcaption></figure>
     </div>
   </div>
   <div class="cs-block tight cs-shots" style="--w:168px">
@@ -320,7 +310,7 @@
     <div class="cs-side">
       <p class="cs-eyebrow">Results and reflection</p>
       <h2 class="cs-h2" id="si-results">What launched, and what it did</h2>
-      <p class="cs-lead">Investors could narrow thousands of ETFs and mutual funds with their own filters, refine as they went, and compare funds on the same measures.</p>
+      <p class="cs-lead">Investors could narrow thousands of funds with their own filters and compare them on the same measures.</p>
     </div>
     <div class="cs-main">
       <div class="cs-g" style="--m:180px;gap:12px">
@@ -330,13 +320,13 @@
       </div>
       <div class="cs-split" style="gap:20px 24px;align-items:center">
         <img class="cs-img bare" src="img/05c8ded8468244d731b33c8069ea9ac6.png" alt="J.D. Power award: Citi, number one in satisfaction with the Wealth Management Digital Experience among full-service investors" style="flex:1 1 240px;width:auto;min-width:0;max-width:300px;border-radius:12px" loading="lazy">
-        <p class="cs-s" style="flex:999 1 260px">Results for Citi Self Invest, the platform the Screener launched in. In 2023 Citi received the highest score in J.D. Power’s U.S. Wealth Management Digital Experience Study, Full-Service Investors segment.</p>
+        <p class="cs-s" style="flex:999 1 260px">Results for Citi Self Invest, where the Screener launched. In 2023 Citi received the highest score in J.D. Power’s U.S. Wealth Management Digital Experience Study, Full-Service Investors segment.</p>
       </div>
     </div>
   </div>
   <div class="cs-block tight cs-g" style="--m:220px;gap:16px 24px">
-    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><span class="cs-eyebrow">What I learned</span><span class="cs-h4">Control and clear explanations, together</span><span class="cs-s">Investors wanted control, along with tools that make complex information simple. Two ways in and help one click away gave them both.</span></div>
-    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><span class="cs-eyebrow">Working across teams</span><span class="cs-h4">PM, engineering, UX research</span><span class="cs-s">Scope with product, data integration and performance with engineering so results updated as filters changed, and research on where investors got stuck.</span></div>
-    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><span class="cs-eyebrow">What I’d explore next</span><span class="cs-h4">Recommendations and simulation</span><span class="cs-s">Suggestions shaped by each investor’s goals beside their own filters, a portfolio preview before buying, and the parked AI direction as a helper.</span></div>
+    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1v.1h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3z"/></svg></i><span class="cs-eyebrow">What I learned</span><span class="cs-h4">Control and clear explanations, together</span><span class="cs-s">Investors wanted control, with complex information made simple. Two ways in and help one click away gave them both.</span></div>
+    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 19c.8-3 3.2-5 6-5s5.2 2 6 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c2.3.3 4 2 4.5 4.8"/></svg></i><span class="cs-eyebrow">Working across teams</span><span class="cs-h4">PM, engineering, UX research</span><span class="cs-s">Scope with product, live results with engineering, and research on where investors got stuck.</span></div>
+    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><i class="cs-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg></i><span class="cs-eyebrow">What I’d explore next</span><span class="cs-h4">Recommendations and simulation</span><span class="cs-s">Goal-based suggestions beside their own filters, a portfolio preview before buying, and the parked AI direction as a helper.</span></div>
   </div>
 </section>
