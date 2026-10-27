@@ -1,0 +1,466 @@
+<!--meta {
+  "theme": {"ground":"#F8F6F1","surface":"#FFFFFF","ink":"#1A2535","ink2":"#5A6A7A","rule":"#E8E2D8","rule2":"#DDD6CC","neutral":"#EDE8DF","eyebrow":"#7A5A18","dark":"#1B3A5C","ondark":"#F8F6F1","ondark2":"#C9D4E1","ondark-acc":"#D4B97A","tint":"#FDF8F0","tint-line":"#E2CFA3","tint-ink":"#5A4010","low":"#F6E3DF","low-ink":"#7A2A20","x":"#C0392B"},
+  "fonts": ["https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&family=Playfair+Display:ital,wght@0,400..900;1,400..700&display=swap"],
+  "boards": ["ScreenIntro","ScreenIntakePhone"]
+} -->
+<div class="cs-hero">
+  <div class="cs-hero-copy">
+    <p class="cs-eyebrow">Client project · Healthcare · Turkish and English · 2026</p>
+    <h1 class="cs-h1">Online Consultation</h1>
+    <p class="cs-sub">From a phone number to a booked second opinion</p>
+    <p class="cs-lead">How I designed and built an online booking flow for one of Turkey’s most experienced thoracic surgeons, so a patient or their family can go from first visit to a paid, scheduled consultation in four steps, on a phone, in Turkish or English.</p>
+    <div class="cs-actions">
+      <button type="button" class="cs-btn" data-jump="deliver" style="border:0;cursor:pointer;font-family:inherit">Try the booking flow<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></button>
+      <span class="cs-note">Screens recreated from the live site’s code. Patient details are fictional.</span>
+    </div>
+  </div>
+  <div class="cs-hero-art" aria-hidden="true">
+    <div class="cs-combo">
+      <div class="cs-browser"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="ScreenIntro" data-crop="0.66"></div></div>
+      <div class="cs-phone"><div class="plate" data-screen="ScreenIntakePhone" data-crop="2.164"></div></div>
+    </div>
+  </div>
+</div>
+<dl class="cs-facts">
+  <div><dt>Role</dt><dd>Solo designer and builder: research, service design, flows, UI, bilingual copy, AI-assisted build</dd></div>
+  <div><dt>Client</dt><dd>Prof. Dr. Semih Halezeroğlu, thoracic surgeon in private practice</dd></div>
+  <div><dt>Timeline</dt><dd>Spring 2026, live since, with ongoing updates</dd></div>
+  <div><dt>Outcome</dt><dd>A live four-step booking flow with automated WhatsApp confirmations. 35 consultations booked since launch.</dd></div>
+</dl>
+<!--phasebar-->
+<section class="cs-process" aria-labelledby="oc-process">
+  <div class="cs-head">
+    <h2 class="cs-h3" id="oc-process">Understand the old path, then replace it</h2>
+    <p>The first diamond settled what was really broken about booking a second opinion. The second settled how to fix it, one shipped version at a time, with the client reviewing every round.</p>
+  </div>
+  <div class="cs-dd" aria-hidden="true">
+    <svg viewBox="0 0 1000 72" preserveAspectRatio="none"><path d="M1 36 L250 2 L500 36 L250 70 Z" fill="#E3EAF2" stroke="#1B3A5C" vector-effect="non-scaling-stroke"/><path d="M500 36 L750 2 L999 36 L750 70 Z" fill="#F6EEDD" stroke="#1B3A5C" vector-effect="non-scaling-stroke"/></svg>
+    <span class="lbl" style="left:25%;color:#2A4F7C">Problem space</span>
+    <span class="lbl" style="left:75%;color:#7A5A18">Solution space</span>
+    <span class="pill" style="left:50%">Problem statement</span>
+  </div>
+  <div class="cs-steps">
+    <button type="button" class="cs-step" data-jump="discover"><span class="cs-eyebrow">01 · Open up</span><b>Discover</b><span>A kickoff with the surgeon, a walk through the old call-then-WhatsApp path, and his reviews.</span></button>
+    <button type="button" class="cs-step" data-jump="define"><span class="cs-eyebrow">02 · Narrow down</span><b>Define</b><span>Two people with different jobs: the family that books, and the practice that must be ready.</span></button>
+    <button type="button" class="cs-step" data-jump="develop"><span class="cs-eyebrow">03 · Open up</span><b>Develop</b><span>A long form against one question at a time, three ways to collect records, two ways to pay.</span></button>
+    <button type="button" class="cs-step" data-jump="deliver"><span class="cs-eyebrow">04 · Narrow down</span><b>Deliver</b><span>Four steps in Turkish and English, wired to his calendar, a shared sheet and WhatsApp.</span></button>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Discover" aria-labelledby="oc-discover">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">01 · Discover</p>
+      <h2 class="cs-h2" id="oc-discover">How a second opinion got booked before</h2>
+      <p class="cs-lead">The surgeon had stepped back from operating to focus on online consultations and second opinions. Patients found him through his website and his reputation, then called or messaged a single phone number. Everything after that happened by hand.</p>
+    </div>
+    <div class="cs-main">
+      <div class="cs-card" style="gap:12px">
+        <span class="cs-eyebrow">The brief, as the client gave it</span>
+        <div class="cs-g cs-rules" style="--m:140px;gap:16px">
+          <div style="border-top-width:1px"><span class="n">1</span><p class="cs-h4">Be found by more patients</p></div>
+          <div style="border-top-width:1px"><span class="n">2</span><p class="cs-h4">Make it easier to reach him</p></div>
+          <div style="border-top-width:1px"><span class="n">3</span><p class="cs-h4">Get medical documents to him online</p></div>
+          <div style="border-top-width:1px"><span class="n">4</span><p class="cs-h4">Take payment into his Turkish bank account</p></div>
+        </div>
+      </div>
+      <div class="cs-g" style="--m:280px">
+        <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Client kickoff</p><p class="cs-s">What was getting in the way, and what he wanted his week to look like: his own availability, reminders, easy rescheduling.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">Four pain points, in his words</span></div>
+        <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Service audit</p><p class="cs-s">I walked the old path from his website: the number, the call or message, the records, the payment, agreeing a time. Every hand-off logged.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">Phone, WhatsApp, email, banking app</span></div>
+        <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Review and content audit</p><p class="cs-s">His Google reviews and existing site, to see what patients trust him for and which credentials they repeat back.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">40 Google reviews, all five stars</span></div>
+        <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Build and review rounds</p><p class="cs-s">Working versions reviewed with the client. He edited the intake questions line by line, in Turkish and English.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">Live prototypes, not slides</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <h3 class="cs-h3" style="margin-bottom:20px">What I learned</h3>
+    <div class="cs-g" style="--m:230px">
+      <div class="cs-card tint"><span class="cs-eyebrow">Insight 1</span><p class="cs-t">The person booking is often not the patient</p><p class="cs-p">Children book for parents, parents for babies. The first form asked “What is your name?”. After review, every question asks about the patient, and the phone number can belong to a relative.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 2</span><p class="cs-t">WhatsApp is the front door</p><p class="cs-p">Patients already message the practice on WhatsApp, and the surgeon prefers WhatsApp video. Not everyone has it, so the flow needs a Google Meet fallback.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 3</span><p class="cs-t">The records are the consultation</p><p class="cs-p">CT, PET-CT, lab and pathology reports must reach him early enough to read. Imaging files are large, and most records already sit in E-Nabız, Turkey’s national health portal.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 4</span><p class="cs-t">The money has to land in a Turkish account</p><p class="cs-p">Fees paid upfront, into the practice’s account. Bank transfer is familiar, free and needs no integration, but nothing confirms it automatically.</p></div>
+    </div>
+  </div>
+
+  <div class="cs-block tight cs-quotes">
+    <figure><blockquote>“In critical processes such as lung diseases and cancer, seeking a second expert opinion can fundamentally change a patient’s treatment journey.”</blockquote><figcaption>Prof. Dr. Semih Halezeroğlu, on the live site · why the service exists</figcaption></figure>
+    <figure><blockquote>“Semih Bey made me feel completely safe. I went into the operation totally at ease.”</blockquote><figcaption>Google review, translated from Turkish · trust comes first</figcaption></figure>
+  </div>
+
+  <div class="cs-block">
+    <div class="cs-head">
+      <h3 class="cs-h3">One consultation, before the redesign</h3>
+      <p>One booking mapped from both sides. The low points sit where the family and the practice were doing the same job by hand, over the same phone.</p>
+    </div>
+    <div class="cs-scroll" tabindex="0" role="region" aria-label="Current-state journey">
+      <div class="cs-journey" style="--n:7;min-width:1040px">
+        <div class="cs-jrow"><span>Moment</span><span><span class="n">1</span><b>Find</b></span><span><span class="n">2</span><b>Reach out</b></span><span><span class="n">3</span><b>Explain</b></span><span><span class="n">4</span><b>Send records</b></span><span><span class="n">5</span><b>Pay</b></span><span><span class="n">6</span><b>Agree a time</b></span><span><span class="n">7</span><b>Consult</b></span></div>
+        <div class="cs-jrow"><span>Family</span><span>Hears about him, reads his credentials and reviews.</span><span>Calls or messages the one number on his website.</span><span>Describes the diagnosis on the phone, often for a parent.</span><span>Photographs reports, sends CT files in pieces.</span><span>Asks how to pay, gets an IBAN by message.</span><span>Messages back and forth for a slot, across time zones.</span><span>Joins a video call with the surgeon.</span></div>
+        <div class="cs-jrow"><span>Practice</span><span>Site shows credentials and a phone number.</span><span>The assistant answers each call, one at a time.</span><span>Passes the case on to the surgeon, second-hand.</span><span>Records arrive across chats and emails.</span><span>Matches each transfer to a name in the bank app.</span><span>Juggles the diary by hand, confirms by message.</span><span>Reads whatever arrived, sometimes just before.</span></div>
+        <div class="cs-jrow mid"><span>Feeling</span><span class="cs-chip">Hopeful</span><span class="cs-chip">Unsure</span><span class="cs-chip low">Anxious</span><span class="cs-chip low">Lost</span><span class="cs-chip low">Wary</span><span class="cs-chip">Waiting</span><span class="cs-chip">Relieved</span></div>
+        <div class="cs-jrow"><span>Pain point</span><span>A phone number is the only way in.</span><span>One number, one person answering it.</span><span>The same story told more than once.</span><span>Imaging is too big to message.</span><span>No price up front. Transfers are hard to match.</span><span>Many messages to agree one time.</span><span>Records met for the first time on the call.</span></div>
+        <div class="cs-jrow dark"><span>Opportunity</span><span><b>Book online</b><small>A clear path next to WhatsApp, in Turkish and English.</small></span><span><b>Any hour</b><small>A form that works at night, plus a pre-filled WhatsApp message.</small></span><span><b>Six questions</b><small>About the patient, saved straight to a sheet.</small></span><span><b>Ask once</b><small>Records after booking, with a list of exactly what to send.</small></span><span><b>One screen</b><small>Fee, what it includes and the bank details together.</small></span><span><b>Live slots</b><small>From his own calendar, in the patient’s time zone.</small></span><span><b>24 hours ahead</b><small>So records are read before the call.</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Define" aria-labelledby="oc-define">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">02 · Define</p>
+      <h2 class="cs-h2" id="oc-define">Two people, one booking</h2>
+      <p class="cs-lead">Bookings are often made around the patient rather than by her, and every booking lands in the surgeon’s week. I wrote a persona for each side, then one problem statement and four principles that name who they protect.</p>
+      <div class="cs-card dark" style="margin-top:8px;gap:12px">
+        <span class="cs-eyebrow">Problem statement</span>
+        <p style="font-size:16px;line-height:1.55">Ayten’s family needs a clear, trusted way to book Prof. Halezeroğlu and get her records to him in time, because a surgical decision is waiting on his answer. He needs every booking to arrive paid, scheduled and prepared, without the phone tag.</p>
+        <div class="cs-sep"></div>
+        <span class="cs-eyebrow">How might we</span>
+        <p style="font-size:19px;line-height:1.35;font-weight:600;letter-spacing:-.01em">Turn a phone number into a four-step booking a worried family can finish on a phone, in their own language, that leaves the practice nothing to chase?</p>
+      </div>
+    </div>
+    <div class="cs-main">
+      <div class="cs-g" style="--m:300px">
+        <div class="cs-card" style="padding:24px;gap:16px">
+          <div class="cs-persona"><img src="img/persona-ayten.jpg" alt="Stock photo used for the Ayten proto-persona"><span><span class="cs-eyebrow">Patient · proto-persona</span><b>Ayten Öztürk, 63</b><span class="cs-s">Retired teacher · İzmir</span></span></div>
+          <p class="cs-quote-line">“Before anyone operates on me, I want to hear it from someone who has done this thousands of times.”</p>
+          <dl class="cs-pdl"><dt>Situation</dt><dd>A 2 cm nodule on a routine CT. Her surgeon suggests an operation soon.</dd><dt>Helped by</dt><dd>Her son Emre, 36, in Munich. He researches, books and pays.</dd><dt>Uses</dt><dd>WhatsApp video, mobile banking, E-Nabız when Emre logs her in</dd></dl>
+          <div class="cs-stack" style="gap:8px;padding-top:14px;border-top:1px solid var(--c-rule)">
+            <span class="cs-eyebrow muted">What she needs from the design</span>
+            <ul class="cs-xl cs-ck" style="font-size:14px"><li>Questions about “the patient”, so Emre can answer for her</li><li>WhatsApp video, or Google Meet if she doesn’t use it</li><li>The price and bank details before she commits</li><li>A plain list of what to send, once she’s booked</li><li>Time slots that make sense for İzmir and Munich</li></ul>
+          </div>
+          <p class="cs-xs" style="margin-top:auto;font-size:12px">Composite persona from the kickoff, the service audit and the client’s changes. Stock photo, not a real patient.</p>
+        </div>
+        <div class="cs-card" style="padding:24px;gap:16px">
+          <div class="cs-persona"><img src="img/semih.jpg" alt="Prof. Dr. Semih Halezeroğlu"><span><span class="cs-eyebrow">Client · practice owner</span><b>Prof. Dr. Semih Halezeroğlu</b><span class="cs-s">Thoracic surgeon · private practice</span></span></div>
+          <p class="cs-quote-line">Start every consultation with the records already read, and the admin already done.</p>
+          <dl class="cs-pdl"><dt>Track record</dt><dd>38 years in thoracic surgery, 3,000+ uniportal VATS operations</dd><dt>Now</dt><dd>Focused on online consultations and second opinions</dd><dt>Works with</dt><dd>An assistant on the practice phone and WhatsApp</dd></dl>
+          <div class="cs-stack" style="gap:8px;padding-top:14px;border-top:1px solid var(--c-rule)">
+            <span class="cs-eyebrow muted">What he needs from the design</span>
+            <ul class="cs-xl cs-ck" style="font-size:14px"><li>Every booking’s details in one place, without retyping</li><li>Slots from his own calendar, blocked once taken</li><li>Payment before a time can be chosen</li><li>At least a day to read records before each call</li><li>Patients confirmed without anyone typing a message</li></ul>
+          </div>
+          <p class="cs-xs" style="margin-top:auto;font-size:12px">Built with the client from his brief and review feedback. Credentials as stated on his site.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <div class="cs-head">
+      <h3 class="cs-h3">One booking, from both sides</h3>
+      <p>How the same booking runs in the new flow, for Ayten’s family and for the practice.</p>
+    </div>
+    <div class="cs-scroll" tabindex="0" role="region" aria-label="One booking from both sides">
+      <div class="cs-journey" style="--n:5">
+        <div class="cs-jrow"><span>Family</span><span><b>Intro</b>Emre reads the credentials and reviews, then starts.</span><span><b>1 · Details</b>Six questions about his mother, and her WhatsApp number.</span><span><b>2 · Payment</b>He sends the transfer with her name as the reference.</span><span><b>3–4 · Language, time</b>Turkish emails, the time zone checked, a slot two days out.</span><span><b>After booking</b>Ayten sends her reports on WhatsApp.</span></div>
+        <div class="cs-jrow"><span>Practice</span><span><b>Form sent</b>A new row in the sheet: patient, age, reason, history, contact.</span><span><b>Automatically</b>A WhatsApp confirmation, in the patient’s own language.</span><span><b>Slot booked</b>Cal.com blocks his calendar and emails him.</span><span><b>Assistant</b>Checks the transfer and collects the records.</span><span><b>The day before</b>He reads the records, then calls at the booked time.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <h3 class="cs-h3" style="margin-bottom:20px">Four principles, each naming who it protects</h3>
+    <div class="cs-g cs-rules" style="--m:220px;gap:24px">
+      <div><span class="n">01</span><p class="cs-t">One question at a time</p><p class="cs-p">Short, plain questions about the patient, one per screen. Calm on a phone, and easy to answer for someone else.</p><span class="cs-tag tint" style="margin-top:4px">Protects the patient</span></div>
+      <div><span class="n">02</span><p class="cs-t">Meet people where they are</p><p class="cs-p">WhatsApp for the call and the records, Google Meet as the fallback, a bank transfer they already trust, Turkish or English.</p><span class="cs-tag" style="margin-top:4px">Protects both</span></div>
+      <div><span class="n">03</span><p class="cs-t">No surprises</p><p class="cs-p">The price, the steps, what to send and the 24-hour review window all show up before they’re needed.</p><span class="cs-tag tint" style="margin-top:4px">Protects the patient</span></div>
+      <div><span class="n">04</span><p class="cs-t">His time is for medicine</p><p class="cs-p">Every booking arrives paid, scheduled and logged. Confirmations go out on their own.</p><span class="cs-tag dark" style="margin-top:4px">Protects the client</span></div>
+    </div>
+    <dl class="cs-dl plain" style="margin-top:28px">
+      <div><dt>Measured by</dt><dd>Bookings completed, out of forms started</dd></div>
+      <div><dt>&nbsp;</dt><dd>Bookings with records in at least 24 hours ahead</dd></div>
+      <div><dt>&nbsp;</dt><dd>Messages the assistant sends per booking</dd></div>
+      <div><dt>&nbsp;</dt><dd>Bookings made without a phone call</dd></div>
+    </dl>
+  </div>
+
+  <div class="cs-block">
+    <div class="cs-head">
+      <h3 class="cs-h3">From a phone number to a flow</h3>
+      <p>Before, the website ended at a phone number and everything else happened off-site. The new structure gives patients one straight path with a progress bar, and moves the practice’s work behind it.</p>
+    </div>
+    <div class="cs-ba">
+      <div class="before cs-card dashed" style="gap:14px">
+        <div class="cs-stack" style="gap:6px"><span class="cs-tag">Before</span><span class="cs-h4" style="font-size:16px;color:var(--c-ink)">His existing website</span></div>
+        <ol class="cs-ol">
+          <li><span class="i">1</span><span><b>His website</b><small>Credentials and reviews</small></span></li>
+          <li><span class="i">2</span><span><b>Consultation page</b><small>What a second opinion is</small></span></li>
+          <li><span class="i">3</span><span><b>Phone number</b><small>The only way in</small></span></li>
+        </ol>
+        <div class="cs-stack" style="gap:6px;padding-top:12px;border-top:1px solid var(--c-rule2)">
+          <span class="cs-eyebrow muted">Off the site, by hand</span>
+          <span class="cs-s">Call or message → send records → bank transfer → agree a time → video call</span>
+        </div>
+      </div>
+      <div class="after cs-card" style="gap:16px">
+        <div class="cs-stack" style="gap:6px"><span class="cs-tag dark">After</span><span class="cs-h4" style="font-size:16px">The booking site, four steps with a progress bar</span></div>
+        <div class="cs-flow">
+          <span class="node">Intro</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          <span class="node dark">1 Details</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          <span class="node dark">2 Payment</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          <span class="node dark">3 Language</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          <span class="node dark">4 Appointment</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          <span class="node tint">Confirmation</span>
+        </div>
+        <div class="cs-g" style="--m:140px;gap:12px 20px">
+          <div class="cs-stack" style="gap:4px"><span class="cs-h4" style="font-size:14px">1 · Details</span><span class="cs-xs">Name, age, WhatsApp or Google Meet, reason (10 conditions + other), previous chest surgery, a 500-character description</span></div>
+          <div class="cs-stack" style="gap:4px"><span class="cs-h4" style="font-size:14px">2 · Payment</span><span class="cs-xs">Fee and what it includes, bank details, cancellation policy, a “Have you sent the transfer?” check</span></div>
+          <div class="cs-stack" style="gap:4px"><span class="cs-h4" style="font-size:14px">3 · Language</span><span class="cs-xs">Turkish or English, which sets the booking type so every email matches</span></div>
+          <div class="cs-stack" style="gap:4px"><span class="cs-h4" style="font-size:14px">4 · Appointment</span><span class="cs-xs">Time zone reminder, 24-hour notice and next steps, month view and open slots</span></div>
+        </div>
+        <p class="cs-xs" style="padding-top:12px;border-top:1px solid var(--c-rule)">On every screen: a TR | EN switch, a floating WhatsApp button with a pre-filled message, and Back.</p>
+      </div>
+    </div>
+    <div class="cs-g" style="--m:240px;margin-top:16px">
+      <div class="cs-card" style="gap:10px">
+        <span class="cs-eyebrow">Behind the scenes: what the practice gets</span>
+        <dl class="cs-pdl"><dt>Google Sheet</dt><dd>One row per intake, the moment step 1 is done</dd><dt>WhatsApp</dt><dd>Make passes the new row to Claude, which writes the confirmation; Twilio sends it</dd><dt>Cal.com</dt><dd>His availability, blocked slots, emails and rescheduling, in two languages</dd><dt>Assistant</dt><dd>Transfer receipts and records, one chat per patient</dd></dl>
+      </div>
+      <div class="cs-card dashed" style="gap:10px">
+        <span class="cs-eyebrow muted">Cut along the way</span>
+        <ul class="cs-xl" style="border:0;padding:0"><li>Document upload: imaging is too large for a web form</li><li>E-Nabız login: no portal password should sit in a sheet</li><li>Card payment: a transfer has no fees and no integration</li><li>Email, country and referral questions: nine questions became six</li><li>“Add to calendar” and a security badge: neither promised anything new</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Develop" aria-labelledby="oc-develop">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">03 · Develop</p>
+      <h2 class="cs-h2" id="oc-develop">Three decisions, explored as wireframes</h2>
+      <p class="cs-lead">Before polishing anything, I sketched the three choices that shaped the flow: how to ask, how records arrive, and how money moves. Several shipped as working versions first, and the client’s feedback decided which stayed.</p>
+      <div class="cs-card tint" style="margin-top:8px;gap:8px">
+        <span class="cs-eyebrow">Why pay before picking a time</span>
+        <p style="font-size:15px;line-height:1.5">Payment comes before the calendar, so every slot in the surgeon’s week belongs to someone who has already paid.</p>
+        <p class="cs-p">The trade-off: a transfer can’t confirm itself. The assistant matches each one to the patient’s name, which the form asks people to use as the reference.</p>
+      </div>
+    </div>
+    <div class="cs-main" style="gap:32px">
+      <div class="cs-stack" style="gap:12px">
+        <div><span class="cs-eyebrow muted">Decision 1</span><p class="cs-t">How do we ask? <span class="cs-s" style="font-weight:400">For a relative on a phone, answering about someone else.</span></p></div>
+        <div class="cs-g" style="--m:190px;gap:12px">
+          <div class="cs-card" style="gap:6px"><span class="cs-tag line">Cut after testing</span><span class="cs-h4">A · Long form</span><span class="cs-xs">Nine labelled fields on one page. It read like a hospital form, and ran long on a phone.</span></div>
+          <div class="cs-card" style="gap:6px;border-color:var(--c-dark);border-width:2px"><span class="cs-tag dark">Shipped</span><span class="cs-h4">B · One question per screen</span><span class="cs-xs">Six questions about the patient, with a counter, a progress line, letter keys and Enter to continue.</span></div>
+          <div class="cs-card" style="gap:6px"><span class="cs-tag tint">Kept as a side door</span><span class="cs-h4">C · WhatsApp only</span><span class="cs-xs">A pre-filled message to the assistant, on every screen for people who’d rather talk.</span></div>
+        </div>
+      </div>
+      <div class="cs-stack" style="gap:12px">
+        <div><span class="cs-eyebrow muted">Decision 2</span><p class="cs-t">How do records arrive? <span class="cs-s" style="font-weight:400">Before the call, not during it.</span></p></div>
+        <div class="cs-g" style="--m:190px;gap:12px">
+          <div class="cs-card" style="gap:6px"><span class="cs-tag line">Cut after testing</span><span class="cs-h4">A · Upload in the form</span><span class="cs-xs">A drop zone per file. CT and PET-CT files are too large for a web form.</span></div>
+          <div class="cs-card" style="gap:6px"><span class="cs-tag line">Cut after testing</span><span class="cs-h4">B · E-Nabız login</span><span class="cs-xs">A portal password typed into a form and stored in a sheet. The client preferred to ask himself.</span></div>
+          <div class="cs-card" style="gap:6px;border-color:var(--c-dark);border-width:2px"><span class="cs-tag dark">Shipped</span><span class="cs-h4">C · WhatsApp, after booking</span><span class="cs-xs">One clear instruction and a list of what to send, plus a 24-hour minimum to read it all.</span></div>
+        </div>
+      </div>
+      <div class="cs-stack" style="gap:12px">
+        <div><span class="cs-eyebrow muted">Decision 3</span><p class="cs-t">How does money move? <span class="cs-s" style="font-weight:400">Upfront, into a Turkish account, with no payments integration.</span></p></div>
+        <div class="cs-g" style="--m:190px;gap:12px">
+          <div class="cs-card" style="gap:6px"><span class="cs-tag line">Not built</span><span class="cs-h4">A · Card checkout</span><span class="cs-xs">Instant, but a provider means fees, set-up and verification before the first booking.</span></div>
+          <div class="cs-card" style="gap:6px;border-color:var(--c-dark);border-width:2px"><span class="cs-tag dark">Shipped</span><span class="cs-h4">B · Bank transfer, then confirm</span><span class="cs-xs">Fee, inclusions and IBAN on one screen. A short check stops anyone booking before they’ve paid.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block cs-split center">
+    <div class="cs-phone" aria-hidden="true" style="margin-inline:auto"><div class="plate" data-screen="ScreenIntakePhone" data-crop="2.164"></div></div>
+    <div class="cs-main" style="gap:20px">
+      <h3 class="cs-h3">Every screen reads in the same order</h3>
+      <p class="cs-lead" style="font-size:16px;max-width:620px">Where am I, what is being asked, how do I answer, what do I press. And every screen has to hold both Turkish and English without breaking.</p>
+      <ol class="cs-levels">
+        <li><span class="cs-num">1</span><span><b>Where am I</b><span class="cs-s">Four named steps. Done steps turn gold with a tick; the current one is navy.</span></span></li>
+        <li><span class="cs-num">2</span><span><b>How far into this step</b><span class="cs-s">A 3px gold line across the top and a “5 of 6” counter. Quiet, but always there.</span></span></li>
+        <li><span class="cs-num">3</span><span><b>The way back</b><span class="cs-s">Back sits above every question, in the same place, so a wrong answer costs one tap.</span></span></li>
+        <li><span class="cs-num">4</span><span><b>What is being asked</b><span class="cs-s">The largest thing on screen: Playfair 600, 24 to 38px, in a column no wider than 660px.</span></span></li>
+        <li><span class="cs-num">5</span><span><b>How to answer</b><span class="cs-s">Big targets: yes and no as two cards, choices as full-width rows with letter keys.</span></span></li>
+        <li><span class="cs-num">6</span><span><b>What to press</b><span class="cs-s">One navy button per screen, with “or press Enter” beside it for keyboards.</span></span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <h3 class="cs-h3" style="margin-bottom:20px">Two languages, one layout</h3>
+    <div class="cs-g" style="--m:260px">
+      <div class="cs-card" style="gap:10px">
+        <p class="cs-h4">Neither language is always longer</p>
+        <dl class="cs-pdl" style="grid-template-columns:28px minmax(0,1fr) auto;font-size:14px">
+          <dt>TR</dt><dd>Ödemeyi Yaptım, Randevu Al</dd><dd class="cs-xs">26</dd>
+          <dt>EN</dt><dd>I’ve Made the Transfer, Book Appointment</dd><dd class="cs-xs">40</dd>
+          <dt>TR</dt><dd>Online Tıbbi Değerlendirme Başvurusu</dd><dd class="cs-xs">36</dd>
+          <dt>EN</dt><dd>Online Medical Assessment</dd><dd class="cs-xs">25</dd>
+        </dl>
+        <p class="cs-xs">So nothing has a fixed width: buttons size to their label, and headings scale with clamp() and wrap with text-wrap: balance.</p>
+      </div>
+      <div class="cs-card" style="gap:10px">
+        <p class="cs-h4">Capitals need the right language</p>
+        <div class="cs-g" style="--m:100px;gap:10px">
+          <div class="cs-stack" style="gap:2px"><span lang="tr" style="font-size:22px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">bilgiler</span><span class="cs-xs">lang="tr"</span></div>
+          <div class="cs-stack" style="gap:2px"><span lang="en" style="font-size:22px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-x)">bilgiler</span><span class="cs-xs">no language set</span></div>
+        </div>
+        <p class="cs-xs">Turkish has a dotted İ and a dotless ı. Uppercase labels only come out right when the page declares Turkish, so the language switch sets it too.</p>
+      </div>
+      <div class="cs-card" style="gap:10px">
+        <p class="cs-h4">On a phone, the surgeon comes first</p>
+        <p class="cs-s">The hero image comes first in the page, so when the two columns stack on a phone, people see who they’ll be talking to before they see a button.</p>
+        <p class="cs-xs">Trust before the ask: credentials, then the three steps, then reviews.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Design system" aria-labelledby="oc-system">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">Design system</p>
+      <h2 class="cs-h2" id="oc-system">Tidied from the live stylesheet</h2>
+      <p class="cs-lead">23 font sizes became 14 named styles, 64 hard-coded colours became 22 tokens, and six pairings that failed WCAG AA were fixed. Documenting the parts as components is the first step to moving the code onto shared tokens.</p>
+    </div>
+    <div class="cs-main" data-tabs>
+      <div class="cs-tabs" role="tablist" aria-label="Design system">
+        <button type="button" role="tab" id="oc-t1" aria-controls="oc-p1">Type</button>
+        <button type="button" role="tab" id="oc-t2" aria-controls="oc-p2">Colour</button>
+        <button type="button" role="tab" id="oc-t3" aria-controls="oc-p3">Spacing</button>
+        <button type="button" role="tab" id="oc-t4" aria-controls="oc-p4">Components</button>
+      </div>
+      <div class="cs-panels">
+        <div class="cs-panel" role="tabpanel" id="oc-p1" aria-labelledby="oc-t1">
+          <div class="intro"><b>The surgeon’s voice, and a calm interface</b><p>Playfair Display carries the surgeon’s voice: questions, headings and the numbers that matter. DM Sans carries everything people read and tap. Both draw ç, ğ, ı, İ, ö, ş and ü in every weight used.</p></div>
+          <div class="cs-g" style="--m:260px">
+            <div class="cs-card dark" style="padding:24px;gap:4px"><span class="cs-aa" style="font-family:'Playfair Display',Georgia,serif;font-weight:700">Aa</span><b style="margin-top:12px;font-size:18px">Playfair Display</b><span class="cs-s">Display and voice. Italic 400 for quotes, 600 for questions, 700 for headings and numerals.</span></div>
+            <div class="cs-card" style="padding:24px;gap:4px"><span class="cs-aa" style="font-family:'DM Sans',system-ui,sans-serif;font-weight:500">Aa</span><b style="margin-top:12px;font-size:18px">DM Sans</b><span class="cs-s">Interface and reading. 400 to read, 500 for hints, 600 for buttons, 700 for counters.</span></div>
+          </div>
+          <div class="cs-spec"><div>
+            <div class="row"><span>display</span><span style="font-family:'Playfair Display',Georgia,serif;font-size:44px;line-height:1.1;font-weight:700">Consultation</span><span>Playfair 64/70, fluid to 44</span></div>
+            <div class="row"><span>question</span><span style="font-family:'Playfair Display',Georgia,serif;font-size:30px;line-height:1.3;font-weight:600">What is the patient’s age?</span><span>Playfair 38/49, fluid to 24</span></div>
+            <div class="row"><span>numeral</span><span style="font-family:'Playfair Display',Georgia,serif;font-size:36px;line-height:1.1;font-weight:700">01 · ₺15.000</span><span>Playfair 48/52, 700</span></div>
+            <div class="row"><span>input</span><span style="font-family:'DM Sans',system-ui,sans-serif;font-size:22px;line-height:30px">Ayten Öztürk</span><span>DM Sans 22/30</span></div>
+            <div class="row"><span>body-md</span><span style="font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:24px">Suspected Lung Nodule</span><span>DM Sans 15/24</span></div>
+            <div class="row"><span>overline</span><span style="font-family:'DM Sans',system-ui,sans-serif;font-size:12px;line-height:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Consultation details</span><span>DM Sans 12/16, 700</span></div>
+          </div></div>
+          <p class="cs-xs">6 of the 14 styles, on a 15px base. Prices are written the local way: ₺15.000 in Turkish, €300 in English.</p>
+        </div>
+        <div class="cs-panel" role="tabpanel" id="oc-p2" aria-labelledby="oc-t2" hidden>
+          <div class="intro"><b>Navy moves you forward. Gold marks the way.</b><p>A warm cream ground, a deep navy and an old gold, all taken from the live site. Gold is a fill or a rule on light grounds; when it has to be text, it becomes gold-800.</p></div>
+          <div class="cs-g" style="--m:140px">
+            <div class="cs-sw"><i style="background:#1B3A5C;color:#fff">10.8 on cream · AAA</i><b>Navy 700</b><span>#1B3A5C · buttons, headings, the current step</span></div>
+            <div class="cs-sw"><i style="background:#C8A96E;color:#1B3A5C">Fill only</i><b>Gold 500</b><span>#C8A96E · progress, chosen answers, the price</span></div>
+            <div class="cs-sw"><i style="background:#F8F6F1;border-color:#DDD6CC;color:#5A6A7A">Ground</i><b>Cream</b><span>#F8F6F1 · every page. White lifts cards off it.</span></div>
+            <div class="cs-sw"><i style="background:#1A2535;color:#F8F6F1">14.3 · AAA</i><b>Ink 900</b><span>#1A2535 · body text</span></div>
+            <div class="cs-sw"><i style="background:#7A5A18;color:#fff">5.9 · AA</i><b>Gold 800</b><span>#7A5A18 · gold text and badges</span></div>
+            <div class="cs-sw"><i style="background:#5A6A7A;color:#fff">5.2 · AA</i><b>Slate 600</b><span>#5A6A7A · secondary text</span></div>
+          </div>
+          <div class="cs-spec"><div>
+            <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="color:var(--c-ink)">Contrast audit: six fixes to the live site</span><span>Live</span><span>Fixed</span></div>
+            <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="font-weight:400;color:var(--c-ink)">Gold buttons: pay, confirm transfer</span><span style="color:var(--c-x)">2.2</span><span>5.2 · AA</span></div>
+            <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="font-weight:400;color:var(--c-ink)">Secondary text on cream</span><span style="color:var(--c-x)">4.1</span><span>5.2 · AA</span></div>
+            <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="font-weight:400;color:var(--c-ink)">Summary labels, time-zone note</span><span style="color:var(--c-x)">2.1</span><span>5.6 · AA</span></div>
+            <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="font-weight:400;color:var(--c-ink)">Step numerals, 48px</span><span style="color:var(--c-x)">2.1</span><span>3.7 · large</span></div>
+            <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="font-weight:400;color:var(--c-ink)">WhatsApp button</span><span style="color:var(--c-x)">2.0</span><span>7.8 · AAA</span></div>
+            <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="font-weight:400;color:var(--c-ink)">Answer underline, a UI edge</span><span style="color:var(--c-x)">2.2</span><span>3.9 · AA</span></div>
+          </div></div>
+          <div class="cs-g" style="--m:180px;gap:16px 24px">
+            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Navy moves you forward</span><span class="cs-s">One navy action per screen.</span></div>
+            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Cream, not white</span><span class="cs-s">Warm, not clinical. White only for cards and inputs.</span></div>
+            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Status explains</span><span class="cs-s">Green says do this next, amber says before you book, red only marks errors.</span></div>
+          </div>
+        </div>
+        <div class="cs-panel" role="tabpanel" id="oc-p3" aria-labelledby="oc-t3" hidden>
+          <div class="intro"><b>Room to breathe, in a narrow column</b><p>A 4px base with thirteen steps, eight radii and three elevations, all consolidated from values already in the live stylesheet. A question never runs wider than a comfortable line.</p></div>
+          <div class="cs-g" style="--m:280px;align-items:start">
+            <div class="cs-card cs-space" style="padding:20px;gap:3px">
+              <div class="cs-head" style="margin:0 0 8px"><span class="cs-h4">Spacing scale</span><p class="cs-xs" style="font-size:12px">Bars at true size</p></div>
+              <div class="row"><b>4</b><i style="width:4px"></i><span>Dot rail, icon to label</span></div>
+              <div class="row"><b>8</b><i style="width:8px"></i><span>Between choice rows</span></div>
+              <div class="row"><b>12</b><i style="width:12px"></i><span>Buttons in a row, slot grid</span></div>
+              <div class="row"><b>16</b><i style="width:16px"></i><span>Between form fields</span></div>
+              <div class="row"><b>20</b><i style="width:20px"></i><span>Card gaps, phone side padding</span></div>
+              <div class="row"><b>24</b><i style="width:24px"></i><span>Notice padding</span></div>
+              <div class="row"><b>28</b><i style="width:28px"></i><span>Card padding</span></div>
+              <div class="row"><b>32</b><i style="width:32px;background:#C8A96E"></i><span>Page gutter, question to answer</span></div>
+              <div class="row"><b>40</b><i style="width:40px"></i><span>Step header to content</span></div>
+              <div class="row"><b>48</b><i style="width:48px"></i><span>Top of every step</span></div>
+              <div class="row"><b>56</b><i style="width:56px"></i><span>Section title to its grid</span></div>
+              <div class="row"><b>80</b><i style="width:80px"></i><span>Between hero columns</span></div>
+              <div class="row"><b>100</b><i style="width:100px"></i><span>Section padding on desktop</span></div>
+            </div>
+            <div class="cs-stack">
+              <div class="cs-card" style="padding:20px;gap:12px">
+                <span class="cs-h4">Radii</span>
+                <div class="cs-radii">
+                  <div><i style="border-top-left-radius:5px"></i><b>5</b><span>Keys</span></div>
+                  <div><i style="border-top-left-radius:8px"></i><b>8</b><span>Buttons</span></div>
+                  <div><i style="border-top-left-radius:10px"></i><b>10</b><span>Answers</span></div>
+                  <div><i style="border-top-left-radius:12px"></i><b>12</b><span>Cards</span></div>
+                  <div><i style="border-top-left-radius:16px"></i><b>16</b><span>Hero</span></div>
+                  <div><i style="border-top-left-radius:20px;border-color:#C8A96E"></i><b>20</b><span>Dialog</span></div>
+                </div>
+              </div>
+              <div class="cs-card" style="padding:20px;gap:8px">
+                <span class="cs-h4">Columns</span>
+                <dl class="cs-pdl"><dt>Intro</dt><dd>max 1000px</dd><dt>Steps 2–4</dt><dd>max 760px</dd><dt>Question</dt><dd>max 660px: at 38px type it breaks after about 35 characters, two or three short lines</dd><dt>≤ 768px</dt><dd>Hero stacks image first, step labels hide, four slots per row become three</dd></dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-panel" role="tabpanel" id="oc-p4" aria-labelledby="oc-t4" hidden>
+          <div class="intro"><b>Components, built from the tokens</b><p>Every piece of the booking flow, with its states. Focus rings are new: one ring for every control, 2px of cream then 2px of navy-500.</p></div>
+          <div class="cs-card cs-comp" style="padding:20px;font-family:'DM Sans',system-ui,sans-serif">
+            <div><span style="display:inline-flex;align-items:center;height:46px;padding:0 26px;border-radius:8px;background:#1B3A5C;color:#fff;font-size:15px;font-weight:600">Continue ↓</span><span class="cap">Primary</span></div>
+            <div><span style="display:inline-flex;align-items:center;height:50px;padding:0 24px;border-radius:10px;background:#C8A96E;color:#1B3A5C;font-size:15px;font-weight:600">Yes, I’ve sent it →</span><span class="cap">Pay, navy on gold</span></div>
+            <div><span style="display:inline-flex;align-items:center;height:46px;padding:0 18px;box-sizing:border-box;border-radius:8px;border:1.5px solid #D8DCE6;background:#fff;color:#1A2535;font-size:14px;font-weight:500">Message on WhatsApp</span><span class="cap">Secondary</span></div>
+            <div><span style="display:inline-flex;align-items:center;height:26px;padding:0 14px;border-radius:100px;background:#EDE8DF;color:#3A2D1E;font-size:12px;font-weight:700;letter-spacing:.05em">3 of 6</span><span class="cap">Counter</span></div>
+          </div>
+          <div class="cs-g" style="--m:240px;align-items:start">
+            <div class="cs-card" style="padding:20px;gap:10px;font-family:'DM Sans',system-ui,sans-serif">
+              <span class="cs-h4" style="font-family:var(--f-text)">Choices</span>
+              <span style="display:flex;align-items:center;gap:14px;padding:13px 18px;border:1.5px solid #DDD6CC;border-radius:10px;background:#fff;font-size:15px"><span style="width:24px;height:24px;box-sizing:border-box;border:1.5px solid #8A7A65;border-radius:5px;display:grid;place-items:center;font-size:10px;font-weight:700;color:#5A4A35">A</span>Lung Cancer</span>
+              <span style="display:flex;align-items:center;gap:14px;padding:13px 18px;border:1.5px solid #C8A96E;border-radius:10px;background:#FDF8F0;font-size:15px"><span style="width:24px;height:24px;border-radius:5px;background:#C8A96E;display:grid;place-items:center;color:#1B3A5C;font-size:12px;font-weight:700">✓</span>Bronchiectasis</span>
+              <span class="cs-xs" style="font-family:var(--f-text)">Default and selected. Letter keys answer from the keyboard.</span>
+            </div>
+            <div class="cs-card" style="padding:20px;gap:10px">
+              <span class="cs-h4">Progress</span>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-family:'DM Sans',system-ui,sans-serif;font-size:12px;color:#5A6A7A">
+                <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:24px;height:24px;border-radius:50%;background:#C8A96E;color:#1B3A5C;display:grid;place-items:center;font-weight:700">✓</span>Details</span>
+                <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:24px;height:24px;border-radius:50%;background:#C8A96E;color:#1B3A5C;display:grid;place-items:center;font-weight:700">✓</span>Payment</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;color:#1B3A5C;font-weight:700"><span style="width:24px;height:24px;border-radius:50%;background:#1B3A5C;color:#fff;display:grid;place-items:center">3</span>Language</span>
+                <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:24px;height:24px;border-radius:50%;background:#EDE8DF;color:#5A6A7A;display:grid;place-items:center;font-weight:700">4</span>Appointment</span>
+              </div>
+              <span class="cs-xs">Done: gold with a tick. Current: navy, bold label. To come: sand.</span>
+            </div>
+            <div class="cs-card dark" style="padding:20px;gap:6px">
+              <span class="cs-xs">Online Medical Consultation (20–30 min)</span>
+              <span style="font-family:'Playfair Display',Georgia,serif;font-size:36px;line-height:40px;font-weight:700;color:#D4B97A">€300</span>
+              <ul class="cs-xl cs-ck" style="border:0;padding:0;font-size:13px;color:var(--c-ondark2)"><li>Documents reviewed in advance</li><li>20–30 minute video consultation</li><li>Written summary afterwards</li></ul>
+              <span class="cs-xs">Fee summary: the price is the one thing in gold.</span>
+            </div>
+            <div class="cs-card" style="padding:20px;gap:10px">
+              <span class="cs-h4">Notices</span>
+              <span style="padding:12px 14px;border-radius:12px;background:#FFF8EC;color:#5A4010;font-size:14px;line-height:1.45"><b>Before you book:</b> pick a time at least 24 hours ahead, so the doctor can review your documents.</span>
+              <span style="padding:12px 14px;border-radius:12px;background:#F0F7F0;color:#1E4A2A;font-size:14px;line-height:1.45"><b>What to do now:</b> send a WhatsApp message saying “I have booked my appointment”.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Deliver" aria-labelledby="oc-deliver">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">04 · Deliver</p>
+      <h2 class="cs-h2" id="oc-deliver">The booking flow, live</h2>
+      <p class="cs-lead">Four steps in Turkish and English, wired to the surgeon’s calendar, a shared sheet and automatic WhatsApp confirmations. Click through the whole flow below.</p>
+    </div>
+    <div class="cs-main">
+      <dl class="cs-dl big">
+        <div><dt>35</dt><dd>Consultations booked since launch</dd></div>
+        <div><dt>4 steps</dt><dd>From the intro to a paid, scheduled slot</dd></div>
+        <div><dt>Automatic</dt><dd>WhatsApp confirmations, in the patient’s own language</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="cs-block tight"><div data-proto></div></div>
+</section>

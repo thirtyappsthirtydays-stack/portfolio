@@ -1,0 +1,301 @@
+<!--meta {
+  "theme": {"ground":"#F4F5F7","surface":"#FFFFFF","ink":"#14161A","ink2":"#555B66","rule":"#E1E4E8","rule2":"#C9CED6","neutral":"#ECEEF1","eyebrow":"#1A4FD6","dark":"#171A21","ondark":"#F4F6FA","ondark2":"#AEB5C2","ondark-acc":"#FFB020","tint":"#FFF1D6","tint-line":"#FFD27A","tint-ink":"#5C3B00","low":"#FFF1D6","low-ink":"#5C3B00","x":"#C6331F"},
+  "fonts": ["https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap"],
+  "boards": ["BelirsizDonus","Rota","AracEkrani","Saat"]
+} -->
+<div class="cs-hero">
+  <div class="cs-hero-copy">
+    <p class="cs-eyebrow">Independent concept · Navigation · Istanbul · 2026</p>
+    <h1 class="cs-h1">Yol Arkadaşı</h1>
+    <p class="cs-sub">Directions you can trust, even when the map is wrong</p>
+    <p class="cs-lead">How I designed a navigation concept for Istanbul drivers around the question every driver asks at a junction: can I trust this instruction, and what do I do if I can’t?</p>
+    <div class="cs-actions">
+      <button type="button" class="cs-btn" data-jump="deliver" style="border:0;cursor:pointer;font-family:inherit">See one drive<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></button>
+      <span class="cs-note">Not affiliated with any navigation provider. The interface is in Turkish.</span>
+    </div>
+  </div>
+  <div class="cs-hero-art" aria-hidden="true">
+    <div class="cs-phone back"><div class="plate" data-screen="Rota"></div></div>
+    <div class="cs-phone"><div class="plate" data-screen="BelirsizDonus"></div></div>
+  </div>
+</div>
+<dl class="cs-facts">
+  <div><dt>Role</dt><dd>Product designer, solo: research, interaction and visual design, Turkish UX writing</dd></div>
+  <div><dt>Context</dt><dd>Self-initiated concept, with feedback from Istanbul drivers</dd></div>
+  <div><dt>Timeline</dt><dd>October 2026</dd></div>
+  <div><dt>Output</dt><dd>8 screens across iPhone, the car display and Apple Watch</dd></div>
+</dl>
+<!--phasebar-->
+<section class="cs-process" aria-labelledby="yo-process">
+  <div class="cs-head">
+    <h2 class="cs-h3" id="yo-process">From a wrong turn to a fixed map</h2>
+    <p>Confident instructions the street won’t allow, and no safe way to correct them. The work went from cataloguing where directions break to an app that is honest about doubt.</p>
+  </div>
+  <div class="cs-steps">
+    <button type="button" class="cs-step" data-jump="discover"><span class="cs-eyebrow">01</span><b>Discover</b><span>Five failure patterns, a rush-hour route audit and driver interviews.</span></button>
+    <button type="button" class="cs-step" data-jump="define"><span class="cs-eyebrow">02</span><b>Define</b><span>A persona, six principles, and four levels of confidence for every instruction.</span></button>
+    <button type="button" class="cs-step" data-jump="develop"><span class="cs-eyebrow">03</span><b>Develop</b><span>Three ways to handle a doubtful turn, then one reading order for every screen.</span></button>
+    <button type="button" class="cs-step" data-jump="deliver"><span class="cs-eyebrow">04</span><b>Deliver</b><span>One drive across iPhone, the car display and Apple Watch.</span></button>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Discover" aria-labelledby="yo-discover">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">01 · Discover</p>
+      <h2 class="cs-h2" id="yo-discover">Where directions break in Istanbul</h2>
+      <p class="cs-lead">Istanbul’s roads change faster than map data, and its layout punishes small mistakes: service roads beside main roads, exits close together, concrete medians, and a strait you can only cross at a few points.</p>
+    </div>
+    <div class="cs-main">
+      <dl class="cs-dl" style="--dm:300px">
+        <div><dt>Desk research</dt><dd>Traffic and vehicle data, 2026 tolls, Turkish signage · TÜİK, TomTom, KGM</dd></div>
+        <div><dt>Failure patterns</dt><dd>How instructions break, the cause and the cost · 5 patterns</dd></div>
+        <div><dt>Route audit</dt><dd>Moda to Levent at rush hour, every wrong instruction logged</dd></div>
+        <div><dt>Driver interviews</dt><dd>The last time navigation let them down, and what they did next</dd></div>
+      </dl>
+      <div class="cs-g" style="--m:150px;gap:12px">
+        <div class="cs-card dark"><span class="cs-stat sm">6.39M</span><span class="cs-s">vehicles registered in Istanbul, about one in five in Türkiye</span></div>
+        <div class="cs-card"><span class="cs-stat sm">62%</span><span class="cs-s">average congestion across the city in 2025</span></div>
+        <div class="cs-card"><span class="cs-stat sm">22:54</span><span class="cs-s">minutes, on average, to drive 10 km</span></div>
+        <div class="cs-card"><span class="cs-stat sm">112 h</span><span class="cs-s">lost to rush-hour traffic in 2025</span></div>
+      </div>
+      <p class="cs-xs">Sources: TÜİK motor vehicle statistics, May 2026. TomTom Traffic Index, Istanbul, 2025.</p>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <h3 class="cs-h3" style="margin-bottom:20px">What I found</h3>
+    <div class="cs-g" style="--m:230px">
+      <div class="cs-card tint"><span class="cs-eyebrow" style="color:#5C3B00">Insight 1</span><p class="cs-t">The street changes faster than the map</p><p class="cs-p">New medians, banned turns and one-way changes reach the map late. Until then, the app repeats an old instruction with full confidence.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 2</span><p class="cs-t">Drivers read signs, not street names</p><p class="cs-p">Overhead signs list districts, like Levent · Maslak, and locals give directions by landmarks.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 3</span><p class="cs-t">Two roads, one blue dot</p><p class="cs-p">Main roads and service roads (yan yol) run side by side. GPS can’t always tell which one you’re on, so the instructions jump too.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 4</span><p class="cs-t">Some mistakes can’t be undone</p><p class="cs-p">Miss the right exit near the Bosphorus and you may be committed to a crossing, with its toll. The app only reacts after the mistake.</p></div>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <div class="cs-head">
+      <h3 class="cs-h3">One commute, before the redesign</h3>
+      <p>A morning drive from Moda to Levent across the 15 Temmuz Şehitler Bridge. The low points sit where the app speaks with confidence it doesn’t have, or leaves the driver to recover alone.</p>
+    </div>
+    <div class="cs-scroll" tabindex="0" role="region" aria-label="Current-state journey">
+      <div class="cs-journey" style="--n:6">
+        <div class="cs-jrow"><span>Moment</span><span><span class="n">08:15 · Moda</span><b>Plan</b></span><span><span class="n">08:30 · Altunizade</span><b>Approach the bridge</b></span><span><span class="n">08:44 · Zincirlikuyu</span><b>Take the exit</b></span><span><span class="n">08:51 · Levent</span><b>The last turn</b></span><span><span class="n">08:52 · Levent</span><b>Recover</b></span><span><span class="n">08:56 · Office</span><b>Arrive</b></span></div>
+        <div class="cs-jrow"><span>Doing</span><span>Picks the fastest route. Nothing says which crossing is hard to drive.</span><span>A service road runs beside the main road.</span><span>Looks for her exit while lanes merge and split.</span><span>Follows the last instruction: turn left into a side street.</span><span>Finds a median where the turn should be, hunts for a U-turn.</span><span>Parks late. The map still shows the turn.</span></div>
+        <div class="cs-jrow mid"><span>Feeling</span><span class="cs-chip">Calm</span><span class="cs-chip">Unsure</span><span class="cs-chip low">Hesitant</span><span class="cs-chip low">Doubtful</span><span class="cs-chip low">Stuck</span><span class="cs-chip low">Annoyed</span></div>
+        <div class="cs-jrow"><span>Pain point</span><span>Time is the only comparison.</span><span>The blue dot jumps between roads, and so do the instructions.</span><span>A street name she can’t see, while the sign shows districts.</span><span>Told to turn across a median other drivers know about.</span><span>“Rerouting…” in the junction, with cars behind her.</span><span>No easy way to say the turn didn’t exist.</span></div>
+        <div class="cs-jrow dark"><span>Opportunity</span><span><b>Compare crossings</b><small>On difficulty and toll, and name the last point to decide.</small></span><span><b>Both instructions</b><small>When unsure where she is, instead of guessing.</small></span><span><b>Mirror the sign</b><small>And anchor it to a landmark.</small></span><span><b>Flag the doubt</b><small>With evidence, and a Plan B ready.</small></span><span><b>Plan B, calmly</b><small>And log the problem by voice.</small></span><span><b>Two questions</b><small>After parking, to fix the map.</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Define" aria-labelledby="yo-define">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">02 · Define</p>
+      <h2 class="cs-h2" id="yo-define">Designing for Elif</h2>
+      <p class="cs-lead">I brought the research together into one primary persona, then turned her commute into a problem statement and six principles to test every design against.</p>
+      <div class="cs-card dark" style="margin-top:8px;gap:12px">
+        <span class="cs-eyebrow">Problem statement</span>
+        <p style="font-size:16px;line-height:1.55">Elif needs directions she can trust on streets that change faster than the map, because near the Bosphorus one wrong turn can commit her to the wrong crossing.</p>
+        <div class="cs-sep"></div>
+        <span class="cs-eyebrow">How might we</span>
+        <p style="font-size:19px;line-height:1.35;font-weight:600;letter-spacing:-.01em">Make the app honest about what it doesn’t know, and ready for the moment the map is wrong?</p>
+      </div>
+    </div>
+    <div class="cs-main">
+      <div class="cs-card cs-g" style="--m:280px;gap:20px 32px;padding:24px">
+        <div class="cs-stack" style="gap:18px">
+          <div class="cs-persona"><img src="img/persona-elif.jpg" alt="Stock photo used for the Elif proto-persona"><span><span class="cs-eyebrow">Proto-persona</span><b>Elif Arslan, 36</b><span class="cs-s">Product lead · lives in Moda, works in Levent</span></span></div>
+          <p class="cs-quote-line">“Don’t just tell me where to turn. Tell me what I’ll see, and what to do if I can’t.”</p>
+          <dl class="cs-pdl"><dt>Drives</dt><dd>Four days a week, about 40 minutes each way</dd><dt>Crosses</dt><dd>The Bosphorus twice a day</dd><dt>Relies on</dt><dd>Navigation for traffic; signs and landmarks for directions</dd></dl>
+        </div>
+        <div class="cs-stack">
+          <div><p class="cs-h4" style="margin-bottom:6px">Goals</p><ul class="cs-ul"><li>Arrive on time, with no surprises at junctions</li><li>Know her options before a choice becomes irreversible</li><li>Keep her eyes and hands on the road</li></ul></div>
+          <div><p class="cs-h4" style="margin-bottom:6px">Frustrations</p><ul class="cs-ul"><li>Instructions the street won’t allow</li><li>“Rerouting” in the middle of a junction</li><li>No easy way to say what was wrong</li></ul></div>
+          <p class="cs-xs" style="margin-top:auto;font-size:12px">Proto-persona from desk research, to validate in interviews. Stock photo, not a real participant.</p>
+        </div>
+      </div>
+      <div class="cs-card"><span class="cs-eyebrow">How I’d measure it</span><ul class="cs-ul md"><li>Reroutes after an instruction the street didn’t allow</li><li>Blocked turns handled by a prepared Plan B</li><li>Drivers who answer the post-trip questions</li><li>Days from first report to a fixed map</li></ul></div>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <h3 class="cs-h3" style="margin-bottom:20px">Six principles</h3>
+    <div class="cs-g cs-rules" style="--m:300px;gap:24px 28px">
+      <div><span class="n">01</span><p class="cs-t">Speak like the street</p><p class="cs-p">Use the words on the sign and the landmarks locals use. Talk like a friend in the passenger seat.</p></div>
+      <div><span class="n">02</span><p class="cs-t">Never fake certainty</p><p class="cs-p">When the app doesn’t know where you are, or whether a turn exists, it says so and shows why.</p></div>
+      <div><span class="n">03</span><p class="cs-t">Plan B before the junction</p><p class="cs-p">A fallback is ready before a risky turn, so a blocked turn is a non-event, not a panic.</p></div>
+      <div><span class="n">04</span><p class="cs-t">No tapping while moving</p><p class="cs-p">Voice in the moment, questions after parking. Nothing asks for attention a driver doesn’t have.</p></div>
+      <div><span class="n">05</span><p class="cs-t">Respect the irreversible</p><p class="cs-p">Name the last point where a choice can still change, like which Bosphorus crossing to take.</p></div>
+      <div><span class="n">06</span><p class="cs-t">Private by default</p><p class="cs-p">Reports are anonymous and location history isn’t kept. Helping the map costs the driver nothing.</p></div>
+    </div>
+  </div>
+
+  <div class="cs-block">
+    <div class="cs-head">
+      <h3 class="cs-h3">How the app decides what to say</h3>
+      <p>Every instruction carries a confidence level. Each level has one behaviour on screen and one in voice, so drivers learn to read doubt the same way every time.</p>
+    </div>
+    <div class="cs-scroll" tabindex="0" role="region" aria-label="Confidence model">
+      <div class="cs-journey" style="--n:4;min-width:820px">
+        <div class="cs-jrow"><span>Level</span><span><span class="n">1</span><b>Sure</b></span><span><span class="n">2</span><b>Unsure where you are</b></span><span><span class="n" style="color:#5C3B00">3</span><b style="display:inline-block;padding:0 8px;border-radius:6px;background:#FFF1D6">Doubtful turn</b></span><span><span class="n">4</span><b>Confirmed closed</b></span></div>
+        <div class="cs-jrow"><span>Signal</span><span>Map data, GPS and recent drives agree</span><span>GPS can’t separate a main road from the service road beside it</span><span>Recent driver reports disagree with the map</span><span>Ten drivers confirmed it after parking</span></div>
+        <div class="cs-jrow"><span>On screen</span><span>One instruction, the sign to look for and the lanes to be in</span><span>Both instructions, each labelled by road, and a way to answer by voice</span><span>An amber chip, the evidence, and Plan B with its cost, before the junction</span><span>Nothing to decide: the turn leaves the map and routes avoid it</span></div>
+        <div class="cs-jrow dark" lang="tr"><span lang="en">In voice</span><span><b>“Zorlu’dan sonra sağdaki iki şerit.”</b></span><span><b>“Ana yoldaysan sağ şeritte kal. Yan yoldaysan ışıklardan sonra sola.”</b></span><span><b>“Bu dönüş kapalı olabilir. Kapalıysa düz devam et.”</b></span><span lang="en"><small style="margin:0">No prompt. The doubt has been resolved.</small></span></div>
+      </div>
+    </div>
+    <div class="cs-flow" style="margin-top:20px">
+      <span class="node">Compare crossings</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      <span class="node">Follow the sign</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      <span class="node tint">Flag the doubt</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      <span class="node tint">Take Plan B</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      <span class="node">Two questions</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      <span class="node dark">Map fixed for everyone</span>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Develop" aria-labelledby="yo-develop">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">03 · Develop</p>
+      <h2 class="cs-h2" id="yo-develop">Three ways to handle a doubtful turn</h2>
+      <p class="cs-lead">The uncertain turn was the hardest moment to design. I sketched three behaviours as low-fidelity screens and judged each against the principles, then made the same kind of call for every other moment.</p>
+    </div>
+    <div class="cs-main">
+      <div class="cs-g" style="--m:200px">
+        <div class="cs-card"><span class="cs-eyebrow muted">Option A</span><p class="cs-t">Stay silent, reroute after</p><p class="cs-s">Today’s behaviour. The driver finds out at the junction, with cars behind her.</p><div class="foot"><span class="cs-tag">Breaks 02 and 03</span></div></div>
+        <div class="cs-card"><span class="cs-eyebrow muted">Option B</span><p class="cs-t">Ask the driver</p><p class="cs-s">Honest, but a question at speed is a distraction, and with no answer she’s left with nothing.</p><div class="foot"><span class="cs-tag">Breaks 04</span></div></div>
+        <div class="cs-card dark"><span class="cs-eyebrow">Option C · Chosen</span><p class="cs-t">Show the evidence, prepare Plan B</p><p class="cs-s">Says the turn is in doubt, shows why, and has a fallback with its cost ready. Useful with no input at all.</p><div class="foot"><span class="cs-tag line">Meets 02, 03 and 04</span></div></div>
+      </div>
+      <div class="cs-spec cs-calls"><p class="cs-h4" style="margin:16px 0 2px">The same call, for every other moment</p><div>
+        <div class="row"><span>Main road or service road?</span><span class="cs-flow"><span class="node" style="color:var(--c-ink2);font-weight:500">Guess one road</span><span class="node" style="color:var(--c-ink2);font-weight:500">Ask the driver</span><span class="node dark">Show both instructions</span></span></div>
+        <div class="row"><span>What an instruction is made of</span><span class="cs-flow"><span class="node" style="color:var(--c-ink2);font-weight:500">Street name</span><span class="node" style="color:var(--c-ink2);font-weight:500">Landmark only</span><span class="node dark">Sign, landmark and lanes</span></span></div>
+        <div class="row"><span>How drivers fix the map</span><span class="cs-flow"><span class="node" style="color:var(--c-ink2);font-weight:500">Report button</span><span class="node" style="color:var(--c-ink2);font-weight:500">Infer from reroutes</span><span class="node dark">Say it now, confirm later</span></span></div>
+        <div class="row"><span>How the app speaks</span><span class="cs-flow"><span class="node" style="color:var(--c-ink2);font-weight:500" lang="tr">Siz: “Sola dönün”</span><span class="node dark" lang="tr">Sen: “Sola dön”</span></span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="cs-block cs-split center">
+    <div class="cs-phone" aria-hidden="true" style="margin-inline:auto"><div class="plate" data-screen="BelirsizDonus"></div></div>
+    <div class="cs-main" style="gap:20px">
+      <h3 class="cs-h3">Built to be read in a glance</h3>
+      <p class="cs-lead" style="font-size:16px;max-width:620px">Every driving screen follows one reading order. Size, weight and colour carry it, so her eyes leave the road for as little time as possible.</p>
+      <ol class="cs-levels">
+        <li><span class="cs-num">1</span><span><b>What to do</b><span class="cs-s">The manoeuvre and distance at 32px, the largest type on screen.</span></span></li>
+        <li><span class="cs-num">2</span><span><b>How sure</b><span class="cs-s">An amber chip names the doubt in two words. Amber appears only when the app is unsure.</span></span></li>
+        <li><span class="cs-num">3</span><span><b>Why</b><span class="cs-s">Evidence from other drivers as a count and a bar, never a vague warning.</span></span></li>
+        <li><span class="cs-num">4</span><span><b>Where</b><span class="cs-s">The planned turn in solid blue, Plan B as an amber dotted line.</span></span></li>
+        <li><span class="cs-num">5</span><span><b>What if</b><span class="cs-s">Plan B in one sentence with its cost in minutes, at the bottom where the next step goes.</span></span></li>
+        <li><span class="cs-num">6</span><span><b>When</b><span class="cs-s">Arrival time and distance left, in the same place on every driving screen.</span></span></li>
+      </ol>
+      <dl class="cs-dl plain" style="--dm:150px">
+        <div><dt>Dark by default</dt><dd>So the screen never outshines the road</dd></div>
+        <div><dt>Top for now, bottom for next</dt><dd>The current instruction on top, what’s next below</dd></div>
+        <div><dt>Big targets, few of them</dt><dd>At least 56px tall, each with a spoken equivalent</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Visual language" aria-labelledby="yo-system">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">Visual language and Turkish</p>
+      <h2 class="cs-h2" id="yo-system">Blue is the way, amber is doubt</h2>
+      <p class="cs-lead">Two colours carry all the meaning, eight components are learned once, and every string was written in Turkish first, not translated into it.</p>
+    </div>
+    <div class="cs-main" data-tabs>
+      <div class="cs-tabs" role="tablist" aria-label="Visual language">
+        <button type="button" role="tab" id="yo-t1" aria-controls="yo-p1">Colour and type</button>
+        <button type="button" role="tab" id="yo-t2" aria-controls="yo-p2">Components</button>
+        <button type="button" role="tab" id="yo-t3" aria-controls="yo-p3">Turkish</button>
+      </div>
+      <div class="cs-panels">
+        <div class="cs-panel" role="tabpanel" id="yo-p1" aria-labelledby="yo-t1">
+          <div class="intro"><b>Everything else stays neutral</b><p>So a glance finds the route and the doubt first. Driving screens are dark so they never outshine the road; planning and review screens are light, because the car is parked.</p></div>
+          <div class="cs-g" style="--m:150px">
+            <div class="cs-sw"><i style="background:linear-gradient(90deg,#1F5EFF 50%,#3D7BFF 50%);color:#fff">Day · Night</i><b>Blue</b><span>The way and what to do: route, manoeuvre, primary button. White on day blue 5.1:1.</span></div>
+            <div class="cs-sw"><i style="background:linear-gradient(90deg,#FFB020 50%,#FFF1D6 50%);color:#14161A">Fill · Tint</i><b>Amber</b><span>Doubt and Plan B, only when the app is unsure. Dark text on amber 10.1:1.</span></div>
+            <div class="cs-sw"><i style="background:#0B6B3A;color:#fff">Otoyol</i><b>Green</b><span>Motorway signs only, never interface state, so it can’t read as “go”.</span></div>
+            <div class="cs-sw"><i style="background:linear-gradient(90deg,#171A21 50%,#F2F3F5 50%);color:#fff">Night · Day</i><b>Neutrals</b><span>Secondary text above 6:1 in both: 7.5:1 at night, 6.1:1 by day.</span></div>
+          </div>
+          <div class="cs-card dark" style="padding:20px 22px;gap:0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif">
+            <div class="cs-spec" style="background:transparent;border:0;padding:0"><div style="min-width:420px">
+              <div class="row" style="border-color:#2B303B"><span style="color:#AEB5C2">Distance</span><span style="font-size:32px;line-height:1.1;font-weight:700;color:#F4F6FA">200 m</span><span style="color:#AEB5C2">32 · Bold</span></div>
+              <div class="row" style="border-color:#2B303B"><span style="color:#AEB5C2">Manoeuvre</span><span lang="tr" style="font-size:20px;font-weight:600;color:#F4F6FA">Sola dön · Gonca Sk.</span><span style="color:#AEB5C2">18 to 22 · Semibold</span></div>
+              <div class="row" style="border-color:#2B303B"><span style="color:#AEB5C2">Evidence</span><span lang="tr" style="font-size:14px;color:#D5DAE3">Son 7 günde 6 sürücü “dönüş yok” dedi.</span><span style="color:#AEB5C2">14 · Regular</span></div>
+              <div class="row" style="border-color:#2B303B"><span style="color:#AEB5C2">Label</span><span lang="tr" style="font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FFB020">B planı hazır · yan yoldaysan</span><span style="color:#AEB5C2">11.5 · Heavy · +1</span></div>
+              <div class="row" style="border-color:#2B303B"><span style="color:#AEB5C2">Arrival</span><span lang="tr" style="font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;color:#F4F6FA">08:53 varış</span><span style="color:#AEB5C2">20 · Bold · tabular</span></div>
+            </div></div>
+          </div>
+          <p class="cs-xs">Set in the platform’s system font, SF Pro on iOS, which draws every Turkish letter, including ğ, ş, ı and İ.</p>
+        </div>
+        <div class="cs-panel" role="tabpanel" id="yo-p2" aria-labelledby="yo-t2" hidden>
+          <div class="intro"><b>Eight parts, learned once</b><p>Each has a single job and a rule for when it appears, so drivers recognise it at a glance after the first time.</p></div>
+          <div class="cs-g" lang="tr" style="--m:220px;align-items:start;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif">
+            <div class="cs-card dark" style="padding:16px;gap:4px"><span style="font-size:30px;line-height:1;font-weight:700">200 m</span><span style="font-size:18px;font-weight:600">Sola dön · Gonca Sk.</span><span class="cs-xs" lang="en" style="margin-top:8px;font-family:var(--f-text)"><b style="color:var(--c-ondark)">Manoeuvre card</b> · always at the top of a driving screen</span></div>
+            <div class="cs-card dark" style="padding:16px;gap:6px"><span style="font-size:11px;font-weight:800;letter-spacing:1px;color:#AEB5C2">ANA YOLDAYSAN</span><span style="font-size:16px;font-weight:600">Sağ şeritte kal</span><span style="font-size:11px;font-weight:800;letter-spacing:1px;color:#AEB5C2;margin-top:4px">YAN YOLDAYSAN</span><span style="font-size:16px;font-weight:600">Işıklardan sonra sola</span><span class="cs-xs" lang="en" style="margin-top:8px;font-family:var(--f-text)"><b style="color:var(--c-ondark)">Hedged instruction</b> · only when position is uncertain</span></div>
+            <div class="cs-card dark" style="padding:16px;gap:8px"><span style="align-self:flex-start;padding:3px 10px;border-radius:8px;background:#FFB020;color:#14161A;font-size:13px;font-weight:700">Belirsiz dönüş</span><span style="font-size:13px;line-height:1.4;color:#D5DAE3">6 sürücü “dönüş yok” dedi, 2 sürücü sorunsuz döndü.</span><span style="display:flex;height:6px;border-radius:3px;overflow:hidden"><i style="width:75%;background:#FFB020"></i><i style="width:25%;background:#3D7BFF"></i></span><span class="cs-xs" lang="en" style="margin-top:4px;font-family:var(--f-text)"><b style="color:var(--c-ondark)">Doubt chip and evidence</b> · two words, then what drivers reported</span></div>
+            <div class="cs-card dark" style="padding:16px;gap:6px"><span style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;font-weight:800;letter-spacing:1px;color:#FFB020">B PLANI HAZIR</span><span style="font-size:13px;font-weight:700;color:#FFB020">+3 dk</span></span><span style="font-size:14px;line-height:1.4">Dönüş kapalıysa düz devam et, 300 m sonra ışıklardan U dönüşü yap.</span><span class="cs-xs" lang="en" style="margin-top:8px;font-family:var(--f-text)"><b style="color:var(--c-ondark)">Plan B card</b> · one sentence and its cost, before the junction</span></div>
+            <div class="cs-card dark" style="padding:16px;gap:4px"><span style="font-size:15px;font-weight:600">“Dönüş yok” dedin</span><span style="font-size:13px;color:#AEB5C2">Varınca kısaca soracağız.</span><span class="cs-xs" lang="en" style="margin-top:8px;font-family:var(--f-text)"><b style="color:var(--c-ondark)">Voice capture</b> · repeats what it heard, asks nothing while moving</span></div>
+            <div class="cs-card" style="padding:16px;gap:8px"><span style="font-size:15px;font-weight:600;line-height:1.3">Gonca Sokak’a sola dönüş kapalı mıydı?</span><span style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:6px 10px;border-radius:10px;background:#1F5EFF;color:#fff;font-size:13px;font-weight:600">Evet, refüj vardı</span><span style="padding:6px 10px;border-radius:10px;border:1px solid #C9CED6;font-size:13px;font-weight:600">Hayır, kaçırdım</span></span><span class="cs-xs" lang="en" style="margin-top:4px;font-family:var(--f-text)"><b style="color:var(--c-ink)">Post-trip question</b> · two answers, a way out, and how close the fix is (7/10)</span></div>
+          </div>
+          <p class="cs-xs">Plus the sign panel, which mirrors the green overhead sign and dims the half she doesn’t need, and lane guidance that lights the matching lanes.</p>
+        </div>
+        <div class="cs-panel" role="tabpanel" id="yo-p3" aria-labelledby="yo-t3" hidden>
+          <div class="intro"><b>Designing in Turkish, not translating into it</b><p>Several details change how strings have to be built, not only how they read, so each comes with a note for engineering.</p></div>
+          <div class="cs-g" style="--m:240px">
+            <div class="cs-card" style="gap:6px"><span lang="tr" class="cs-h4" style="color:var(--c-eyebrow)">Zorlu’dan · Zorlu Center’ın · Gonca Sokak’a</span><span class="cs-s">Case endings follow the name, and how it’s said: “Center” is said sentır, so it takes -’ın.</span><span class="cs-xs"><b style="color:var(--c-ink)">Build:</b> store suffix forms with each place. Never build “{place}’a”.</span></div>
+            <div class="cs-card" style="gap:6px"><span lang="tr" class="cs-h4" style="color:var(--c-eyebrow)">BELİRSİZ DÖNÜŞ · B PLANI</span><span class="cs-s">Uppercasing “belirsiz” with an English locale gives BELIRSIZ, a different word.</span><span class="cs-xs"><b style="color:var(--c-ink)">Build:</b> uppercase with tr-TR, never the default.</span></div>
+            <div class="cs-card" style="gap:6px"><span lang="tr" class="cs-h4" style="color:var(--c-eyebrow)">2,1 km · 08:53 · ₺59</span><span class="cs-s">Decimal comma, 24-hour clock, and the lira sign as the Turkish locale formats it.</span><span class="cs-xs"><b style="color:var(--c-ink)">Build:</b> format every number, time and price with tr-TR.</span></div>
+            <div class="cs-card" style="gap:6px"><span lang="tr" class="cs-h4" style="color:var(--c-eyebrow)">Sola dön, not Sola dönün</span><span class="cs-s">A friend’s voice, sen not siz: how a passenger gives directions, not a call centre.</span><span class="cs-xs"><b style="color:var(--c-ink)">Build:</b> screen and voice share one register.</span></div>
+            <div class="cs-card" style="gap:6px"><span lang="tr" class="cs-h4" style="color:var(--c-eyebrow)">yan yol · refüj · Avrupa Yakası · HGS</span><span class="cs-s">The drivers’ own words for the service road, the median, the European side and the toll tag.</span><span class="cs-xs"><b style="color:var(--c-ink)">Build:</b> one glossary for UI writers and voice.</span></div>
+            <div class="cs-card" style="gap:6px"><span lang="tr" class="cs-h4" style="color:#0B6B3A">Levent · Maslak</span><span class="cs-s">Otoyol signs in Türkiye are green, so the app mirrors the panel’s colour and layout.</span><span class="cs-xs"><b style="color:var(--c-ink)">Build:</b> sign text comes from map data, never retyped.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-chapter" data-nav="Deliver" aria-labelledby="yo-deliver">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">04 · Deliver</p>
+      <h2 class="cs-h2" id="yo-deliver">One drive, from phone to wrist</h2>
+      <p class="cs-lead">Route choice, a hedged instruction, a sign to follow, a doubtful turn, Plan B, and two questions after parking. Then the same doubtful turn on the car display and Apple Watch.</p>
+    </div>
+    <div class="cs-main" style="flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:24px">
+      <figure class="cs-shot"><div class="cs-car" aria-hidden="true" style="--cw:440px"><div class="plate" data-screen="AracEkrani"></div></div><figcaption>Car display<small>The doubtful turn, at arm’s length</small></figcaption></figure>
+      <figure class="cs-shot"><div class="cs-phone watch" aria-hidden="true" style="--pw:150px"><div class="plate" data-screen="Saat"></div></div><figcaption>Watch<small>A tap on the wrist</small></figcaption></figure>
+    </div>
+  </div>
+  <div class="cs-block tight"><div data-carousel></div></div>
+</section>
+
+<section class="cs-chapter" data-nav="Results" aria-labelledby="yo-results">
+  <div class="cs-split">
+    <div class="cs-side">
+      <p class="cs-eyebrow">Results and reflection</p>
+      <h2 class="cs-h2" id="yo-results">What success would look like</h2>
+      <p class="cs-lead">This is a concept, so there are no launch numbers. These are the measures I’d set for a pilot on a few Istanbul corridors, and the targets for its first three months.</p>
+    </div>
+    <div class="cs-main">
+      <div class="cs-g" style="--m:160px;gap:12px">
+        <div class="cs-card"><span class="cs-eyebrow muted">Impossible instructions</span><span class="cs-stat sm" style="font-size:30px">−30%</span><span class="cs-xs">Reroutes after an instruction the street didn’t allow</span></div>
+        <div class="cs-card"><span class="cs-eyebrow muted">Calm recoveries</span><span class="cs-stat sm" style="font-size:30px">60%</span><span class="cs-xs">Of blocked turns handled by a prepared Plan B</span></div>
+        <div class="cs-card"><span class="cs-eyebrow muted">Answer rate</span><span class="cs-stat sm" style="font-size:30px">35%</span><span class="cs-xs">Of trips with the post-trip questions answered</span></div>
+        <div class="cs-card"><span class="cs-eyebrow muted">Time to fix</span><span class="cs-stat sm" style="font-size:30px">&lt; 3 days</span><span class="cs-xs">From the first report to a corrected map</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="cs-block tight cs-g" style="--m:220px;gap:16px 24px">
+    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><span class="cs-eyebrow">What worked</span><span class="cs-h4">Hedging instead of guessing</span><span class="cs-s">Showing both instructions, or the evidence behind a doubt, turned the app’s weakest moments into its most honest ones.</span></div>
+    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><span class="cs-eyebrow">What I’d test first</span><span class="cs-h4">Are two instructions calm, or confusing?</span><span class="cs-s">The riskiest idea. I’d test it with drivers in a parked car, phone mounted, before polishing anything else.</span></div>
+    <div class="cs-stack" style="gap:4px;padding-top:14px;border-top:2px solid var(--c-ink)"><span class="cs-eyebrow">What’s next</span><span class="cs-h4">Closures that come and go</span><span class="cs-s">Extend the confidence model to weekly street markets and match days, where the right answer changes by the hour.</span></div>
+  </div>
+</section>
