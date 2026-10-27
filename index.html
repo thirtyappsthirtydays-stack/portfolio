@@ -444,7 +444,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-step:hover b{text-decoration:underline;text-underline-offset:3px}
 
 /* chapters */
-.cs-chapter{margin-top:80px;padding-top:48px;border-top:1px solid var(--c-rule);scroll-margin-top:calc(var(--head-h) + 60px)}
+.cs-chapter{margin-top:clamp(72px,8vw,104px);padding-top:clamp(36px,4vw,52px);border-top:1px solid var(--c-ink);scroll-margin-top:calc(var(--head-h) + 60px)}
 .cs-split{display:flex;flex-wrap:wrap;gap:40px 56px;align-items:flex-start}
 .cs-side{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px}
 .cs-main{flex:999 1 540px;min-width:0;display:flex;flex-direction:column;gap:24px}
@@ -453,6 +453,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-h3{margin:0;font-size:22px;line-height:1.25;letter-spacing:-.01em;font-weight:600;text-wrap:balance}
 .cs-h4{font-size:15px;font-weight:600;line-height:1.4}
 .cs-block{margin-top:64px}
+.cs-chapter .cs-block:not(.tight){margin-top:clamp(52px,6vw,72px);padding-top:clamp(28px,3.4vw,40px);border-top:1px solid var(--c-rule2,var(--c-rule))}
+.cs-chapter .cs-block:not(.tight) .cs-h3{font-size:clamp(21px,2vw,24px)}
 .cs-block.tight{margin-top:40px}
 .cs-g{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(var(--m,240px),100%),1fr))}
 .cs-stack{display:flex;flex-direction:column;gap:16px;min-width:0}
