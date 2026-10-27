@@ -575,6 +575,15 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-fig figcaption{font-size:13px;line-height:1.45;color:var(--c-ink2)}
 .cs-fig figcaption b{display:block;font-size:14px;color:var(--c-ink)}
 .cs-fig.row{flex-direction:row;flex-wrap:wrap;align-items:center;gap:20px 32px}
+.imgcar{display:grid;gap:20px}
+.imgcar-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;outline:none;border-radius:16px}
+.imgcar-track::-webkit-scrollbar{display:none}
+.imgcar-track:focus-visible{outline:2px solid var(--c-eyebrow);outline-offset:4px}
+.imgcar-slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;margin:0;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;padding:28px;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:16px;min-width:0}
+.imgcar-slide > figcaption{flex:1 1 240px;max-width:320px;gap:4px}
+.imgcar-shot{flex:999 1 420px;min-width:0;height:clamp(220px,32vw,400px);display:flex;align-items:center;justify-content:center;background:var(--c-neutral);border-radius:12px;padding:16px;box-sizing:border-box;overflow:hidden}
+.imgcar-shot img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;min-width:0;min-height:0;object-fit:contain;border-radius:6px;box-shadow:0 4px 16px rgba(14,31,59,.12)}
+@media (max-width:640px){.imgcar-slide{padding:18px}.imgcar-slide > figcaption{max-width:none}.imgcar-shot{height:auto;padding:12px}}
 .cs-fig.row > img{flex:0 1 340px;width:340px;max-width:100%}
 .cs-fig.row > figcaption{flex:1 1 240px}
 .cs-need{display:flex;flex-direction:column;gap:6px}
@@ -1366,6 +1375,31 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       }
     });
   }
+  function initImgCar(root){
+    var track = root.querySelector('.imgcar-track'), slides = [].slice.call(track.children), n = slides.length;
+    var count = root.querySelector('.mcar-count'), prev = root.querySelector('[data-dir="-1"]'), next = root.querySelector('[data-dir="1"]');
+    var dots = [].slice.call(root.querySelectorAll('.mcar-dot'));
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function idx(){ return Math.max(0, Math.min(n - 1, Math.round(track.scrollLeft / Math.max(1, track.clientWidth)))); }
+    function sync(){
+      var k = idx();
+      count.textContent = (k + 1) + ' of ' + n;
+      prev.disabled = k === 0; next.disabled = k === n - 1;
+      dots.forEach(function(d, i){ d.setAttribute('aria-current', i === k ? 'true' : 'false'); });
+      slides.forEach(function(s, i){ s.setAttribute('aria-hidden', i === k ? 'false' : 'true'); });
+    }
+    function go(k){ k = Math.max(0, Math.min(n - 1, k)); track.scrollTo({left: k * track.clientWidth, behavior: reduce ? 'auto' : 'smooth'}); }
+    prev.addEventListener('click', function(){ go(idx() - 1); });
+    next.addEventListener('click', function(){ go(idx() + 1); });
+    dots.forEach(function(d, i){ d.addEventListener('click', function(){ go(i); }); });
+    track.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight'){ e.preventDefault(); go(idx() + 1); }
+      else if(e.key === 'ArrowLeft'){ e.preventDefault(); go(idx() - 1); }
+    });
+    var raf = 0;
+    track.addEventListener('scroll', function(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); });
+    sync();
+  }
   function initTabs(scope){
     scope.querySelectorAll('[data-tabs]').forEach(function(box){
       var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));
@@ -1407,6 +1441,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     body.querySelectorAll('.mcar').forEach(function(r){ initCarousel(r, d); });
     body.querySelectorAll('.bproto').forEach(function(f){ initProto(f, d.proto); });
     initTabs(body);
+    body.querySelectorAll('[data-imgcar]').forEach(initImgCar);
     /* in-page jumps scroll instead of changing the hash, which the router owns */
     body.querySelectorAll('[data-jump]').forEach(function(btn){
       btn.addEventListener('click', function(e){
