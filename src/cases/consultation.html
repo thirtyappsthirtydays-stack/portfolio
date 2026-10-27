@@ -68,7 +68,7 @@
         <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Client kickoff</p><p class="cs-s">What was getting in the way, and what he wanted his week to look like: his own availability, reminders, easy rescheduling.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">Four pain points, in his words</span></div>
         <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Service audit</p><p class="cs-s">I walked the old path from his website: the number, the call or message, the records, the payment, agreeing a time. Every hand-off logged.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">Phone, WhatsApp, email, banking app</span></div>
         <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Review and content audit</p><p class="cs-s">His Google reviews and existing site, to see what patients trust him for and which credentials they repeat back.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">40 Google reviews, all five stars</span></div>
-        <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Build and review rounds</p><p class="cs-s">Working versions reviewed with the client. He edited the intake questions line by line, in Turkish and English.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">Live prototypes, not slides</span></div>
+        <div class="cs-card flat" style="gap:4px"><p class="cs-h4">Build and review rounds</p><p class="cs-s">Working versions reviewed with the client. He edited the intake questions line by line, in Turkish and English.</p><span class="cs-xs" style="font-weight:600;color:var(--c-ink)">Reviewed as working prototypes</span></div>
       </div>
     </div>
   </div>
@@ -77,8 +77,8 @@
     <h3 class="cs-h3" style="margin-bottom:20px">What I learned</h3>
     <div class="cs-g" style="--m:230px">
       <div class="cs-card tint"><span class="cs-eyebrow">Insight 1</span><p class="cs-t">The person booking is often not the patient</p><p class="cs-p">Children book for parents, parents for babies. The first form asked “What is your name?”. After review, every question asks about the patient, and the phone number can belong to a relative.</p></div>
-      <div class="cs-card"><span class="cs-eyebrow">Insight 2</span><p class="cs-t">WhatsApp is the front door</p><p class="cs-p">Patients already message the practice on WhatsApp, and the surgeon prefers WhatsApp video. Not everyone has it, so the flow needs a Google Meet fallback.</p></div>
-      <div class="cs-card"><span class="cs-eyebrow">Insight 3</span><p class="cs-t">The records are the consultation</p><p class="cs-p">CT, PET-CT, lab and pathology reports must reach him early enough to read. Imaging files are large, and most records already sit in E-Nabız, Turkey’s national health portal.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 2</span><p class="cs-t">Patients already use WhatsApp</p><p class="cs-p">Patients already message the practice on WhatsApp, and the surgeon prefers WhatsApp video. Not everyone has it, so the flow needs a Google Meet fallback.</p></div>
+      <div class="cs-card"><span class="cs-eyebrow">Insight 3</span><p class="cs-t">The review depends on the records</p><p class="cs-p">CT, PET-CT, lab and pathology reports must reach him early enough to read. Imaging files are large, and most records already sit in E-Nabız, Turkey’s national health portal.</p></div>
       <div class="cs-card"><span class="cs-eyebrow">Insight 4</span><p class="cs-t">The money has to land in a Turkish account</p><p class="cs-p">Fees paid upfront, into the practice’s account. Bank transfer is familiar, free and needs no integration, but nothing confirms it automatically.</p></div>
     </div>
   </div>
@@ -110,7 +110,7 @@
   <div class="cs-split">
     <div class="cs-side">
       <p class="cs-eyebrow">02 · Define</p>
-      <h2 class="cs-h2" id="oc-define">Two people, one booking</h2>
+      <h2 class="cs-h2" id="oc-define">Designing for the patient and the surgeon</h2>
       <p class="cs-lead">Bookings are often made around the patient rather than by her, and every booking lands in the surgeon’s week. I wrote a persona for each side, then one problem statement and four principles that name who they protect.</p>
       <div class="cs-card dark" style="margin-top:8px;gap:12px">
         <span class="cs-eyebrow">Problem statement</span>
@@ -148,7 +148,7 @@
 
   <div class="cs-block">
     <div class="cs-head">
-      <h3 class="cs-h3">One booking, from both sides</h3>
+      <h3 class="cs-h3">How one booking works for the patient and the practice</h3>
       <p>How the same booking runs in the new flow, for Ayten’s family and for the practice.</p>
     </div>
     <div class="cs-scroll" tabindex="0" role="region" aria-label="One booking from both sides">
@@ -163,9 +163,9 @@
     <h3 class="cs-h3" style="margin-bottom:20px">Four principles, each naming who it protects</h3>
     <div class="cs-g cs-rules" style="--m:220px;gap:24px">
       <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .9-1 1.6v.4"/><path d="M12 17.2v.3"/></svg></i>01</span><p class="cs-t">One question at a time</p><p class="cs-p">Short, plain questions about the patient, one per screen. Calm on a phone, and easy to answer for someone else.</p><span class="cs-tag tint" style="margin-top:4px">Protects the patient</span></div>
-      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></i>02</span><p class="cs-t">Meet people where they are</p><p class="cs-p">WhatsApp for the call and the records, Google Meet as the fallback, a bank transfer they already trust, Turkish or English.</p><span class="cs-tag" style="margin-top:4px">Protects both</span></div>
-      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></i>03</span><p class="cs-t">No surprises</p><p class="cs-p">The price, the steps, what to send and the 24-hour review window all show up before they’re needed.</p><span class="cs-tag tint" style="margin-top:4px">Protects the patient</span></div>
-      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i>04</span><p class="cs-t">His time is for medicine</p><p class="cs-p">Every booking arrives paid, scheduled and logged. Confirmations go out on their own.</p><span class="cs-tag dark" style="margin-top:4px">Protects the client</span></div>
+      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></i>02</span><p class="cs-t">Use the tools people already have</p><p class="cs-p">WhatsApp for the call and the records, Google Meet as the fallback, a bank transfer they already trust, Turkish or English.</p><span class="cs-tag" style="margin-top:4px">Protects both</span></div>
+      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></i>03</span><p class="cs-t">Show everything up front</p><p class="cs-p">The price, the steps, what to send and the 24-hour review window all show up before they’re needed.</p><span class="cs-tag tint" style="margin-top:4px">Protects the patient</span></div>
+      <div><span class="n"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i>04</span><p class="cs-t">Protect the surgeon’s time</p><p class="cs-p">Every booking arrives paid, scheduled and logged. Confirmations go out on their own.</p><span class="cs-tag dark" style="margin-top:4px">Protects the client</span></div>
     </div>
     <dl class="cs-dl plain" style="margin-top:28px">
       <div><dt>Measured by</dt><dd>Bookings completed, out of forms started</dd></div>
@@ -234,7 +234,7 @@
       <div class="cs-card tint" style="margin-top:8px;gap:8px">
         <span class="cs-eyebrow">Why pay before picking a time</span>
         <p style="font-size:15px;line-height:1.5">Payment comes before the calendar, so every slot in the surgeon’s week belongs to someone who has already paid.</p>
-        <p class="cs-p">The trade-off: a transfer can’t confirm itself. The assistant matches each one to the patient’s name, which the form asks people to use as the reference.</p>
+        <p class="cs-p">A transfer can’t be confirmed automatically, so the assistant matches each one to the patient’s name, which the form asks people to use as the reference.</p>
       </div>
     </div>
     <div class="cs-main" style="gap:32px">
@@ -247,7 +247,7 @@
         </div>
       </div>
       <div class="cs-stack" style="gap:12px">
-        <div><span class="cs-eyebrow muted">Decision 2</span><p class="cs-t">How do records arrive? <span class="cs-s" style="font-weight:400">Before the call, not during it.</span></p></div>
+        <div><span class="cs-eyebrow muted">Decision 2</span><p class="cs-t">How do records arrive? <span class="cs-s" style="font-weight:400">They need to reach him before the call.</span></p></div>
         <div class="cs-g" style="--m:190px;gap:12px">
           <div class="cs-card" style="gap:6px"><span class="cs-tag line">Cut after testing</span><span class="cs-h4">A · Upload in the form</span><span class="cs-xs">A drop zone per file. CT and PET-CT files are too large for a web form.</span></div>
           <div class="cs-card" style="gap:6px"><span class="cs-tag line">Cut after testing</span><span class="cs-h4">B · E-Nabız login</span><span class="cs-xs">A portal password typed into a form and stored in a sheet. The client preferred to ask himself.</span></div>
@@ -281,7 +281,7 @@
   </div>
 
   <div class="cs-block">
-    <h3 class="cs-h3" style="margin-bottom:20px">Two languages, one layout</h3>
+    <h3 class="cs-h3" style="margin-bottom:20px">Layouts that hold Turkish and English</h3>
     <div class="cs-g" style="--m:260px">
       <div class="cs-card" style="gap:10px">
         <p class="cs-h4">Neither language is always longer</p>
@@ -304,7 +304,7 @@
       <div class="cs-card" style="gap:10px">
         <p class="cs-h4">On a phone, the surgeon comes first</p>
         <p class="cs-s">The hero image comes first in the page, so when the two columns stack on a phone, people see who they’ll be talking to before they see a button.</p>
-        <p class="cs-xs">Trust before the ask: credentials, then the three steps, then reviews.</p>
+        <p class="cs-xs">Credentials come first, then the three steps, then reviews, so people trust the page before they’re asked to book.</p>
       </div>
     </div>
   </div>
@@ -342,7 +342,7 @@
           <p class="cs-xs">6 of the 14 styles, on a 15px base. Prices are written the local way: ₺15.000 in Turkish, €300 in English.</p>
         </div>
         <div class="cs-panel" role="tabpanel" id="oc-p2" aria-labelledby="oc-t2" hidden>
-          <div class="intro"><b>Navy moves you forward. Gold marks the way.</b><p>A warm cream ground, a deep navy and an old gold, all taken from the live site. Gold is a fill or a rule on light grounds; when it has to be text, it becomes gold-800.</p></div>
+          <div class="intro"><b>Navy for actions, gold for progress</b><p>A warm cream ground, a deep navy and an old gold, all taken from the live site. Gold is a fill or a rule on light grounds; when it has to be text, it becomes gold-800.</p></div>
           <div class="cs-g" style="--m:140px">
             <div class="cs-sw"><i style="background:#1B3A5C;color:#fff">10.8 on cream · AAA</i><b>Navy 700</b><span>#1B3A5C · buttons, headings, the current step</span></div>
             <div class="cs-sw"><i style="background:#C8A96E;color:#1B3A5C">Fill only</i><b>Gold 500</b><span>#C8A96E · progress, chosen answers, the price</span></div>
@@ -361,9 +361,9 @@
             <div class="row" style="grid-template-columns:minmax(0,1fr) 90px 110px"><span style="font-weight:400;color:var(--c-ink)">Answer underline, a UI edge</span><span style="color:var(--c-x)">2.2</span><span>3.9 · AA</span></div>
           </div></div>
           <div class="cs-g" style="--m:180px;gap:16px 24px">
-            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Navy moves you forward</span><span class="cs-s">One navy action per screen.</span></div>
-            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Cream, not white</span><span class="cs-s">Warm, not clinical. White only for cards and inputs.</span></div>
-            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Status explains</span><span class="cs-s">Green says do this next, amber says before you book, red only marks errors.</span></div>
+            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Navy marks the next step</span><span class="cs-s">One navy action per screen.</span></div>
+            <div class="cs-stack" style="gap:4px"><span class="cs-h4">A cream background</span><span class="cs-s">Warmer and less clinical than white, which is kept for cards and inputs.</span></div>
+            <div class="cs-stack" style="gap:4px"><span class="cs-h4">Colour shows status</span><span class="cs-s">Green says do this next, amber says before you book, red only marks errors.</span></div>
           </div>
         </div>
         <div class="cs-panel" role="tabpanel" id="oc-p3" aria-labelledby="oc-t3" hidden>
