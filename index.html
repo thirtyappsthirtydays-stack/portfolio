@@ -571,6 +571,15 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-combo > .cs-phone{position:absolute;right:0;bottom:0;--pw:148px;padding:6px}
 .cs-combo > .wide{width:86%}
 .cs-combo > .over{position:absolute;right:0;bottom:0;width:27%}
+.cs-hero.stack{flex-direction:column;align-items:stretch;gap:40px}
+.cs-hero.stack .cs-hero-copy{flex:none;max-width:none;display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 64px}
+.cs-hero.stack .cs-hero-copy > .l,.cs-hero.stack .cs-hero-copy > .r{display:flex;flex-direction:column;gap:20px;min-width:0}
+.cs-hero.stack .cs-hero-copy > .l{flex:1 1 380px;max-width:560px}
+.cs-hero.stack .cs-hero-copy > .r{flex:1 1 380px;max-width:520px}
+.cs-hero.stack .cs-hero-art{width:100%}
+.cs-combo.big{width:1000px;max-width:100%;padding:0 0 32px}
+.cs-combo.big > .wide{width:84%}
+.cs-combo.big > .over{width:25%;bottom:0}
 .cs-fig{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
 .cs-fig figcaption{font-size:13px;line-height:1.45;color:var(--c-ink2)}
 .cs-fig figcaption b{display:block;font-size:14px;color:var(--c-ink)}
