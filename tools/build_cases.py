@@ -60,3 +60,13 @@ if __name__ == '__main__':
     ids = sys.argv[1:] or [f[:-5] for f in sorted(os.listdir(os.path.join(ROOT, 'src', 'cases'))) if f.endswith('.html')]
     for cid in ids:
         build(cid)
+    # cache-busting: stamp each case file's content hash into index.html
+    import hashlib, re
+    idx = os.path.join(ROOT, 'index.html')
+    html = open(idx, encoding='utf-8').read()
+    vers = {}
+    for f in sorted(os.listdir(os.path.join(ROOT, 'cases'))):
+        if f.endswith('.js'):
+            vers[f[:-3]] = hashlib.sha1(open(os.path.join(ROOT, 'cases', f), 'rb').read()).hexdigest()[:10]
+    html = re.sub(r'var CASE_V = \{.*?\}; /\* case-versions \*/', 'var CASE_V = ' + json.dumps(vers) + '; /* case-versions */', html, count=1)
+    open(idx, 'w', encoding='utf-8').write(html)
