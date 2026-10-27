@@ -1,7 +1,7 @@
 <!--meta {
   "theme": {"ground":"#F5F8FB","surface":"#FFFFFF","ink":"#0E1F3B","ink2":"#4A5A70","rule":"#DCE3EC","rule2":"#C3CDDA","neutral":"#EAF0F6","eyebrow":"#056DAE","dark":"#002D72","ondark":"#FFFFFF","ondark2":"#C3D3EC","ondark-acc":"#9FD3F5","tint":"#E6F1F9","tint-line":"#B7D6EE","tint-ink":"#023F6B","low":"#FCE8E8","low-ink":"#A12222","x":"#C62828"},
   "fonts": ["https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300..800;1,400..600&family=Overpass+Mono:wght@400..600&display=swap"],
-  "boards": []
+  "boards": ["ScreenerWeb","ScreenerWebFilters"]
 } -->
 <div class="cs-hero">
   <div class="cs-hero-copy">
@@ -16,7 +16,7 @@
   </div>
   <div class="cs-hero-art" aria-hidden="true">
     <div class="cs-combo" style="padding-bottom:24px">
-      <img class="cs-img bare wide" src="img/si-laptop.png" alt="">
+      <div class="cs-laptop wide"><div class="scr"><div class="plate" data-screen="ScreenerWeb"></div></div><div class="base"></div></div>
       <img class="cs-img bare over" src="img/9dd101ea8bc4216545ffdaabccc2406e.png" alt="">
     </div>
   </div>
@@ -202,7 +202,7 @@
       <p>Set criteria, scan the results, act on one. Here it is in Citi’s design system, ready for build.</p>
     </div>
     <div class="cs-split" style="gap:32px 40px;align-items:center">
-      <div class="cs-pinned" style="flex:999 1 480px;min-width:0"><img class="cs-img bare" src="img/8d986ab42bb18123d42499b43271d0a9.png" alt="Final desktop Screener on a laptop" style="width:100%" loading="lazy"><span class="cs-pin" aria-hidden="true" style="left:9.2%;top:30%">1</span><span class="cs-pin" aria-hidden="true" style="left:35.6%;top:24%">2</span><span class="cs-pin" aria-hidden="true" style="left:35.6%;top:42%">3</span><span class="cs-pin" aria-hidden="true" style="left:35.6%;top:52%">4</span><span class="cs-pin" aria-hidden="true" style="left:70.6%;top:61%">5</span></div>
+      <div class="cs-laptop" style="flex:999 1 480px"><div class="scr"><div class="cs-pinned"><div class="plate" data-screen="ScreenerWeb"></div><span class="cs-pin" aria-hidden="true" style="left:2.4%;top:30.4%">1</span><span class="cs-pin" aria-hidden="true" style="left:28.2%;top:23.1%">2</span><span class="cs-pin" aria-hidden="true" style="left:28.2%;top:42%">3</span><span class="cs-pin" aria-hidden="true" style="left:28.2%;top:51.7%">4</span><span class="cs-pin" aria-hidden="true" style="left:74.1%;top:66.6%">5</span></div></div><div class="base"></div></div>
       <ol class="cs-levels" style="flex:1 1 300px;grid-template-columns:minmax(0,1fr);gap:14px">
         <li><span class="cs-num">1</span><span><b>Criteria on the left</b><span class="cs-s">Fund categories first, extra filters below, Add Filters at the end.</span></span></li>
         <li><span class="cs-num">2</span><span><b>Investment Lookup</b><span class="cs-s">For investors who already know the symbol, so they skip filtering.</span></span></li>
@@ -282,7 +282,7 @@
       <dl class="cs-pdl" style="margin-top:4px"><dt>Left filter panel</dt><dd>→ a grid of filter tiles</dd><dt>Modal dialog</dt><dd>→ a bottom sheet</dd><dt>Seven-column grid</dt><dd>→ a two-line fund card</dd></dl>
     </div>
     <div class="cs-main">
-      <figure class="cs-fig"><img class="cs-img bare" src="img/ede7c7d00d21c4da0767a7860f24e913.png" alt="Web Add Filters dialog over the Screener" loading="lazy"><figcaption><b>Add Filters, in Citi’s design system</b>The grouped chips from the greyscale spec. A filled blue chip with a tick means the filter is on. Citi Blue appears only on chips, pills, checkboxes and the Buy, Sell and Apply buttons.</figcaption></figure>
+      <figure class="cs-fig"><div class="cs-laptop" role="img" aria-label="Web Add Filters dialog over the Screener"><div class="scr"><div class="plate" data-screen="ScreenerWebFilters"></div></div><div class="base"></div></div><figcaption><b>Add Filters, in Citi’s design system</b>The grouped chips from the greyscale spec. A filled blue chip with a tick means the filter is on. Citi Blue appears only on chips, pills, checkboxes and the Buy, Sell and Apply buttons.</figcaption></figure>
     </div>
   </div>
   <div class="cs-block tight cs-shots" style="--w:168px">
