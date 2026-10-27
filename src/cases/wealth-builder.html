@@ -15,8 +15,8 @@
     </div>
   </div>
   <div class="cs-hero-art" aria-hidden="true">
-    <div class="cs-combo" style="padding-bottom:24px">
-      <div class="cs-laptop wide"><div class="scr"><img src="img/d7afe99bf1c7afd9d64f343bfd417a09.png" alt=""></div><div class="base"></div></div>
+    <div class="cs-combo" style="padding-bottom:24px;width:600px">
+      <div class="cs-laptop wide" style="width:88%"><div class="scr"><img src="img/d7afe99bf1c7afd9d64f343bfd417a09.png" alt=""></div><div class="base"></div></div>
       <img class="cs-img bare over" src="img/d80a82240f5b91b058f768b62d999dbc.png" alt="" style="border-radius:18px;box-shadow:0 16px 40px rgba(14,31,59,.18)">
     </div>
   </div>
@@ -125,6 +125,12 @@
 
   <div class="cs-block tight cs-g" style="--m:290px">
     <div class="cs-card" style="padding:22px;gap:14px">
+      <div class="cs-persona"><img src="img/persona-jordan.jpg" alt="Stock photo used for the Jordan proto-persona"><span><span class="cs-eyebrow">The Starter · new</span><b>Jordan, 26</b><span class="cs-s">Graphic designer · Austin</span></span></div>
+      <p class="cs-quote-line" style="font-size:16px">“I have $50 to start and no idea what I’m doing. I just know I’m already behind.”</p>
+      <dl class="cs-pdl"><dt>Needs</dt><dd>Guided onboarding, low minimums, simple goals, mobile first</dd><dt>Pain point</dt><dd>Jargon and fear of loss. Three apps opened and closed without investing a cent.</dd></dl>
+      <p class="cs-s" style="margin-top:auto;padding-top:12px;border-top:1px solid var(--c-rule);color:var(--c-ink)"><b>Onboarding must</b> speak plainly, ask one thing at a time, and never feel like a test.</p>
+    </div>
+    <div class="cs-card" style="padding:22px;gap:14px">
       <div class="cs-persona"><img src="img/persona-alex.jpg" alt="Stock photo used for the Alex proto-persona"><span><span class="cs-eyebrow">The Optimizer · advanced</span><b>Alex, 34</b><span class="cs-s">Software engineer · San Francisco</span></span></div>
       <p class="cs-quote-line" style="font-size:16px">“I can build my own spreadsheet for this. Convince me a robo-advisor is actually worth it.”</p>
       <dl class="cs-pdl"><dt>Needs</dt><dd>Performance detail, low expense ratios, a way to inspect the strategy</dd><dt>Pain point</dt><dd>Robo-advisors feel like a black box, and fees quietly eat returns</dd></dl>
@@ -135,12 +141,6 @@
       <p class="cs-quote-line" style="font-size:16px">“I just want something I can trust to handle this while I focus on everything else in my life.”</p>
       <dl class="cs-pdl"><dt>Needs</dt><dd>Set-and-forget investing, rebalancing, goal tracking, an advisor for big decisions</dd><dt>Pain point</dt><dd>Afraid of a costly mistake near retirement</dd></dl>
       <p class="cs-s" style="margin-top:auto;padding-top:12px;border-top:1px solid var(--c-rule);color:var(--c-ink)"><b>Onboarding must</b> recommend with confidence, make the risk visible, and offer a person.</p>
-    </div>
-    <div class="cs-card" style="padding:22px;gap:14px">
-      <div class="cs-persona"><img src="img/persona-jordan.jpg" alt="Stock photo used for the Jordan proto-persona"><span><span class="cs-eyebrow">The Starter · new</span><b>Jordan, 26</b><span class="cs-s">Graphic designer · Austin</span></span></div>
-      <p class="cs-quote-line" style="font-size:16px">“I have $50 to start and no idea what I’m doing. I just know I’m already behind.”</p>
-      <dl class="cs-pdl"><dt>Needs</dt><dd>Guided onboarding, low minimums, simple goals, mobile first</dd><dt>Pain point</dt><dd>Jargon and fear of loss. Three apps opened and closed without investing a cent.</dd></dl>
-      <p class="cs-s" style="margin-top:auto;padding-top:12px;border-top:1px solid var(--c-rule);color:var(--c-ink)"><b>Onboarding must</b> speak plainly, ask one thing at a time, and never feel like a test.</p>
     </div>
   </div>
   <p class="cs-xs" style="margin-top:12px;font-size:12px">Proto-personas from research synthesis and customer data. Stock photos, not real people.</p>
@@ -183,16 +183,16 @@
     <div class="cs-side">
       <p class="cs-eyebrow">03 · Develop</p>
       <h2 class="cs-h2" id="wb-develop">Structure first, then a need for every screen</h2>
+    </div>
+    <div class="cs-main" style="align-self:flex-end">
       <p class="cs-lead">Before any colour, each step was a greyscale wireframe with one job, so feedback stayed on order and wording. Then each screen answered one need from research, without a single finance term in the questions.</p>
     </div>
-    <div class="cs-main">
-      <div class="cs-g" style="--m:300px;gap:16px">
-        <figure class="cs-card" style="margin:0;flex-direction:row;gap:16px;padding:16px;align-items:flex-start"><img class="cs-img bare" src="img/d80a82240f5b91b058f768b62d999dbc.png" alt="iOS goal step: three goal cards, Retirement selected" style="width:120px;flex:none" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“Start from what I’m saving for, not from products”</span><span class="v sol" style="font-size:15px">Three goals, in the investor’s own words</span><span class="cs-xs" style="margin-top:4px">First-person sentences people recognise. Selected uses a heavier Dark Blue border and a check, never colour alone. No wrong answer: every goal offers the same account.</span></figcaption></figure>
-        <figure class="cs-card" style="margin:0;flex-direction:row;gap:16px;padding:16px;align-items:flex-start"><img class="cs-img bare" src="img/4dd88f0cb78622b534d647ba1ab8d9f5.png" alt="iOS investing outlook step with four questions" style="width:120px;flex:none" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“Ask about my risk without a finance exam”</span><span class="v sol" style="font-size:15px">Four questions, answered in plain sentences</span><span class="cs-xs" style="margin-top:4px">Behaviour, not a score: “I’d withdraw a portion of my assets” is easier to answer honestly. Question small, answer bold, all four editable in view.</span></figcaption></figure>
-        <figure class="cs-card" style="margin:0;flex-direction:row;gap:16px;padding:16px;align-items:flex-start"><img class="cs-img bare" src="img/74c5ed962f8c0036b75e4503c556c2da.png" alt="iOS investment style step with style cards" style="width:120px;flex:none" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“Invest in a way that fits how I think about money”</span><span class="v sol" style="font-size:15px">Three styles, one line each, with a comparison</span><span class="cs-xs" style="margin-top:4px">Index tracking, a blend, or sustainable. “Compare these styles” sits above the cards, so a style is never picked blind.</span></figcaption></figure>
-        <figure class="cs-card" style="margin:0;flex-direction:row;gap:16px;padding:16px;align-items:flex-start"><img class="cs-img bare" src="img/961663037466ce56872fc353b151a1da.png" alt="iOS strategy step: Best Match with target asset mix" style="width:120px;flex:none" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“A recommendation I can trust, and a say in it”</span><span class="v sol" style="font-size:15px">Best Match first, alternatives one tap away</span><span class="cs-xs" style="margin-top:4px">Traced back to the answers, the mix shown as a donut and as percentages, and More Conservative or More Aggressive always possible, never the default.</span></figcaption></figure>
-      </div>
-    </div>
+  </div>
+  <div class="cs-block tight cs-g" style="--m:220px;gap:16px;align-items:start">
+      <figure class="cs-card" style="margin:0;gap:16px;padding:20px"><img class="cs-img bare" src="img/d80a82240f5b91b058f768b62d999dbc.png" alt="iOS goal step: three goal cards, Retirement selected" style="width:100%;max-width:220px;margin-inline:auto" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“Start from what I’m saving for, not from products”</span><span class="v sol" style="font-size:15px">Three goals, in the investor’s own words</span><span class="cs-xs" style="margin-top:4px">First-person sentences people recognise. Selected uses a heavier Dark Blue border and a check, never colour alone. No wrong answer: every goal offers the same account.</span></figcaption></figure>
+      <figure class="cs-card" style="margin:0;gap:16px;padding:20px"><img class="cs-img bare" src="img/4dd88f0cb78622b534d647ba1ab8d9f5.png" alt="iOS investing outlook step with four questions" style="width:100%;max-width:220px;margin-inline:auto" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“Ask about my risk without a finance exam”</span><span class="v sol" style="font-size:15px">Four questions, answered in plain sentences</span><span class="cs-xs" style="margin-top:4px">Behaviour, not a score: “I’d withdraw a portion of my assets” is easier to answer honestly. Question small, answer bold, all four editable in view.</span></figcaption></figure>
+      <figure class="cs-card" style="margin:0;gap:16px;padding:20px"><img class="cs-img bare" src="img/74c5ed962f8c0036b75e4503c556c2da.png" alt="iOS investment style step with style cards" style="width:100%;max-width:220px;margin-inline:auto" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“Invest in a way that fits how I think about money”</span><span class="v sol" style="font-size:15px">Three styles, one line each, with a comparison</span><span class="cs-xs" style="margin-top:4px">Index tracking, a blend, or sustainable. “Compare these styles” sits above the cards, so a style is never picked blind.</span></figcaption></figure>
+      <figure class="cs-card" style="margin:0;gap:16px;padding:20px"><img class="cs-img bare" src="img/961663037466ce56872fc353b151a1da.png" alt="iOS strategy step: Best Match with target asset mix" style="width:100%;max-width:220px;margin-inline:auto" loading="lazy"><figcaption class="cs-need"><span class="k">Need</span><span class="v" style="font-size:15px">“A recommendation I can trust, and a say in it”</span><span class="v sol" style="font-size:15px">Best Match first, alternatives one tap away</span><span class="cs-xs" style="margin-top:4px">Traced back to the answers, the mix shown as a donut and as percentages, and More Conservative or More Aggressive always possible, never the default.</span></figcaption></figure>
   </div>
 
   <div class="cs-block">
@@ -277,14 +277,14 @@
     <div class="cs-side">
       <p class="cs-eyebrow">04 · Deliver</p>
       <h2 class="cs-h2" id="wb-deliver">The promise, before the first question</h2>
+    </div>
+    <div class="cs-main" style="align-self:flex-end">
       <p class="cs-lead">Onboarding starts on the guided investing page. It answers what stops people at the door, what it costs, what they need and what happens next, before anyone is asked anything.</p>
     </div>
-    <div class="cs-main">
-      <div class="cs-g" style="--m:280px;align-items:start">
+  </div>
+  <div class="cs-block tight cs-g" style="--m:400px;gap:20px 28px;align-items:start">
         <figure class="cs-fig"><img class="cs-img" src="img/dcd5aee5136994ecfa878f4ccac8b5ab.png" alt="Guided investing page: hero, features and the two tiers" loading="lazy"><figcaption><b>One action, cost in plain sight</b>Open an Account with the eligible account it needs right under it, the fee offer in the hero, and two tiers side by side.</figcaption></figure>
         <figure class="cs-fig"><img class="cs-img" src="img/de0a5f31e1a64d15db10fa171ddf650d.png" alt="How guided investing works, and the three investment styles" loading="lazy"><figcaption><b>The journey, previewed</b>Answer a few questions, choose a strategy, sit back: the same order onboarding follows. Styles are met here first.</figcaption></figure>
-      </div>
-    </div>
   </div>
   <div class="cs-block">
     <div class="cs-head">
@@ -292,9 +292,9 @@
       <p>Investors see what they own, what it could grow into, and what a different strategy would have meant.</p>
     </div>
     <div class="cs-shots">
-      <figure class="cs-shot" style="width:200px"><img class="cs-img bare" src="img/15e9efaef299e1392313226f553a3c2b.png" alt="iOS detailed holdings with a donut and every percentage" loading="lazy"><figcaption>What I own<small>The mix behind the strategy, the detail Alex asked for</small></figcaption></figure>
-      <figure class="cs-shot" style="width:200px"><img class="cs-img bare" src="img/1bdf00f16a303d6fd40e8d0d83e5f073.png" alt="iOS projected investment value with a range and horizon chips" loading="lazy"><figcaption>What it could become<small>A best estimate and a range, 5 to 50 years</small></figcaption></figure>
-      <figure class="cs-shot" style="width:200px"><img class="cs-img bare" src="img/4fdaf74e1f7e877ba5bb94c39cbd08d0.png" alt="iOS strategy comparison with three lines" loading="lazy"><figcaption>What if I’d chosen differently<small>The three strategies as toggles</small></figcaption></figure>
+      <figure class="cs-shot" style="width:240px"><img class="cs-img bare" src="img/15e9efaef299e1392313226f553a3c2b.png" alt="iOS detailed holdings with a donut and every percentage" loading="lazy"><figcaption>What I own<small>The mix behind the strategy, the detail Alex asked for</small></figcaption></figure>
+      <figure class="cs-shot" style="width:240px"><img class="cs-img bare" src="img/1bdf00f16a303d6fd40e8d0d83e5f073.png" alt="iOS projected investment value with a range and horizon chips" loading="lazy"><figcaption>What it could become<small>A best estimate and a range, 5 to 50 years</small></figcaption></figure>
+      <figure class="cs-shot" style="width:240px"><img class="cs-img bare" src="img/4fdaf74e1f7e877ba5bb94c39cbd08d0.png" alt="iOS strategy comparison with three lines" loading="lazy"><figcaption>What if I’d chosen differently<small>The three strategies as toggles</small></figcaption></figure>
     </div>
   </div>
 </section>
