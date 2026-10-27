@@ -578,6 +578,11 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-need .v.sol{color:var(--c-eyebrow)}
 .cs-car{flex:none;width:var(--cw,520px);max-width:100%;box-sizing:border-box;padding:10px;border-radius:24px;background:#0D0E11;box-shadow:0 24px 48px rgba(20,22,30,.18)}
 .cs-car > .plate{border:0;border-radius:15px}
+.cs-pinned{position:relative;display:block;min-width:0}
+.cs-phone > .cs-pinned > .plate{border:0;border-radius:13% / 6%}
+.cs-browser > .cs-pinned > .plate{display:block;width:100%;border:0;border-radius:0}
+.cs-pinned > img{display:block}
+.cs-pin{position:absolute;z-index:2;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--c-dark);color:var(--c-ondark);font-size:12px;font-weight:600;line-height:1;box-shadow:0 0 0 2px var(--c-surface),0 3px 8px rgba(20,22,30,.22);pointer-events:none}
 .cs-img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--c-rule);background:var(--c-surface)}
 .cs-img.bare{border:0;background:none;border-radius:0}
 
@@ -744,13 +749,6 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 
     <div>
       <section class="cv-section">
-        <h2>Profile</h2>
-        <div class="prose">
-          <p>Senior product designer with 10+ years of professional experience, focused on visual and interaction design for consumer mobile and web products. Born and raised in Istanbul, with ten years in New York and two in London, I design with cultural context in mind and work natively in Turkish and English.</p>
-        </div>
-      </section>
-
-      <section class="cv-section">
         <h2>Experience</h2>
         <ol class="xp">
           <li>
@@ -911,22 +909,22 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   var CASES = [
     {id:'miiras', name:'Miiras', kind:'Founder project', title:'Making difficult family talks easier to start',
      summary:'A conversation app that helps families start talking about money, inheritance, and plans for illness or accidents. The research changed the problem itself, from tracking wealth to starting the talk.',
-     role:'Founder and designer', platform:'iOS and Android', year:'2026'},
+     role:'Founder and designer', market:'B2C', platform:'iOS and Android', year:'2026'},
+    {id:'cerehive', name:'CereHive', kind:'AI recruitment platform · SaaS', title:'AI recruiting that finds the best candidates, and shows why',
+     summary:'An AI-native recruitment platform that helps hiring teams find and screen the best candidates for each role. I rebuilt it around the open role so every AI match score shows its reasons, and designed its Figma design system.',
+     role:'Senior Product Designer', market:'B2B', platform:'Web app', year:'2025 – 2026'},
     {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
      summary:'A four-step booking flow in Turkish and English for a thoracic surgeon’s online consultations, built around WhatsApp, bank transfer and getting the patient’s records in on time.',
-     role:'Designer and builder', platform:'Web, mobile first', year:'2026'},
-    {id:'cerehive', name:'CereHive', kind:'AI recruitment platform · B2B SaaS', title:'AI recruiting that finds the best candidates, and shows why',
-     summary:'An AI-native recruitment platform that helps hiring teams find and screen the best candidates for each role. I rebuilt it around the open role so every AI match score shows its reasons, and designed its Figma design system.',
-     role:'Senior Product Designer', platform:'Web app', year:'2025 – 2026'},
+     role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'},
     {id:'self-invest', name:'Citi Self Invest', kind:'Citibank', title:'The ETF and Mutual Fund Screener',
      summary:'Narrowing thousands of funds to the few that fit, for investors new to funds and for experienced ones who want full control, on web and iPhone.',
-     role:'Senior Product Designer', platform:'Web and iOS', year:'2021 – 2024'},
+     role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2021 – 2024'},
     {id:'wealth-builder', name:'Citi Wealth Builder', kind:'Citibank', title:'Guided investing onboarding',
      summary:'Onboarding for Citi’s first robo-advisor: turning a goal and a comfort with risk into a portfolio investors trust, one question at a time.',
-     role:'Senior Product Designer', platform:'Web and iOS', year:'2021 – 2024'},
+     role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2021 – 2024'},
     {id:'yol', name:'Yol Arkadaşı', kind:'Independent concept · Navigation', title:'Directions you can trust, even when the map is wrong',
      summary:'A navigation concept for Istanbul drivers. It flags a doubtful turn with the evidence behind it, has a Plan B ready before the junction, and lets drivers fix the map after they park. Written in Turkish first, for iPhone, the car display and Apple Watch.',
-     role:'Solo designer', platform:'iPhone, car display and Watch', year:'2026'}
+     role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'}
   ];
   var BY = {}; CASES.forEach(function(c, i){ c.i = i; BY[c.id] = c; });
   var ARROW = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>';
@@ -1075,7 +1073,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       return '<li><a href="#' + c.id + '">' +
         '<span class="ix-name">' + esc(c.name) + '<span class="ix-kind">' + esc(c.kind) + '</span></span>' +
         '<span class="ix-title">' + esc(c.title) + '</span>' +
-        '<span class="ix-meta">' + esc(c.platform) + ' · ' + esc(c.year) + '</span>' +
+        '<span class="ix-meta">' + esc(c.market) + ' · ' + esc(c.platform) + ' · ' + esc(c.year) + '</span>' +
         '<span class="ix-arrow">' + ARROW + '</span></a></li>';
     }).join('');
   }
@@ -1099,7 +1097,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
           '<span class="label">' + esc(c.kind) + '</span>' +
           '<h2 class="card-name">' + esc(c.name) + '</h2>' +
           '<p class="card-title">' + esc(c.title) + '</p>' +
-          '<div class="chips"><span class="chip">' + esc(c.platform) + '</span><span class="chip">' + esc(c.year) + '</span></div>' +
+          '<div class="chips"><span class="chip">' + esc(c.market) + '</span><span class="chip">' + esc(c.platform) + '</span><span class="chip">' + esc(c.year) + '</span></div>' +
           '<span class="go" style="margin-top:4px">Open the case study</span>' +
         '</div></a>';
     }).join('');
