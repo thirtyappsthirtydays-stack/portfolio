@@ -183,7 +183,7 @@
   };
   var T = {
     en:{spec:'Lung Surgery Specialist', steps:['Details','Payment','Language','Appointment'], of:function(a,b){return a+' of '+b;}, back:'Back', cont:'Continue', enter:'or press Enter ↵', req:'Required',
-      title:'Online Medical Assessment with Prof. Dr. Semih Halezeroğlu', sub:'Complete your appointment in 3 simple steps.', go:'Go to Form',
+      title:'Online Medical Assessment with Prof. Dr. Semih Halezeroğlu', sub:'Three stages, from booking to your consultation.', go:'Go to Form',
       c1h:'Fill the Form & Book Your Appointment', c1p:'Enter the patient\'s details, complete the payment, and select a convenient appointment time.',
       c2h:'Document Review', c2p:'Your medical records on E-Nabız, imaging studies, lab results, and any documents you share will be thoroughly reviewed by Prof. Dr. Semih Halezeroğlu.',
       c3h:'Consultation', c3p:'At the scheduled time, Prof. Dr. Semih Halezeroğlu will call you via WhatsApp video. The consultation lasts 30 minutes.',
@@ -207,7 +207,7 @@
       prepH:'What to do before the consultation?', prep1:'Note down the questions you want to ask the doctor.', prep2wa:'Keep the phone nearby at the booked time. The doctor calls on WhatsApp video.', prep2meet:'Keep the device you\'ll use for Google Meet nearby at the booked time.',
       contact:'Questions? Call or WhatsApp our assistant at'},
     tr:{spec:'Göğüs Cerrahisi Uzmanı', steps:['Bilgiler','Ödeme','Dil','Randevu'], of:function(a,b){return a+' / '+b;}, back:'Geri', cont:'Devam', enter:'ya da Enter ↵', req:'Zorunlu',
-      title:'Prof. Dr. Semih Halezeroğlu ile Online Tıbbi Değerlendirme', sub:'Randevunuzu 3 kolay adımda tamamlayın.', go:'Forma Git',
+      title:'Prof. Dr. Semih Halezeroğlu ile Online Tıbbi Değerlendirme', sub:'Randevudan görüşmeye üç aşama.', go:'Forma Git',
       c1h:'Formu Doldurun ve Randevunuzu Alın', c1p:'Hastanın bilgilerini girin, ödemeyi tamamlayın ve size uygun bir randevu saati seçin.',
       c2h:'Belge İncelemesi', c2p:'E-Nabız’daki tıbbi kayıtlarınız, görüntülemeleriniz, tahlil sonuçlarınız ve paylaştığınız tüm belgeler Prof. Dr. Semih Halezeroğlu tarafından ayrıntılı olarak incelenir.',
       c3h:'Görüşme', c3p:'Randevu saatinde Prof. Dr. Semih Halezeroğlu sizi WhatsApp üzerinden görüntülü arar. Görüşme 30 dakika sürer.',
