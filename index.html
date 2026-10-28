@@ -1453,7 +1453,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "8ac94fd9f2", "bofa": "bd668f8f97", "cerehive": "755dbb9ec7", "consultation": "1d5c276399", "flexit": "3ca13caf44", "livs-love-pool": "9c86da4d2f", "miiras": "dfa86ccad2", "self-invest": "125542fa04", "thirty-apps": "5eccbb1cc6", "wealth-builder": "48115a3f84", "yol": "712ac8c0ba"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "8ac94fd9f2", "bofa": "bd668f8f97", "cerehive": "755dbb9ec7", "consultation": "1d5c276399", "flexit": "3ca13caf44", "livs-love-pool": "b6ed16a81a", "miiras": "dfa86ccad2", "self-invest": "125542fa04", "thirty-apps": "5eccbb1cc6", "wealth-builder": "48115a3f84", "yol": "712ac8c0ba"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
