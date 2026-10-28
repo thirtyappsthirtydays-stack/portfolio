@@ -148,8 +148,37 @@ html.is-home .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .e-values li > span{font-size:15px;color:#3F5356}
 .e-video{padding-bottom:clamp(72px,9vw,120px)}
 .e-video figure{margin:0;display:flex;flex-direction:column;gap:16px}
-.e-vframe{border-radius:24px;overflow:hidden;background:#0B1022;border:1px solid rgba(255,255,255,.7);box-shadow:0 30px 80px rgba(30,50,54,.16)}
-.e-vframe video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;background:#0B1022}
+.e-vframe{position:relative;border-radius:24px;overflow:hidden;background:#0B1022;border:1px solid rgba(255,255,255,.7);box-shadow:0 30px 80px rgba(30,50,54,.16)}
+.e-vframe video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;background:#0B1022;cursor:pointer}
+.e-vframe:fullscreen{display:flex;align-items:center;border:0;border-radius:0;background:#000}
+.e-vframe:fullscreen video{height:100%;aspect-ratio:auto;object-fit:contain}
+.e-vctl{position:absolute;top:clamp(10px,2vw,20px);right:clamp(10px,2vw,20px);display:flex;align-items:stretch;gap:8px}
+.page[data-page="home"] .e-vbtn{display:inline-flex;align-items:center;justify-content:center;margin:0;border:1px solid rgba(255,255,255,.32);border-radius:8px;background:rgba(255,255,255,.14);color:#FFFFFF;-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);font-family:var(--f-text);cursor:pointer;transition:background .25s,border-color .25s}
+.page[data-page="home"] .e-vbtn:hover{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.55)}
+.page[data-page="home"] .e-vbtn:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px}
+.e-vbtn svg{display:block;width:22px;height:22px}
+.page[data-page="home"] .e-vplay{gap:14px;padding:12px 22px 12px 16px;text-align:left}
+.e-vplay .ic{display:grid;place-items:center;width:30px;height:30px}
+.e-vplay .ic svg{width:26px;height:26px}
+.e-vplay .tx{display:flex;flex-direction:column;gap:2px;min-width:9.5em}
+.e-vplay b{font-size:20px;line-height:1.15;font-weight:500;letter-spacing:-.005em}
+.e-vplay small{font-size:13px;line-height:1.3;color:rgba(255,255,255,.74);font-variant-numeric:tabular-nums}
+.e-vplay .i-pause,.e-vsound .i-on{display:none}
+.e-vframe[data-state="playing"] .e-vplay .i-play{display:none}
+.e-vframe[data-state="playing"] .e-vplay .i-pause{display:block}
+.e-vsound[aria-pressed="true"] .i-on{display:block}
+.e-vsound[aria-pressed="true"] .i-off{display:none}
+.page[data-page="home"] .e-vsound{width:54px;padding:0}
+.page[data-page="home"] .e-vfull{position:absolute;right:clamp(10px,2vw,20px);bottom:clamp(10px,2vw,20px);width:44px;height:44px;padding:0}
+.e-vfull svg{width:20px;height:20px}
+@media (max-width:640px){
+  .page[data-page="home"] .e-vplay{gap:8px;padding:6px 12px 6px 8px}
+  .e-vplay .ic{width:22px;height:22px}.e-vplay .ic svg{width:18px;height:18px}
+  .e-vplay .tx{min-width:7.5em}
+  .e-vplay b{font-size:14.5px}.e-vplay small{font-size:11.5px}
+  .page[data-page="home"] .e-vsound{width:44px}
+  .page[data-page="home"] .e-vfull{width:36px;height:36px}
+}
 .e-video figcaption{display:flex;flex-direction:column;gap:10px;font-size:15px;color:#4A5D60}
 .e-vt{font-family:var(--f-display);font-size:22px;line-height:1.2;color:#1E3236}
 .e-vt span{font-family:Manrope,system-ui,sans-serif;font-size:14px;color:#4A5D60}
@@ -175,7 +204,10 @@ html.is-home .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .e-result{font-size:16px;font-weight:600}
 .page[data-page="home"] .e-read{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:#3B6A65;text-decoration:none}
 .e-read:hover{text-decoration:underline;text-underline-offset:3px}
-.e-list{flex:999 1 340px;min-width:0;list-style:none;margin:0;padding:0;border-bottom:1px solid rgba(30,50,54,.16)}
+.e-listcol{flex:999 1 340px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.page[data-page="home"] .e-all{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:#3B6A65;text-decoration:none}
+.e-all:hover{text-decoration:underline;text-underline-offset:3px}
+.e-list{align-self:stretch;min-width:0;list-style:none;margin:0;padding:0;border-bottom:1px solid rgba(30,50,54,.16)}
 .page[data-page="home"] .e-item{display:flex;flex-direction:column;gap:6px;padding:20px 0;border-top:1px solid rgba(30,50,54,.16);text-decoration:none;color:#44585B;transition:padding-left .4s ease,box-shadow .4s ease,color .4s ease}
 .e-item .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
 .e-item b{font-family:var(--f-display);font-size:26px;line-height:1.15;font-weight:300}
@@ -845,7 +877,14 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 
   <section class="e-in e-video" aria-labelledby="e-video-t">
     <figure class="e-reveal">
-      <div class="e-vframe"><video controls playsinline preload="metadata" poster="img/story-poster.jpg" aria-labelledby="e-video-t"><source src="media/career-story.mp4" type="video/mp4"></video></div>
+      <div class="e-vframe" id="e-vframe" data-state="ambient">
+        <video id="e-video" muted loop playsinline preload="metadata" poster="img/story-poster.jpg" aria-labelledby="e-video-t"><source src="media/career-story.mp4" type="video/mp4"></video>
+        <div class="e-vctl">
+          <button type="button" class="e-vbtn e-vsound" id="e-vsound" aria-pressed="false" aria-label="Sound" title="Turn sound on"><svg class="i-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor" stroke="none"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor" stroke="none"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button>
+          <button type="button" class="e-vbtn e-vplay" id="e-vplay"><span class="ic"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4.5" width="4" height="15" rx="1" fill="currentColor"/><rect x="14" y="4.5" width="4" height="15" rx="1" fill="currentColor"/></svg></span><span class="tx"><b id="e-vplay-t">Play the story</b><small id="e-vplay-s">0:42 · A short story</small></span></button>
+        </div>
+        <button type="button" class="e-vbtn e-vfull" id="e-vfull" aria-label="Watch full screen" title="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+      </div>
       <figcaption>
         <span class="e-vt" id="e-video-t">How I got here <span>· 42 seconds</span></span>
         <details class="e-story">
@@ -874,7 +913,10 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
         <div class="e-shots" id="e-shots" aria-hidden="true"></div>
         <div class="e-foot"><span class="e-result" id="e-result"></span><a class="e-read" id="e-read" href="#miiras">Read the case study<span aria-hidden="true">&nbsp;→</span></a></div>
       </div>
-      <ul class="e-list" id="e-list" aria-label="Selected case studies"></ul>
+      <div class="e-listcol">
+        <ul class="e-list" id="e-list" aria-label="Selected case studies"></ul>
+        <a class="e-all" href="#work">See all work<span aria-hidden="true">&nbsp;→</span></a>
+      </div>
     </div>
   </section>
 
@@ -1250,6 +1292,55 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   }
 
   /* ---------- Home ---------- */
+  /* The story video: a quiet muted loop while it's on screen; "Play the story" starts it from the top.
+     Sound stays off until the visitor turns it on. No autoplay for people who prefer less motion. */
+  var pauseStory = function(){};
+  function homeVideo(){
+    var box = document.getElementById('e-vframe'), v = document.getElementById('e-video');
+    if(!box || !v) return;
+    var btn = document.getElementById('e-vplay'), t = document.getElementById('e-vplay-t'), sub = document.getElementById('e-vplay-s');
+    var snd = document.getElementById('e-vsound'), full = document.getElementById('e-vfull');
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var state = 'ambient', LEN = '0:42';
+    v.muted = true;
+    function mmss(x){ x = Math.max(0, Math.floor(x || 0)); return Math.floor(x / 60) + ':' + ('0' + x % 60).slice(-2); }
+    function go(p){ if(p && p.catch) p.catch(function(){}); }
+    function set(s){
+      state = s; box.dataset.state = s;
+      t.textContent = {playing:'Pause the story', paused:'Resume the story', ended:'Play it again'}[s] || 'Play the story';
+      if(s === 'ambient' || s === 'ended') sub.textContent = LEN + ' · A short story';
+      else sub.textContent = mmss(v.currentTime) + ' / ' + LEN;
+    }
+    v.addEventListener('loadedmetadata', function(){ if(isFinite(v.duration)) LEN = mmss(v.duration); set(state); });
+    v.addEventListener('timeupdate', function(){ if(state === 'playing' || state === 'paused') sub.textContent = mmss(v.currentTime) + ' / ' + LEN; });
+    v.addEventListener('ended', function(){ set('ended'); });
+    function toggle(){
+      if(state === 'playing'){ v.pause(); set('paused'); }
+      else if(state === 'paused'){ go(v.play()); set('playing'); }
+      else { v.loop = false; v.currentTime = 0; go(v.play()); set('playing'); }
+    }
+    btn.addEventListener('click', toggle);
+    v.addEventListener('click', toggle);
+    snd.addEventListener('click', function(){
+      v.muted = !v.muted;
+      snd.setAttribute('aria-pressed', String(!v.muted));
+      snd.title = v.muted ? 'Turn sound on' : 'Turn sound off';
+    });
+    full.addEventListener('click', function(){
+      if(document.fullscreenElement){ document.exitFullscreen(); return; }
+      if(box.requestFullscreen) go(box.requestFullscreen());
+      else if(v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    });
+    pauseStory = function(){ if(!v.paused){ v.pause(); if(state === 'playing') set('paused'); } };
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting && e.intersectionRatio >= .35){ if(state === 'ambient' && !reduce){ v.loop = true; go(v.play()); } }
+          else pauseStory();
+        });
+      }, {threshold:[0, .35]}).observe(box);
+    }
+  }
   function homeWork(){
     var list = document.getElementById('e-list'), shots = document.getElementById('e-shots');
     var res = document.getElementById('e-result'), read = document.getElementById('e-read');
@@ -1662,7 +1753,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     var root = document.documentElement, home = document.querySelector('[data-page="home"]');
     root.classList.toggle('is-home', page === 'home');
     if(page === 'home'){ if(savedTheme === undefined) savedTheme = root.dataset.theme || null; root.dataset.theme = 'light'; homeSeen = true; }
-    else if(homeSeen) home.classList.add('e-played');
+    else { if(homeSeen) home.classList.add('e-played'); pauseStory(); }
     if(page === 'work'){ var wp = document.querySelector('[data-page="work"]'); mountScenes(wp); mountCovers(wp); }
     window.scrollTo(0, 0);
   }
@@ -1677,7 +1768,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     }catch(e){ sel(); }
   });
 
-  homeWork(); cards();
+  homeWork(); homeVideo(); cards();
   mountScenes(document.querySelector('[data-page="home"]')); mountCovers(document.querySelector('[data-page="home"]'));
   window.addEventListener('hashchange', route);
   route();
