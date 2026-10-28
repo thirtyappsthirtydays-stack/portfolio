@@ -1107,10 +1107,10 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     {id:'wealth-builder', name:'Citi Wealth Builder Plus', kind:'Citibank', title:'Hybrid investing onboarding',
      summary:'Onboarding for Citi’s hybrid investing product: a portfolio Citi manages, plus a Financial Advisor, at a lower cost than full advisory. One question at a time, from a goal to a first advisor appointment.',
      role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2022 – 2024'},
-    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
+    {id:'bofa', name:'Bank of America Capital Management', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
      summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
      role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'},
-    {id:'bofa-complaints', name:'Complaints Reporting', kind:'Bank of America · Enterprise Business Intelligence', title:'One complaints dataset, a view for each team',
+    {id:'bofa-complaints', name:'Bank of America Business Intelligence', kind:'Enterprise Business Intelligence', title:'One complaints dataset, a view for each team',
      summary:'Reports built on one complaints dataset, with a view each for Compliance, Risk and Legal. The usability score rose from 70 to 90, and finding complaint data took half the time.',
      role:'Product Designer', market:'Internal', platform:'Reporting dashboards', year:'2020 – 2021'},
     {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
@@ -1138,8 +1138,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     'cerehive': {kind:'AI recruitment · 2025–26', result:'$300K ARR in the first 12 months', acc:'#B9A6F2', dk:'#251548'},
     'self-invest': {kind:'Citibank · 2021–23', result:'$2.2B+ AUM growth and 70K+ new accounts', acc:'#5FB4EB', dk:'#002D72'},
     'wealth-builder': {kind:'Citibank · 2022–24', result:'$8M+ in assets within 6 months', acc:'#8FD0D3', dk:'#0B3B44'},
-    'bofa': {kind:'Capital management · 2016–20', result:'Reporting cycle cut from 10 days to 3', acc:'#E31837', dk:'#5A0B1E'},
-    'bofa-complaints': {kind:'Bank of America · 2020–21', result:'Usability score raised from 70 to 90', acc:'#3987E5', dk:'#1F3A5F'},
+    'bofa': {kind:'Reporting automation · 2016–20', result:'Reporting cycle cut from 10 days to 3', acc:'#E31837', dk:'#5A0B1E'},
+    'bofa-complaints': {kind:'Complaints reporting · 2020–21', result:'Usability score raised from 70 to 90', acc:'#3987E5', dk:'#1F3A5F'},
     'consultation': {kind:'Healthcare · 2026', result:'35 consultations booked since launch', acc:'#D4B97A', dk:'#1B3A5C'},
     'yol': {kind:'Concept · 2026', result:'Directions you can trust, on iPhone, car and Watch', acc:'#FFB020', dk:'#171A21'},
     'thirty-apps': {kind:'Personal challenge · 2026', result:'30 working prototypes, each in under 24 hours', acc:'#FF8FB1', dk:'#2B1A45'},
@@ -1302,7 +1302,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   function cards(){ gallery(CASES.map(function(c){ return c.id; }), document.getElementById('cards'), 'h2'); }
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "d00bdb83c3", "bofa": "9ffb4772ca", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "e6ff709a57", "livs-love-pool": "7d42c66d12", "miiras": "cebb6ebfd8", "self-invest": "2dc513a0df", "thirty-apps": "04d41ea7e4", "wealth-builder": "6c75ee935f", "yol": "712ac8c0ba"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "f5bbcf2706", "bofa": "57759ebfc3", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "e6ff709a57", "livs-love-pool": "7d42c66d12", "miiras": "cebb6ebfd8", "self-invest": "2dc513a0df", "thirty-apps": "04d41ea7e4", "wealth-builder": "6c75ee935f", "yol": "712ac8c0ba"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
