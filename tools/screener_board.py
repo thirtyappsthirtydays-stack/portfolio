@@ -163,7 +163,7 @@ def filters_dialog():
         f'<span style="font-size:12.5px;color:{INK2};padding-top:6px">Your selected filters will display on the left side of the page.</span>'
         + group('FUND CATEGORIES', [chip('Asset Class', True), chip('Equity Style'), chip('Market Cap'), chip('Target Asset Mix'), chip('Target Date'), chip('US Equity Sectors')])
         + group('MANAGEMENT AND EXPENSES', [chip('Active vs. Passive'), chip('Benchmark Index'), chip('Expense Ratio')])
-        + group('ADDITIONAL FILTERS', [chip('Asset Class'), chip('Fund Type', True)]) +
+        + group('ADDITIONAL FILTERS', [chip('Asset Style'), chip('Fund Type', True)]) +
         f'<span style="display:flex;align-items:center;gap:8px;padding-top:22px;font-size:12.5px;color:{INK}">{icon(INFO,17,BLUE,1.6)}Not sure which filter to choose? <span style="color:{BLUE};font-weight:600;text-decoration:underline">Go to our Glossary.</span></span>'
         f'<span style="display:flex;align-items:center;gap:22px;padding-top:28px">'
         f'<span style="height:38px;padding:0 22px;border-radius:4px;background:{BLUE};color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700">Apply</span>'

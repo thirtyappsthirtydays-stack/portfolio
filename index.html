@@ -629,6 +629,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .imgcar-slide > figcaption{flex:1 1 240px;max-width:320px;gap:4px}
 .imgcar-shot{flex:999 1 420px;min-width:0;height:clamp(220px,32vw,400px);display:flex;align-items:center;justify-content:center;background:var(--c-neutral);border-radius:12px;padding:16px;box-sizing:border-box;overflow:hidden}
 .imgcar-shot img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;min-width:0;min-height:0;object-fit:contain;border-radius:6px;box-shadow:0 4px 16px rgba(14,31,59,.12)}
+.imgcar-shot.board{height:auto;padding:0;background:none;border-radius:10px;box-shadow:0 0 0 1px var(--c-rule),0 4px 16px rgba(14,31,59,.08)}
+.imgcar-shot.board .plate{width:100%;display:block}
 @media (max-width:640px){.imgcar-slide{padding:18px}.imgcar-slide > figcaption{max-width:none}.imgcar-shot{height:auto;padding:12px}}
 .cs-fig.row > img{flex:0 1 340px;width:340px;max-width:100%}
 .cs-fig.row > figcaption{flex:1 1 240px}
@@ -1225,7 +1227,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   }
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"cerehive": "326f7b7486", "consultation": "7a7dfccd91", "miiras": "2e4e447123", "self-invest": "80b3756703", "wealth-builder": "e6163384a2", "yol": "712ac8c0ba"}; /* case-versions */
+  var CASE_V = {"cerehive": "326f7b7486", "consultation": "7a7dfccd91", "miiras": "2e4e447123", "self-invest": "b93a603b68", "wealth-builder": "e6163384a2", "yol": "712ac8c0ba"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
