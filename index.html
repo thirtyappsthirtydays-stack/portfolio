@@ -1117,9 +1117,18 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 <script>
 (function(){
   var CASES = [
+    {id:'yol', name:'Yol Arkadaşı', kind:'Independent concept · Navigation', title:'Directions you can trust, even when the map is wrong',
+     summary:'A navigation concept for Istanbul drivers. It flags a doubtful turn with the evidence behind it, has a Plan B ready before the junction, and lets drivers fix the map after they park. Written in Turkish first, for iPhone, the car display and Apple Watch.',
+     role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'},
     {id:'miiras', name:'Miiras', kind:'Founder project', title:'Making difficult family talks easier to start',
      summary:'A conversation app that helps families start talking about money, inheritance, and plans for illness or accidents. Research moved the focus from tracking wealth to starting the conversation.',
      role:'Founder and designer', market:'B2C', platform:'iOS and Android', year:'2026'},
+    {id:'thirty-apps', name:'30 Apps in 30 Days', kind:'Personal challenge · AI-assisted building', title:'Learning AI-assisted product development, one app a day',
+     summary:'Thirty small web and mobile apps in thirty days, each built with AI coding tools from a real problem and a short PRD, in under 24 hours.',
+     role:'Designer and builder', market:'B2C', platform:'Web and mobile', year:'March 2026'},
+    {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
+     summary:'A four-step booking flow in Turkish and English for a thoracic surgeon’s online consultations, built around WhatsApp, bank transfer and getting the patient’s records in on time.',
+     role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'},
     {id:'cerehive', name:'CereHive', kind:'AI recruitment platform · SaaS', title:'AI recruiting that finds the best candidates, and shows why',
      summary:'An AI-native recruitment platform that helps hiring teams find and screen the best candidates for each role. I designed it from 0 to 1 around the open role, so every AI match score shows its reasons, and built its Figma design system.',
      role:'Senior Product Designer', market:'B2B', platform:'Web app', year:'2025 – 2026'},
@@ -1129,27 +1138,18 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     {id:'wealth-builder', name:'Citi Wealth Builder Plus', kind:'Citibank', title:'Hybrid investing onboarding',
      summary:'Onboarding for Citi’s hybrid investing product: a portfolio Citi manages, plus a Financial Advisor, at a lower cost than full advisory. One question at a time, from a goal to a first advisor appointment.',
      role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2022 – 2024'},
-    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
-     summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
-     role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'},
     {id:'bofa-complaints', name:'Complaints Reporting', kind:'Bank of America · Enterprise Business Intelligence', title:'One complaints dataset, a view for each team',
      summary:'Reports built on one complaints dataset, with a view each for Compliance, Risk and Legal. The usability score rose from 70 to 90, and finding complaint data took half the time.',
      role:'Product Designer', market:'Internal', platform:'Reporting dashboards', year:'2020 – 2021'},
-    {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
-     summary:'A four-step booking flow in Turkish and English for a thoracic surgeon’s online consultations, built around WhatsApp, bank transfer and getting the patient’s records in on time.',
-     role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'},
-    {id:'yol', name:'Yol Arkadaşı', kind:'Independent concept · Navigation', title:'Directions you can trust, even when the map is wrong',
-     summary:'A navigation concept for Istanbul drivers. It flags a doubtful turn with the evidence behind it, has a Plan B ready before the junction, and lets drivers fix the map after they park. Written in Turkish first, for iPhone, the car display and Apple Watch.',
-     role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'},
-    {id:'thirty-apps', name:'30 Apps in 30 Days', kind:'Personal challenge · AI-assisted building', title:'Learning AI-assisted product development, one app a day',
-     summary:'Thirty small web and mobile apps in thirty days, each built with AI coding tools from a real problem and a short PRD, in under 24 hours.',
-     role:'Designer and builder', market:'B2C', platform:'Web and mobile', year:'2026'},
     {id:'flexit', name:'FlexIt', kind:'Fitness startup', title:'Onboarding that explains the app before it asks for anything',
      summary:'A redesigned onboarding for a pay-by-the-minute gym app: a welcome carousel, a reason beside every personal question, and tooltips for what is new. 40% more accounts created.',
      role:'Product strategist', market:'B2C', platform:'Mobile app', year:'2020'},
     {id:'livs-love-pool', name:'Liv’s Love Pool', kind:'Matchmaking service', title:'A website and sign-up for a one-woman matchmaking service',
      summary:'A website, a guided sign-up and a date feedback loop for a matchmaker who ran her business through Instagram, texts and a Google Form.',
-     role:'UX designer and researcher', market:'B2C', platform:'Website, mobile first', year:'2020'}
+     role:'UX designer and researcher', market:'B2C', platform:'Website, mobile first', year:'2020'},
+    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
+     summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
+     role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'}
   ];
   var BY = {}; CASES.forEach(function(c, i){ c.i = i; BY[c.id] = c; });
   /* keep the All work count in step with the list */
@@ -1172,7 +1172,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     'bofa-complaints': {kind:'Bank of America · 2020–21', work:{name:'Bank of America Business Intelligence', kind:'Complaints reporting · 2020–21'}, result:'Usability score raised from 70 to 90', acc:'#3987E5', dk:'#1F3A5F'},
     'consultation': {kind:'Healthcare · 2026', result:'35 consultations booked since launch', acc:'#D4B97A', dk:'#1B3A5C'},
     'yol': {kind:'Concept · 2026', result:'Directions you can trust, on iPhone, car and Watch', acc:'#FFB020', dk:'#171A21'},
-    'thirty-apps': {kind:'Personal challenge · 2026', result:'30 working prototypes, each in under 24 hours', acc:'#FF8FB1', dk:'#2B1A45'},
+    'thirty-apps': {kind:'Personal challenge · March 2026', result:'30 working prototypes, each in under 24 hours', acc:'#FF8FB1', dk:'#2B1A45'},
     'flexit': {kind:'Fitness startup · 2020', result:'40% more accounts created', acc:'#36B6E3', dk:'#14295B'},
     'livs-love-pool': {kind:'Matchmaking service · 2020', result:'A guided sign-up in place of a Google Form', acc:'#F37DA5', dk:'#3B1D35'}
   };
@@ -1360,7 +1360,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "8c3f5a8464", "bofa": "bd668f8f97", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "36c991909e", "livs-love-pool": "c2410d382f", "miiras": "cebb6ebfd8", "self-invest": "be3bf0266f", "thirty-apps": "d53b7be92e", "wealth-builder": "fd48242422", "yol": "712ac8c0ba"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "8c3f5a8464", "bofa": "bd668f8f97", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "36c991909e", "livs-love-pool": "c2410d382f", "miiras": "cebb6ebfd8", "self-invest": "be3bf0266f", "thirty-apps": "e116f3183d", "wealth-builder": "fd48242422", "yol": "712ac8c0ba"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
