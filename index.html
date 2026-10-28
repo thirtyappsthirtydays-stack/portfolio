@@ -245,6 +245,14 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .work-head h1{font-size:var(--fs-h1)}
 .page[data-page="work"] .gallery{padding-bottom:clamp(72px,9vw,120px)}
 .work-head p{font-size:var(--fs-small);color:var(--ink-2);justify-self:end;align-self:end;padding-bottom:10px}
+.wk-filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:calc(-1 * clamp(16px,2.5vw,32px)) 0 clamp(40px,5vw,64px)}
+.wk-f{height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.wk-f:hover{border-color:var(--ink-2)}
+.wk-f[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.wk-f:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.wk-sep{width:1px;height:24px;margin:0 6px;background:var(--rule)}
+.wk-empty{grid-column:1/-1;font-size:var(--fs-small);color:var(--ink-2)}
+@media (max-width:600px){.wk-sep{display:none}}
 
 /* ---------- Case study page ---------- */
 .crumb{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:var(--fs-small);font-weight:600;color:var(--cobalt);text-decoration:none;margin-bottom:12px}
@@ -1051,7 +1059,17 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   <div class="wrap">
     <div class="work-head">
       <h1 class="display">All work</h1>
-      <p><span data-case-count>11</span> case studies, 2016 to 2026</p>
+      <p id="work-sub" aria-live="polite"><span data-case-count>11</span> case studies, 2016 to 2026</p>
+    </div>
+    <div class="wk-filters" role="group" aria-label="Filter case studies">
+      <button type="button" class="wk-f" data-f="all" aria-pressed="true">All</button>
+      <button type="button" class="wk-f" data-f="B2C" aria-pressed="false">B2C</button>
+      <button type="button" class="wk-f" data-f="Internal" aria-pressed="false">Internal</button>
+      <button type="button" class="wk-f" data-f="B2B" aria-pressed="false">B2B</button>
+      <span class="wk-sep" aria-hidden="true"></span>
+      <button type="button" class="wk-f" data-f="Mobile" aria-pressed="false">Mobile</button>
+      <button type="button" class="wk-f" data-f="Desktop" aria-pressed="false">Desktop</button>
+      <button type="button" class="wk-f" data-f="Other" aria-pressed="false">Other</button>
     </div>
     <div class="gallery" id="cards"></div>
   </div>
@@ -1315,7 +1333,31 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     }
   }
   function homeWork(){ gallery(SELECTED, document.getElementById('home-gallery'), 'h3', true); }
-  function cards(){ gallery(CASES.map(function(c){ return c.id; }), document.getElementById('cards'), 'h2', false, true); }
+  /* All Work filters: one at a time, by market (B2C, B2B, Internal) or by device.
+     "Other" is any device besides mobile and desktop (car, watch). Pressing the active filter again shows all. */
+  var workFilter = 'all';
+  function workMatch(id, f){
+    if(f === 'all') return true;
+    if(f === 'B2C' || f === 'B2B' || f === 'Internal') return BY[id].market === f;
+    var d = DEVICES[id] || [];
+    if(f === 'Other') return d.some(function(t){ return t !== 'Mobile' && t !== 'Desktop'; });
+    return d.indexOf(f) >= 0;
+  }
+  function cards(){
+    var ids = CASES.map(function(c){ return c.id; }).filter(function(id){ return workMatch(id, workFilter); });
+    gallery(ids, document.getElementById('cards'), 'h2', false, true);
+    var sub = document.getElementById('work-sub');
+    if(sub) sub.innerHTML = workFilter === 'all' ? CASES.length + ' case studies, 2016 to 2026' :
+      ids.length + ' of ' + CASES.length + ' case studies · ' + esc(workFilter);
+  }
+  [].forEach.call(document.querySelectorAll('.wk-f'), function(btn, k, all){
+    btn.addEventListener('click', function(){
+      var f = btn.dataset.f;
+      workFilter = (f === workFilter && f !== 'all') ? 'all' : f;
+      [].forEach.call(all, function(b){ b.setAttribute('aria-pressed', String(b.dataset.f === workFilter)); });
+      cards();
+    });
+  });
 
   /* ---------- Case study page ---------- */
   var CASE_V = {"bofa-complaints": "8c3f5a8464", "bofa": "bd668f8f97", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "36c991909e", "livs-love-pool": "c2410d382f", "miiras": "cebb6ebfd8", "self-invest": "be3bf0266f", "thirty-apps": "d53b7be92e", "wealth-builder": "fd48242422", "yol": "712ac8c0ba"}; /* case-versions */
