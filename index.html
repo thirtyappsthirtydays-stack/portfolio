@@ -1302,7 +1302,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   function cards(){ gallery(CASES.map(function(c){ return c.id; }), document.getElementById('cards'), 'h2'); }
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "f5bbcf2706", "bofa": "57759ebfc3", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "e6ff709a57", "livs-love-pool": "7d42c66d12", "miiras": "cebb6ebfd8", "self-invest": "2dc513a0df", "thirty-apps": "04d41ea7e4", "wealth-builder": "6c75ee935f", "yol": "712ac8c0ba"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "f5bbcf2706", "bofa": "7ea1ab8e15", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "e6ff709a57", "livs-love-pool": "7d42c66d12", "miiras": "cebb6ebfd8", "self-invest": "2dc513a0df", "thirty-apps": "04d41ea7e4", "wealth-builder": "6c75ee935f", "yol": "712ac8c0ba"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
