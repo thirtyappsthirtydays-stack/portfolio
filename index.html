@@ -251,8 +251,15 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .wk-f[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .wk-f:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
 .wk-sep{width:1px;height:24px;margin:0 6px;background:var(--rule)}
+.wk-sort{margin-left:auto;display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-2)}
+.wk-sel{position:relative;display:inline-flex}
+.wk-sel::after{content:"";position:absolute;right:16px;top:50%;width:7px;height:7px;border-right:1.6px solid var(--ink);border-bottom:1.6px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.wk-sort select{height:40px;padding:0 38px 0 14px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:14px;font-weight:500;cursor:pointer;-webkit-appearance:none;appearance:none}
+.wk-sort option{color:#10162A;background:#fff}
+.wk-sort select:hover{border-color:var(--ink-2)}
+.wk-sort select:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
 .wk-empty{grid-column:1/-1;font-size:var(--fs-small);color:var(--ink-2)}
-@media (max-width:600px){.wk-sep{display:none}}
+@media (max-width:600px){.wk-sep{display:none}.wk-sort{margin-left:0;width:100%}}
 
 /* ---------- Case study page ---------- */
 .crumb{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:var(--fs-small);font-weight:600;color:var(--cobalt);text-decoration:none;margin-bottom:12px}
@@ -1070,6 +1077,13 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       <button type="button" class="wk-f" data-f="Mobile" aria-pressed="false">Mobile</button>
       <button type="button" class="wk-f" data-f="Desktop" aria-pressed="false">Desktop</button>
       <button type="button" class="wk-f" data-f="Other" aria-pressed="false">Other</button>
+      <label class="wk-sort">Sort by
+        <span class="wk-sel"><select id="wk-sort">
+          <option value="featured">Featured</option>
+          <option value="date">Newest first</option>
+          <option value="az">A to Z</option>
+        </select></span>
+      </label>
     </div>
     <div class="gallery" id="cards"></div>
   </div>
@@ -1117,21 +1131,6 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 <script>
 (function(){
   var CASES = [
-    {id:'yol', name:'Yol Arkadaşı', kind:'Independent concept · Navigation', title:'Directions you can trust, even when the map is wrong',
-     summary:'A navigation concept for Istanbul drivers. It flags a doubtful turn with the evidence behind it, has a Plan B ready before the junction, and lets drivers fix the map after they park. Written in Turkish first, for iPhone, the car display and Apple Watch.',
-     role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'},
-    {id:'miiras', name:'Miiras', kind:'Founder project', title:'Making difficult family talks easier to start',
-     summary:'A conversation app that helps families start talking about money, inheritance, and plans for illness or accidents. Research moved the focus from tracking wealth to starting the conversation.',
-     role:'Founder and designer', market:'B2C', platform:'iOS and Android', year:'2026'},
-    {id:'thirty-apps', name:'30 Apps in 30 Days', kind:'Personal challenge · AI-assisted building', title:'Learning AI-assisted product development, one app a day',
-     summary:'Thirty small web and mobile apps in thirty days, each built with AI coding tools from a real problem and a short PRD, in under 24 hours.',
-     role:'Designer and builder', market:'B2C', platform:'Web and mobile', year:'March 2026'},
-    {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
-     summary:'A four-step booking flow in Turkish and English for a thoracic surgeon’s online consultations, built around WhatsApp, bank transfer and getting the patient’s records in on time.',
-     role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'},
-    {id:'cerehive', name:'CereHive', kind:'AI recruitment platform · SaaS', title:'AI recruiting that finds the best candidates, and shows why',
-     summary:'An AI-native recruitment platform that helps hiring teams find and screen the best candidates for each role. I designed it from 0 to 1 around the open role, so every AI match score shows its reasons, and built its Figma design system.',
-     role:'Senior Product Designer', market:'B2B', platform:'Web app', year:'2025 – 2026'},
     {id:'self-invest', name:'Citi Self Invest', kind:'Citibank', title:'The ETF and Mutual Fund Screener',
      summary:'Narrowing thousands of funds to the few that fit, for investors new to funds and for experienced ones who want full control, on web and iPhone.',
      role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2021 – 2023'},
@@ -1141,15 +1140,30 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     {id:'bofa-complaints', name:'Complaints Reporting', kind:'Bank of America · Enterprise Business Intelligence', title:'One complaints dataset, a view for each team',
      summary:'Reports built on one complaints dataset, with a view each for Compliance, Risk and Legal. The usability score rose from 70 to 90, and finding complaint data took half the time.',
      role:'Product Designer', market:'Internal', platform:'Reporting dashboards', year:'2020 – 2021'},
+    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
+     summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
+     role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'},
+    {id:'cerehive', name:'CereHive', kind:'AI recruitment platform · SaaS', title:'AI recruiting that finds the best candidates, and shows why',
+     summary:'An AI-native recruitment platform that helps hiring teams find and screen the best candidates for each role. I designed it from 0 to 1 around the open role, so every AI match score shows its reasons, and built its Figma design system.',
+     role:'Senior Product Designer', market:'B2B', platform:'Web app', year:'2025 – 2026'},
+    {id:'miiras', name:'Miiras', kind:'Founder project', title:'Making difficult family talks easier to start',
+     summary:'A conversation app that helps families start talking about money, inheritance, and plans for illness or accidents. Research moved the focus from tracking wealth to starting the conversation.',
+     role:'Founder and designer', market:'B2C', platform:'iOS and Android', year:'2026'},
+    {id:'thirty-apps', name:'30 Apps in 30 Days', kind:'Personal challenge · AI-assisted building', title:'Learning AI-assisted product development, one app a day',
+     summary:'Thirty small web and mobile apps in thirty days, each built with AI coding tools from a real problem and a short PRD, in under 24 hours.',
+     role:'Designer and builder', market:'B2C', platform:'Web and mobile', year:'March 2026'},
     {id:'flexit', name:'FlexIt', kind:'Fitness startup', title:'Onboarding that explains the app before it asks for anything',
      summary:'A redesigned onboarding for a pay-by-the-minute gym app: a welcome carousel, a reason beside every personal question, and tooltips for what is new. 40% more accounts created.',
      role:'Product strategist', market:'B2C', platform:'Mobile app', year:'2020'},
     {id:'livs-love-pool', name:'Liv’s Love Pool', kind:'Matchmaking service', title:'A website and sign-up for a one-woman matchmaking service',
      summary:'A website, a guided sign-up and a date feedback loop for a matchmaker who ran her business through Instagram, texts and a Google Form.',
      role:'UX designer and researcher', market:'B2C', platform:'Website, mobile first', year:'2020'},
-    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
-     summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
-     role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'}
+    {id:'yol', name:'Yol Arkadaşı', kind:'Independent concept · Navigation', title:'Directions you can trust, even when the map is wrong',
+     summary:'A navigation concept for Istanbul drivers. It flags a doubtful turn with the evidence behind it, has a Plan B ready before the junction, and lets drivers fix the map after they park. Written in Turkish first, for iPhone, the car display and Apple Watch.',
+     role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'},
+    {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
+     summary:'A four-step booking flow in Turkish and English for a thoracic surgeon’s online consultations, built around WhatsApp, bank transfer and getting the patient’s records in on time.',
+     role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'}
   ];
   var BY = {}; CASES.forEach(function(c, i){ c.i = i; BY[c.id] = c; });
   /* keep the All work count in step with the list */
@@ -1343,8 +1357,28 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     if(f === 'Other') return d.some(function(t){ return t !== 'Mobile' && t !== 'Desktop'; });
     return d.indexOf(f) >= 0;
   }
+  /* Sort: Featured is the CASES order. Newest first goes by when each project ended (month where known),
+     then by when it started; ties keep the Featured order. A to Z uses the title shown on the card. */
+  var WHEN = {
+    'miiras': ['2026-10', 2026], 'yol': ['2026-10', 2026], 'consultation': ['2026-10', 2026], 'cerehive': ['2026-04', 2025],
+    'thirty-apps': ['2026-03', 2026], 'wealth-builder': ['2024', 2022], 'self-invest': ['2023', 2021],
+    'bofa-complaints': ['2021', 2020], 'flexit': ['2020', 2020], 'livs-love-pool': ['2020', 2020], 'bofa': ['2020', 2016]
+  };
+  var workSort = 'featured';
+  function workTitle(id){ var g = GALLERY[id]; return (g.work && g.work.name) || BY[id].name; }
+  function sortIds(ids){
+    if(workSort === 'az') return ids.slice().sort(function(a, b){ return workTitle(a).localeCompare(workTitle(b), 'en', {numeric:true, sensitivity:'base'}); });
+    if(workSort === 'date') return ids.slice().sort(function(a, b){
+      var x = WHEN[a] || ['0', 0], y = WHEN[b] || ['0', 0];
+      var ex = (x[0] + '-00').slice(0, 7), ey = (y[0] + '-00').slice(0, 7);
+      if(ex !== ey) return ex < ey ? 1 : -1;
+      if(x[1] !== y[1]) return y[1] - x[1];
+      return BY[a].i - BY[b].i;
+    });
+    return ids;
+  }
   function cards(){
-    var ids = CASES.map(function(c){ return c.id; }).filter(function(id){ return workMatch(id, workFilter); });
+    var ids = sortIds(CASES.map(function(c){ return c.id; }).filter(function(id){ return workMatch(id, workFilter); }));
     gallery(ids, document.getElementById('cards'), 'h2', false, true);
     var sub = document.getElementById('work-sub');
     if(sub) sub.innerHTML = workFilter === 'all' ? CASES.length + ' case studies, 2016 to 2026' :
@@ -1358,6 +1392,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       cards();
     });
   });
+  var sortSel = document.getElementById('wk-sort');
+  if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
   var CASE_V = {"bofa-complaints": "8c3f5a8464", "bofa": "bd668f8f97", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "36c991909e", "livs-love-pool": "c2410d382f", "miiras": "cebb6ebfd8", "self-invest": "be3bf0266f", "thirty-apps": "e116f3183d", "wealth-builder": "fd48242422", "yol": "712ac8c0ba"}; /* case-versions */
