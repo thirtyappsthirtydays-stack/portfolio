@@ -1,7 +1,7 @@
 <!--meta {
   "theme": {"ground":"#F5F8FB","surface":"#FFFFFF","ink":"#0E1F3B","ink2":"#4A5A70","rule":"#DCE3EC","rule2":"#C3CDDA","neutral":"#EAF0F6","eyebrow":"#056DAE","dark":"#002D72","ondark":"#FFFFFF","ondark2":"#C3D3EC","ondark-acc":"#9FD3F5","tint":"#E6F1F9","tint-line":"#B7D6EE","tint-ink":"#023F6B","low":"#FCE8E8","low-ink":"#A12222","x":"#C62828"},
   "fonts": ["https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300..800;1,400..600&family=Overpass+Mono:wght@400..600&display=swap"],
-  "boards": ["ScreenerWeb","ScreenerWebFilters"]
+  "boards": ["ScreenerWeb","ScreenerWebFilters","IOSResults","IOSFilters","IOSSheet","IOSSort","IOSQuestions","IOSTour"]
 } -->
 <div class="cs-hero stack">
   <div class="cs-hero-copy">
@@ -21,7 +21,7 @@
   <div class="cs-hero-art" aria-hidden="true">
     <div class="cs-combo big">
       <div class="cs-laptop wide"><div class="scr"><div class="plate" data-screen="ScreenerWeb"></div></div><div class="base"></div></div>
-      <img class="cs-img bare over" src="img/9dd101ea8bc4216545ffdaabccc2406e.png" alt="">
+      <div class="cs-phone over"><div class="plate" data-screen="IOSResults"></div></div>
     </div>
   </div>
 </div>
@@ -272,8 +272,8 @@
         <div class="cs-panel" role="tabpanel" id="si-p3" aria-labelledby="si-t3" hidden>
           <div class="intro"><b>The patterns the Screener added</b><p>From the final iOS design. The range and tooltip come from greyscale specs.</p></div>
           <div class="cs-g" style="--m:220px;align-items:start">
-            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/bfc07bd66aae90ecc1da99d70c363e36.png" alt="Category tiles, two selected" loading="lazy"><img class="cs-img bare" src="img/1898b77cd16df9b1bb6a4893d414dc13.png" alt="View 1,786 Results button" loading="lazy"><figcaption><b>Category tile and results button</b>Selected tiles fill blue. The button carries the live count.</figcaption></figure>
-            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/a84a00044022dcf56ef8598525743e9d.png" alt="Sort by and Filter controls with two removable pills" loading="lazy"><img class="cs-img bare" src="img/999884aa3ddcf3df87e451b9352f157e.png" alt="Fund row with ticker, price, expense ratio and return" loading="lazy"><figcaption><b>Control bar, pills and fund row</b>A removable pill per filter, and a two-line fund row.</figcaption></figure>
+            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/si-ios-tiles.png" alt="Fund category tiles, two selected" loading="lazy"><img class="cs-img bare" src="img/si-ios-results-button.png" alt="View 1,786 Results button" loading="lazy"><figcaption><b>Category tile and results button</b>Selected tiles fill blue. The button carries the live count.</figcaption></figure>
+            <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/si-ios-controls.png" alt="Sort by and Filter controls with two removable pills" loading="lazy"><img class="cs-img bare" src="img/si-ios-fund-row.png" alt="Fund row with ticker, price, expense ratio and return" loading="lazy"><figcaption><b>Control bar, pills and fund row</b>A removable pill per filter, and a two-line fund row.</figcaption></figure>
             <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/4b2f412207cd95d31c3e5f4d1957a937.png" alt="Expense ratio range over a histogram of funds" loading="lazy"><figcaption><b>Range with distribution</b>Investors see where most funds sit before they drag.</figcaption></figure>
             <figure class="cs-fig cs-card" style="padding:16px"><img class="cs-img bare" src="img/c8487526ad7b3b3da163ec6a022edacd.png" alt="Tour tooltip with progress dots, Exit and Next" loading="lazy"><figcaption><b>Tour tooltip</b>A title, one sentence, progress dots, Exit and Next.</figcaption></figure>
           </div>
@@ -295,13 +295,13 @@
       <figure class="cs-fig"><div class="cs-laptop" role="img" aria-label="Web Add Filters dialog over the Screener"><div class="scr"><div class="plate" data-screen="ScreenerWebFilters"></div></div><div class="base"></div></div><figcaption><b>Add Filters, in Citi’s design system</b>A filled blue chip with a tick means the filter is on.</figcaption></figure>
     </div>
   </div>
-  <div class="cs-block tight cs-shots" style="--w:168px">
-    <figure class="cs-shot" style="width:160px"><img class="cs-img bare" src="img/9dd101ea8bc4216545ffdaabccc2406e.png" alt="iOS results with pills and fund cards" loading="lazy"><figcaption>Results<small>Two-line fund cards</small></figcaption></figure>
-    <figure class="cs-shot" style="width:160px"><img class="cs-img bare" src="img/09871ce07d94c5d0e0871d139d5223a0.png" alt="iOS fund filters as tiles" loading="lazy"><figcaption>Fund filters<small>11 tiles, live count</small></figcaption></figure>
-    <figure class="cs-shot" style="width:160px"><img class="cs-img bare" src="img/6df7c6ffbaeb6209f0a79ede36e28e0a.png" alt="iOS bottom sheet for Asset Class" loading="lazy"><figcaption>Choosing a filter<small>A bottom sheet</small></figcaption></figure>
-    <figure class="cs-shot" style="width:160px"><img class="cs-img bare" src="img/d23a64c0ea5a175b6b4cbd879412b33a.png" alt="iOS sort sheet" loading="lazy"><figcaption>Sort by<small>Each sort explained</small></figcaption></figure>
-    <figure class="cs-shot" style="width:160px"><img class="cs-img bare" src="img/f879bdc9abb820c3331fffc23b04cb22.png" alt="iOS questionnaire step 1 of 2" loading="lazy"><figcaption>Questions<small>Step 1 of 2</small></figcaption></figure>
-    <figure class="cs-shot" style="width:160px"><img class="cs-img bare" src="img/c0d8b748d917bf10254ef6753f8a12a4.png" alt="iOS tour spotlighting Filter" loading="lazy"><figcaption>Tour<small>Two steps on a phone</small></figcaption></figure>
+  <div class="cs-block tight">
+    <p class="cs-eyebrow muted cs-ios-h">Finding a fund on iPhone</p>
+    <div class="cs-ios"><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone fund filters as tiles, two categories selected, with a View 1,786 Results button"><div class="plate" data-screen="IOSFilters"></div></div><figcaption>Pick a category<small>Filter tiles with a live results count</small></figcaption></figure><span class="cs-ios-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"/></svg></span><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone bottom sheet for Asset Class with Equity ticked"><div class="plate" data-screen="IOSSheet"></div></div><figcaption>Choose within it<small>A bottom sheet for each filter</small></figcaption></figure><span class="cs-ios-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"/></svg></span><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone filtered results with two removable pills and two-line fund cards"><div class="plate" data-screen="IOSResults"></div></div><figcaption>Compare the funds<small>Removable pills, two-line fund cards</small></figcaption></figure></div>
+  </div>
+  <div class="cs-block tight">
+    <p class="cs-eyebrow muted cs-ios-h">Sorting, and two ways in for new investors</p>
+    <div class="cs-ios gap"><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone Sort By sheet with Performance and Expense Ratio explained"><div class="plate" data-screen="IOSSort"></div></div><figcaption>Sort the list<small>Each option explained in a line</small></figcaption></figure><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone pre-screen question, step 1 of 2, with four fund categories"><div class="plate" data-screen="IOSQuestions"></div></div><figcaption>Get a starting point<small>Two questions, or set your own filters</small></figcaption></figure><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone tour tooltip pointing at the Filter control"><div class="plate" data-screen="IOSTour"></div></div><figcaption>Or take the tour<small>Two tooltips on the real controls</small></figcaption></figure></div>
   </div>
 </section>
 
