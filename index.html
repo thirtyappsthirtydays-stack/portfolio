@@ -712,6 +712,18 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-pin{position:absolute;z-index:2;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--c-dark);color:var(--c-ondark);font-size:12px;font-weight:600;line-height:1;box-shadow:0 0 0 2px var(--c-surface),0 3px 8px rgba(20,22,30,.22);pointer-events:none}
 .cs-img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--c-rule);background:var(--c-surface)}
 .cs-img.bare{border:0;background:none;border-radius:0}
+.cs-days{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(4px,.8vw,10px)}
+.cs-days > span{aspect-ratio:1.3;border-radius:clamp(8px,1vw,14px);padding:clamp(6px,1vw,12px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;min-width:0;overflow:hidden}
+.cs-days b{font-size:clamp(13px,1.7vw,24px);line-height:1;font-weight:700;letter-spacing:-.02em}
+.cs-days em{font-style:normal;font-size:clamp(11px,1.1vw,13.5px);line-height:1.2;font-weight:600}
+@media (max-width:640px){.cs-days em{display:none}}
+.cs-apps li{gap:12px;padding:10px 0}
+.cs-apps .i{font-size:13px;min-width:20px}
+.cs-apps b{font-size:15px;line-height:1.35}
+.cs-apps a{text-decoration:underline;text-decoration-color:var(--c-rule2);text-underline-offset:3px}
+.cs-apps a:hover{text-decoration-color:currentColor}
+.cs-apps a svg{display:inline-block;vertical-align:-1px;margin-left:4px;color:var(--c-ink2)}
+.cs-apps small{font-size:13.5px;line-height:1.45;color:var(--c-ink2)}
 
 /* tabs */
 .cs-tabs{display:flex;flex-wrap:wrap;gap:8px}
@@ -1052,13 +1064,25 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
      role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'},
     {id:'self-invest', name:'Citi Self Invest', kind:'Citibank', title:'The ETF and Mutual Fund Screener',
      summary:'Narrowing thousands of funds to the few that fit, for investors new to funds and for experienced ones who want full control, on web and iPhone.',
-     role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2021 – 2024'},
+     role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2021 – 2023'},
     {id:'wealth-builder', name:'Citi Wealth Builder', kind:'Citibank', title:'Guided investing onboarding',
      summary:'Onboarding for Citi’s first robo-advisor: turning a goal and a comfort with risk into a portfolio investors trust, one question at a time.',
-     role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2021 – 2024'},
+     role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2022 – 2024'},
     {id:'yol', name:'Yol Arkadaşı', kind:'Independent concept · Navigation', title:'Directions you can trust, even when the map is wrong',
      summary:'A navigation concept for Istanbul drivers. It flags a doubtful turn with the evidence behind it, has a Plan B ready before the junction, and lets drivers fix the map after they park. Written in Turkish first, for iPhone, the car display and Apple Watch.',
-     role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'}
+     role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'},
+    {id:'thirty-apps', name:'30 Apps in 30 Days', kind:'Personal challenge · AI-assisted building', title:'Learning AI-assisted product development, one app a day',
+     summary:'Thirty small web and mobile apps in thirty days, each built with AI coding tools from a real problem and a short PRD, in under 24 hours.',
+     role:'Designer and builder', market:'B2C', platform:'Web and mobile', year:'2026'},
+    {id:'flexit', name:'FlexIt', kind:'Fitness startup', title:'Onboarding that explains the app before it asks for anything',
+     summary:'A redesigned onboarding for a pay-by-the-minute gym app: a welcome carousel, a reason beside every personal question, and tooltips for what is new. 40% more accounts created.',
+     role:'Product strategist', market:'B2C', platform:'Mobile app', year:'2020'},
+    {id:'livs-love-pool', name:'Liv’s Love Pool', kind:'Matchmaking service', title:'A website and sign-up for a one-woman matchmaking service',
+     summary:'A website, a guided sign-up and a date feedback loop for a matchmaker who ran her business through Instagram, texts and a Google Form.',
+     role:'UX designer and researcher', market:'B2C', platform:'Website, mobile first', year:'2020'},
+    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
+     summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
+     role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'}
   ];
   var BY = {}; CASES.forEach(function(c, i){ c.i = i; BY[c.id] = c; });
   var ARROW = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>';
@@ -1146,7 +1170,11 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       {t:'phone', s:'yol/Rota', x:138, y:236, w:360, isl:false},
       {t:'phone', s:'yol/BPlani', x:918, y:236, w:360, isl:false},
       {t:'phone', s:'yol/BelirsizDonus', x:528, y:126, w:360, isl:false},
-      {t:'watch', s:'yol/Saat', x:1150, y:660, w:208}]}
+      {t:'watch', s:'yol/Saat', x:1150, y:660, w:208}]},
+    'flexit': {bg:'#EAF1FB', items:[
+      {t:'img', src:'img/flexit-screens.webp', x:20, y:168, w:1400}]},
+    'livs-love-pool': {bg:'#F4DEF3', items:[
+      {t:'img', src:'img/livs-hero.webp', x:60, y:91, w:1320}]}
   };
   function screenEl(key, w, h){
     var b = (window.__SCREENS || {})[key];
@@ -1238,7 +1266,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   }
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"cerehive": "27efeb283a", "consultation": "053ff2bcf1", "miiras": "0650b39f3c", "self-invest": "b03e96bd26", "wealth-builder": "6922c8fec0", "yol": "712ac8c0ba"}; /* case-versions */
+  var CASE_V = {"bofa": "f0bc881b6b", "cerehive": "27efeb283a", "consultation": "053ff2bcf1", "flexit": "4c2215d6ea", "livs-love-pool": "ef3ac68973", "miiras": "0650b39f3c", "self-invest": "b03e96bd26", "thirty-apps": "04d41ea7e4", "wealth-builder": "6922c8fec0", "yol": "712ac8c0ba"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){

@@ -18,7 +18,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def load_case(cid):
-    src = open(os.path.join(ROOT, 'cases', cid + '.js'), encoding='utf-8').read()
+    path = os.path.join(ROOT, 'cases', cid + '.js')
+    if not os.path.exists(path):
+        return {}  # a new case: nothing to carry over yet
+    src = open(path, encoding='utf-8').read()
     return json.loads(src[src.index('(') + 1:src.rindex(')')])
 
 
