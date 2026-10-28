@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capital Workbench: Reconciliation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#24508F}a:hover{color:#173766}
+.ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; background: #F2F3F0; color: #15181C; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 1.45; font-variant-numeric: tabular-nums">
+
+<nav aria-label="Workbench" style="flex: 1 1 232px; box-sizing: border-box; background: #1A1E23; color: #C9CED4; padding: 20px 12px 28px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 4px 10px">
+<svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="5" width="20" height="4" rx="1" fill="#E6ECF5"></rect><rect x="4" y="12" width="15" height="4" rx="1" fill="#9DB3D6"></rect><rect x="4" y="19" width="10" height="4" rx="1" fill="#5F82B8"></rect></svg>
+<div style="display: flex; flex-direction: column">
+<span style="color: #FFFFFF; font-weight: 600; font-size: 15px; line-height: 1.25">Capital Workbench</span>
+<span style="color: #9AA3AD; font-size: 12px">Capital Management</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="padding: 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8B939C">Quarter-end close</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="Main.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"></rect></svg>Overview</a></li>
+<li><a href="#runs" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M10 8.5v7l5.5-3.5z"></path></svg>Calculation runs</a></li>
+<li><a href="Reconciliation.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; background: #2C323A; color: #FFFFFF; text-decoration: none; font-weight: 500"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M4 17l3 3 3-3M17 20V4M14 7l3-3 3 3"></path></svg><span style="flex: 1">Reconciliation</span><span style="min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 11px; background: #A84A12; color: #FFFFFF; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">2</span></a></li>
+</ul>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="padding: 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8B939C">Configuration</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="Rules.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5"></path></svg>Rule library</a></li>
+<li><a href="#feeds" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7.5" ry="2.8"></ellipse><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"></path></svg>Data feeds</a></li>
+</ul>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="padding: 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8B939C">Outputs</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="#reports" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"></path><path d="M14 3.5V8h4.5M9 13h6M9 16.5h6"></path></svg>Reports</a></li>
+<li><a href="#audit" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>Audit trail</a></li>
+</ul>
+</div>
+</nav>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+
+<header style="min-height: 72px; box-sizing: border-box; padding: 14px 32px; background: #FCFCFB; border-bottom: 1px solid #DCDFDA; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<nav aria-label="Breadcrumb">
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 8px; color: #5C636B">
+<li>Q3 close</li>
+<li aria-hidden="true">/</li>
+<li aria-current="page" style="color: #15181C; font-weight: 500">Reconciliation</li>
+</ol>
+</nav>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; display: flex; align-items: center; gap: 8px; border: 1px solid #C6CAC4; border-radius: 6px; background: #FCFCFB; color: #15181C; font: inherit; cursor: pointer"><span style="color: #5C636B">Period</span><span style="font-weight: 500">Q3 close</span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="color: #5C636B">Basis</span>
+<div style="display: flex; gap: 2px; padding: 3px; border: 1px solid #C6CAC4; border-radius: 8px; background: #F2F3F0">
+<button type="button" aria-pressed="true" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 5px; background: #FCFCFB; box-shadow: 0 1px 2px rgba(21, 24, 28, 0.14); color: #15181C; font: inherit; font-weight: 500; cursor: pointer">Transitional</button>
+<button type="button" aria-pressed="false" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 5px; background: transparent; color: #474E56; font: inherit; cursor: pointer">Fully phased-in</button>
+</div>
+</div>
+<span style="display: flex; align-items: center; gap: 8px; padding: 0 4px; color: #474E56"><span style="width: 8px; height: 8px; border-radius: 4px; background: {{accent}}"></span>Run 04 · 06:48</span>
+<button type="button" aria-label="Account" style="width: 44px; height: 44px; border-radius: 22px; border: 1px solid #C6CAC4; background: #FCFCFB; color: #474E56; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"></path></svg></button>
+</div>
+</header>
+
+<main style="box-sizing: border-box; width: 100%; max-width: 1240px; padding: 32px 32px 48px; display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #5C636B">Quarter-end close · Run 04</span>
+<h1 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -0.01em">Reconciliation</h1>
+<p style="margin: 0; max-width: 640px; color: #474E56; text-wrap: pretty">Run 04 compared line by line with the spreadsheet model. Tolerance is ±$5.0M per line item.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px">
+<button type="button" style="min-height: 44px; padding: 0 16px; display: flex; align-items: center; gap: 8px; border: 1px solid #C6CAC4; border-radius: 6px; background: #FCFCFB; color: #15181C; font: inherit; font-weight: 500; cursor: pointer"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"></path></svg>Export</button>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px">
+<button type="button" disabled style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 6px; background: #E4E6E2; color: #5C636B; font: inherit; font-weight: 500; cursor: not-allowed">Sign off</button>
+<span style="font-size: 12px; color: #5C636B">2 exceptions open</span>
+</div>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 16px">
+<div style="box-sizing: border-box; padding: 16px 20px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 500; color: #474E56">Matched</span>
+<span style="font-size: 28px; line-height: 1.15; font-weight: 600">6</span>
+<span style="font-size: 13px; color: #5C636B">of 9 line items</span>
+</div>
+<div style="box-sizing: border-box; padding: 16px 20px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 500; color: #474E56">Within tolerance</span>
+<span style="font-size: 28px; line-height: 1.15; font-weight: 600">1</span>
+<span style="font-size: 13px; color: #5C636B">Under ±$5.0M</span>
+</div>
+<div style="box-sizing: border-box; padding: 16px 20px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 500; color: #474E56">Exceptions</span>
+<span style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #A84A12">2</span>
+<span style="font-size: 13px; color: #5C636B">Both assigned to source teams</span>
+</div>
+<div style="box-sizing: border-box; padding: 16px 20px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 500; color: #474E56">CET1 variance</span>
+<span style="font-size: 28px; line-height: 1.15; font-weight: 600">+249.8</span>
+<span style="font-size: 13px; color: #5C636B">$M, automated less model</span>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px">
+
+<div style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+
+<section aria-labelledby="lines-h" style="box-sizing: border-box; padding: 22px 24px 12px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px">
+<h2 id="lines-h" style="margin: 0; font-size: 16px; font-weight: 600">Line items</h2>
+<span style="font-size: 13px; color: #5C636B">$ millions · spreadsheet model v2 (Q3)</span>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 680px; border-collapse: collapse; font-size: 14px">
+<thead>
+<tr style="color: #5C636B; font-size: 12px"><th scope="col" style="text-align: left; font-weight: 500; padding: 8px 12px 8px 8px">Line item</th><th scope="col" style="text-align: right; font-weight: 500; padding: 8px 12px">Automated</th><th scope="col" style="text-align: right; font-weight: 500; padding: 8px 12px">Model</th><th scope="col" style="text-align: right; font-weight: 500; padding: 8px 12px">Variance</th><th scope="col" style="text-align: left; font-weight: 500; padding: 8px 8px 8px 12px; width: 150px">Status</th></tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">Common stockholders’ equity</th><td style="text-align: right; padding: 11px 12px">241,600.0</td><td style="text-align: right; padding: 11px 12px">241,600.0</td><td style="text-align: right; padding: 11px 12px; color: #5C636B">0.0</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: {{accent}}; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Matched</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">Filters: cash-flow hedges, own credit</th><td style="text-align: right; padding: 11px 12px">1,180.0</td><td style="text-align: right; padding: 11px 12px">1,180.0</td><td style="text-align: right; padding: 11px 12px; color: #5C636B">0.0</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: {{accent}}; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Matched</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">Goodwill, net of DTL</th><td style="text-align: right; padding: 11px 12px">−68,940.0</td><td style="text-align: right; padding: 11px 12px">−68,940.0</td><td style="text-align: right; padding: 11px 12px; color: #5C636B">0.0</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: {{accent}}; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Matched</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">Other intangibles, net of DTL</th><td style="text-align: right; padding: 11px 12px">−1,820.0</td><td style="text-align: right; padding: 11px 12px">−1,820.4</td><td style="text-align: right; padding: 11px 12px">+0.4</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: #474E56; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>Within tolerance</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">DTAs from carryforwards</th><td style="text-align: right; padding: 11px 12px">−5,960.0</td><td style="text-align: right; padding: 11px 12px">−5,960.0</td><td style="text-align: right; padding: 11px 12px; color: #5C636B">0.0</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: {{accent}}; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Matched</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">Other deductions</th><td style="text-align: right; padding: 11px 12px">−640.0</td><td style="text-align: right; padding: 11px 12px">−640.0</td><td style="text-align: right; padding: 11px 12px; color: #5C636B">0.0</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: {{accent}}; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Matched</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4; background: {{accentSoft}}"><th scope="row" style="text-align: left; font-weight: 600; padding: 11px 12px 11px 8px">Threshold deductions</th><td style="text-align: right; padding: 11px 12px; font-weight: 500">−3,034.8</td><td style="text-align: right; padding: 11px 12px; font-weight: 500">−3,284.2</td><td style="text-align: right; padding: 11px 12px; font-weight: 600">+249.4</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: #A84A12; font-weight: 600"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 21 19.5H3z"></path><path d="M12 10v4.5M12 17.2v.3"></path></svg>Exception E-01</span></td></tr>
+<tr style="border-top: 1px solid #C6CAC4; background: #F6F7F4"><th scope="row" style="text-align: left; font-weight: 600; padding: 11px 12px 11px 8px">Common Equity Tier 1</th><td style="text-align: right; padding: 11px 12px; font-weight: 600">162,385.2</td><td style="text-align: right; padding: 11px 12px; font-weight: 600">162,135.4</td><td style="text-align: right; padding: 11px 12px; font-weight: 600">+249.8</td><td style="padding: 11px 8px 11px 12px; font-size: 13px; color: #A84A12">Follows E-01</td></tr>
+<tr style="border-top: 1px solid #C6CAC4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">Additional Tier 1</th><td style="text-align: right; padding: 11px 12px">25,220.0</td><td style="text-align: right; padding: 11px 12px">25,220.0</td><td style="text-align: right; padding: 11px 12px; color: #5C636B">0.0</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: {{accent}}; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Matched</span></td></tr>
+<tr style="border-top: 1px solid #C6CAC4; background: #F6F7F4"><th scope="row" style="text-align: left; font-weight: 600; padding: 11px 12px 11px 8px">Tier 1 capital</th><td style="text-align: right; padding: 11px 12px; font-weight: 600">187,605.2</td><td style="text-align: right; padding: 11px 12px; font-weight: 600">187,355.4</td><td style="text-align: right; padding: 11px 12px; font-weight: 600">+249.8</td><td style="padding: 11px 8px 11px 12px; font-size: 13px; color: #A84A12">Follows E-01</td></tr>
+<tr style="border-top: 1px solid #C6CAC4"><th scope="row" style="text-align: left; font-weight: 400; padding: 11px 12px 11px 8px">Tier 2</th><td style="text-align: right; padding: 11px 12px">24,970.0</td><td style="text-align: right; padding: 11px 12px">24,660.0</td><td style="text-align: right; padding: 11px 12px; font-weight: 500">+310.0</td><td style="padding: 11px 8px 11px 12px"><span style="display: flex; align-items: center; gap: 6px; color: #A84A12; font-weight: 600"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 21 19.5H3z"></path><path d="M12 10v4.5M12 17.2v.3"></path></svg>Exception E-02</span></td></tr>
+<tr style="border-top: 1px solid #C6CAC4; background: #F6F7F4"><th scope="row" style="text-align: left; font-weight: 600; padding: 11px 12px 11px 8px">Total capital</th><td style="text-align: right; padding: 11px 12px; font-weight: 600">212,575.2</td><td style="text-align: right; padding: 11px 12px; font-weight: 600">212,015.4</td><td style="text-align: right; padding: 11px 12px; font-weight: 600">+559.8</td><td style="padding: 11px 8px 11px 12px; font-size: 13px; color: #A84A12">Follows E-01, E-02</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section aria-labelledby="sign-h" style="box-sizing: border-box; padding: 22px 24px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 14px">
+<h2 id="sign-h" style="margin: 0; font-size: 16px; font-weight: 600">Sign-off</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px">
+<li style="box-sizing: border-box; padding: 14px 16px; border: 1px solid {{accent}}; border-radius: 6px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; font-weight: 600; color: {{accent}}">1 · In progress</span>
+<span style="font-weight: 500">Prepared</span>
+<span style="font-size: 13px; color: #5C636B">Capital analyst</span>
+</li>
+<li style="box-sizing: border-box; padding: 14px 16px; border: 1px solid #DCDFDA; border-radius: 6px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; font-weight: 600; color: #5C636B">2 · Waiting</span>
+<span style="font-weight: 500">Reviewed</span>
+<span style="font-size: 13px; color: #5C636B">Capital manager</span>
+</li>
+<li style="box-sizing: border-box; padding: 14px 16px; border: 1px solid #DCDFDA; border-radius: 6px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; font-weight: 600; color: #5C636B">3 · Waiting</span>
+<span style="font-weight: 500">Approved</span>
+<span style="font-size: 13px; color: #5C636B">Controller</span>
+</li>
+</ol>
+</section>
+
+</div>
+
+<aside aria-labelledby="e01-h" style="flex: 1 1 360px; min-width: 0; box-sizing: border-box; padding: 22px 24px 24px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 20px">
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: #A84A12">E-01</span>
+<span style="display: flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 13px; background: #FBEDE3; color: #A84A12; font-size: 12px; font-weight: 600">Open</span>
+</div>
+<h2 id="e01-h" style="margin: 0; font-size: 20px; line-height: 1.25; font-weight: 600">Threshold deductions</h2>
+<span style="font-size: 14px; color: #474E56"><span style="font-size: 22px; font-weight: 600; color: #15181C">+249.4</span> $M vs model</span>
+</div>
+
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px">
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Raised</dt><dd style="margin: 0">06:52 · automated check</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Owner</dt><dd style="margin: 0">Tax reporting</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Rule</dt><dd style="margin: 0"><a href="Rules.dc.html" style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; color: {{accent}}">R-CET1-14</a></dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Source feed</dt><dd style="margin: 0">Deferred tax</dd></div>
+</dl>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 600">Cause</h3>
+<p style="margin: 0; color: #474E56; text-wrap: pretty">Tax account 2408-117 (deferred tax assets, temporary differences) was opened this quarter. The spreadsheet model already includes it. The engine’s account mapping does not have it yet.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 600">Trace · $M</h3>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li style="display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; padding: 10px 0; border-top: 1px solid #E6E8E4">
+<span style="width: 22px; height: 22px; border-radius: 11px; background: #FBEDE3; color: #A84A12; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">1</span>
+<span style="display: flex; flex-direction: column; gap: 1px"><span style="display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px">GL 2408-117</span><span style="font-weight: 500; white-space: nowrap">212.0</span></span><span style="font-size: 12px; color: #A84A12; font-weight: 500">Unmapped in the deferred tax feed</span></span>
+</li>
+<li style="display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; padding: 10px 0; border-top: 1px solid #E6E8E4">
+<span style="width: 22px; height: 22px; border-radius: 11px; background: #E9EAE6; color: #474E56; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">2</span>
+<span style="display: flex; flex-direction: column; gap: 1px"><span style="display: flex; flex-direction: column"><span>DTAs, temporary differences</span><span style="font-weight: 500; white-space: nowrap">7,880.0 → 8,092.0</span></span><span style="font-size: 12px; color: #5C636B">Model value, with the account mapped</span></span>
+</li>
+<li style="display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; padding: 10px 0; border-top: 1px solid #E6E8E4">
+<span style="width: 22px; height: 22px; border-radius: 11px; background: #E9EAE6; color: #474E56; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">3</span>
+<span style="display: flex; flex-direction: column; gap: 1px"><span style="display: flex; flex-direction: column"><span>Threshold deductions</span><span style="font-weight: 500; white-space: nowrap">3,034.8 → 3,284.2</span></span><span style="font-size: 12px; color: #5C636B">The combined amount goes further over 15%</span></span>
+</li>
+<li style="display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; padding: 10px 0; border-top: 1px solid #E6E8E4">
+<span style="width: 22px; height: 22px; border-radius: 11px; background: #E9EAE6; color: #474E56; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">4</span>
+<span style="display: flex; flex-direction: column; gap: 1px"><span style="display: flex; flex-direction: column"><span>Common Equity Tier 1</span><span style="font-weight: 500; white-space: nowrap">162,385.2 → 162,135.4</span></span><span style="font-size: 12px; color: #5C636B">Within tolerance once re-run</span></span>
+</li>
+</ol>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button type="button" style="flex: 1 1 auto; min-height: 44px; padding: 0 16px; border: 0; border-radius: 6px; background: {{accent}}; color: #FFFFFF; font: inherit; font-weight: 500; cursor: pointer">Map account and re-run</button>
+<button type="button" style="flex: 1 1 auto; min-height: 44px; padding: 0 16px; border: 1px solid #C6CAC4; border-radius: 6px; background: #FCFCFB; color: #15181C; font: inherit; font-weight: 500; cursor: pointer">Add note</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 600">Activity</h3>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+<li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; font-size: 13px"><span style="color: #5C636B">06:52</span><span>Raised by the automated check: variance over tolerance.</span></li>
+<li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; font-size: 13px"><span style="color: #5C636B">07:15</span><span>Assigned to Tax reporting.</span></li>
+<li style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; font-size: 13px"><span style="color: #5C636B">07:40</span><span>Tax reporting confirmed the account belongs under DTAs, temporary differences.</span></li>
+</ol>
+</div>
+
+</aside>
+</div>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#24508F","options":["#24508F","#1F5F5B","#3D3F8F","#15181C"]},"$preview":{"width":1440,"height":1580}}'>
+class Component extends DCLogic {
+  mix(hex, toHex, t) {
+    const parse = (h) => {
+      let s = String(h || '').replace('#', '');
+      if (s.length === 3) s = s.split('').map((c) => c + c).join('');
+      const n = parseInt(s.slice(0, 6), 16);
+      if (isNaN(n)) return [36, 80, 143];
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    };
+    const a = parse(hex);
+    const b = parse(toHex);
+    return '#' + a.map((v, i) => Math.round(v + (b[i] - v) * t).toString(16).padStart(2, '0')).join('');
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#24508F';
+    return {
+      accent,
+      accentSoft: this.mix(accent, '#FCFCFB', 0.9)
+    };
+  }
+}
+</script>
+</body>
+</html>

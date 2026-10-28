@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capital Workbench: Rule detail</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#24508F}a:hover{color:#173766}
+.ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; background: #F2F3F0; color: #15181C; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; line-height: 1.45; font-variant-numeric: tabular-nums">
+
+<nav aria-label="Workbench" style="flex: 1 1 232px; box-sizing: border-box; background: #1A1E23; color: #C9CED4; padding: 20px 12px 28px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 4px 10px">
+<svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="5" width="20" height="4" rx="1" fill="#E6ECF5"></rect><rect x="4" y="12" width="15" height="4" rx="1" fill="#9DB3D6"></rect><rect x="4" y="19" width="10" height="4" rx="1" fill="#5F82B8"></rect></svg>
+<div style="display: flex; flex-direction: column">
+<span style="color: #FFFFFF; font-weight: 600; font-size: 15px; line-height: 1.25">Capital Workbench</span>
+<span style="color: #9AA3AD; font-size: 12px">Capital Management</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="padding: 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8B939C">Quarter-end close</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="Main.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"></rect></svg>Overview</a></li>
+<li><a href="#runs" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M10 8.5v7l5.5-3.5z"></path></svg>Calculation runs</a></li>
+<li><a href="Reconciliation.dc.html" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M4 17l3 3 3-3M17 20V4M14 7l3-3 3 3"></path></svg><span style="flex: 1">Reconciliation</span><span style="min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 11px; background: #A84A12; color: #FFFFFF; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center">2</span></a></li>
+</ul>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="padding: 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8B939C">Configuration</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="Rules.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; background: #2C323A; color: #FFFFFF; text-decoration: none; font-weight: 500"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5"></path></svg>Rule library</a></li>
+<li><a href="#feeds" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7.5" ry="2.8"></ellipse><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"></path></svg>Data feeds</a></li>
+</ul>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="padding: 0 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8B939C">Outputs</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="#reports" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"></path><path d="M14 3.5V8h4.5M9 13h6M9 16.5h6"></path></svg>Reports</a></li>
+<li><a href="#audit" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 6px; color: #C9CED4; text-decoration: none"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>Audit trail</a></li>
+</ul>
+</div>
+</nav>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+
+<header style="min-height: 72px; box-sizing: border-box; padding: 14px 32px; background: #FCFCFB; border-bottom: 1px solid #DCDFDA; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<nav aria-label="Breadcrumb">
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: #5C636B">
+<li>Rule library</li>
+<li aria-hidden="true">/</li>
+<li>CET1 deductions</li>
+<li aria-hidden="true">/</li>
+<li aria-current="page" style="color: #15181C; font-weight: 500">Threshold deductions</li>
+</ol>
+</nav>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; display: flex; align-items: center; gap: 8px; border: 1px solid #C6CAC4; border-radius: 6px; background: #FCFCFB; color: #15181C; font: inherit; cursor: pointer"><span style="color: #5C636B">Period</span><span style="font-weight: 500">Q3 close</span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="color: #5C636B">Basis</span>
+<div style="display: flex; gap: 2px; padding: 3px; border: 1px solid #C6CAC4; border-radius: 8px; background: #F2F3F0">
+<button type="button" aria-pressed="true" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 5px; background: #FCFCFB; box-shadow: 0 1px 2px rgba(21, 24, 28, 0.14); color: #15181C; font: inherit; font-weight: 500; cursor: pointer">Transitional</button>
+<button type="button" aria-pressed="false" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 5px; background: transparent; color: #474E56; font: inherit; cursor: pointer">Fully phased-in</button>
+</div>
+</div>
+<span style="display: flex; align-items: center; gap: 8px; padding: 0 4px; color: #474E56"><span style="width: 8px; height: 8px; border-radius: 4px; background: {{accent}}"></span>Run 04 · 06:48</span>
+<button type="button" aria-label="Account" style="width: 44px; height: 44px; border-radius: 22px; border: 1px solid #C6CAC4; background: #FCFCFB; color: #474E56; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"></path></svg></button>
+</div>
+</header>
+
+<main style="box-sizing: border-box; width: 100%; max-width: 1240px; padding: 32px 32px 48px; display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #5C636B"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; letter-spacing: 0; text-transform: none; font-size: 13px">R-CET1-14</span>· CET1 deduction</span>
+<h1 style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -0.01em">Threshold deductions</h1>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 2px">
+<span style="display: flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 14px; background: #E9EAE6; color: #474E56; font-size: 13px; font-weight: 500">Version 3.2</span>
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 14px; background: {{accentSoft}}; color: {{accent}}; font-size: 13px; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Validated · 5 of 5 tests</span>
+<span style="display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 14px; background: #FBEDE3; color: #A84A12; font-size: 13px; font-weight: 500"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 21 19.5H3z"></path><path d="M12 10v4.5M12 17.2v.3"></path></svg>1 input flagged this run</span>
+<span style="display: flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 14px; border: 1px solid #C6CAC4; color: #474E56; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px">Ref. 12 CFR 217.22(d)</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #C6CAC4; border-radius: 6px; background: #FCFCFB; color: #15181C; font: inherit; font-weight: 500; cursor: pointer">Edit rule</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; display: flex; align-items: center; gap: 8px; border: 0; border-radius: 6px; background: {{accent}}; color: #FFFFFF; font: inherit; font-weight: 500; cursor: pointer"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"></path></svg>Run tests</button>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px">
+
+<aside aria-labelledby="lib-h" style="flex: 1 1 270px; min-width: 0; box-sizing: border-box; padding: 18px 14px 14px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 16px">
+<h2 id="lib-h" style="margin: 0; padding: 0 6px; font-size: 16px; font-weight: 600">Rules</h2>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 0 6px">
+<label for="rule-search" style="font-size: 12px; font-weight: 500; color: #474E56">Search rules</label>
+<input id="rule-search" type="search" placeholder="Name or ID" style="min-height: 44px; box-sizing: border-box; width: 100%; padding: 0 12px; border: 1px solid #C6CAC4; border-radius: 6px; background: #FFFFFF; color: #15181C; font: inherit">
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="padding: 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C636B">CET1 filters</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="#r-cet1-01" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-CET1-01</span><span>Cash-flow hedge reserve</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+<li><a href="#r-cet1-02" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-CET1-02</span><span>Own credit adjustments</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+</ul>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="padding: 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C636B">CET1 deductions</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="#r-cet1-08" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-CET1-08</span><span>Goodwill, net of DTL</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+<li><a href="#r-cet1-09" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-CET1-09</span><span>Other intangibles, net of DTL</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+<li><a href="#r-cet1-10" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-CET1-10</span><span>DTAs from carryforwards</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+<li><a href="#r-cet1-11" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-CET1-11</span><span>Investments in own shares</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+<li><a href="#r-cet1-12" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-CET1-12</span><span>Defined benefit pension assets</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+<li><a href="Rules.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; background: {{accentSoft}}; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #474E56">R-CET1-14</span><span style="font-weight: 600">Threshold deductions</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Input flagged" style="color: #A84A12"><path d="M12 4 21 19.5H3z"></path><path d="M12 10v4.5M12 17.2v.3"></path></svg></a></li>
+</ul>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="padding: 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C636B">Additional Tier 1</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="#r-at1-01" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-AT1-01</span><span>Qualifying preferred stock</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+</ul>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="padding: 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C636B">Tier 2</span>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px">
+<li><a href="#r-t2-01" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-T2-01</span><span>Qualifying subordinated debt</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Input flagged" style="color: #A84A12"><path d="M12 4 21 19.5H3z"></path><path d="M12 10v4.5M12 17.2v.3"></path></svg></a></li>
+<li><a href="#r-t2-03" style="display: flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 6px; border-radius: 6px; color: #15181C; text-decoration: none"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; color: #5C636B">R-T2-03</span><span>Eligible credit reserves</span></span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" role="img" aria-label="Validated" style="color: {{accent}}"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg></a></li>
+</ul>
+</div>
+<span style="padding: 8px 6px 0; border-top: 1px solid #E6E8E4; font-size: 12px; color: #5C636B">Showing 11 of 58 rules</span>
+</aside>
+
+<div style="flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+
+<section aria-labelledby="what-h" style="box-sizing: border-box; padding: 22px 24px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 12px">
+<h2 id="what-h" style="margin: 0; font-size: 16px; font-weight: 600">What the rule does</h2>
+<p style="margin: 0; max-width: 760px; text-wrap: pretty">Three items count against capital only above a threshold: deferred tax assets from temporary differences, mortgage servicing assets, and significant investments in the common stock of unconsolidated financial institutions.</p>
+<p style="margin: 0; max-width: 760px; text-wrap: pretty">Each item is deducted where it exceeds 10% of the CET1 base. Whatever remains of the three combined is deducted where it exceeds 15% of CET1 after all deductions.</p>
+<dl style="margin: 6px 0 0; padding-top: 14px; border-top: 1px solid #E6E8E4; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 12px 24px">
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Applies to</dt><dd style="margin: 0; font-weight: 500">CET1</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Runs after</dt><dd style="margin: 0; font-weight: 500">R-CET1-01 to -13</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Rule owner</dt><dd style="margin: 0; font-weight: 500">Capital management</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 12px; color: #5C636B">Reviewer</dt><dd style="margin: 0; font-weight: 500">Capital reporting</dd></div>
+</dl>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 20px">
+
+<section aria-labelledby="logic-h" style="flex: 1 1 400px; min-width: 0; box-sizing: border-box; padding: 22px 24px 24px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px">
+<h2 id="logic-h" style="margin: 0; font-size: 16px; font-weight: 600">Logic</h2>
+<span style="font-size: 13px; color: #5C636B">v3.2</span>
+</div>
+<div style="flex: 1; box-sizing: border-box; padding: 16px 18px; border-radius: 6px; background: #1A1E23; color: #E6E8E4; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; line-height: 22px; overflow-x: auto; display: flex; flex-direction: column">
+<div style="white-space: pre; color: #9AA3AD"># CET1 base after rules R-CET1-01 to -13</div>
+<div style="white-space: pre">base      = cet1_elements − prior_deductions</div>
+<div style="white-space: pre">limit_10  = <span style="color: #F0B892">0.10</span> × base</div>
+<div style="height: 22px"></div>
+<div style="white-space: pre"><span style="color: #9DB3D6">for</span> item <span style="color: #9DB3D6">in</span> (dta_temp, msa_net, sig_inv):</div>
+<div style="white-space: pre; padding-left: 4ch">over_10[item] = max(<span style="color: #F0B892">0</span>, item − limit_10)</div>
+<div style="height: 22px"></div>
+<div style="white-space: pre">remaining = Σ (item − over_10[item])</div>
+<div style="white-space: pre; color: #9AA3AD"># equals 15% of CET1 after all deductions</div>
+<div style="white-space: pre">limit_15  = <span style="color: #F0B892">0.1765</span> × (base − Σ item)</div>
+<div style="white-space: pre">over_15   = max(<span style="color: #F0B892">0</span>, remaining − limit_15)</div>
+<div style="height: 22px"></div>
+<div style="white-space: pre"><span style="color: #FFFFFF; font-weight: 500">deduction</span> = Σ over_10 + over_15</div>
+</div>
+</section>
+
+<section aria-labelledby="run-h" style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 22px 24px 20px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px">
+<h2 id="run-h" style="margin: 0; font-size: 16px; font-weight: 600">This run</h2>
+<span style="font-size: 13px; color: #5C636B">Run 04 · $ millions</span>
+</div>
+<table style="width: 100%; border-collapse: collapse; font-size: 14px">
+<caption style="text-align: left; padding: 4px 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C636B">Inputs</caption>
+<tbody>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 8px 12px 8px 0"><span style="display: flex; flex-direction: column"><span>CET1 base</span><span style="font-size: 12px; color: #5C636B">Computed by R-CET1-01 to -13</span></span></th><td style="text-align: right; padding: 8px 0; white-space: nowrap">165,420.0</td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 8px 12px 8px 0"><span style="display: flex; flex-direction: column"><span>DTAs, temporary differences</span><span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; color: #A84A12"><svg class="ic" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 21 19.5H3z"></path><path d="M12 10v4.5M12 17.2v.3"></path></svg>Deferred tax feed · 1 account unmapped</span></span></th><td style="text-align: right; padding: 8px 0; white-space: nowrap">7,880.0</td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 8px 12px 8px 0"><span style="display: flex; flex-direction: column"><span>MSAs, net of DTL</span><span style="font-size: 12px; color: #5C636B">General ledger feed</span></span></th><td style="text-align: right; padding: 8px 0; white-space: nowrap">2,310.0</td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 8px 12px 8px 0"><span style="display: flex; flex-direction: column"><span>Significant investments, common stock</span><span style="font-size: 12px; color: #5C636B">Equity investments feed</span></span></th><td style="text-align: right; padding: 8px 0; white-space: nowrap">17,206.0</td></tr>
+</tbody>
+</table>
+<table style="width: 100%; border-collapse: collapse; font-size: 14px">
+<caption style="text-align: left; padding: 8px 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C636B">Steps</caption>
+<tbody>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 7px 12px 7px 0; color: #474E56">10% limit</th><td style="text-align: right; padding: 7px 0; white-space: nowrap; color: #474E56">16,542.0</td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 7px 12px 7px 0; color: #474E56">Over 10%, significant investments</th><td style="text-align: right; padding: 7px 0; white-space: nowrap; color: #474E56">664.0</td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 7px 12px 7px 0; color: #474E56">15% limit</th><td style="text-align: right; padding: 7px 0; white-space: nowrap; color: #474E56">24,361.2</td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><th scope="row" style="text-align: left; font-weight: 400; padding: 7px 12px 7px 0; color: #474E56">Over 15%, combined</th><td style="text-align: right; padding: 7px 0; white-space: nowrap; color: #474E56">2,370.8</td></tr>
+<tr style="border-top: 2px solid #15181C"><th scope="row" style="text-align: left; font-weight: 600; padding: 10px 12px 10px 0">Deduction from CET1</th><td style="text-align: right; padding: 10px 0; white-space: nowrap; font-weight: 600">3,034.8</td></tr>
+</tbody>
+</table>
+<p style="margin: 4px 0 0; padding: 10px 12px; border-radius: 6px; background: #FBEDE3; font-size: 13px; color: #15181C; text-wrap: pretty">The DTA input leaves out new account 2408-117. <a href="Reconciliation.dc.html" style="color: #8A3B0E; font-weight: 500">See exception E-01</a></p>
+</section>
+
+</div>
+
+<section aria-labelledby="tests-h" style="box-sizing: border-box; padding: 22px 24px 12px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px">
+<h2 id="tests-h" style="margin: 0; font-size: 16px; font-weight: 600">Test cases</h2>
+<span style="font-size: 13px; color: #5C636B">Last run 06:12 · 5 of 5 passed · $ millions</span>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 520px; border-collapse: collapse; font-size: 14px">
+<thead>
+<tr style="color: #5C636B; font-size: 12px"><th scope="col" style="text-align: left; font-weight: 500; padding: 8px 12px 8px 0">Case</th><th scope="col" style="text-align: right; font-weight: 500; padding: 8px 12px">Expected</th><th scope="col" style="text-align: right; font-weight: 500; padding: 8px 12px">Actual</th><th scope="col" style="text-align: left; font-weight: 500; padding: 8px 0 8px 12px; width: 90px">Result</th></tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #E6E8E4"><td style="padding: 11px 12px 11px 0">All three items below 10%</td><td style="text-align: right; padding: 11px 12px">0.0</td><td style="text-align: right; padding: 11px 12px">0.0</td><td style="padding: 11px 0 11px 12px"><span style="display: flex; align-items: center; gap: 6px; font-weight: 500; color: {{accent}}"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Pass</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><td style="padding: 11px 12px 11px 0">One item above 10%</td><td style="text-align: right; padding: 11px 12px">2,000.0</td><td style="text-align: right; padding: 11px 12px">2,000.0</td><td style="padding: 11px 0 11px 12px"><span style="display: flex; align-items: center; gap: 6px; font-weight: 500; color: {{accent}}"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Pass</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><td style="padding: 11px 12px 11px 0">Combined amount above 15%</td><td style="text-align: right; padding: 11px 12px">7,056.5</td><td style="text-align: right; padding: 11px 12px">7,056.5</td><td style="padding: 11px 0 11px 12px"><span style="display: flex; align-items: center; gap: 6px; font-weight: 500; color: {{accent}}"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Pass</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><td style="padding: 11px 12px 11px 0">Both thresholds breached</td><td style="text-align: right; padding: 11px 12px">9,409.5</td><td style="text-align: right; padding: 11px 12px">9,409.5</td><td style="padding: 11px 0 11px 12px"><span style="display: flex; align-items: center; gap: 6px; font-weight: 500; color: {{accent}}"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Pass</span></td></tr>
+<tr style="border-top: 1px solid #E6E8E4"><td style="padding: 11px 12px 11px 0">Q2 close replayed against the spreadsheet model</td><td style="text-align: right; padding: 11px 12px">3,335.4</td><td style="text-align: right; padding: 11px 12px">3,335.4</td><td style="padding: 11px 0 11px 12px"><span style="display: flex; align-items: center; gap: 6px; font-weight: 500; color: {{accent}}"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5 9.5 17.5 19.5 7"></path></svg>Pass</span></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section aria-labelledby="hist-h" style="box-sizing: border-box; padding: 22px 24px 10px; background: #FCFCFB; border: 1px solid #DCDFDA; border-radius: 8px; display: flex; flex-direction: column; gap: 6px">
+<h2 id="hist-h" style="margin: 0 0 4px; font-size: 16px; font-weight: 600">Version history</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 4px 16px; padding: 12px 0; border-top: 1px solid #E6E8E4">
+<span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; font-weight: 500">v3.2</span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span>The 15% limit now uses the base less the three items in full, matching the rule text.</span><span style="font-size: 13px; color: #5C636B">14 Sep · Capital analyst · reviewed by Capital manager</span></span>
+</li>
+<li style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 4px 16px; padding: 12px 0; border-top: 1px solid #E6E8E4">
+<span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; font-weight: 500">v3.1</span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span>Mortgage servicing assets taken net of DTL from the general ledger feed.</span><span style="font-size: 13px; color: #5C636B">22 Aug · Capital analyst · reviewed by Capital manager</span></span>
+</li>
+<li style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 4px 16px; padding: 12px 0; border-top: 1px solid #E6E8E4">
+<span style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 13px; font-weight: 500">v3.0</span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span>Moved from the spreadsheet model into the calculation engine.</span><span style="font-size: 13px; color: #5C636B">30 Jun · Capital technology · reviewed by Capital management</span></span>
+</li>
+</ol>
+</section>
+
+</div>
+</div>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#24508F","options":["#24508F","#1F5F5B","#3D3F8F","#15181C"]},"$preview":{"width":1440,"height":1880}}'>
+class Component extends DCLogic {
+  mix(hex, toHex, t) {
+    const parse = (h) => {
+      let s = String(h || '').replace('#', '');
+      if (s.length === 3) s = s.split('').map((c) => c + c).join('');
+      const n = parseInt(s.slice(0, 6), 16);
+      if (isNaN(n)) return [36, 80, 143];
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    };
+    const a = parse(hex);
+    const b = parse(toHex);
+    return '#' + a.map((v, i) => Math.round(v + (b[i] - v) * t).toString(16).padStart(2, '0')).join('');
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#24508F';
+    return {
+      accent,
+      accentSoft: this.mix(accent, '#FCFCFB', 0.9)
+    };
+  }
+}
+</script>
+</body>
+</html>
