@@ -11,7 +11,7 @@
 <meta name="description" content="Bengisu Halezeroğlu, product designer. Case studies in visual and interaction design for financial services, B2B SaaS and consumer apps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,400..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..800;1,400..600&family=Manrope:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..400;1,6..72,300..400&display=swap">
 <style>
 /* Layout: an annotated spec sheet. A left-aligned reading column for words, a wider plate column for the work,
    cobalt hairlines as redlines. Each case study board keeps its own product's look, mounted as a plate on the sheet. */
@@ -71,7 +71,7 @@ button{font:inherit;color:inherit}
 /* ---------- Header ---------- */
 .site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--rule)}
 .head-inner{height:var(--head-h);display:flex;align-items:center;justify-content:space-between;gap:16px}
-.wordmark{font-family:var(--f-display);font-size:1.25rem;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.wordmark{font-family:"Newsreader",Georgia,serif;font-size:1.375rem;text-decoration:none;letter-spacing:0;white-space:nowrap}
 .wordmark .short{display:none}
 .nav{display:flex;gap:clamp(12px,2.4vw,28px)}
 .nav a{font-size:var(--fs-small);text-decoration:none;color:var(--ink-2);padding:6px 0;border-bottom:1.5px solid transparent;white-space:nowrap}
@@ -87,7 +87,7 @@ button{font:inherit;color:inherit}
 .prose p + p{margin-top:1em}
 .display{font-family:var(--f-display);font-weight:600;letter-spacing:-.035em;line-height:1.02;text-wrap:balance;font-optical-sizing:auto}
 .section-title{font-family:var(--f-display);font-size:var(--fs-h2);line-height:1.08;letter-spacing:-.025em;text-wrap:balance}
-.wordmark,.section-title,.feature-foot strong,.practice h3,.ix-name,.card-name,.phasebar .ttl,.case-section > .wide > h2,.pager .nm,.cv-section > h2,.pron b{font-weight:600}
+.section-title,.card-name,.phasebar .ttl,.case-section > .wide > h2,.pager .nm,.cv-section > h2,.pron b{font-weight:600}
 .link{color:var(--cobalt);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .link:hover{text-decoration-thickness:2px}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:var(--fs-small);text-decoration:none;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
@@ -120,90 +120,102 @@ section.block{padding-block:clamp(48px,8vw,104px);border-top:1px solid var(--rul
 .sc .shot{position:absolute;display:block;height:auto}
 .sc .scr > .stage{position:absolute;top:0;left:0;transform-origin:0 0}
 
-/* ---------- Home bento ---------- */
-.page[data-page="home"]{padding-top:clamp(16px,2.6vw,36px)}
-.bento-wrap{padding-bottom:clamp(48px,7vw,88px)}
-.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(clamp(250px,21vw,300px),auto);gap:16px}
-.b-tile{position:relative;overflow:hidden;border-radius:26px;background:var(--surface);border:1px solid var(--rule);padding:24px;min-width:0;margin:0;color:var(--ink);text-decoration:none;display:flex;flex-direction:column}
-.b-photo{grid-row:span 2;padding:0;border:0;background:var(--rule)}
-.b-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.b-intro{grid-column:span 2;justify-content:space-between;gap:20px}
-.b-lab{font-size:var(--fs-xs);font-weight:600;color:var(--ink-2);position:relative;z-index:1}
-.b-hi{margin:0;font-size:clamp(2.6rem,4.4vw,3.8rem);line-height:.95;letter-spacing:-.045em;font-weight:700;text-wrap:balance}
-.b-lead{margin-top:12px;font-size:clamp(1.02rem,1.3vw,1.18rem);line-height:1.45;color:var(--ink-2);max-width:34em}
-.b-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.b-link{color:var(--cobalt);font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:5px}
-.b-link:hover{text-decoration:underline;text-underline-offset:3px}
-.b-stat{justify-content:flex-end;gap:8px}
-.b-num{font-size:clamp(3.4rem,6vw,5.6rem);line-height:.92;letter-spacing:-.05em;font-weight:700}
-.b-cap{font-size:var(--fs-small);line-height:1.4}
-.b-cobalt{background:#2541B2;border-color:#2541B2;color:#FFFFFF}
-.b-cobalt .b-cap{color:rgba(255,255,255,.86)}
-.b-ink .b-num{font-size:clamp(2.6rem,4vw,3.6rem)}
-.b-ink{background:#15171C;border-color:#2A2D35;color:#F2F4F8}
-.b-ink .b-lab,.b-ink .b-cap{color:#A9AFBF}
-.b-case{background:var(--tint);border:0;color:#15171C}
-.b-case .b-lab{color:var(--tink)}
-.b-name{display:block;position:relative;z-index:1;font-size:clamp(1.5rem,2.2vw,1.9rem);font-weight:700;letter-spacing:-.025em;line-height:1.1;margin-top:2px}
-.b-dev{position:absolute;left:50%;top:var(--dt);width:var(--dw);max-width:none;transform:translateX(var(--dx,-50%));transition:transform .4s cubic-bezier(.2,.7,.2,1)}
-.b-case:hover .b-dev{transform:translateX(var(--dx,-50%)) translateY(-8px)}
-.b-case:focus-visible{outline-offset:4px}
-.b-wide{grid-column:span 2}
-.b-edu{justify-content:space-between}
-.b-edu .b-name{font-size:clamp(1.35rem,1.9vw,1.6rem)}
-.b-edu .b-cap{display:block;margin-top:8px;color:var(--ink-2)}
-@media (prefers-reduced-motion: reduce){.b-dev{transition:none}.b-case:hover .b-dev{transform:translateX(var(--dx,-50%))}}
-@media (max-width:900px){
-  .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row dense;grid-auto-rows:minmax(280px,auto)}
-  .b-intro{grid-column:span 2;grid-row:1}
-  .b-photo{grid-row:span 1}
-  .b-narrow{grid-column:span 2}
-  .b-narrow .b-dev{width:min(var(--dw),440px);top:32%}
+/* ---------- Home: clarity, care, craft ---------- */
+html.is-home body{color:#1E3236;background:radial-gradient(70% 38rem at 82% -4rem,rgba(255,255,255,.75),rgba(255,255,255,0) 70%),radial-gradient(60% 34rem at 0% 30rem,rgba(201,222,230,.7),rgba(201,222,230,0) 70%),linear-gradient(180deg,#D6E4EC 0%,#E1ECE8 42%,#EAEFE8 68%,#F4EFE7 100%)}
+html.is-home .site-head{background:rgba(240,245,245,.8);border-bottom-color:rgba(30,50,54,.08)}
+html.is-home .nav a{color:#3F5356}
+html.is-home .nav a[aria-current="page"]{color:#1E3236;border-bottom-color:#3B6A65}
+html.is-home .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
+.page[data-page="home"]{position:relative;padding:0;overflow:hidden;font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6;color:#1E3236}
+.page[data-page="home"] a{color:inherit}
+.e-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.e-bg i{position:absolute;border-radius:50%}
+.e-bg .a{top:-14rem;right:-12%;width:62rem;height:62rem;background:radial-gradient(circle,rgba(255,255,255,.6),rgba(255,255,255,0) 60%)}
+.e-bg .b{top:20rem;left:-20%;width:52rem;height:52rem;background:radial-gradient(circle,rgba(184,214,226,.5),rgba(184,214,226,0) 62%)}
+.e-bg .c{top:120rem;right:-16%;width:56rem;height:56rem;background:radial-gradient(circle,rgba(214,232,222,.55),rgba(214,232,222,0) 62%)}
+.e-in{position:relative;z-index:1;max-width:var(--max);margin-inline:auto;padding-left:max(clamp(16px,4vw,40px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,40px),env(safe-area-inset-right,0px))}
+.e-serif{font-family:"Newsreader",Georgia,serif}
+.e-hero{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(56px,7vw,88px)}
+.e-eyebrow{margin:0 0 24px;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#4A5D60}
+.e-h1{margin:0;max-width:880px;font-family:"Newsreader",Georgia,serif;font-weight:300;font-size:clamp(36px,4.4vw,60px);line-height:1.12;letter-spacing:-.01em}
+.e-h1 > span{display:block}
+.e-h1 .e-sub{margin-top:12px;font-size:.6em;line-height:1.3;color:#4A5D60;text-wrap:pretty}
+.e-values{list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px 40px}
+.e-values li{display:flex;flex-direction:column;gap:8px;padding-top:20px;border-top:1px solid rgba(30,50,54,.2)}
+.e-values b{display:flex;align-items:center;gap:12px;font-family:"Newsreader",Georgia,serif;font-size:32px;line-height:1.1;font-weight:400}
+.e-values b i{flex:none;width:12px;height:12px;border-radius:50%}
+.e-values li > span{font-size:15px;color:#3F5356}
+.e-video{padding-bottom:clamp(72px,9vw,120px)}
+.e-video figure{margin:0;display:flex;flex-direction:column;gap:16px}
+.e-vframe{border-radius:24px;overflow:hidden;background:#0B1022;border:1px solid rgba(255,255,255,.7);box-shadow:0 30px 80px rgba(30,50,54,.16)}
+.e-vframe video{display:block;width:100%;height:auto;aspect-ratio:16 / 9;background:#0B1022}
+.e-video figcaption{display:flex;flex-direction:column;gap:10px;font-size:15px;color:#4A5D60}
+.e-vt{font-family:"Newsreader",Georgia,serif;font-size:22px;line-height:1.2;color:#1E3236}
+.e-vt span{font-family:Manrope,system-ui,sans-serif;font-size:14px;color:#4A5D60}
+.e-story summary{display:inline-flex;align-items:center;gap:6px;min-height:44px;cursor:pointer;font-weight:600;color:#3B6A65;list-style:none}
+.e-story summary::-webkit-details-marker{display:none}
+.e-story summary::before{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s;margin-right:4px}
+.e-story[open] summary::before{transform:rotate(45deg) translate(-2px,-2px)}
+.e-story ol{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px 32px}
+.e-story li{display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid rgba(30,50,54,.16);font-size:15px;line-height:1.5;color:#3F5356}
+.e-story li .n{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#4A5D60}
+.e-story li b{font-family:"Newsreader",Georgia,serif;font-size:20px;line-height:1.25;font-weight:400;color:#1E3236}
+.e-story .end{margin-top:20px;font-family:"Newsreader",Georgia,serif;font-size:22px;line-height:1.3;color:#1E3236}
+.e-work-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:28px}
+.e-work-head h2{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:clamp(36px,4vw,56px);line-height:1}
+.e-work-head p{font-size:15px;color:#4A5D60}
+.e-work-head p a{font-weight:600;color:#3B6A65;text-decoration:underline;text-underline-offset:3px}
+.e-work-body{display:flex;flex-direction:row-reverse;flex-wrap:wrap;gap:32px 64px;align-items:flex-start}
+.e-preview{flex:1 1 420px;max-width:560px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.e-shots{position:relative;aspect-ratio:1440 / 1040;border-radius:24px;overflow:hidden;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);box-shadow:0 30px 80px rgba(30,50,54,.08)}
+.e-shots > .plate{position:absolute;inset:0;border:0;border-radius:0;opacity:0;transition:opacity .8s ease;filter:saturate(.72)}
+.e-shots > .plate.is-on{opacity:1}
+.e-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px}
+.e-result{font-size:16px;font-weight:600}
+.page[data-page="home"] .e-read{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:#3B6A65;text-decoration:none}
+.e-read:hover{text-decoration:underline;text-underline-offset:3px}
+.e-list{flex:999 1 340px;min-width:0;list-style:none;margin:0;padding:0;border-bottom:1px solid rgba(30,50,54,.16)}
+.page[data-page="home"] .e-item{display:flex;flex-direction:column;gap:6px;padding:20px 0;border-top:1px solid rgba(30,50,54,.16);text-decoration:none;color:#44585B;transition:padding-left .4s ease,box-shadow .4s ease,color .4s ease}
+.e-item .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
+.e-item b{font-family:"Newsreader",Georgia,serif;font-size:26px;line-height:1.15;font-weight:300}
+.e-item .k{font-size:13px;color:#4A5D60}
+.e-item .ln,.e-item .rs{display:none;font-size:15px;color:#3F5356}
+.e-item:hover{padding-left:8px}
+.page[data-page="home"] .e-item.is-on{padding:20px 0 22px 20px;box-shadow:inset 2px 0 0 #3B6A65;color:#1E3236}
+.e-item.is-on b{font-size:32px;line-height:1.1;font-weight:400}
+.e-item.is-on .ln{display:block}
+.e-cta{display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;padding-top:clamp(96px,11vw,160px);padding-bottom:clamp(72px,9vw,120px)}
+.e-cta h2{max-width:720px;font-family:"Newsreader",Georgia,serif;font-weight:300;font-size:clamp(36px,4.6vw,64px);line-height:1.1;text-wrap:balance}
+.page[data-page="home"] .e-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:24px;background:#1E3236;color:#F4EFE7;font-weight:600;text-decoration:none;transition:background .3s}
+.page[data-page="home"] .e-btn:hover{background:#3B6A65}
+@media (max-width:760px){
+  .e-preview{display:none}
+  .page[data-page="home"] .e-item,.page[data-page="home"] .e-item.is-on{padding:18px 0;box-shadow:none;color:#1E3236}
+  .e-item b,.e-item.is-on b{font-size:28px;font-weight:400}
+  .e-item .ln,.e-item .rs{display:block}
+  .e-item .rs{font-size:14px;font-weight:600;color:#1E3236}
+  .e-item:hover{padding-left:0}
 }
-@media (max-width:560px){
-  .bento{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:14px}
-  .b-intro,.b-wide,.b-narrow{grid-column:auto}
-  .b-photo{aspect-ratio:1 / 1}
-  .b-stat,.b-edu{min-height:220px}
-  .b-case{min-height:300px}
-  .b-narrow{min-height:380px}
-}
-
-/* ---------- Home ---------- */
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(32px,5vw,72px);align-items:start;padding-bottom:clamp(48px,8vw,96px)}
-.hero-copy{display:grid;gap:28px;padding-top:12px;min-width:0}
-.hero-title{font-size:var(--fs-hero)}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-
-.portrait{margin:0;width:100%;max-width:520px;justify-self:end;aspect-ratio:1 / 1;border-radius:24px;overflow:hidden;background:var(--surface);border:1px solid var(--rule)}
-.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%}
-@media (max-width:900px){.portrait{justify-self:start;max-width:420px}}
-.feature{display:grid;text-decoration:none;background:var(--surface);border:1px solid var(--rule);border-radius:20px;overflow:hidden;transition:border-color .2s}
-.feature:hover{border-color:var(--cobalt)}
-.feature .plate{border:0;border-radius:0;border-bottom:1px solid var(--rule)}
-.feature-foot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:18px clamp(18px,3vw,28px)}
-.feature-foot strong{font-family:var(--f-display);font-weight:400;font-size:1.375rem;letter-spacing:-.01em}
+@keyframes e-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes e-word{from{opacity:0;transform:translateY(.35em);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes e-drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-5%,4%) scale(1.08)}100%{transform:translate(0,0) scale(1)}}
+@keyframes e-dot{0%,100%{transform:scale(1)}50%{transform:scale(1.4)}}
+.e-rise{animation:e-rise 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+.e-word{display:inline-block;margin-right:.26em;animation:e-word 1.5s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+.e-drift{animation:e-drift 20s ease-in-out infinite}
+.e-drift.slow{animation-duration:28s;animation-direction:reverse}
+.e-dot{animation:e-dot 4.5s ease-in-out infinite;animation-delay:var(--d,0s)}
+@supports (animation-timeline: view()){.e-reveal{animation:e-rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}}
+/* the opening plays once per visit; coming back from a case study shows it settled */
+.e-played .e-word,.e-played .e-rise{animation:none}
+@media (prefers-reduced-motion: reduce){.e-word,.e-rise,.e-drift,.e-dot,.e-reveal{animation:none!important}.e-shots > .plate,.page[data-page="home"] .e-item,.e-story summary::before{transition:none}}
 .go{font-size:var(--fs-small);color:var(--cobalt);font-weight:600;white-space:nowrap}
-
-.home-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,4vw,48px);margin-bottom:clamp(32px,5vw,56px);align-items:end}
-.practice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,48px)}
-.practice h3{font-family:var(--f-display);font-size:1.6rem;line-height:1.15;letter-spacing:-.01em;margin-bottom:10px}
-.practice p{color:var(--ink-2)}
-
-.index{list-style:none;border-top:1px solid var(--ink)}
-.index a{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1fr) 24px;gap:8px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none}
-.index a:hover .ix-name{color:var(--cobalt)}
-.ix-name{font-family:var(--f-display);font-size:1.6rem;line-height:1.15;letter-spacing:-.015em}
-.ix-kind{display:block;font-size:var(--fs-xs);font-weight:600;color:var(--ink-2);margin-top:4px;font-family:var(--f-text);letter-spacing:.01em}
-.ix-title{color:var(--ink)}
-.ix-meta{font-size:var(--fs-small);color:var(--ink-2)}
-.ix-arrow{color:var(--cobalt);justify-self:end}
-.ix-arrow svg{display:block}
 
 /* ---------- Case study index ---------- */
 .page[data-page="work"]{padding-top:clamp(32px,4.5vw,64px)}
 .work-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;padding-bottom:clamp(24px,3vw,40px)}
 .work-head h1{font-size:var(--fs-h1)}
+.work-group{padding:14px 0 24px;border-top:1px solid var(--rule);font-family:var(--f-display);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:600;letter-spacing:-.015em}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,3.5vw,48px) clamp(16px,2vw,28px);padding-bottom:clamp(56px,8vw,104px)}
 @media (max-width:1023px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .card{display:flex;flex-direction:column;gap:16px;text-decoration:none;min-width:0}
@@ -789,12 +801,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
-  .hero,.home-intro,.work-head,.case-head,.about,.contact{grid-template-columns:minmax(0,1fr)}
-  .practice{grid-template-columns:minmax(0,1fr)}
+  .work-head,.case-head,.about,.contact{grid-template-columns:minmax(0,1fr)}
   .profile{position:static}
-  .index a{grid-template-columns:minmax(0,1fr) 24px}
-  .index .ix-title,.index .ix-meta{grid-column:1}
-  .index .ix-arrow{grid-column:2;grid-row:1}
 }
 @media (max-width:640px){
   .cards{grid-template-columns:minmax(0,1fr)}
@@ -813,7 +821,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     <nav class="nav" aria-label="Main">
       <a href="#home" data-nav="home">Home</a>
       <a href="#about" data-nav="about">About</a>
-      <a href="#work" data-nav="work">Case studies</a>
+      <a href="#work" data-nav="work">All work</a>
       <a href="#contact" data-nav="contact">Contact</a>
     </nav>
   </div>
@@ -823,52 +831,56 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 
 <!-- ============================ HOME ============================ -->
 <div class="page" data-page="home">
-  <div class="wrap bento-wrap">
-    <div class="bento">
-      <figure class="b-tile b-photo"><img src="img/portrait.jpg" alt="Bengisu Halezeroğlu" width="1024" height="1024"></figure>
-      <div class="b-tile b-intro">
-        <span class="b-lab">Product designer · London</span>
-        <div><h1 class="b-hi">Hi, I'm Bengisu.</h1><p class="b-lead">I turn complicated, high-stakes decisions into products people trust, from investing at Citi to hiring with AI and finding the right turn in Istanbul traffic.</p></div>
-        <div class="b-actions"><a class="btn" href="#work">See the case studies</a><a class="b-link" href="#about">About me <span aria-hidden="true">›</span></a></div>
-      </div>
-      <div class="b-tile b-stat b-cobalt"><span class="b-num">10+</span><span class="b-cap">years building digital products</span></div>
-      <a class="b-tile b-case b-wide" href="#self-invest" style="--tint:#E1E9F1;--tink:#00548A"><span class="b-lab">Citibank · Investing</span><span class="b-name">Citi Self Invest</span><img class="b-dev" src="img/tile-citi.webp" alt="" style="--dw:84%;--dt:30%"></a>
-      <div class="b-tile b-stat b-ink"><span class="b-lab">Citi Self Invest</span><span class="b-num">$2.2B+</span><span class="b-cap">AUM growth, and 70,000+ new accounts</span></div>
-      <a class="b-tile b-case b-wide" href="#cerehive" style="--tint:#E9E5F6;--tink:#4A2A8E"><span class="b-lab">AI recruitment platform</span><span class="b-name">CereHive</span><img class="b-dev" src="img/tile-cerehive.webp" alt="" style="--dw:82%;--dt:30%;--dx:-46%"></a>
-      <a class="b-tile b-case b-narrow" href="#yol" style="--tint:#DCE5FB;--tink:#1747C4"><span class="b-lab">Concept</span><span class="b-name" lang="tr">Yol Arkadaşı</span><img class="b-dev" src="img/tile-yol.webp" alt="" style="--dw:108%;--dt:38%"></a>
-      <div class="b-tile b-edu"><span class="b-lab">Education</span><div><span class="b-name">MSc, Distinction</span><span class="b-cap">Management and Technological Change, King's Business School</span></div></div>
-    </div>
-  </div>
+  <div class="e-bg" aria-hidden="true"><i class="a e-drift"></i><i class="b e-drift slow"></i><i class="c e-drift"></i></div>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="home-intro">
-        <h2 class="section-title">What I bring</h2>
+  <section class="e-in e-hero" aria-labelledby="e-intro">
+    <p class="e-eyebrow e-rise" style="--d:.05s">Product designer · London, New York, Istanbul</p>
+    <h1 id="e-intro" class="e-h1" aria-label="I research, design, build and ship. 10+ years of solving customer and enterprise problems through thoughtful design."><span aria-hidden="true"><span class="e-word" style="--d:0.30s">I</span><span class="e-word" style="--d:0.75s">research,</span><span class="e-word" style="--d:1.20s">design,</span><span class="e-word" style="--d:1.65s">build</span><span class="e-word" style="--d:2.10s">and</span><span class="e-word" style="--d:2.55s">ship.</span></span><span aria-hidden="true" class="e-sub e-rise" style="--d:3.3s">10+ years of solving customer and enterprise problems through thoughtful design.</span></h1>
+    <ul class="e-values" aria-label="What I value">
+      <li class="e-rise" style="--d:3.9s"><b><i class="e-dot" aria-hidden="true" style="--d:0s;background:#8DB4C7"></i>Clarity</b><span>I turn complex decisions into simple, confident steps.</span></li>
+      <li class="e-rise" style="--d:4.15s"><b><i class="e-dot" aria-hidden="true" style="--d:1.5s;background:#93B9A8"></i>Care</b><span>I design for real people, their worries and their context.</span></li>
+      <li class="e-rise" style="--d:4.4s"><b><i class="e-dot" aria-hidden="true" style="--d:3s;background:#CDB48C"></i><em>Craft</em></b><span>I get the details right, so products feel effortless.</span></li>
+    </ul>
+  </section>
+
+  <section class="e-in e-video" aria-labelledby="e-video-t">
+    <figure class="e-reveal">
+      <div class="e-vframe"><video controls playsinline preload="metadata" poster="img/story-poster.jpg" aria-labelledby="e-video-t"><source src="media/career-story.mp4" type="video/mp4"></video></div>
+      <figcaption>
+        <span class="e-vt" id="e-video-t">How I got here <span>· 42 seconds</span></span>
+        <details class="e-story">
+          <summary>Read the video’s text</summary>
+          <ol>
+            <li><span class="n">01 · A journey across business, technology &amp; design</span><b>Curious by nature. A builder by choice.</b>I wanted to understand how the world works — people, businesses, and technology.</li>
+            <li><span class="n">02 · Economics · Finance</span><b>Understanding the bigger picture.</b>Economics taught me systems. Finance taught me how businesses run — then I got curious about the people.</li>
+            <li><span class="n">03 · Bank of America</span><b>From numbers to experiences.</b>Transforming complex financial processes through automation — then moving into UX.</li>
+            <li><span class="n">04 · Citi</span><b>Designing for real life.</b>Digital wealth experiences that help people invest with clarity and confidence.</li>
+            <li><span class="n">05 · CereHive</span><b>A new way to think about technology.</b>Product strategy &amp; UX for an AI recruiting platform. How do we turn emerging tech into real value?</li>
+            <li><span class="n">06 · Today</span><b>Bringing it all together.</b>Exploring the intersection of AI, business &amp; design — turning complexity into clarity.</li>
+          </ol>
+          <p class="end">The tools will keep changing. What matters is what we choose to build with them.</p>
+        </details>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="e-in e-work" aria-labelledby="e-work">
+    <div class="e-work-head e-reveal">
+      <h2 id="e-work">Selected work</h2>
+      <p>Five case studies, 2016 to 2026 · <a href="#work">See all work</a></p>
+    </div>
+    <div class="e-work-body e-reveal">
+      <div class="e-preview">
+        <div class="e-shots" id="e-shots" aria-hidden="true"></div>
+        <div class="e-foot"><span class="e-result" id="e-result"></span><a class="e-read" id="e-read" href="#miiras">Read the case study<span aria-hidden="true">&nbsp;→</span></a></div>
       </div>
-      <div class="practice">
-        <div>
-          <h3>Visual and interaction design</h3>
-          <p>Lead designer on Citi Self Invest and Citi Wealth Builder, from sketches and wireframes to high-fidelity comps, prototypes and launch, on mobile and web.</p>
-        </div>
-        <div>
-          <h3>Systems and accessibility</h3>
-          <p>Built and governed design systems at Citi and CereHive: type scales, colour, spacing and components, with accessibility built in to WCAG standards.</p>
-        </div>
-        <div>
-          <h3>Analysis and strategy</h3>
-          <p>Started as an analyst in capital management at Bank of America, with an economics degree from Penn and an MSc in Management and Technological Change from King's. I ground design decisions in data and business strategy.</p>
-        </div>
-      </div>
+      <ul class="e-list" id="e-list" aria-label="Selected case studies"></ul>
     </div>
   </section>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="home-intro">
-        <h2 class="section-title">Selected work</h2>
-      </div>
-      <ol class="index" id="home-index"></ol>
-    </div>
+  <section class="e-in e-cta e-reveal" aria-labelledby="e-cta-t">
+    <h2 id="e-cta-t">Let’s build something <em>thoughtful</em> together.</h2>
+    <a class="e-btn" href="#contact">Get in touch</a>
   </section>
 </div>
 
@@ -991,7 +1003,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
           </li>
         </ol>
         <div class="cv-links">
-          <a class="btn ghost" href="#work">See the case studies</a>
+          <a class="btn ghost" href="#work">See all work</a>
           <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
       </section>
@@ -999,13 +1011,16 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   </div>
 </div>
 
-<!-- ============================ CASE STUDIES ============================ -->
+<!-- ============================ ALL WORK ============================ -->
 <div class="page" data-page="work" hidden>
   <div class="wrap">
     <div class="work-head">
-      <h1 class="display">Case studies</h1>
+      <h1 class="display">All work</h1>
     </div>
-    <div class="cards" id="cards"></div>
+    <h2 class="work-group">Selected work</h2>
+    <div class="cards" id="cards-sel"></div>
+    <h2 class="work-group">More projects</h2>
+    <div class="cards" id="cards-more"></div>
   </div>
 </div>
 
@@ -1032,7 +1047,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 
 <footer class="site-foot">
   <div class="wrap">
-    <span>© 2026 Bengisu Halezeroğlu</span>
+    <span>© 2026 Bengisu Halezeroğlu · London, New York, Istanbul</span>
   </div>
 </footer>
 
@@ -1059,15 +1074,18 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     {id:'cerehive', name:'CereHive', kind:'AI recruitment platform · SaaS', title:'AI recruiting that finds the best candidates, and shows why',
      summary:'An AI-native recruitment platform that helps hiring teams find and screen the best candidates for each role. I designed it from 0 to 1 around the open role, so every AI match score shows its reasons, and built its Figma design system.',
      role:'Senior Product Designer', market:'B2B', platform:'Web app', year:'2025 – 2026'},
-    {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
-     summary:'A four-step booking flow in Turkish and English for a thoracic surgeon’s online consultations, built around WhatsApp, bank transfer and getting the patient’s records in on time.',
-     role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'},
     {id:'self-invest', name:'Citi Self Invest', kind:'Citibank', title:'The ETF and Mutual Fund Screener',
      summary:'Narrowing thousands of funds to the few that fit, for investors new to funds and for experienced ones who want full control, on web and iPhone.',
      role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2021 – 2023'},
     {id:'wealth-builder', name:'Citi Wealth Builder', kind:'Citibank', title:'Guided investing onboarding',
      summary:'Onboarding for Citi’s first robo-advisor: turning a goal and a comfort with risk into a portfolio investors trust, one question at a time.',
      role:'Senior Product Designer', market:'B2C', platform:'Web and iOS', year:'2022 – 2024'},
+    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
+     summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
+     role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'},
+    {id:'consultation', name:'Online Consultation', kind:'Client project · Prof. Dr. Semih Halezeroğlu', title:'Helping patients and families book a second opinion online',
+     summary:'A four-step booking flow in Turkish and English for a thoracic surgeon’s online consultations, built around WhatsApp, bank transfer and getting the patient’s records in on time.',
+     role:'Designer and builder', market:'B2C', platform:'Web, mobile first', year:'2026'},
     {id:'yol', name:'Yol Arkadaşı', kind:'Independent concept · Navigation', title:'Directions you can trust, even when the map is wrong',
      summary:'A navigation concept for Istanbul drivers. It flags a doubtful turn with the evidence behind it, has a Plan B ready before the junction, and lets drivers fix the map after they park. Written in Turkish first, for iPhone, the car display and Apple Watch.',
      role:'Solo designer', market:'B2C', platform:'iPhone, car display and Watch', year:'2026'},
@@ -1079,12 +1097,18 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
      role:'Product strategist', market:'B2C', platform:'Mobile app', year:'2020'},
     {id:'livs-love-pool', name:'Liv’s Love Pool', kind:'Matchmaking service', title:'A website and sign-up for a one-woman matchmaking service',
      summary:'A website, a guided sign-up and a date feedback loop for a matchmaker who ran her business through Instagram, texts and a Google Form.',
-     role:'UX designer and researcher', market:'B2C', platform:'Website, mobile first', year:'2020'},
-    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
-     summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
-     role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'}
+     role:'UX designer and researcher', market:'B2C', platform:'Website, mobile first', year:'2020'}
   ];
   var BY = {}; CASES.forEach(function(c, i){ c.i = i; BY[c.id] = c; });
+  /* the five shown on the home page; All work lists them first, then the rest */
+  var SELECTED = [
+    {id:'miiras', kind:'Founder project · 2026', result:'8 families reported more confidence talking about money'},
+    {id:'cerehive', kind:'AI recruitment · 2025–26', result:'$300K ARR in the first 12 months'},
+    {id:'self-invest', kind:'Citibank · 2021–23', result:'$2.2B+ AUM growth and 70K+ new accounts'},
+    {id:'wealth-builder', kind:'Citibank · 2022–24', result:'$8M+ in assets within 6 months'},
+    {id:'bofa', kind:'Capital management · 2016–20', result:'Reporting cycle cut from 10 days to 3'}
+  ];
+  var IS_SEL = {}; SELECTED.forEach(function(x){ IS_SEL[x.id] = 1; });
   var ARROW = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>';
   var EXPAND = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>';
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -1230,14 +1254,30 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   }
 
   /* ---------- Home ---------- */
-  function homeIndex(){
-    document.getElementById('home-index').innerHTML = CASES.map(function(c){
-      return '<li><a href="#' + c.id + '">' +
-        '<span class="ix-name">' + esc(c.name) + '<span class="ix-kind">' + esc(c.kind) + '</span></span>' +
-        '<span class="ix-title">' + esc(c.title) + '</span>' +
-        '<span class="ix-meta">' + esc(c.market) + ' · ' + esc(c.platform) + ' · ' + esc(c.year) + '</span>' +
-        '<span class="ix-arrow">' + ARROW + '</span></a></li>';
+  function homeWork(){
+    var list = document.getElementById('e-list'), shots = document.getElementById('e-shots');
+    var res = document.getElementById('e-result'), read = document.getElementById('e-read');
+    list.innerHTML = SELECTED.map(function(x, i){
+      var c = BY[x.id];
+      return '<li><a class="e-item" href="#' + c.id + '"><span class="top"><b>' + esc(c.name) + '</b><span class="k">' + esc(x.kind) + '</span></span>' +
+        '<span class="ln">' + esc(c.title) + '</span><span class="rs">' + esc(x.result) + '</span></a></li>';
     }).join('');
+    shots.innerHTML = SELECTED.map(function(x){
+      return SCENES[x.id] ? '<div class="plate" data-scene="' + x.id + '"></div>' : '<div class="plate" data-cover="' + x.id + '"></div>';
+    }).join('');
+    var items = [].slice.call(list.querySelectorAll('.e-item')), plates = [].slice.call(shots.children);
+    function pick(k){
+      items.forEach(function(a, i){ a.classList.toggle('is-on', i === k); });
+      plates.forEach(function(p, i){ p.classList.toggle('is-on', i === k); });
+      res.textContent = SELECTED[k].result;
+      read.href = '#' + SELECTED[k].id;
+      read.setAttribute('aria-label', 'Read the ' + BY[SELECTED[k].id].name + ' case study');
+    }
+    items.forEach(function(a, i){
+      a.addEventListener('mouseenter', function(){ pick(i); });
+      a.addEventListener('focus', function(){ pick(i); });
+    });
+    pick(0);
   }
   function mountCovers(scope){
     var C = window.__COVERS || {};
@@ -1252,17 +1292,19 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 
   /* ---------- Case study index ---------- */
   function cards(){
-    document.getElementById('cards').innerHTML = CASES.map(function(c, i){
+    function card(c){
       return '<a class="card" href="#' + c.id + '">' +
         (SCENES[c.id] ? '<div class="plate" data-scene="' + c.id + '"></div>' : '<div class="plate" data-cover="' + c.id + '"></div>') +
         '<div class="card-body">' +
           '<span class="label">' + esc(c.kind) + '</span>' +
-          '<h2 class="card-name">' + esc(c.name) + '</h2>' +
+          '<h3 class="card-name">' + esc(c.name) + '</h3>' +
           '<p class="card-title">' + esc(c.title) + '</p>' +
           '<div class="chips"><span class="chip">' + esc(c.market) + '</span><span class="chip">' + esc(c.platform) + '</span><span class="chip">' + esc(c.year) + '</span></div>' +
           '<span class="go" style="margin-top:4px">Open the case study</span>' +
         '</div></a>';
-    }).join('');
+    }
+    document.getElementById('cards-sel').innerHTML = SELECTED.map(function(x){ return card(BY[x.id]); }).join('');
+    document.getElementById('cards-more').innerHTML = CASES.filter(function(c){ return !IS_SEL[c.id]; }).map(card).join('');
   }
 
   /* ---------- Case study page ---------- */
@@ -1535,7 +1577,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     applyTheme(document.getElementById('case'), d.theme || {});
     var body = document.getElementById('case-body');
     var parts = String(d.html).split('<!--phasebar-->');
-    var crumb = '<a class="cs-crumb" href="#work"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg>All case studies</a>';
+    var crumb = '<a class="cs-crumb" href="#work"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg>All work</a>';
     var html = '<div class="wrap cs">' + crumb + parts[0] + '</div>';
     if(parts.length > 1) html += '<nav class="phasebar" aria-label="Case study sections"><div class="wrap"><span class="ttl">' + esc(c.name) + '</span><span class="phase-list"></span></div></nav><div class="wrap cs">' + parts[1] + '</div>';
     body.innerHTML = html;
@@ -1608,10 +1650,10 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   window.addEventListener('resize', vLayout);
 
   /* ---------- Router ---------- */
-  var PAGES = {home:1, about:1, work:1, contact:1};
+  var PAGES = {home:1, about:1, work:1, contact:1}, homeSeen = false;
   function route(){
     var h = (location.hash || '').replace('#', '');
-    if(h === 'case-studies') h = 'work';
+    if(h === 'case-studies' || h === 'all-work') h = 'work';
     var page = PAGES[h] ? h : (BY[h] ? 'case' : 'home');
     document.querySelectorAll('.page').forEach(function(p){ p.hidden = p.dataset.page !== page; });
     var navKey = page === 'case' ? 'work' : page;
@@ -1621,7 +1663,12 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     });
     if(page === 'case') showCase(h);
     else { current = null; clearTheme(); var ce = document.getElementById('case'); ce.innerHTML = ''; ce.removeAttribute('style'); }
-    if(page === 'work'){ mountScenes(document.getElementById('cards')); mountCovers(document.getElementById('cards')); }
+    /* the home page is always light: its gradient is the design */
+    var root = document.documentElement, home = document.querySelector('[data-page="home"]');
+    root.classList.toggle('is-home', page === 'home');
+    if(page === 'home'){ if(savedTheme === undefined) savedTheme = root.dataset.theme || null; root.dataset.theme = 'light'; homeSeen = true; }
+    else if(homeSeen) home.classList.add('e-played');
+    if(page === 'work'){ var wp = document.querySelector('[data-page="work"]'); mountScenes(wp); mountCovers(wp); }
     window.scrollTo(0, 0);
   }
 
@@ -1635,8 +1682,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     }catch(e){ sel(); }
   });
 
-  homeIndex(); cards();
-  mountScenes(document.querySelector('[data-page="home"]'));
+  homeWork(); cards();
+  mountScenes(document.querySelector('[data-page="home"]')); mountCovers(document.querySelector('[data-page="home"]'));
   window.addEventListener('hashchange', route);
   route();
 })();
