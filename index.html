@@ -210,7 +210,9 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .g-name{margin:0;font-family:var(--f-display);font-weight:400;font-size:32px;line-height:1.1;letter-spacing:-.005em;color:#1E3236}
 .g-card.big .g-name{font-size:clamp(32px,3vw,40px)}
 .g-res{font-size:15px;line-height:1.45;color:#3F5356}
-.g-tag{align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--dk) 28%,transparent);background:color-mix(in srgb,var(--acc) 14%,transparent);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--dk)}
+.g-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.g-tag{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--dk) 28%,transparent);background:color-mix(in srgb,var(--acc) 14%,transparent);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--dk)}
+.g-tag.dev{background:transparent;font-weight:500;letter-spacing:.02em}
 .g-card:hover{transform:translateY(-8px)}
 .g-card:hover .g-glow{opacity:.6}
 .g-card:hover .g-txt{border-top-color:var(--acc)}
@@ -1137,6 +1139,12 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   /* the five shown on the home page: the Citi and Bank of America work first */
   var SELECTED = ['self-invest', 'wealth-builder', 'bofa', 'miiras', 'cerehive'];
   /* how each project appears in the gallery: a short label, its headline result, and the colours of its glow */
+  /* the devices each project was designed for, shown as tags on the cards */
+  var DEVICES = {
+    'miiras': ['Mobile'], 'cerehive': ['Desktop'], 'self-invest': ['Desktop', 'Mobile'], 'wealth-builder': ['Desktop', 'Mobile'],
+    'bofa': ['Desktop'], 'bofa-complaints': ['Desktop'], 'consultation': ['Mobile', 'Desktop'], 'yol': ['Mobile', 'Car', 'Watch'],
+    'thirty-apps': ['Mobile', 'Desktop'], 'flexit': ['Mobile'], 'livs-love-pool': ['Mobile', 'Desktop']
+  };
   var GALLERY = {
     'miiras': {kind:'Founder project · 2026', result:'8 families reported more confidence talking about money', acc:'#E2C47F', dk:'#1B2A41'},
     'cerehive': {kind:'AI recruitment · 2025–26', result:'$300K ARR in the first 12 months', acc:'#B9A6F2', dk:'#251548'},
@@ -1161,7 +1169,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
         '<span class="g-txt"><span class="g-kind">' + esc(kd) + '</span>' +
         '<' + level + ' class="g-name"' + (id === 'yol' ? ' lang="tr"' : '') + '>' + esc(nm) + '</' + level + '>' +
         '<span class="g-res">' + esc(g.result) + '</span>' +
-        (c.market ? '<span class="g-tag">' + esc(c.market) + '</span>' : '') + '</span></a>';
+        '<span class="g-tags">' + (c.market ? '<span class="g-tag">' + esc(c.market) + '</span>' : '') +
+        (DEVICES[id] || []).map(function(t){ return '<span class="g-tag dev">' + esc(t) + '</span>'; }).join('') + '</span></span></a>';
     }).join('');
   }
   var ARROW = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>';
