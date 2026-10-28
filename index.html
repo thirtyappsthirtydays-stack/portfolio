@@ -664,9 +664,10 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-pgrid > .cs-phone{width:100%;padding:clamp(3px,.5vw,6px);box-shadow:0 10px 22px rgba(20,22,30,.12)}
 .cs-prow{display:flex;justify-content:center;gap:clamp(8px,1.4vw,14px)}
 .cs-prow > .cs-phone{flex:1 1 0;width:auto;min-width:0;max-width:var(--pmax,190px);padding:clamp(3px,.5vw,6px);box-shadow:0 10px 22px rgba(20,22,30,.12)}
-.imgcar-shot.phones{flex-basis:100%;height:auto;gap:clamp(8px,1.6vw,18px);padding:clamp(16px,2.8vw,32px)}
-.imgcar-shot.phones .cs-phone{flex:1 1 0;width:auto;max-width:var(--pmax,200px);padding:clamp(3px,.5vw,6px);box-shadow:0 14px 30px rgba(20,22,30,.14)}
-@media (max-width:640px){.imgcar-slide{padding:18px}.imgcar-slide > figcaption{max-width:none}.imgcar-shot{height:auto;padding:12px}.imgcar-shot.phones{flex-wrap:wrap}.imgcar-shot.phones .cs-phone{flex:0 1 calc(33.333% - 6px)}}
+.imgcar-shot.phones{--g:clamp(8px,1.6vw,18px);flex-basis:100%;height:auto;gap:var(--g);padding:clamp(16px,2.8vw,32px)}
+/* every phone is a fifth of the row, so slides with three phones come out as tall as the slide with five */
+.imgcar-shot.phones .cs-phone{flex:0 1 calc((100% - 4 * var(--g)) / 5);width:auto;max-width:var(--pmax,178px);padding:clamp(3px,.5vw,6px);box-shadow:0 14px 30px rgba(20,22,30,.14)}
+@media (max-width:640px){.imgcar-slide{padding:18px}.imgcar-slide > figcaption{max-width:none}.imgcar-shot{height:auto;padding:12px}.imgcar-shot.phones{flex-wrap:wrap}.imgcar-shot.phones .cs-phone{flex:0 1 calc(33.333% - 6px)}.imgcar-track:has(.phones){align-items:flex-start}}
 .cs-fig.row > img{flex:0 1 340px;width:340px;max-width:100%}
 .cs-fig.row > figcaption{flex:1 1 240px}
 .cs-need{display:flex;flex-direction:column;gap:6px}
@@ -1304,7 +1305,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   function cards(){ gallery(CASES.map(function(c){ return c.id; }), document.getElementById('cards'), 'h2'); }
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "f5bbcf2706", "bofa": "7ea1ab8e15", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "e6ff709a57", "livs-love-pool": "7d42c66d12", "miiras": "cebb6ebfd8", "self-invest": "2dc513a0df", "thirty-apps": "04d41ea7e4", "wealth-builder": "6c75ee935f", "yol": "712ac8c0ba"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "f5bbcf2706", "bofa": "7ea1ab8e15", "cerehive": "b263c9c2fb", "consultation": "eda3e108d5", "flexit": "70e404007c", "livs-love-pool": "7d42c66d12", "miiras": "cebb6ebfd8", "self-invest": "2dc513a0df", "thirty-apps": "04d41ea7e4", "wealth-builder": "6c75ee935f", "yol": "712ac8c0ba"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
