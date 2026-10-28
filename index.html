@@ -1047,7 +1047,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   <div class="wrap">
     <div class="work-head">
       <h1 class="display">All work</h1>
-      <p>10 case studies, 2016 to 2026</p>
+      <p><span data-case-count>11</span> case studies, 2016 to 2026</p>
     </div>
     <div class="gallery" id="cards"></div>
   </div>
@@ -1130,6 +1130,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
      role:'UX designer and researcher', market:'B2C', platform:'Website, mobile first', year:'2020'}
   ];
   var BY = {}; CASES.forEach(function(c, i){ c.i = i; BY[c.id] = c; });
+  /* keep the All work count in step with the list */
+  [].forEach.call(document.querySelectorAll('[data-case-count]'), function(el){ el.textContent = CASES.length; });
   /* the five shown on the home page: the Citi and Bank of America work first */
   var SELECTED = ['self-invest', 'wealth-builder', 'bofa', 'miiras', 'cerehive'];
   /* how each project appears in the gallery: a short label, its headline result, and the colours of its glow */
