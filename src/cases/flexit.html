@@ -1,4 +1,4 @@
-<!--meta {"theme": {"ground": "#F2F6FA", "surface": "#FFFFFF", "ink": "#0E1D3A", "ink2": "#4A5A72", "rule": "#D8E1EB", "rule2": "#BCC9D8", "neutral": "#E5EDF4", "eyebrow": "#0A6A91", "dark": "#14295B", "ondark": "#FFFFFF", "ondark2": "#C3D3EC", "ondark-acc": "#7FD3EE", "tint": "#E1F0F7", "tint-line": "#AFD6E8", "tint-ink": "#0B4D69", "low": "#FCE8E8", "low-ink": "#A12222", "x": "#C62828"}, "fonts": [], "boards": []} -->
+<!--meta {"theme": {"ground": "#F2F6FA", "surface": "#FFFFFF", "ink": "#0E1D3A", "ink2": "#4A5A72", "rule": "#D8E1EB", "rule2": "#BCC9D8", "neutral": "#E5EDF4", "eyebrow": "#0A6A91", "dark": "#14295B", "ondark": "#FFFFFF", "ondark2": "#C3D3EC", "ondark-acc": "#7FD3EE", "tint": "#E1F0F7", "tint-line": "#AFD6E8", "tint-ink": "#0B4D69", "low": "#FCE8E8", "low-ink": "#A12222", "x": "#C62828"}, "fonts": ["https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap"], "boards": ["FxWelcome", "FxDiscover", "FxCheckIn", "FxWorkOut", "FxCheckOut", "FxModalPhone", "FxModalGender", "FxModalBirth", "FxTipMap", "FxTipFilter", "FxTipCheckIn"]} -->
 <div class="cs-hero stack">
   <div class="cs-hero-copy">
     <div class="l">
@@ -14,8 +14,12 @@
       </div>
     </div>
   </div>
-  <div class="cs-hero-art" aria-hidden="true">
-    <img class="cs-img bare" src="img/flexit-screens.webp" alt="" style="max-width:1080px;border-radius:24px">
+  <div class="cs-hero-art" aria-hidden="true" style="gap:clamp(10px,1.8vw,22px)">
+    <div class="cs-phone" style="--pw:clamp(104px,16vw,190px)"><div class="plate" data-screen="FxWelcome"></div></div>
+    <div class="cs-phone back" style="--pw:clamp(104px,16vw,190px)"><div class="plate" data-screen="FxDiscover"></div></div>
+    <div class="cs-phone" style="--pw:clamp(104px,16vw,190px)"><div class="plate" data-screen="FxModalGender"></div></div>
+    <div class="cs-phone back" style="--pw:clamp(104px,16vw,190px)"><div class="plate" data-screen="FxTipMap"></div></div>
+    <div class="cs-phone" style="--pw:clamp(104px,16vw,190px)"><div class="plate" data-screen="FxTipCheckIn"></div></div>
   </div>
 </div>
 <dl class="cs-facts">
@@ -154,15 +158,15 @@
     <div class="imgcar-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="The three onboarding changes">
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="1 of 3: A welcome carousel">
         <figcaption class="cs-need"><span class="k">Need</span><span class="v">“What is this app, and how does it work?”</span><span class="k">Solution</span><span class="v sol">A welcome carousel</span><span class="cs-s" style="margin-top:6px">Five screens: what FlexIt is, then find, check in, work out and check out. Create New Account stays on every screen.</span></figcaption>
-        <div class="imgcar-shot" style="background:#EAF1FB"><img src="img/flexit-screens.webp" alt="Five welcome screens: Pay-By-The-Minute Gym Access, Discover, Check In, Work Out and Check Out" loading="lazy" style="box-shadow:none;border-radius:0"></div>
+        <div class="imgcar-shot phones" style="background:#EAF1FB;--pmax:178px" role="img" aria-label="Five welcome screens: Pay-By-The-Minute Gym Access, Discover, Check In, Work Out and Check Out"><div class="cs-phone"><div class="plate" data-screen="FxWelcome"></div></div><div class="cs-phone"><div class="plate" data-screen="FxDiscover"></div></div><div class="cs-phone"><div class="plate" data-screen="FxCheckIn"></div></div><div class="cs-phone"><div class="plate" data-screen="FxWorkOut"></div></div><div class="cs-phone"><div class="plate" data-screen="FxCheckOut"></div></div></div>
       </figure>
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="2 of 3: A reason beside every personal question">
         <figcaption class="cs-need"><span class="k">Need</span><span class="v">“Why do you need my number, gender and birthday?”</span><span class="k">Solution</span><span class="v sol">A reason beside every personal question</span><span class="cs-s" style="margin-top:6px">A question mark opens a short, friendly answer: gyms need contact details, assign locker rooms, and require members to be 18 or over.</span></figcaption>
-        <div class="imgcar-shot" style="background:#CEDDE6"><img src="img/flexit-modals.webp" alt="Three Create Account screens, each with a modal titled Why am I being asked for this?" loading="lazy" style="box-shadow:none;border-radius:0"></div>
+        <div class="imgcar-shot phones" style="background:#DDE7EE;--pmax:232px" role="img" aria-label="Three Create Account screens, each with a modal titled Why am I being asked for this?"><div class="cs-phone"><div class="plate" data-screen="FxModalPhone"></div></div><div class="cs-phone"><div class="plate" data-screen="FxModalGender"></div></div><div class="cs-phone"><div class="plate" data-screen="FxModalBirth"></div></div></div>
       </figure>
       <figure class="imgcar-slide" role="group" aria-roledescription="slide" aria-label="3 of 3: Tooltips for what’s unique to FlexIt">
         <figcaption class="cs-need"><span class="k">Need</span><span class="v">“Where do I start?”</span><span class="k">Solution</span><span class="v sol">Tooltips for what’s unique to FlexIt</span><span class="cs-s" style="margin-top:6px">Five steps over the real app: the map and per-minute prices, filters, and the QR check-in. Each one can be closed.</span></figcaption>
-        <div class="imgcar-shot" style="background:#CEDDE6"><img src="img/flexit-tooltips.webp" alt="Three map screens with tooltips 1 of 5, 2 of 5 and 4 of 5" loading="lazy" style="box-shadow:none;border-radius:0"></div>
+        <div class="imgcar-shot phones" style="background:#DDE7EE;--pmax:232px" role="img" aria-label="Three map screens with tooltips 1 of 5, 2 of 5 and 4 of 5"><div class="cs-phone"><div class="plate" data-screen="FxTipMap"></div></div><div class="cs-phone"><div class="plate" data-screen="FxTipFilter"></div></div><div class="cs-phone"><div class="plate" data-screen="FxTipCheckIn"></div></div></div>
       </figure>
     </div>
     <div class="mcar-bar"><button type="button" class="mcar-btn" data-dir="-1" aria-label="Previous design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><div class="mcar-meta"><div class="mcar-sub"><span class="mcar-count" aria-live="polite"></span><div class="mcar-dots"><button type="button" class="mcar-dot" data-go="0" aria-label="Show A welcome carousel"></button><button type="button" class="mcar-dot" data-go="1" aria-label="Show A reason beside every personal question"></button><button type="button" class="mcar-dot" data-go="2" aria-label="Show Tooltips for what’s unique to FlexIt"></button></div></div></div><button type="button" class="mcar-btn" data-dir="1" aria-label="Next design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
