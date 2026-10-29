@@ -1068,7 +1068,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
             <div class="when">Jan 2016 – Jan 2020</div>
             <div class="what">
               <p>My first product work: I mapped a manual capital management process end to end, found where data and handoffs broke down, and worked with engineers to redesign it as an automated reporting tool, cutting the cycle from 10 days to 3 with zero restatements across 48 submissions.</p>
-              <div class="case-links"><a class="link" href="#bofa">Read the Capital Management case study</a></div>
+              <div class="case-links"><a class="link" href="#bofa">Read the Bank of America Capital Management case study</a></div>
             </div>
           </li>
         </ol>
@@ -1196,7 +1196,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     {id:'bofa-complaints', name:'Complaints Reporting', kind:'Bank of America · Enterprise Business Intelligence', title:'One complaints dataset, a view for each team',
      summary:'Reports built on one complaints dataset, with a view each for Compliance, Risk and Legal. The usability score rose from 70 to 90, and finding complaint data took half the time.',
      role:'Product Designer', market:'Internal', platform:'Reporting dashboards', year:'2020 – 2021'},
-    {id:'bofa', name:'Bank of America', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
+    {id:'bofa', name:'Bank of America Capital Management', kind:'Enterprise Capital Management', title:'Automating a monthly capital calculation',
      summary:'My first product work: mapping a manual, spreadsheet-based calculation and turning it into an automated reporting tool with engineers. The cycle went from 10 days to 3.',
      role:'Analyst', market:'Internal', platform:'Reporting tool', year:'2016 – 2020'},
     {id:'cerehive', name:'CereHive', kind:'AI recruitment platform · SaaS', title:'AI recruiting that finds the best candidates, and shows why',
@@ -1513,7 +1513,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "86a2d90217", "bofa": "d195e0ef43", "cerehive": "3cf43e1880", "consultation": "ccdeaa3563", "flexit": "e008c4658f", "livs-love-pool": "f8a387b0eb", "miiras": "740a31915a", "self-invest": "f5636479e7", "thirty-apps": "5eccbb1cc6", "wealth-builder": "ae27868aef", "yol": "b8dfc8bbb0"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "86a2d90217", "bofa": "9d57423937", "cerehive": "8bf2c08add", "consultation": "ccdeaa3563", "flexit": "e008c4658f", "livs-love-pool": "f8a387b0eb", "miiras": "740a31915a", "self-invest": "8f87e23743", "thirty-apps": "5eccbb1cc6", "wealth-builder": "552d6b3148", "yol": "b8dfc8bbb0"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
