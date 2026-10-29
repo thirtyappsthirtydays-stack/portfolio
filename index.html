@@ -758,6 +758,12 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .imgcar-shot.board{height:auto;padding:0;background:none;border-radius:10px;box-shadow:0 0 0 1px var(--c-rule),0 4px 16px rgba(14,31,59,.08)}
 .imgcar-shot.board .plate{width:100%;display:block}
 .imgcar-slide:has(> .phones){align-content:center}
+/* design-system patterns: UI pieces on a white card, at a size close to the real screen */
+.imgcar-shot.pat{height:380px}
+.pat-card{width:var(--pw,340px);max-width:100%;box-sizing:border-box;display:grid;gap:12px;padding:16px;background:#FFFFFF;border-radius:14px;box-shadow:0 4px 16px rgba(14,31,59,.12)}
+.imgcar-shot .pat-card img{width:100%;max-height:none;border-radius:0;box-shadow:none}
+.imgcar-shot img.flat{box-shadow:none;border-radius:0}
+@media (max-width:640px){.imgcar-shot.pat{height:auto;min-height:280px}}
 .cs-pgrid{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:clamp(8px,1.4vw,16px)}
 .cs-pgrid > .cs-phone{width:100%;padding:clamp(3px,.5vw,6px);box-shadow:0 10px 22px rgba(20,22,30,.12)}
 .cs-prow{display:flex;justify-content:center;gap:clamp(8px,1.4vw,14px)}
@@ -1633,7 +1639,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "86a2d90217", "bofa": "9d57423937", "cerehive": "8bf2c08add", "consultation": "ccdeaa3563", "flexit": "e008c4658f", "livs-love-pool": "f8a387b0eb", "miiras": "740a31915a", "self-invest": "8f87e23743", "thirty-apps": "5eccbb1cc6", "wealth-builder": "552d6b3148", "yol": "b8dfc8bbb0"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "86a2d90217", "bofa": "9d57423937", "cerehive": "8bf2c08add", "consultation": "ccdeaa3563", "flexit": "e008c4658f", "livs-love-pool": "f8a387b0eb", "miiras": "740a31915a", "self-invest": "80c8e579ac", "thirty-apps": "5eccbb1cc6", "wealth-builder": "552d6b3148", "yol": "b8dfc8bbb0"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
