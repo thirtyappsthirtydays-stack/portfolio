@@ -54,6 +54,9 @@ def build(cid):
     for key in ('live', 'proto', 'carousel'):
         if old.get(key):
             out[key] = old[key]
+    # a stamp of this build; index.html carries the same stamp, so a page that is older than its case file can tell
+    import hashlib
+    out['v'] = hashlib.sha1(json.dumps(out, sort_keys=True, ensure_ascii=False).encode('utf-8')).hexdigest()[:10]
     js = 'window.__caseLoaded(' + json.dumps(out, ensure_ascii=False) + ');\n'
     open(os.path.join(ROOT, 'cases', cid + '.js'), 'w', encoding='utf-8').write(js)
     print('built', cid, len(js), 'bytes,', len(out['boards']), 'boards')
@@ -70,6 +73,8 @@ if __name__ == '__main__':
     vers = {}
     for f in sorted(os.listdir(os.path.join(ROOT, 'cases'))):
         if f.endswith('.js'):
-            vers[f[:-3]] = hashlib.sha1(open(os.path.join(ROOT, 'cases', f), 'rb').read()).hexdigest()[:10]
+            src = open(os.path.join(ROOT, 'cases', f), encoding='utf-8').read()
+            m = re.search(r'"v": "([0-9a-f]{10})"', src[-400:])
+            vers[f[:-3]] = m.group(1) if m else hashlib.sha1(src.encode('utf-8')).hexdigest()[:10]
     html = re.sub(r'var CASE_V = \{.*?\}; /\* case-versions \*/', 'var CASE_V = ' + json.dumps(vers) + '; /* case-versions */', html, count=1)
     open(idx, 'w', encoding='utf-8').write(html)
