@@ -42,12 +42,17 @@ def build(cid):
     for key in ('carousel',):
         if old.get(key):
             want += [b for b in old[key]['boards'] if b not in want]
-    used = set(re.findall(r'data-screen="([^"]+)"', html))
+    # an optional condensed version for phones: src/cases/<id>.deck.html (one screen per step)
+    dpath = os.path.join(ROOT, 'src', 'cases', cid + '.deck.html')
+    deck = open(dpath, encoding='utf-8').read().strip() if os.path.exists(dpath) else ''
+    used = set(re.findall(r'data-screen="([^"]+)"', html + deck))
     missing = [b for b in used if b not in want]
     if missing:
         raise SystemExit(cid + ': screens used but not listed in meta boards: ' + ', '.join(missing))
     out = {'id': cid, 'fonts': meta.get('fonts', old.get('fonts', [])), 'theme': meta['theme'], 'html': html,
            'boards': [boards[b] for b in want if b in boards]}
+    if deck:
+        out['deck'] = deck
     gone = [b for b in want if b not in boards]
     if gone:
         raise SystemExit(cid + ': boards not found: ' + ', '.join(gone))

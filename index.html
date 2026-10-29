@@ -817,6 +817,99 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-laptop > .scr::before{content:"";position:absolute;top:.75%;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#3A3D45}
 .cs-laptop .plate{display:block;width:100%;border:0;border-radius:0}
 .cs-laptop > .scr > img{display:block;width:100%;height:auto}
+/* ---------- case decks: phones only, one screen per step ---------- */
+.deck{display:none}
+@media (max-width:640px){
+  #case.has-deck #case-body > .wrap.cs,#case.has-deck #case-body > .phasebar{display:none}
+  #case.has-deck .deck{display:flex}
+  .deck{flex-direction:column;height:calc(100svh - var(--head-h) - env(safe-area-inset-top,0px));min-height:560px;background:var(--c-ground);color:var(--c-ink)}
+  .dk-top{flex:none;display:grid;gap:8px;padding:10px 16px 10px;border-bottom:1px solid var(--c-rule)}
+  .dk-segs{display:grid;grid-template-columns:repeat(var(--n,8),minmax(0,1fr));gap:4px}
+  .dk-segs button{all:unset;cursor:pointer;height:14px;display:flex;align-items:center}
+  .dk-segs button::before{content:"";flex:1;height:4px;border-radius:2px;background:var(--c-rule);transition:background-color .25s ease}
+  .dk-segs button.done::before{background:var(--c-tint-line)}
+  .dk-segs button[aria-current="step"]::before{background:var(--c-eyebrow)}
+  .dk-row{display:flex;align-items:center;gap:8px}
+  .dk-label{flex:1;min-width:0;font-size:13px;color:var(--c-ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .dk-label b{color:var(--c-ink);font-weight:600}
+  .dk-arrow{flex:none;width:36px;height:36px;padding:0;border-radius:50%;border:1px solid var(--c-rule2);background:var(--c-surface);color:var(--c-ink);display:grid;place-items:center;cursor:pointer}
+  .dk-arrow:disabled{opacity:.35;cursor:default}
+  .dk-track{flex:1;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+  .dk-track::-webkit-scrollbar{display:none}
+  .dk-step{flex:0 0 100%;min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;overflow-y:auto;overscroll-behavior-y:contain;padding:14px 16px calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px}
+  .dk-eyebrow{margin:0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-eyebrow)}
+  .dk-h1{margin:0;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:36px;line-height:1;font-weight:500}
+  .dk-h2{margin:0;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:27px;line-height:1.06;font-weight:500}
+  .dk-p{margin:0;font-size:14px;line-height:1.45;color:var(--c-ink2)}
+  .dk-s{margin:2px 0 0;font-size:12.5px;line-height:1.4;color:var(--c-ink2)}
+  .dk-s b{color:var(--c-ink);font-weight:600}
+  .dk-xs{margin:0;font-size:11px;line-height:1.4;color:var(--c-ink2)}
+  .dk-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .dk-card{background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;min-width:0}
+  .dk-card .k,.dk-note .k,.dk-comp .k,.dk-map .k{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-eyebrow)}
+  .dk-card b{font-size:13.5px;line-height:1.3;font-weight:600}
+  .dk-card b + span{font-size:12px;line-height:1.35;color:var(--c-ink2)}
+  .dk-card span + b{margin-top:6px}
+  .dk-big{font-size:14px;line-height:1.45;color:var(--c-ink)}
+  .dk-note{background:var(--c-dark);color:var(--c-ondark);border-radius:12px;padding:11px 13px;display:grid;gap:3px}
+  .dk-note .k{color:var(--c-ondark-acc)}
+  .dk-note b{font-size:14px;line-height:1.35;font-weight:600}
+  .dk-note b + span{font-size:12.5px;line-height:1.4;color:var(--c-ondark2)}
+  .dk-art{position:relative;width:78%;margin:0 auto;padding:0 0 12px}
+  .dk-art .cs-browser{width:calc(100% - 24px)}
+  .dk-art .cs-phone{position:absolute;right:0;bottom:0;--pw:24%;padding:4px}
+  .dk-facts{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:12.5px;line-height:1.35}
+  .dk-facts dt{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-ink2)}
+  .dk-facts dd{margin:2px 0 0}
+  .dk-go{all:unset;box-sizing:border-box;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;height:46px;border-radius:999px;background:var(--c-dark);color:var(--c-ondark);font-size:14.5px;font-weight:600;cursor:pointer}
+  .dk-steps{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  .dk-steps button{all:unset;box-sizing:border-box;width:100%;display:flex;gap:12px;align-items:flex-start;padding:9px 12px;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;cursor:pointer;font-size:12.5px;line-height:1.35;color:var(--c-ink2)}
+  .dk-steps .n{flex:none;font-size:11px;font-weight:700;color:var(--c-eyebrow);padding-top:2px}
+  .dk-steps b{display:block;font-size:14px;color:var(--c-ink);font-weight:600}
+  .dk-step .cs-dd{margin:26px 0 60px}
+  .dk-comp{display:grid;gap:4px;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.35;color:var(--c-ink2)}
+  .dk-comp b{display:inline-block;min-width:112px;color:var(--c-ink);font-weight:600}
+  .dk-comp .gap{margin-top:3px;padding-top:6px;border-top:1px solid var(--c-rule);color:var(--c-eyebrow);font-weight:600}
+  .dk-comp .gap b{color:var(--c-eyebrow)}
+  .dk-who{display:flex;gap:8px;align-items:center;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:7px 8px;font-size:11.5px;line-height:1.3;color:var(--c-ink2);min-width:0}
+  .dk-who img{flex:none;width:38px;height:38px;border-radius:50%;object-fit:cover}
+  .dk-who b{display:block;font-size:13.5px;color:var(--c-ink);font-weight:600}
+  .dk-opts{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  .dk-opts li{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.35;color:var(--c-ink2)}
+  .dk-opts b{display:block;font-size:13.5px;color:var(--c-ink);font-weight:600}
+  .dk-opts .tag{flex:none;width:76px;box-sizing:border-box;text-align:center;font-size:10.5px;font-weight:700;padding:3px 0;border-radius:999px;border:1px solid var(--c-rule2);color:var(--c-ink2);margin-top:1px}
+  .dk-opts .tag.yes{background:var(--c-dark);border-color:var(--c-dark);color:var(--c-ondark)}
+  .dk-car{display:grid;gap:8px;min-width:0}
+  .dk-car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;gap:0}
+  .dk-car-track::-webkit-scrollbar{display:none}
+  .dk-car-track > figure{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;display:grid;gap:8px;align-content:start}
+  .dk-car-track figcaption{font-size:12px;line-height:1.4;color:var(--c-ink2)}
+  .dk-car-track figcaption b{display:block;font-size:13.5px;color:var(--c-ink);font-weight:600}
+  .dk-car .cs-browser{width:100%}
+  .dk-pat{height:190px;display:flex;align-items:center;justify-content:center;background:var(--c-neutral);border-radius:12px;padding:12px;box-sizing:border-box;overflow:hidden}
+  .dk-pat .pat-card{padding:10px;gap:8px}
+  .dk-pat .pat-card img{display:block;width:100%;height:auto}
+  .dk-pat img.flat{max-width:100%;height:auto;filter:drop-shadow(0 4px 12px rgba(14,31,59,.12))}
+  .dk-dots{display:flex;justify-content:center;gap:6px}
+  .dk-dots button{all:unset;cursor:pointer;width:7px;height:7px;border-radius:4px;background:var(--c-rule2);transition:width .2s ease,background-color .2s ease}
+  .dk-dots button[aria-current="true"]{width:18px;background:var(--c-ink)}
+  .dk-map{display:grid;gap:3px;font-size:12.5px;line-height:1.35;color:var(--c-ink)}
+  .dk-map i{font-style:normal;color:var(--c-ink2);padding:0 6px}
+  .dk-tabs{display:grid;gap:10px;min-height:0}
+  .dk-tabs .cs-tabs button{min-height:34px;padding:0 14px;font-size:13.5px}
+  .dk-tabs .cs-flow{gap:10px}
+  .dk-tabs .cs-flow > .cs-phone{--pw:auto;width:min(176px,46vw);padding:5px}
+  .dk-tabs .cs-laptop > .scr{width:92%}
+  .dk-tabs .cs-flow-steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .dk-tabs .cs-flow-steps button{font-size:11.5px;gap:6px}
+  .dk-tabs .cs-flow-pp{width:32px;height:32px}
+  .dk-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .dk-stats > div{background:var(--c-dark);color:var(--c-ondark);border-radius:12px;padding:9px 9px 10px;display:grid;gap:3px;align-content:start}
+  .dk-stats b{font-size:20px;line-height:1.05;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+  .dk-stats span{font-size:11px;line-height:1.3;color:var(--c-ondark2)}
+  .dk-stats.light > div{background:var(--c-surface);color:var(--c-ink);border:1px solid var(--c-rule)}
+  .dk-stats.light span{color:var(--c-ink2)}
+}
 /* looping walkthrough videos (Self Invest Deliver) */
 .cs-laptop > .scr > video{display:block;width:100%;height:auto;aspect-ratio:16 / 10;background:#F2F5F9}
 .cs-phone > video{display:block;width:100%;height:auto;aspect-ratio:390 / 844;border-radius:13% / 6%;background:#fff}
@@ -1661,7 +1754,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "70a3d711a7", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "dd5b4a48a5", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){
     /* a case file newer than this page means the browser kept an old copy of the page (GitHub Pages lets it for ten minutes):
@@ -1947,6 +2040,53 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       state(); paint();
     });
   }
+  /* Phones: a case with a deck shows as one screen per step. A tracker at the top shows where you are; the arrows,
+     the tracker and a sideways swipe move between steps. Small carousels inside a step have their own dots. */
+  function initDeck(root){
+    var track = root.querySelector('.dk-track'), steps = [].slice.call(track.children), n = steps.length;
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var top = document.createElement('div'); top.className = 'dk-top';
+    top.innerHTML = '<div class="dk-segs" style="--n:' + n + '">' + steps.map(function(s, i){ return '<button type="button" aria-label="Step ' + (i + 1) + ': ' + esc(s.dataset.name) + '"></button>'; }).join('') + '</div>' +
+      '<div class="dk-row"><span class="dk-label" aria-live="polite"></span>' +
+      '<button type="button" class="dk-arrow" data-dir="-1" aria-label="Previous step"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>' +
+      '<button type="button" class="dk-arrow" data-dir="1" aria-label="Next step"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>';
+    root.insertBefore(top, track);
+    var segs = [].slice.call(top.querySelectorAll('.dk-segs button')), label = top.querySelector('.dk-label');
+    var prev = top.querySelector('[data-dir="-1"]'), next = top.querySelector('[data-dir="1"]'), cur = -1;
+    steps.forEach(function(s, i){ s.setAttribute('role', 'group'); s.setAttribute('aria-roledescription', 'step'); s.setAttribute('aria-label', (i + 1) + ' of ' + n + ': ' + s.dataset.name); });
+    function idx(){ return Math.max(0, Math.min(n - 1, Math.round(track.scrollLeft / Math.max(1, track.clientWidth)))); }
+    function go(k){ k = Math.max(0, Math.min(n - 1, k)); track.scrollTo({left: k * track.clientWidth, behavior: reduce ? 'auto' : 'smooth'}); }
+    function sync(){
+      var k = idx(); if(k === cur) return; cur = k;
+      segs.forEach(function(b, i){ b.classList.toggle('done', i < k); if(i === k) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
+      label.innerHTML = '<b>' + esc(steps[k].dataset.name) + '</b> · ' + (k + 1) + ' of ' + n;
+      prev.disabled = k === 0; next.disabled = k === n - 1;
+      steps.forEach(function(s, i){ s.inert = i !== k; if(i !== k) s.scrollTop = 0; });
+    }
+    var raf = 0;
+    track.addEventListener('scroll', function(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); }, {passive: true});
+    prev.addEventListener('click', function(){ go(idx() - 1); });
+    next.addEventListener('click', function(){ go(idx() + 1); });
+    segs.forEach(function(b, i){ b.addEventListener('click', function(){ go(i); }); });
+    root.querySelectorAll('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ go(+b.dataset.go); }); });
+    root.addEventListener('keydown', function(e){
+      if(e.target.closest && e.target.closest('[role="tablist"],.dk-car-track')) return;
+      if(e.key === 'ArrowRight'){ e.preventDefault(); go(idx() + 1); }
+      else if(e.key === 'ArrowLeft'){ e.preventDefault(); go(idx() - 1); }
+    });
+    window.addEventListener('resize', function(){ cur = -1; track.scrollLeft = idx() * track.clientWidth; sync(); });
+    root.querySelectorAll('[data-dkcar]').forEach(function(car){
+      var t = car.querySelector('.dk-car-track'), sl = [].slice.call(t.children), dots = car.querySelector('.dk-dots');
+      dots.innerHTML = sl.map(function(s, i){ return '<button type="button" aria-label="Show ' + (i + 1) + ' of ' + sl.length + '"></button>'; }).join('');
+      var ds = [].slice.call(dots.children);
+      function at(){ return Math.max(0, Math.min(sl.length - 1, Math.round(t.scrollLeft / Math.max(1, t.clientWidth)))); }
+      function mark(){ var k = at(); ds.forEach(function(d, i){ d.setAttribute('aria-current', i === k ? 'true' : 'false'); }); }
+      ds.forEach(function(d, i){ d.addEventListener('click', function(){ t.scrollTo({left: i * t.clientWidth, behavior: reduce ? 'auto' : 'smooth'}); }); });
+      t.addEventListener('scroll', function(){ requestAnimationFrame(mark); }, {passive: true});
+      mark();
+    });
+    sync();
+  }
   function initTabs(scope){
     scope.querySelectorAll('[data-tabs]').forEach(function(box){
       var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));
@@ -1975,6 +2115,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     var crumb = '<a class="cs-crumb" href="#work"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg>All work</a>';
     var html = '<div class="wrap cs">' + crumb + parts[0] + '</div>';
     if(parts.length > 1) html += '<nav class="phasebar" aria-label="Case study sections"><div class="wrap"><span class="ttl">' + esc(c.name) + '</span><span class="phase-list"></span></div></nav><div class="wrap cs">' + parts[1] + '</div>';
+    if(d.deck) html = '<div class="deck" data-deck>' + d.deck + '</div>' + html;
+    document.getElementById('case').classList.toggle('has-deck', !!d.deck);
     body.innerHTML = html;
     /* the sticky bar lists every chapter, in page order */
     var chapters = [].slice.call(body.querySelectorAll('.cs-chapter[data-nav]'));
@@ -1990,6 +2132,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     body.querySelectorAll('.bproto').forEach(function(f){ initProto(f, d.proto); });
     initTabs(body);
     initFlows(body);
+    body.querySelectorAll('[data-deck]').forEach(initDeck);
     body.querySelectorAll('[data-imgcar]').forEach(initImgCar);
     /* in-page jumps scroll instead of changing the hash, which the router owns */
     body.querySelectorAll('[data-jump]').forEach(function(btn){
@@ -2066,7 +2209,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   }
   function zoomables(scope, d){
     scope.querySelectorAll('.cs-browser, .cs-laptop > .scr').forEach(function(fr){
-      if(fr.closest('.bproto, .mcar')) return;
+      if(fr.closest('.bproto, .mcar, .dk-art')) return;
       var p = fr.querySelector('.plate[data-screen]'), img = p ? null : fr.querySelector('img');
       var label = fr.getAttribute('aria-label') || (fr.closest('[aria-label]') || {getAttribute: function(){ return ''; }}).getAttribute('aria-label') || (p && p.getAttribute('aria-label')) || '';
       if(p){ var b = boardById(d, p.dataset.screen); if(b) makeZoomable(fr, function(){ openViewer(b); }, label || b.title); }
