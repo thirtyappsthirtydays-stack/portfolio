@@ -181,6 +181,29 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
   .page[data-page="home"] .e-vfull{width:32px;height:32px}
   .e-vbar{gap:8px}.e-vtime{font-size:11px}
 }
+/* Phones and small tablets: a portrait card. The video is cropped to its picture, and each chapter's words
+   sit below it as real text, in step with the video. The 16:9 film stays as it is in full screen. */
+.e-vtext,.e-vmask{display:none}
+@media (max-width:760px){
+  .e-video figure{max-width:520px;margin-inline:auto}
+  .e-vframe{display:flex;flex-direction:column;background:#0B1325}
+  .e-vframe video{aspect-ratio:940 / 1080;object-fit:cover;object-position:96% 50%}
+  .e-vmask{display:block;position:absolute;left:0;right:0;top:0;aspect-ratio:940 / 1080;background:linear-gradient(90deg,#0B1325 0%,#0B1325 52%,rgba(11,19,37,0) 80%);opacity:0;transition:opacity .9s ease;pointer-events:none}
+  .e-vframe[data-scene="end"] .e-vmask{opacity:1}
+  .e-vtext{display:grid;position:relative;margin-top:-84px;padding:84px 22px 4px;background:linear-gradient(rgba(11,19,37,0),#0B1325 84px);color:#FFFFFF;pointer-events:none}
+  .e-vch{grid-area:1 / 1;display:flex;flex-direction:column;align-items:flex-start;gap:10px;opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease}
+  .e-vch.on{opacity:1;transform:none}
+  .e-vch .m{font-size:11px;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.55);font-variant-numeric:tabular-nums}
+  .e-vch .eb{font-size:11.5px;line-height:1.4;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.74)}
+  .e-vch b{display:block;padding-bottom:14px;font-family:Manrope,system-ui,sans-serif;font-size:clamp(25px,7.2vw,32px);line-height:1.12;font-weight:700;letter-spacing:-.01em;color:#F4F1EC;background:linear-gradient(var(--c),var(--c)) 0 100% / 36px 3px no-repeat}
+  .e-vch p{margin:0;font-size:15px;line-height:1.5;color:rgba(255,255,255,.8)}
+  .e-vch .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .e-vch .tags i{font-style:normal;font-size:12.5px;line-height:1;padding:6px 10px;border:1px solid rgba(255,255,255,.25);border:1px solid color-mix(in srgb,var(--c) 55%,transparent);border-radius:999px;color:var(--c)}
+  .e-vframe .e-vbar{position:relative;left:auto;right:auto;bottom:auto;padding:14px 16px 16px}
+  .e-vframe .e-vscrim{display:none}
+  .e-vframe.idle .e-vbar{opacity:1;pointer-events:auto}
+  .e-vframe:fullscreen .e-vtext,.e-vframe:fullscreen .e-vmask{display:none}
+  .e-vframe:fullscreen video{object-position:50% 50%}
 }
 .e-video figcaption{display:flex;flex-direction:column;gap:10px;font-size:15px;color:#4A5D60}
 .e-vt{font-family:var(--f-display);font-size:22px;line-height:1.2;color:#1E3236}
@@ -942,6 +965,16 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     <figure class="e-reveal">
       <div class="e-vframe" id="e-vframe" data-state="ambient">
         <video id="e-video" muted playsinline preload="metadata" poster="img/story-poster.jpg" aria-labelledby="e-video-t"><source src="media/career-story.mp4" type="video/mp4"></video>
+        <div class="e-vmask" aria-hidden="true"></div>
+        <div class="e-vtext" id="e-vtext" aria-hidden="true">
+          <div class="e-vch" data-on="0.4" data-off="5.7" style="--c:#D1B089"><span class="m">01 / 06</span><span class="eb">A journey across business, technology &amp; design</span><b>Curious by nature.<br>A builder by choice.</b><p>I wanted to understand how the world works: people, businesses, and technology.</p><span class="tags"><i>People</i><i>Business</i><i>Technology</i></span></div>
+          <div class="e-vch" data-on="6.4" data-off="11.7" style="--c:#67BCBB"><span class="m">02 / 06 · 2011–2016</span><span class="eb">Economics · Finance</span><b>Understanding the bigger picture.</b><p>Economics taught me systems. Finance taught me how businesses run, then I got curious about the people.</p><span class="tags"><i>Business thinking</i><i>Human behavior</i><i>Connecting the dots</i></span></div>
+          <div class="e-vch" data-on="12.4" data-off="17.7" style="--c:#6AA4F1"><span class="m">03 / 06 · 2016–2021</span><span class="eb">Bank of America</span><b>From numbers to experiences.</b><p>Transforming complex financial processes through automation, then moving into UX.</p><span class="tags"><i>Banking</i><i>Automation</i><i>UX design</i></span></div>
+          <div class="e-vch" data-on="18.4" data-off="23.7" style="--c:#92C5A4"><span class="m">04 / 06 · 2021–2024</span><span class="eb">Citi</span><b>Designing for real life.</b><p>Digital wealth experiences that help people invest with clarity and confidence.</p><span class="tags"><i>Fintech</i><i>Wealth management</i><i>Product design</i></span></div>
+          <div class="e-vch" data-on="24.4" data-off="29.7" style="--c:#AB8BF0"><span class="m">05 / 06 · 2025–2026</span><span class="eb">CereHive</span><b>A new way to think about technology.</b><p>Product strategy &amp; UX for an AI recruiting platform. How do we turn emerging tech into real value?</p><span class="tags"><i>AI products</i><i>Product strategy</i><i>End-to-end design</i></span></div>
+          <div class="e-vch" data-on="30.4" data-off="35.7" style="--c:#D48F88"><span class="m">06 / 06</span><span class="eb">Today</span><b>Bringing it all together.</b><p>Exploring the intersection of AI, business &amp; design, turning complexity into clarity.</p><span class="tags"><i>AI</i><i>Business</i><i>Design</i></span></div>
+          <div class="e-vch" data-on="37" data-off="99" style="--c:#D1B089"><span class="eb">Still curious. Still building.</span><b>Connecting the dots.<br>Creating what’s next.</b><span class="tags"><i style="--c:#67BCBB">Strategic thinking</i><i style="--c:#D48F88">Creative problem-solving</i><i style="--c:#D1B089">A builder’s mindset</i></span></div>
+        </div>
         <div class="e-vctl">
           <button type="button" class="e-vbtn e-vsound" id="e-vsound" aria-pressed="false" aria-label="Sound" title="Turn sound on"><svg class="i-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor" stroke="none"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor" stroke="none"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button>
           <button type="button" class="e-vbtn e-vplay" id="e-vplay"><span class="ic"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4.5" width="4" height="15" rx="1" fill="currentColor"/><rect x="14" y="4.5" width="4" height="15" rx="1" fill="currentColor"/></svg></span><span class="tx"><b id="e-vplay-t">Play the story</b><small id="e-vplay-s">0:42 · A short story</small></span></button>
@@ -1385,6 +1418,22 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     window.addEventListener('hashchange', function(){ setTimeout(req, 60); });
     document.addEventListener('fullscreenchange', req);
     req();
+  }
+  /* On phones, each chapter's words show below the cropped video while that chapter is on screen.
+     When the video is paused, the current chapter's words stay. The last scene darkens the left of the picture,
+     where the film's own closing words sit, so they aren't shown cut off. */
+  function storyText(){
+    var box = document.getElementById('e-vframe'), v = document.getElementById('e-video'), wrap = document.getElementById('e-vtext');
+    if(!box || !v || !wrap) return;
+    var chs = [].slice.call(wrap.querySelectorAll('.e-vch')), END = 35.7;
+    function sync(){
+      var t = v.currentTime || 0, still = v.paused || v.ended;
+      box.dataset.scene = t >= END ? 'end' : 'chapter';
+      var k = t >= END ? chs.length - 1 : Math.min(chs.length - 2, Math.floor(t / 6));
+      chs.forEach(function(c, i){ c.classList.toggle('on', i === k && (still || (t >= +c.dataset.on && t <= +c.dataset.off))); });
+    }
+    ['timeupdate', 'seeked', 'seeking', 'play', 'pause', 'ended', 'loadedmetadata'].forEach(function(ev){ v.addEventListener(ev, sync); });
+    sync();
   }
   function homeVideo(){
     var box = document.getElementById('e-vframe'), v = document.getElementById('e-video');
@@ -1921,7 +1970,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     }catch(e){ sel(); }
   });
 
-  homeWork(); homeVideo(); videoGrow(); cards();
+  homeWork(); homeVideo(); storyText(); videoGrow(); cards();
   window.addEventListener('hashchange', route);
   route();
 })();
