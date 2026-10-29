@@ -557,10 +557,15 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-process{margin-top:80px}
 .cs-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 40px;margin-bottom:20px}
 .cs-head > p{max-width:600px;font-size:15px;line-height:1.5;color:var(--c-ink2)}
-.cs-dd{position:relative;height:72px;margin-bottom:20px}
+.cs-dd{position:relative;height:72px;margin:30px 0 20px}
 .cs-dd svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .cs-dd span{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .cs-dd .pill{padding:4px 10px;border-radius:999px;background:var(--c-dark);color:var(--c-ondark);letter-spacing:0;text-transform:none}
+/* the four stages sit inside the diamonds; Problem space and Solution space sit above them */
+.cs-dd .lbl{top:-18px;font-size:11px;letter-spacing:.1em}
+.cs-dd .stg{font-size:14px;letter-spacing:0;text-transform:none}
+/* phones: the stage names need the middle, so the pill hangs below the point where the diamonds meet */
+@media (max-width:640px){.cs-dd{margin-bottom:62px}.cs-dd .stg{font-size:12.5px}.cs-dd .pill{top:calc(100% + 30px)}.cs-dd::before,.cs-dd::after{content:"";position:absolute;left:50%;background:var(--c-dark)}.cs-dd::before{top:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%}.cs-dd::after{top:50%;width:1px;height:calc(50% + 18px);margin-left:-.5px}}
 .cs-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px 24px}
 .cs-step{display:flex;flex-direction:column;gap:4px;padding:14px 0 0;border:0;border-top:2px solid var(--c-ink);background:none;text-align:left;cursor:pointer;color:inherit;font:inherit}
 .cs-step b{font-size:19px;line-height:1.3;font-weight:600}
@@ -941,7 +946,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-qr svg{display:block;width:100%;height:100%}
 .cs .bproto,.cs .mcar{margin:0}
 .cs-end{margin-top:88px;padding-bottom:24px}
-@media (max-width:640px){.cs-hero-art .back,.cs-dd .lbl{display:none}}
+@media (max-width:640px){.cs-hero-art .back{display:none}}
 @media (max-width:400px){.nav{gap:10px}.nav a{font-size:.8125rem}}
 .page[data-page="case"]{padding-top:0}
 .cs + .phasebar{margin-top:56px}
@@ -1639,7 +1644,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "86a2d90217", "bofa": "9d57423937", "cerehive": "8bf2c08add", "consultation": "ccdeaa3563", "flexit": "e008c4658f", "livs-love-pool": "f8a387b0eb", "miiras": "740a31915a", "self-invest": "80c8e579ac", "thirty-apps": "5eccbb1cc6", "wealth-builder": "552d6b3148", "yol": "b8dfc8bbb0"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "ab48f8c4f1", "bofa": "9d57423937", "cerehive": "e3db8742db", "consultation": "da299bb8cc", "flexit": "891cf0b8e0", "livs-love-pool": "a8383d6385", "miiras": "9d263b03d3", "self-invest": "00cebfc5a7", "thirty-apps": "5eccbb1cc6", "wealth-builder": "219ce5a0d0", "yol": "947bcdf7c1"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){ DATA[d.id] = d; if(pending[d.id]){ var f = pending[d.id]; delete pending[d.id]; f(d); } };
   function loadCase(id, cb){
