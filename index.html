@@ -462,6 +462,12 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .v-scroll{position:absolute;inset:0;top:calc(61px + env(safe-area-inset-top,0px));overflow:auto;padding:24px max(16px, env(safe-area-inset-left,0px)) calc(24px + env(safe-area-inset-bottom,0px))}
 .v-frame{position:relative;margin-inline:auto;overflow:hidden;border-radius:10px;box-shadow:0 12px 40px var(--plate-shadow)}
 .v-frame .stage{position:absolute;top:0;left:0;transform-origin:0 0}
+/* screens and screenshots in a case study open in the viewer */
+.zoomable{cursor:zoom-in}
+.zoomable:focus-visible{outline:2px solid var(--c-ink);outline-offset:3px}
+.zoom-hint{position:absolute;right:12px;bottom:12px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(17,19,26,.8);color:#fff;font-size:12px;font-weight:600;line-height:1;opacity:0;transform:translateY(4px);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
+.zoomable:hover .zoom-hint,.zoomable:focus-visible .zoom-hint{opacity:1;transform:none}
+@media (hover:none){.zoom-hint{opacity:1;transform:none}}
 
 /* ---------- Case study: one continuous page, themed by its product ----------
    Each case sets the --c-* tokens from its own palette (see THEME in renderCase).
@@ -1789,6 +1795,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     body.querySelectorAll('[data-proto]').forEach(function(el){ if(d.proto) el.outerHTML = protoBlock(d.proto); });
     body.querySelectorAll('[data-qr]').forEach(function(el){ if(d.live && d.live.qr) el.innerHTML = d.live.qr; });
     mountScreens(body, d);
+    zoomables(body, d);
     body.querySelectorAll('.mcar').forEach(function(r){ initCarousel(r, d); });
     body.querySelectorAll('.bproto').forEach(function(f){ initProto(f, d.proto); });
     initTabs(body);
@@ -1847,6 +1854,39 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   document.getElementById('v-close').addEventListener('click', function(){ vd.close(); });
   vd.addEventListener('close', function(){ vf.innerHTML = ''; vb = null; });
   window.addEventListener('resize', vLayout);
+
+  /* Screens and screenshots in a case study open full size in the viewer, by click or keyboard */
+  function makeZoomable(el, open, label){
+    if(el.classList.contains('zoomable')) return;
+    el.classList.add('zoomable');
+    el.setAttribute('role', 'button'); el.tabIndex = 0;
+    if(el.getAttribute('aria-hidden') === 'true') el.removeAttribute('aria-hidden');
+    el.setAttribute('aria-label', 'Enlarge' + (label ? ': ' + label : ' screen'));
+    if(el.tagName !== 'IMG'){
+      if(getComputedStyle(el).position === 'static') el.style.position = 'relative';
+      el.insertAdjacentHTML('beforeend', '<span class="zoom-hint" aria-hidden="true">' + EXPAND + 'Enlarge</span>');
+    }
+    el.addEventListener('click', function(e){ e.preventDefault(); open(); });
+    el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+  }
+  function openImg(img, label){
+    var w = img.naturalWidth || 1200, h = img.naturalHeight || 800;
+    openViewer({w: w, h: h, title: label || img.alt || 'Screen', css: 'img{display:block;width:100%;height:100%}', html: '<img src="' + (img.currentSrc || img.src) + '" alt="">'});
+  }
+  function zoomables(scope, d){
+    scope.querySelectorAll('.cs-browser, .cs-laptop > .scr').forEach(function(fr){
+      if(fr.closest('.bproto, .mcar')) return;
+      var p = fr.querySelector('.plate[data-screen]'), img = p ? null : fr.querySelector('img');
+      var label = fr.getAttribute('aria-label') || (fr.closest('[aria-label]') || {getAttribute: function(){ return ''; }}).getAttribute('aria-label') || (p && p.getAttribute('aria-label')) || '';
+      if(p){ var b = boardById(d, p.dataset.screen); if(b) makeZoomable(fr, function(){ openViewer(b); }, label || b.title); }
+      else if(img) makeZoomable(fr, function(){ openImg(img, label); }, label || img.alt);
+    });
+    scope.querySelectorAll('img.cs-img').forEach(function(img){
+      if(img.closest('a, button, .zoomable, .bproto, .mcar')) return;
+      var fc = img.closest('figure'), cap = img.alt || (fc && fc.querySelector('figcaption') ? fc.querySelector('figcaption').textContent.trim() : '');
+      makeZoomable(img, function(){ openImg(img, cap); }, cap);
+    });
+  }
 
   /* ---------- Router ---------- */
   var PAGES = {home:1, about:1, work:1, contact:1}, homeSeen = false;
