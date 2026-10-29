@@ -1,7 +1,7 @@
 <!--meta {
   "theme": {"ground":"#F5F8FB","surface":"#FFFFFF","ink":"#0E1F3B","ink2":"#4A5A70","rule":"#DCE3EC","rule2":"#C3CDDA","neutral":"#EAF0F6","eyebrow":"#056DAE","dark":"#002D72","ondark":"#FFFFFF","ondark2":"#C3D3EC","ondark-acc":"#9FD3F5","tint":"#E6F1F9","tint-line":"#B7D6EE","tint-ink":"#023F6B","low":"#FCE8E8","low-ink":"#A12222","x":"#C62828"},
   "fonts": ["https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300..800;1,400..600&family=Overpass+Mono:wght@400..600&display=swap"],
-  "boards": ["ScreenerWeb","ScreenerWebFilters","IOSResults","IOSFilters","IOSSheet","IOSSort","IOSQuestions","IOSTour","GreyAddFilters","GreyPills","GreyRowMenu","GreyTour","GreyQuestions"]
+  "boards": ["ScreenerWeb","IOSResults","GreyAddFilters","GreyPills","GreyRowMenu","GreyTour","GreyQuestions"]
 } -->
 <div class="cs-hero">
   <div class="cs-hero-copy">
@@ -250,17 +250,26 @@
       <p class="cs-lead">The greyscale structure carried into Citi’s design system. On iPhone, each desktop pattern became its native equivalent.</p>
       <dl class="cs-pdl" style="margin-top:4px"><dt>Left filter panel</dt><dd>→ a grid of filter tiles</dd><dt>Modal dialog</dt><dd>→ a bottom sheet</dd><dt>Seven-column grid</dt><dd>→ a two-line fund card</dd></dl>
     </div>
-    <div class="cs-main">
-      <figure class="cs-fig"><div class="cs-laptop" role="img" aria-label="Web Add Filters dialog over the Screener"><div class="scr"><div class="plate" data-screen="ScreenerWebFilters"></div></div><div class="base"></div></div><figcaption><b>Add Filters, in Citi’s design system</b>A filled blue chip with a tick means the filter is on.</figcaption></figure>
+    <div class="cs-main" data-tabs>
+      <div class="cs-tabs" role="tablist" aria-label="The Screener on web and mobile">
+        <button type="button" role="tab" id="si-t-web" aria-controls="si-p-web">Web</button>
+        <button type="button" role="tab" id="si-t-ios" aria-controls="si-p-ios">Mobile</button>
+      </div>
+      <div class="cs-panels">
+        <div class="cs-panel" role="tabpanel" id="si-p-web" aria-labelledby="si-t-web">
+          <figure class="cs-fig cs-flow" data-flow>
+            <div class="cs-laptop"><div class="scr"><video muted loop playsinline preload="metadata" poster="img/si-web-poster.jpg?v=1" aria-label="Screen recording of the web Screener: two onboarding questions, a two-step tour, adding the Expense Ratio filter, then the Buy and Sell menu on a fund"><source src="media/si-web.mp4?v=1" type="video/mp4"></video></div><div class="base"></div></div>
+            <figcaption class="cs-flow-bar"><button type="button" class="cs-flow-pp" data-state="playing" aria-label="Pause the walkthrough"><svg class="i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button><ol class="cs-flow-steps"><li data-t="0"><button type="button"><span class="bar"></span>Two quick questions</button></li><li data-t="4.6"><button type="button"><span class="bar"></span>A short tour</button></li><li data-t="9.1"><button type="button"><span class="bar"></span>Add Filters</button></li><li data-t="15.1"><button type="button"><span class="bar"></span>Buy or sell</button></li></ol></figcaption>
+          </figure>
+        </div>
+        <div class="cs-panel" role="tabpanel" id="si-p-ios" aria-labelledby="si-t-ios" hidden>
+          <figure class="cs-fig cs-flow" data-flow>
+            <div class="cs-phone"><video muted loop playsinline preload="metadata" poster="img/si-ios-poster.jpg?v=1" aria-label="Screen recording of the iPhone Screener: two onboarding questions, a two-step tour, filtering by asset class, then sorting by 1 Year Return"><source src="media/si-ios.mp4?v=1" type="video/mp4"></video></div>
+            <figcaption class="cs-flow-bar"><button type="button" class="cs-flow-pp" data-state="playing" aria-label="Pause the walkthrough"><svg class="i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button><ol class="cs-flow-steps"><li data-t="0"><button type="button"><span class="bar"></span>Two quick questions</button></li><li data-t="2.85"><button type="button"><span class="bar"></span>A short tour</button></li><li data-t="6.15"><button type="button"><span class="bar"></span>Filter</button></li><li data-t="11.8"><button type="button"><span class="bar"></span>Sort</button></li></ol></figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="cs-block tight">
-    <p class="cs-eyebrow muted cs-ios-h">Finding a fund on iPhone</p>
-    <div class="cs-ios"><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone fund filters as tiles, two categories selected, with a View 1,786 Results button"><div class="plate" data-screen="IOSFilters"></div></div><figcaption>Pick a category<small>Filter tiles with a live results count</small></figcaption></figure><span class="cs-ios-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"/></svg></span><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone bottom sheet for Asset Class with Equity ticked"><div class="plate" data-screen="IOSSheet"></div></div><figcaption>Choose within it<small>A bottom sheet for each filter</small></figcaption></figure><span class="cs-ios-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"/></svg></span><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone filtered results with two removable pills and two-line fund cards"><div class="plate" data-screen="IOSResults"></div></div><figcaption>Compare the funds<small>Removable pills, two-line fund cards</small></figcaption></figure></div>
-  </div>
-  <div class="cs-block tight">
-    <p class="cs-eyebrow muted cs-ios-h">Sorting, and two ways in for new investors</p>
-    <div class="cs-ios gap"><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone Sort By sheet with Performance and Expense Ratio explained"><div class="plate" data-screen="IOSSort"></div></div><figcaption>Sort the list<small>Each option explained in a line</small></figcaption></figure><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone pre-screen question, step 1 of 2, with four fund categories"><div class="plate" data-screen="IOSQuestions"></div></div><figcaption>Get a starting point<small>Two questions, or set your own filters</small></figcaption></figure><figure class="cs-shot"><div class="cs-phone" role="img" aria-label="iPhone tour tooltip pointing at the Filter control"><div class="plate" data-screen="IOSTour"></div></div><figcaption>Or take the tour<small>Two tooltips on the real controls</small></figcaption></figure></div>
   </div>
 </section>
 

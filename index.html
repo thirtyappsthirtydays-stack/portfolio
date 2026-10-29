@@ -817,6 +817,23 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs-laptop > .scr::before{content:"";position:absolute;top:.75%;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#3A3D45}
 .cs-laptop .plate{display:block;width:100%;border:0;border-radius:0}
 .cs-laptop > .scr > img{display:block;width:100%;height:auto}
+/* looping walkthrough videos (Self Invest Deliver) */
+.cs-laptop > .scr > video{display:block;width:100%;height:auto;aspect-ratio:16 / 10;background:#F2F5F9}
+.cs-phone > video{display:block;width:100%;height:auto;aspect-ratio:390 / 844;border-radius:13% / 6%;background:#fff}
+.cs-flow{gap:20px}
+.cs-flow > .cs-phone{--pw:clamp(220px,58%,290px);margin:0 auto}
+.cs-flow-bar{display:flex;align-items:flex-start;gap:14px}
+.cs-flow-pp{flex:none;width:36px;height:36px;padding:0;border-radius:50%;border:1px solid var(--c-rule2);background:var(--c-surface);color:var(--c-ink);display:grid;place-items:center;cursor:pointer}
+.cs-flow-pp:hover{border-color:var(--c-ink)}
+.cs-flow-pp .i-play,.cs-flow-pp[data-state="paused"] .i-pause{display:none}
+.cs-flow-pp[data-state="paused"] .i-play{display:block}
+.cs-flow-steps{flex:1;min-width:0;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cs-flow-steps button{all:unset;box-sizing:border-box;display:grid;gap:8px;width:100%;cursor:pointer;font-size:13px;line-height:1.35;color:var(--c-ink2)}
+.cs-flow-steps button:focus-visible{outline:2px solid var(--c-eyebrow);outline-offset:3px;border-radius:2px}
+.cs-flow-steps .bar{display:block;height:3px;border-radius:2px;background:var(--c-rule);overflow:hidden}
+.cs-flow-steps .bar::after{content:"";display:block;height:100%;width:var(--p,0%);background:var(--c-eyebrow)}
+.cs-flow-steps li.on button{color:var(--c-ink);font-weight:600}
+@media (max-width:640px){.cs-flow-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:14px}}
 .cs-laptop > .base{width:100%;height:clamp(8px,1.3vw,15px);background:linear-gradient(#D9DBE0,#A3A6AE 65%,#80838B);border-radius:2px 2px 14px 14px / 2px 2px 9px 9px;position:relative;box-shadow:0 16px 28px rgba(14,31,59,.16)}
 .cs-laptop > .base::before{content:"";position:absolute;left:43%;top:0;width:14%;height:45%;background:#B3B6BC;border-radius:0 0 8px 8px}
 .cs-phone > .cs-pinned > .plate{border:0;border-radius:13% / 6%}
@@ -1644,7 +1661,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "9a57e94ea4", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "70a3d711a7", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){
     /* a case file newer than this page means the browser kept an old copy of the page (GitHub Pages lets it for ten minutes):
@@ -1894,6 +1911,42 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     track.addEventListener('scroll', function(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); });
     sync();
   }
+  /* Looping walkthrough videos ([data-flow]): they play while on screen and in the open tab, and pause otherwise.
+     The steps under each one follow the video; clicking a step jumps to it. With reduced motion they wait for Play. */
+  function initFlows(scope){
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    scope.querySelectorAll('[data-flow]').forEach(function(fig){
+      var v = fig.querySelector('video'), btn = fig.querySelector('.cs-flow-pp'), items = [].slice.call(fig.querySelectorAll('.cs-flow-steps li'));
+      var at = items.map(function(li){ return +li.dataset.t; }), seen = false, held = calm, raf = 0;
+      var panel = fig.closest('[role="tabpanel"]');
+      v.muted = true;
+      function go(){
+        if(!held && seen && !(panel && panel.hidden)){ var pr = v.play(); if(pr && pr.catch) pr.catch(function(){}); }
+        else v.pause();
+      }
+      function paint(){
+        var t = v.currentTime || 0, d = isFinite(v.duration) ? v.duration : at[at.length - 1] + 5, k = 0;
+        at.forEach(function(x, i){ if(t >= x) k = i; });
+        items.forEach(function(li, i){
+          var end = i + 1 < at.length ? at[i + 1] : d;
+          li.classList.toggle('on', i === k);
+          li.style.setProperty('--p', (i < k ? 100 : i > k ? 0 : Math.min(100, (t - at[i]) / (end - at[i]) * 100)) + '%');
+        });
+      }
+      function tick(){ paint(); raf = v.paused ? 0 : requestAnimationFrame(tick); }
+      function state(){ var on = !v.paused; btn.dataset.state = on ? 'playing' : 'paused'; btn.setAttribute('aria-label', on ? 'Pause the walkthrough' : 'Play the walkthrough'); }
+      v.addEventListener('play', function(){ state(); if(!raf) tick(); });
+      v.addEventListener('pause', function(){ state(); paint(); });
+      v.addEventListener('seeked', paint);
+      btn.addEventListener('click', function(){ held = !v.paused; if(!held) seen = true; go(); });
+      items.forEach(function(li, i){ li.querySelector('button').addEventListener('click', function(){ v.currentTime = at[i] + .01; paint(); }); });
+      if('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ seen = e.isIntersecting; go(); }); }, {threshold: .35}).observe(fig);
+      else { seen = true; go(); }
+      /* a tab opening starts its walkthrough from the beginning */
+      if(panel) new MutationObserver(function(){ if(!panel.hidden){ try { v.currentTime = 0; } catch(e){} } go(); }).observe(panel, {attributes: true, attributeFilter: ['hidden']});
+      state(); paint();
+    });
+  }
   function initTabs(scope){
     scope.querySelectorAll('[data-tabs]').forEach(function(box){
       var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));
@@ -1936,6 +1989,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     body.querySelectorAll('.mcar').forEach(function(r){ initCarousel(r, d); });
     body.querySelectorAll('.bproto').forEach(function(f){ initProto(f, d.proto); });
     initTabs(body);
+    initFlows(body);
     body.querySelectorAll('[data-imgcar]').forEach(initImgCar);
     /* in-page jumps scroll instead of changing the hash, which the router owns */
     body.querySelectorAll('[data-jump]').forEach(function(btn){
