@@ -122,6 +122,7 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .e-in{position:relative;z-index:1;max-width:var(--max);margin-inline:auto;padding-left:max(clamp(16px,4vw,40px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,40px),env(safe-area-inset-right,0px))}
 .e-serif{font-family:var(--f-display);font-size-adjust:var(--f-adj)}
 .e-hero{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(56px,7vw,88px)}
+.e-eyebrow .e-nw{white-space:nowrap}
 .e-eyebrow{margin:0 0 24px;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#4A5D60}
 .e-h1{margin:0;max-width:880px;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-weight:300;font-size:clamp(36px,4.4vw,60px);line-height:1.12;letter-spacing:-.01em}
 .e-h1 > span{display:block}
@@ -134,6 +135,7 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 /* phones: the location gets its own line, and the three values sit side by side */
 @media (max-width:600px){
   .e-eyebrow .e-sep{display:none}.e-eyebrow .e-loc{display:block}
+  .e-eyebrow .e-nw{display:block}.e-eyebrow .e-dot{display:none}
   .e-values{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .e-values li{gap:6px;padding-top:12px}
   .e-values b{gap:7px;font-size:21px}
@@ -476,7 +478,7 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .cv-section > h2,.cv-head > h2{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:1.875rem;letter-spacing:-.01em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
 .cv-head{display:flex;align-items:center;justify-content:space-between;gap:12px 16px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
 .cv-head > h2{margin:0;padding:0;border:0}
-@media (max-width:480px){.cv-dl .cv-meta{display:none}}
+
 @media (max-width:520px){.org-site{display:block}.org-sep{display:none}}
 .xp{list-style:none;display:grid;gap:32px}
 .xp > li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px}
@@ -491,7 +493,9 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .skills{display:grid;gap:14px;max-width:42rem}
 .skills b{font-weight:600}
 .cv-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.cv-dl .cv-meta{font-weight:400;opacity:.72}
+.cv-dl{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:4px 12px;border:1px solid var(--rule);border-radius:999px;color:var(--ink-2);font-size:var(--fs-xs);font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;transition:color .2s,border-color .2s}
+.cv-dl:hover{color:var(--ink);border-color:var(--ink-2)}
+.cv-dl .cv-meta{font-weight:400;opacity:.8}
 /* ---------- Contact ---------- */
 .contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);padding-bottom:clamp(56px,10vw,120px);align-items:end}
 .contact h1{font-size:var(--fs-hero)}
@@ -524,14 +528,20 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 /* ---------- Coaching ---------- */
 .coach .profile h1{font-size:var(--fs-h1)}
 .coach .profile .btn{justify-self:start}
-.coach-list{list-style:none;display:grid}
-.coach-list > li{display:grid;grid-template-columns:2.25rem minmax(0,1fr);gap:6px 12px;padding:22px 0;border-bottom:1px solid var(--rule)}
-.coach-list > li:first-child{padding-top:4px}
-.coach-list .n{font-size:var(--fs-xs);font-weight:600;color:var(--cobalt);font-variant-numeric:tabular-nums;line-height:1.6rem}
-.coach-list h3{font-weight:600;font-size:1.0625rem;line-height:1.45;text-wrap:balance}
-.coach-list p,.coach-list .case-links{grid-column:2;max-width:40rem}
-.coach-list p{color:var(--ink-2)}
-.coach-list .case-links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:var(--fs-small)}
+/* What I coach on: a carousel of cards, two per page (one per swipe on phones) */
+.cc{display:grid;gap:16px}
+.coach-list{list-style:none}
+.cc-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 16px) / 2);gap:16px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px;margin:-2px}
+.cc-track::-webkit-scrollbar{display:none}
+.cc-track:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:16px}
+.coach-list > li{display:flex;flex-direction:column;gap:8px;min-width:0;padding:20px 22px 22px;border:1px solid var(--rule);border-radius:14px;background:var(--surface);scroll-snap-align:start}
+.cc-track > li:nth-child(even){scroll-snap-align:none}
+.coach-list .n{font-size:var(--fs-xs);font-weight:600;color:var(--cobalt);font-variant-numeric:tabular-nums}
+.coach-list h3{font-weight:600;font-size:1.0625rem;line-height:1.4;text-wrap:balance}
+.coach-list p{color:var(--ink-2);font-size:var(--fs-small);line-height:1.6}
+.coach-list .case-links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:auto;padding-top:6px;font-size:var(--fs-small)}
+.cc-bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion: reduce){.cc-track{scroll-behavior:auto}}
 /* Book a call: three steps in one card; the calendar step embeds the scheduler */
 .coach-book{margin-top:clamp(40px,6vw,64px);padding:clamp(22px,3vw,32px);border:1px solid var(--rule);border-radius:16px;background:var(--surface);scroll-margin-top:calc(var(--head-h) + 20px)}
 .cb-head{display:grid;gap:10px;margin-bottom:24px}
@@ -579,7 +589,9 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .cb-alt{font-size:var(--fs-small);color:var(--ink-2)}
 .cb-alt:empty{display:none}
 @media (max-width:640px){
-  .coach-list > li{grid-template-columns:1.75rem minmax(0,1fr);padding:18px 0}
+  .cc-track{grid-auto-columns:88%;gap:12px}
+  .cc-track > li:nth-child(even){scroll-snap-align:start}
+  .coach-list > li{padding:18px}
   .coach-book{margin-inline:calc(-1 * clamp(4px,2vw,12px));padding:20px 16px}
   .cb-topics,.cb-fields{grid-template-columns:minmax(0,1fr)}
   .cb-steps{gap:6px 14px}
@@ -1277,7 +1289,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   <div class="e-bg" aria-hidden="true"><i class="a e-drift"></i><i class="b e-drift slow"></i><i class="c e-drift"></i></div>
 
   <section class="e-in e-hero" aria-labelledby="e-intro">
-    <p class="e-eyebrow e-rise" style="--d:.05s">Product designer &amp; strategist<span class="e-sep"> • </span><span class="e-loc">based in London, UK</span></p>
+    <p class="e-eyebrow e-rise" style="--d:.05s">Product designer &amp; strategist<span class="e-sep"> • </span><span class="e-loc"><span class="e-nw">based in London, UK</span><span class="e-dot">&nbsp;· </span><span class="e-nw">prev. in New York City</span><span class="e-dot">&nbsp;· </span><span class="e-nw">roots in Istanbul</span></span></p>
     <h1 id="e-intro" class="e-h1" aria-label="I research, design, build and ship. 10+ years of solving customer and enterprise problems through thoughtful design."><span aria-hidden="true"><span class="e-word" style="--d:0.30s">I</span><span class="e-word" style="--d:0.75s">research,</span><span class="e-word" style="--d:1.20s">design,</span><span class="e-word" style="--d:1.65s">build</span><span class="e-word" style="--d:2.10s">and</span><span class="e-word" style="--d:2.55s">ship.</span></span><span aria-hidden="true" class="e-sub e-rise" style="--d:3.3s">10+ years of solving customer and enterprise problems through thoughtful design.</span></h1>
     <ul class="e-values" aria-label="What I value">
       <li class="e-rise" style="--d:3.9s"><b><i class="e-dot" aria-hidden="true" style="--d:0s;background:#8DB4C7"></i>Clarity</b><span>I turn complex decisions into simple, confident steps.</span></li>
@@ -1364,7 +1376,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       <section class="cv-section">
         <div class="cv-head">
           <h2>Profile</h2>
-          <a class="btn cv-dl" href="BH_CV.pdf" download="BH_CV.pdf"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 19h14"/></svg>Download CV <span class="cv-meta">PDF, 2 pages</span></a>
+          <a class="cv-dl" href="BH_CV.pdf" download="BH_CV.pdf"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 19h14"/></svg>Download CV <span class="cv-meta">PDF</span></a>
         </div>
         <div class="prose">
           <p>Strategist and designer who enjoys making complex problems simple. I combine user-centered design, strategic thinking and a curiosity for emerging technology to create intuitive digital experiences that work for both people and businesses.</p>
@@ -1526,7 +1538,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     <div>
       <section class="cv-section" aria-labelledby="coach-topics">
         <h2 id="coach-topics">What I coach on</h2>
-        <ol class="coach-list">
+        <div class="cc">
+        <ol class="coach-list cc-track" id="cc-track" tabindex="0" aria-label="Coaching topics. Scroll sideways or use the arrows below for more.">
           <li>
             <span class="n" aria-hidden="true">01</span>
             <h3>Higher education application consulting in the US or UK for international students</h3>
@@ -1560,6 +1573,12 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
             <div class="case-links"><a class="link" href="#thirty-apps">Read the 30 Apps case study</a><a class="link" href="#cerehive">Read the CereHive case study</a></div>
           </li>
         </ol>
+        <div class="cc-bar">
+          <button type="button" class="mcar-btn" data-cc="-1" aria-label="Previous topics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="mcar-dots" id="cc-dots"></div>
+          <button type="button" class="mcar-btn" data-cc="1" aria-label="Next topics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+        </div>
       </section>
 
       <section class="coach-book" id="coach-book" aria-labelledby="cb-title">
@@ -2529,6 +2548,53 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     else { if(homeSeen) home.classList.add('e-played'); pauseStory(); }
     window.scrollTo(0, 0);
   }
+
+  /* ---------- Coaching: topics carousel ---------- */
+  (function coachTopics(){
+    var track = document.getElementById('cc-track'); if(!track) return;
+    var items = track.children, dots = document.getElementById('cc-dots'), btns = document.querySelectorAll('[data-cc]');
+    var per = 2, pages = 1, cur = 0, raf = 0;
+    function num(i){ return items[i].querySelector('.n').textContent; }
+    function step(){ return items[per] ? items[per].offsetLeft - items[0].offsetLeft : track.scrollWidth; }
+    function sync(){
+      var max = track.scrollWidth - track.clientWidth;
+      cur = track.scrollLeft >= max - 2 ? pages - 1 : Math.min(pages - 1, Math.round(track.scrollLeft / step()));
+      [].forEach.call(dots.children, function(d, i){ d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+      btns[0].disabled = cur === 0; btns[1].disabled = cur === pages - 1;
+    }
+    function measure(){
+      if(!track.clientWidth) return;   /* the page is hidden */
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0, w = items[0].getBoundingClientRect().width;
+      per = Math.max(1, Math.floor((track.clientWidth + gap + 4) / (w + gap)));
+      pages = Math.ceil(items.length / per);
+      if(dots.children.length !== pages || +dots.dataset.per !== per){
+        dots.innerHTML = ''; dots.dataset.per = per;
+        for(var i = 0; i < pages; i++){
+          var b = document.createElement('button'), a = num(i * per), z = num(Math.min(items.length, (i + 1) * per) - 1);
+          b.type = 'button'; b.className = 'mcar-dot'; b.dataset.page = i;
+          b.setAttribute('aria-label', a === z ? 'Show topic ' + a : 'Show topics ' + a + ' and ' + z);
+          dots.appendChild(b);
+        }
+      }
+      sync();
+    }
+    function go(p){
+      p = Math.max(0, Math.min(pages - 1, p));
+      track.scrollTo({ left: items[p * per].offsetLeft - items[0].offsetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }
+    btns.forEach(function(b){ b.addEventListener('click', function(){ go(cur + +b.dataset.cc); }); });
+    dots.addEventListener('click', function(e){ var d = e.target.closest('.mcar-dot'); if(d) go(+d.dataset.page); });
+    /* tabbing to a link on a card that's off to the side brings its page into view */
+    track.addEventListener('focusin', function(e){
+      var li = e.target.closest('.cc-track > li'); if(!li) return;
+      var p = Math.floor([].indexOf.call(items, li) / per);
+      if(p !== cur) go(p);
+    });
+    track.addEventListener('scroll', function(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); }, { passive: true });
+    if(window.ResizeObserver) new ResizeObserver(measure).observe(track);
+    window.addEventListener('resize', measure);
+    measure();
+  })();
 
   /* ---------- Coaching: book a call ---------- */
   /* The scheduler for step 3. Set ONE of these:
