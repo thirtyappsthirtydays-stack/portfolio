@@ -845,6 +845,9 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-s{margin:2px 0 0;font-size:12.5px;line-height:1.4;color:var(--c-ink2)}
   .dk-s b{color:var(--c-ink);font-weight:600}
   .dk-role{display:grid;gap:2px}
+  .dk-award{display:flex;gap:12px;align-items:center}
+  .dk-award > img,.dk-award > .zoomable{flex:none;width:44%}
+  .dk-award img.cs-img{display:block;width:100%;height:auto;border-radius:8px}
   .dk-xs{margin:0;font-size:11px;line-height:1.4;color:var(--c-ink2)}
   .dk-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .dk-card{background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;min-width:0}
@@ -1776,7 +1779,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "b4220c9308", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "806ff6d7f0", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){
     /* a case file newer than this page means the browser kept an old copy of the page (GitHub Pages lets it for ten minutes):
