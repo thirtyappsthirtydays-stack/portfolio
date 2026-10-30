@@ -68,7 +68,7 @@ def build(cid):
 
 
 if __name__ == '__main__':
-    ids = sys.argv[1:] or [f[:-5] for f in sorted(os.listdir(os.path.join(ROOT, 'src', 'cases'))) if f.endswith('.html')]
+    ids = sys.argv[1:] or [f[:-5] for f in sorted(os.listdir(os.path.join(ROOT, 'src', 'cases'))) if f.endswith('.html') and not f.endswith('.deck.html')]
     for cid in ids:
         build(cid)
     # cache-busting: stamp each case file's content hash into index.html
