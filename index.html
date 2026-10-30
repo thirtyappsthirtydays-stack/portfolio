@@ -497,6 +497,24 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .contact-list .v{font-size:1.125rem;overflow-wrap:anywhere}
 .copy{border:1px solid var(--rule);background:var(--surface);border-radius:999px;min-height:36px;padding:6px 14px;font-size:var(--fs-xs);font-weight:600;cursor:pointer}
 .copy:hover{border-color:var(--cobalt);color:var(--cobalt)}
+.contact-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.mailbtn{display:inline-flex;align-items:center;gap:8px;min-height:36px;box-sizing:border-box;padding:6px 16px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:var(--fs-xs);font-weight:600;text-decoration:none}
+.mailbtn:hover{opacity:.88}
+.mailbtn:focus-visible,.copy:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+/* phones: the whole Contact page fits one screen */
+@media (max-width:640px){
+  .page[data-page="contact"]{padding-top:20px}
+  .contact{gap:18px;padding-bottom:20px}
+  .contact > div{gap:10px!important}
+  .contact h1{font-size:2.6rem}
+  .contact .lead{font-size:15.5px;line-height:1.5}
+  .contact-list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
+  .contact-list li{padding:12px 0;gap:10px}
+  .contact-list li:nth-child(-n+2){grid-column:1 / -1}
+  .contact-list .v{font-size:1rem}
+  .contact-acts{width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .contact-acts > *{justify-content:center;min-height:42px;font-size:14px}
+}
 
 /* ---------- Footer ---------- */
 .site-foot{border-top:1px solid var(--rule);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px));font-size:var(--fs-xs);color:var(--ink-2)}
@@ -1406,7 +1424,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       <p class="lead">I'm open to senior product design and strategy roles. I enjoy solving hard problems across very different domains, from investing and healthcare to AI and navigation, and I'm always curious about the next one. The quickest way to reach me is email.</p>
     </div>
     <ul class="contact-list">
-      <li><div><div class="k">Email</div><div class="v" id="email-text">bengisuhalezeroglu@gmail.com</div></div><button type="button" class="copy" id="copy-email">Copy email</button></li>
+      <li><div><div class="k">Email</div><div class="v" id="email-text">bengisuhalezeroglu@gmail.com</div></div><span class="contact-acts"><a class="mailbtn" href="mailto:bengisuhalezeroglu@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Email me</a><button type="button" class="copy" id="copy-email">Copy email</button></span></li>
       <li><div><div class="k">LinkedIn</div><a class="v link" href="https://linkedin.com/in/bengisu-halezeroglu" target="_blank" rel="noopener">linkedin.com/in/bengisu-halezeroglu</a></div></li>
       <li><div><div class="k">Based in</div><div class="v">London, UK</div></div></li>
       <li><div><div class="k">Languages</div><div class="v">English and Turkish</div></div></li>
