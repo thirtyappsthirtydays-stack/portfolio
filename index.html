@@ -523,6 +523,23 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
   .contact-acts > *{justify-content:center;min-height:42px;font-size:14px}
 }
 
+/* ---------- Coaching ---------- */
+.coach .profile .btn{justify-self:start}
+.coach-list{list-style:none;display:grid}
+.coach-list > li{display:grid;grid-template-columns:2.25rem minmax(0,1fr);gap:6px 12px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.coach-list > li:first-child{padding-top:4px}
+.coach-list .n{font-size:var(--fs-xs);font-weight:600;color:var(--cobalt);font-variant-numeric:tabular-nums;line-height:1.6rem}
+.coach-list h3{font-weight:600;font-size:1.0625rem;line-height:1.45;text-wrap:balance}
+.coach-list p,.coach-list .case-links{grid-column:2;max-width:40rem}
+.coach-list p{color:var(--ink-2)}
+.coach-list .case-links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:var(--fs-small)}
+.coach-cta{display:grid;gap:14px;justify-items:start;margin-top:clamp(40px,6vw,64px);padding:clamp(22px,3vw,32px);border:1px solid var(--rule);border-radius:16px;background:var(--surface)}
+.coach-cta h2{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:1.875rem;letter-spacing:-.01em;line-height:1.1}
+.coach-cta p{color:var(--ink-2);max-width:36rem}
+@media (max-width:640px){
+  .coach-list > li{grid-template-columns:1.75rem minmax(0,1fr);padding:18px 0}
+}
+
 /* ---------- Footer ---------- */
 .site-foot{border-top:1px solid var(--rule);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px));font-size:var(--fs-xs);color:var(--ink-2)}
 .site-foot .wrap{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
@@ -1167,7 +1184,10 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 .cs .bproto,.cs .mcar{margin:0}
 .cs-end{margin-top:88px;padding-bottom:24px}
 @media (max-width:640px){.cs-hero-art .back{display:none}}
-@media (max-width:400px){.nav{gap:10px}.nav a{font-size:.8125rem}}
+/* five nav links: on phones the wordmark is the way home, so Home steps out to make room */
+@media (max-width:620px){.nav a[data-nav="home"]{display:none}}
+@media (max-width:400px){.nav{gap:8px}.nav a{font-size:.8125rem}.wordmark{font-size:1.25rem}}
+@media (max-width:360px){.nav{gap:6px}.nav a{font-size:.78rem}}
 .page[data-page="case"]{padding-top:0}
 .cs + .phasebar{margin-top:56px}
 .phasebar + .cs > .cs-process:first-child{margin-top:56px}
@@ -1198,6 +1218,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       <a href="#home" data-nav="home">Home</a>
       <a href="#about" data-nav="about">About</a>
       <a href="#work" data-nav="work">All work</a>
+      <a href="#coaching" data-nav="coaching">Coaching</a>
       <a href="#contact" data-nav="contact">Contact</a>
     </nav>
   </div>
@@ -1441,6 +1462,75 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
 
 <!-- ============================ CASE STUDY ============================ -->
 <div class="page" data-page="case" id="case" hidden></div>
+
+<!-- ============================ COACHING ============================ -->
+<div class="page" data-page="coaching" hidden>
+  <div class="wrap about coach">
+    <aside class="profile">
+      <h1 class="display">Coaching</h1>
+      <p class="lead">I provide coaching services for aspiring and junior product talent.</p>
+      <p>My advice comes from my own path: I applied to US universities from Istanbul, moved from finance into design, and spent 10+ years at Bank of America, Citi and my own studio. At Citi I also mentored and managed designers.</p>
+      <dl class="facts">
+        <div><dt>For</dt><dd>Aspiring and junior product talent</dd></div>
+        <div><dt>Languages</dt><dd>English and Turkish, both native</dd></div>
+        <div><dt>Email</dt><dd><a class="link" href="mailto:bengisuhalezeroglu@gmail.com?subject=Coaching">bengisuhalezeroglu@gmail.com</a></dd></div>
+      </dl>
+      <a class="btn" href="mailto:bengisuhalezeroglu@gmail.com?subject=Coaching"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Email me about coaching</a>
+    </aside>
+
+    <div>
+      <section class="cv-section" aria-labelledby="coach-topics">
+        <h2 id="coach-topics">What I coach on</h2>
+        <ol class="coach-list">
+          <li>
+            <span class="n" aria-hidden="true">01</span>
+            <h3>College applications in the US for international students</h3>
+            <p>Choosing where to apply, writing your essays and putting the application together from outside the US. I applied from a high school in Istanbul and studied Economics at the University of Pennsylvania.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">02</span>
+            <h3>Career transition coaching</h3>
+            <p>Planning a move into product from another field. I moved from finance to design: four years as a capital management analyst at Bank of America, the UX Design Immersive at General Assembly, then product design roles at Bank of America and Citi.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">03</span>
+            <h3>Breaking into product design &amp; strategy</h3>
+            <p>Which skills to build first, which roles to aim for and how to find your first product design or strategy role.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">04</span>
+            <h3>Product design &amp; strategy interviews</h3>
+            <p>Preparing for portfolio presentations, design and product case exercises, and questions about how you made decisions and measured success.</p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">05</span>
+            <h3>Portfolio reviews</h3>
+            <p>Feedback on your case studies: which projects to show, how to structure each one and how to make your decisions and results clear.</p>
+            <div class="case-links"><a class="link" href="#work">See my portfolio</a></div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">06</span>
+            <h3>Using AI as a designer</h3>
+            <p>Bringing AI tools into research, design and prototyping. I build working prototypes with Claude Code and other AI tools, built 30 apps in 30 days, and wrote my MSc thesis on how product managers use AI.</p>
+            <div class="case-links"><a class="link" href="#thirty-apps">Read the 30 Apps case study</a></div>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">07</span>
+            <h3>Designing AI-powered products</h3>
+            <p>Designing products with AI at their core: what the AI does, how people check and correct it, and how to build trust in its results. I took CereHive, an AI-native recruiting platform, from 0 to 1.</p>
+            <div class="case-links"><a class="link" href="#cerehive">Read the CereHive case study</a></div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="coach-cta" aria-labelledby="coach-cta-t">
+        <h2 id="coach-cta-t">Get in touch</h2>
+        <p>Email me a few lines about where you are now and what you'd like help with.</p>
+        <a class="btn" href="mailto:bengisuhalezeroglu@gmail.com?subject=Coaching"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Email me about coaching</a>
+      </section>
+    </div>
+  </div>
+</div>
 
 <!-- ============================ CONTACT ============================ -->
 <div class="page" data-page="contact" hidden>
@@ -2339,7 +2429,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   }
 
   /* ---------- Router ---------- */
-  var PAGES = {home:1, about:1, work:1, contact:1}, homeSeen = false;
+  var PAGES = {home:1, about:1, work:1, coaching:1, contact:1}, homeSeen = false;
   function route(){
     var h = (location.hash || '').replace('#', '');
     if(h === 'case-studies' || h === 'all-work') h = 'work';
