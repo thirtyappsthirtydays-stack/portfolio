@@ -840,11 +840,36 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-step > *{flex-shrink:0}
   .dk-eyebrow{margin:0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-eyebrow)}
   .dk-h1{margin:0;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:36px;line-height:1;font-weight:500}
+  .dk-h1.long{font-size:30px;white-space:nowrap}
   .dk-h2{margin:0;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:26px;line-height:1.05;font-weight:500}
   .dk-p{margin:0;font-size:14px;line-height:1.45;color:var(--c-ink2)}
   .dk-s{margin:2px 0 0;font-size:12.5px;line-height:1.4;color:var(--c-ink2)}
   .dk-s b{color:var(--c-ink);font-weight:600}
   .dk-role{display:grid;gap:2px}
+  .dk-art > img.ph{position:absolute;right:-2%;bottom:0;width:24%;height:auto;filter:drop-shadow(0 8px 16px rgba(14,31,59,.18))}
+  .dk-range .r{display:flex;align-items:center;gap:8px;font-size:12px;white-space:nowrap;padding:3px 6px;margin:0 -6px;border-radius:8px}
+  .dk-range .r i{flex:none;width:84px;font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c-ink2)}
+  .dk-range .r b{flex:1;min-width:0;font-size:13px;overflow:hidden;text-overflow:ellipsis}
+  .dk-range .r.on{background:var(--c-tint);color:var(--c-tint-ink)}
+  .dk-range .r.on i,.dk-range .r.on b{color:var(--c-tint-ink)}
+  .dk-people{display:grid;gap:4px}
+  .dk-people .dk-who{padding:5px 8px}
+  .dk-people .dk-who img{width:30px;height:30px}
+  .dk-need{display:flex !important;gap:12px;align-items:center}
+  .dk-need > img{flex:none;width:31%;height:auto;filter:drop-shadow(0 6px 14px rgba(14,31,59,.14))}
+  .dk-need figcaption{display:grid;gap:4px}
+  .dk-need .q{font-size:12.5px;font-style:italic;color:var(--c-eyebrow);line-height:1.35}
+  .dk-lines{display:grid;gap:4px;font-size:12px;color:var(--c-ink2)}
+  .dk-lines span{display:flex;align-items:center;gap:8px}
+  .dk-lines b{min-width:130px;color:var(--c-ink);font-weight:600;font-size:13px}
+  .dk-shot{height:196px;display:flex;align-items:center;justify-content:center;background:var(--c-neutral);border-radius:12px;padding:10px;box-sizing:border-box;overflow:hidden}
+  .dk-shot img.cs-img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:6px;box-shadow:0 4px 14px rgba(14,31,59,.14)}
+  .dk-phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .dk-phones figure{margin:0;display:grid;gap:6px;align-content:start}
+  .dk-phones img.cs-img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 6px 16px rgba(14,31,59,.16)}
+  .dk-phones figcaption{font-size:11px;line-height:1.3;color:var(--c-ink2)}
+  .dk-phones figcaption b{display:block;font-size:12px;color:var(--c-ink);font-weight:600}
+  .dk-stats.two{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dk-award{display:flex;gap:12px;align-items:center}
   .dk-award > img.cs-img{flex:none;display:block;width:44%;min-width:0;height:auto;border-radius:8px}
   .dk-award > p{flex:1;min-width:0}
@@ -856,6 +881,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-card b + span{font-size:12px;line-height:1.35;color:var(--c-ink2)}
   .dk-card span + b{margin-top:6px}
   .dk-big{font-size:14px;line-height:1.45;color:var(--c-ink)}
+  .dk-card .d{font-size:12px;line-height:1.4;color:var(--c-ink2)}
   .dk-note{background:var(--c-dark);color:var(--c-ondark);border-radius:12px;padding:11px 13px;display:grid;gap:3px}
   .dk-note .k{color:var(--c-ondark-acc)}
   .dk-note b{font-size:14px;line-height:1.35;font-weight:600}
@@ -1779,7 +1805,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "806ff6d7f0", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "806ff6d7f0", "thirty-apps": "a08e9a42c4", "wealth-builder": "b87ede760d", "yol": "2c50db5a18"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){
     /* a case file newer than this page means the browser kept an old copy of the page (GitHub Pages lets it for ten minutes):
