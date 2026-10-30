@@ -879,9 +879,19 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-vdd-rows b{font-size:15px;line-height:1.25;color:var(--c-ink);font-weight:600}
   .dk-vdd-rows .pin{display:flex;align-items:center;margin-left:-28px}
   .dk-vdd-rows .pill{padding:4px 11px;border-radius:999px;background:var(--c-dark);color:var(--c-ondark);font-size:12px;font-weight:600;white-space:nowrap}
-  .dk-comp{display:grid;gap:4px;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.35;color:var(--c-ink2)}
+  .dk-comp{display:grid;gap:2px;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.35;color:var(--c-ink2)}
   .dk-comp b{display:inline-block;min-width:112px;color:var(--c-ink);font-weight:600}
-  .dk-comp .gap{margin-top:3px;padding-top:6px;border-top:1px solid var(--c-rule);color:var(--c-eyebrow);font-weight:600}
+  .dk-comp .r{display:flex;align-items:center;gap:8px;font-size:12px;white-space:nowrap}
+  .dk-comp .r b{min-width:94px;font-size:13px}
+  .dk-comp .lg{flex:none;width:46px;height:24px;display:grid;place-items:center}
+  .dk-comp .lg img{display:block}
+  .dk-comp .lg.morningstar{box-sizing:border-box;height:22px;padding:0 5px;border-radius:11px;background:#fff;border:1px solid var(--c-rule2)}
+  .dk-comp .lg.morningstar img{height:8px;width:auto}
+  .dk-comp .lg.fidelity img{width:24px;height:24px;border-radius:50%;object-fit:contain;background:#fff;box-shadow:0 0 0 1px var(--c-rule2)}
+  .dk-comp .lg.schwab img{width:24px;height:24px}
+  .dk-card b.t{display:flex;align-items:center;gap:6px}
+  .dk-card .ic{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--c-tint);color:var(--c-eyebrow)}
+  .dk-comp .gap{margin-top:2px;padding-top:5px;border-top:1px solid var(--c-rule);color:var(--c-eyebrow);font-weight:600}
   .dk-comp .gap b{color:var(--c-eyebrow)}
   .dk-who{display:flex;gap:8px;align-items:center;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:7px 8px;font-size:11.5px;line-height:1.3;color:var(--c-ink2);min-width:0}
   .dk-who img{flex:none;width:38px;height:38px;border-radius:50%;object-fit:cover}
@@ -1766,7 +1776,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "59699fdf24", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "a1aa592425", "bofa": "a43b716502", "cerehive": "1ded79b6f6", "consultation": "c785cebfb8", "flexit": "d3f463f246", "livs-love-pool": "a207ae85f5", "miiras": "6a9225474a", "self-invest": "b4220c9308", "thirty-apps": "a08e9a42c4", "wealth-builder": "249c462db1", "yol": "2c50db5a18"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){
     /* a case file newer than this page means the browser kept an old copy of the page (GitHub Pages lets it for ten minutes):
