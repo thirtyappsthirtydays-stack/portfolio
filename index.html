@@ -559,20 +559,29 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 /* ---------- Coaching ---------- */
 .coach .profile h1{font-size:var(--fs-h1)}
 .coach .profile .btn{justify-self:start}
-/* What I coach on: a carousel of cards, two per page (one per swipe on phones) */
-.cc{display:grid;gap:16px}
-.coach-list{list-style:none}
-.cc-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 16px) / 2);gap:16px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px;margin:-2px}
-.cc-track::-webkit-scrollbar{display:none}
-.cc-track:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:16px}
-.coach-list > li{display:flex;flex-direction:column;gap:8px;min-width:0;padding:20px 22px 22px;border:1px solid var(--rule);border-radius:14px;background:var(--surface);scroll-snap-align:start}
-.cc-track > li:nth-child(even){scroll-snap-align:none}
-.coach-list .n{font-size:var(--fs-xs);font-weight:600;color:var(--cobalt);font-variant-numeric:tabular-nums}
-.coach-list h3{font-weight:600;font-size:1.0625rem;line-height:1.4;text-wrap:balance}
-.coach-list p{color:var(--ink-2);font-size:var(--fs-small);line-height:1.6}
-.coach-list .case-links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:auto;padding-top:6px;font-size:var(--fs-small)}
-.cc-bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
-@media (prefers-reduced-motion: reduce){.cc-track{scroll-behavior:auto}}
+/* What I coach on: numbered titles; a click opens the details in a speech bubble under the title */
+.coach .profile{position:static}
+.coach .coach-book{margin-top:0}
+.ct-list{list-style:none;display:grid;margin-top:6px;border-top:1px solid var(--rule)}
+.ct-list > li{border-bottom:1px solid var(--rule)}
+.ct-q{display:grid;grid-template-columns:2rem minmax(0,1fr) 22px;align-items:baseline;gap:0 10px;width:100%;padding:15px 0;border:0;background:none;color:var(--ink);font:inherit;font-size:1rem;font-weight:600;line-height:1.4;text-align:left;cursor:pointer}
+.ct-q .n{font-size:var(--fs-xs);font-weight:600;color:var(--cobalt);font-variant-numeric:tabular-nums}
+.ct-q .t{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:transparent;transition:color .2s ease,text-decoration-color .2s ease}
+.ct-q:hover .t,.ct-q[aria-expanded="true"] .t{color:var(--cobalt);text-decoration-color:currentColor}
+.ct-q .ic{align-self:center;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;color:var(--cobalt);opacity:0;transition:opacity .2s ease,transform .25s ease}
+.ct-q:hover .ic,.ct-q:focus-visible .ic,.ct-q[aria-expanded="true"] .ic{opacity:1}
+.ct-q[aria-expanded="true"] .ic{transform:rotate(45deg)}
+.ct-q:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:6px}
+@media (hover:none){.ct-q .ic{opacity:1}}
+.ct-a{padding:0 0 18px 2rem}
+.ct-a[hidden]{display:none}
+.ct-bubble{position:relative;display:grid;gap:10px;padding:14px 18px 16px;border-radius:18px;background:var(--cobalt-soft);color:var(--ink);font-size:var(--fs-small);line-height:1.6;transform-origin:16px 0;animation:ct-pop .22s ease}
+.ct-bubble::before{content:"";position:absolute;top:-6px;left:18px;width:14px;height:14px;border-radius:3px 0 0 0;background:inherit;transform:rotate(45deg)}
+.ct-links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:var(--fs-small)}
+.ct-book{padding:0;border:0;background:none;color:var(--cobalt);font:inherit;font-weight:600;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.ct-book::after{content:" \2192"}
+@keyframes ct-pop{from{opacity:0;transform:translateY(-4px) scale(.98)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.ct-bubble{animation:none}.ct-q .ic,.ct-q .t{transition:none}}
 /* Book a call: three steps in one card; the calendar step embeds the scheduler */
 .coach-book{margin-top:clamp(40px,6vw,64px);padding:clamp(22px,3vw,32px);border:1px solid var(--rule);border-radius:16px;background:var(--surface);scroll-margin-top:calc(var(--head-h) + 20px)}
 .cb-head{display:grid;gap:10px;margin-bottom:24px}
@@ -620,9 +629,6 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .cb-alt{font-size:var(--fs-small);color:var(--ink-2)}
 .cb-alt:empty{display:none}
 @media (max-width:640px){
-  .cc-track{grid-auto-columns:88%;gap:12px}
-  .cc-track > li:nth-child(even){scroll-snap-align:start}
-  .coach-list > li{padding:18px}
   .coach-book{margin-inline:calc(-1 * clamp(4px,2vw,12px));padding:20px 16px}
   .cb-topics,.cb-fields{grid-template-columns:minmax(0,1fr)}
   .cb-steps{gap:6px 14px}
@@ -1591,60 +1597,65 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     <aside class="profile">
       <h1 class="display">Coaching</h1>
       <p class="lead">I provide coaching services for aspiring and junior product talent.</p>
-      <p>My advice comes from my own path: I went from Istanbul to university in the US, moved from finance into design, and spent nearly 10 years in New York City, at Bank of America and Citi, then moved to London for a master's, and now have started my own studio.</p>
-      <dl class="facts">
-        <div><dt>For</dt><dd>Aspiring and junior product talent</dd></div>
-        <div><dt>Languages</dt><dd>English and Turkish, both native</dd></div>
-      </dl>
-      <button type="button" class="btn" data-book-go><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Book a call</button>
+      <ol class="ct-list" aria-label="What I coach on">
+        <li>
+          <button type="button" class="ct-q" aria-expanded="false" aria-controls="ct-a1"><span class="n">01</span><span class="t">Higher education application consulting in the US or UK for international students</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="ct-a" id="ct-a1" hidden>
+            <div class="ct-bubble">
+              <p>Choosing where to apply, writing your essays and personal statement, and putting the application together from abroad. I applied from a high school in Istanbul to study Economics at the University of Pennsylvania, and did my master's at King's Business School in London.</p>
+              <div class="ct-links"><button type="button" class="ct-book" data-book-topic="Higher education applications in the US or UK">Book a call about this</button></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <button type="button" class="ct-q" aria-expanded="false" aria-controls="ct-a2"><span class="n">02</span><span class="t">Career transition coaching</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="ct-a" id="ct-a2" hidden>
+            <div class="ct-bubble">
+              <p>Planning a move into product from another field. I moved from finance to design: four years as a capital management analyst at Bank of America, the UX Design Immersive at General Assembly, then product design roles at Bank of America and Citi.</p>
+              <div class="ct-links"><button type="button" class="ct-book" data-book-topic="Career transition">Book a call about this</button></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <button type="button" class="ct-q" aria-expanded="false" aria-controls="ct-a3"><span class="n">03</span><span class="t">Breaking into product design &amp; strategy</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="ct-a" id="ct-a3" hidden>
+            <div class="ct-bubble">
+              <p>Which skills to build first, which roles to aim for and how to find your first product design or strategy role.</p>
+              <div class="ct-links"><button type="button" class="ct-book" data-book-topic="Breaking into product design &amp; strategy">Book a call about this</button></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <button type="button" class="ct-q" aria-expanded="false" aria-controls="ct-a4"><span class="n">04</span><span class="t">Product design &amp; strategy interviews</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="ct-a" id="ct-a4" hidden>
+            <div class="ct-bubble">
+              <p>Preparing for portfolio presentations, design and product case exercises, and questions about how you made decisions and measured success.</p>
+              <div class="ct-links"><button type="button" class="ct-book" data-book-topic="Product design &amp; strategy interviews">Book a call about this</button></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <button type="button" class="ct-q" aria-expanded="false" aria-controls="ct-a5"><span class="n">05</span><span class="t">Portfolio reviews</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="ct-a" id="ct-a5" hidden>
+            <div class="ct-bubble">
+              <p>Feedback on your case studies: which projects to show, how to structure each one and how to make your decisions and results clear.</p>
+              <div class="ct-links"><a class="link" href="#work">See my portfolio</a><button type="button" class="ct-book" data-book-topic="Portfolio review">Book a call about this</button></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <button type="button" class="ct-q" aria-expanded="false" aria-controls="ct-a6"><span class="n">06</span><span class="t">AI &amp; Design</span><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+          <div class="ct-a" id="ct-a6" hidden>
+            <div class="ct-bubble">
+              <p>Using AI tools in your own research, design and prototyping, and designing products with AI at their core: what the AI does, how people check its results and how to earn their trust. I built 30 apps in 30 days with AI coding tools, took CereHive, an AI-native recruiting platform, from 0 to 1, and wrote my MSc thesis on how product managers use AI.</p>
+              <div class="ct-links"><a class="link" href="#thirty-apps">Read the 30 Apps case study</a><a class="link" href="#cerehive">Read the CereHive case study</a><button type="button" class="ct-book" data-book-topic="AI &amp; Design">Book a call about this</button></div>
+            </div>
+          </div>
+        </li>
+      </ol>
     </aside>
 
     <div>
-      <section class="cv-section" aria-labelledby="coach-topics">
-        <h2 id="coach-topics">What I coach on</h2>
-        <div class="cc">
-        <ol class="coach-list cc-track" id="cc-track" tabindex="0" aria-label="Coaching topics. Scroll sideways or use the arrows below for more.">
-          <li>
-            <span class="n" aria-hidden="true">01</span>
-            <h3>Higher education application consulting in the US or UK for international students</h3>
-            <p>Choosing where to apply, writing your essays and personal statement, and putting the application together from abroad. I applied from a high school in Istanbul to study Economics at the University of Pennsylvania, and did my master's at King's Business School in London.</p>
-          </li>
-          <li>
-            <span class="n" aria-hidden="true">02</span>
-            <h3>Career transition coaching</h3>
-            <p>Planning a move into product from another field. I moved from finance to design: four years as a capital management analyst at Bank of America, the UX Design Immersive at General Assembly, then product design roles at Bank of America and Citi.</p>
-          </li>
-          <li>
-            <span class="n" aria-hidden="true">03</span>
-            <h3>Breaking into product design &amp; strategy</h3>
-            <p>Which skills to build first, which roles to aim for and how to find your first product design or strategy role.</p>
-          </li>
-          <li>
-            <span class="n" aria-hidden="true">04</span>
-            <h3>Product design &amp; strategy interviews</h3>
-            <p>Preparing for portfolio presentations, design and product case exercises, and questions about how you made decisions and measured success.</p>
-          </li>
-          <li>
-            <span class="n" aria-hidden="true">05</span>
-            <h3>Portfolio reviews</h3>
-            <p>Feedback on your case studies: which projects to show, how to structure each one and how to make your decisions and results clear.</p>
-            <div class="case-links"><a class="link" href="#work">See my portfolio</a></div>
-          </li>
-          <li>
-            <span class="n" aria-hidden="true">06</span>
-            <h3>AI &amp; Design</h3>
-            <p>Using AI tools in your own research, design and prototyping, and designing products with AI at their core: what the AI does, how people check its results and how to earn their trust. I built 30 apps in 30 days with AI coding tools, took CereHive, an AI-native recruiting platform, from 0 to 1, and wrote my MSc thesis on how product managers use AI.</p>
-            <div class="case-links"><a class="link" href="#thirty-apps">Read the 30 Apps case study</a><a class="link" href="#cerehive">Read the CereHive case study</a></div>
-          </li>
-        </ol>
-        <div class="cc-bar">
-          <button type="button" class="mcar-btn" data-cc="-1" aria-label="Previous topics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <div class="mcar-dots" id="cc-dots"></div>
-          <button type="button" class="mcar-btn" data-cc="1" aria-label="Next topics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-        </div>
-        </div>
-      </section>
-
       <section class="coach-book" id="coach-book" aria-labelledby="cb-title">
         <div class="cb-head">
           <h2 id="cb-title">Book a call</h2>
@@ -2631,51 +2642,16 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     window.scrollTo(0, 0);
   }
 
-  /* ---------- Coaching: topics carousel ---------- */
-  (function coachTopics(){
-    var track = document.getElementById('cc-track'); if(!track) return;
-    var items = track.children, dots = document.getElementById('cc-dots'), btns = document.querySelectorAll('[data-cc]');
-    var per = 2, pages = 1, cur = 0, raf = 0;
-    function num(i){ return items[i].querySelector('.n').textContent; }
-    function step(){ return items[per] ? items[per].offsetLeft - items[0].offsetLeft : track.scrollWidth; }
-    function sync(){
-      var max = track.scrollWidth - track.clientWidth;
-      cur = track.scrollLeft >= max - 2 ? pages - 1 : Math.min(pages - 1, Math.round(track.scrollLeft / step()));
-      [].forEach.call(dots.children, function(d, i){ d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
-      btns[0].disabled = cur === 0; btns[1].disabled = cur === pages - 1;
-    }
-    function measure(){
-      if(!track.clientWidth) return;   /* the page is hidden */
-      var gap = parseFloat(getComputedStyle(track).columnGap) || 0, w = items[0].getBoundingClientRect().width;
-      per = Math.max(1, Math.floor((track.clientWidth + gap + 4) / (w + gap)));
-      pages = Math.ceil(items.length / per);
-      if(dots.children.length !== pages || +dots.dataset.per !== per){
-        dots.innerHTML = ''; dots.dataset.per = per;
-        for(var i = 0; i < pages; i++){
-          var b = document.createElement('button'), a = num(i * per), z = num(Math.min(items.length, (i + 1) * per) - 1);
-          b.type = 'button'; b.className = 'mcar-dot'; b.dataset.page = i;
-          b.setAttribute('aria-label', a === z ? 'Show topic ' + a : 'Show topics ' + a + ' and ' + z);
-          dots.appendChild(b);
-        }
-      }
-      sync();
-    }
-    function go(p){
-      p = Math.max(0, Math.min(pages - 1, p));
-      track.scrollTo({ left: items[p * per].offsetLeft - items[0].offsetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-    }
-    btns.forEach(function(b){ b.addEventListener('click', function(){ go(cur + +b.dataset.cc); }); });
-    dots.addEventListener('click', function(e){ var d = e.target.closest('.mcar-dot'); if(d) go(+d.dataset.page); });
-    /* tabbing to a link on a card that's off to the side brings its page into view */
-    track.addEventListener('focusin', function(e){
-      var li = e.target.closest('.cc-track > li'); if(!li) return;
-      var p = Math.floor([].indexOf.call(items, li) / per);
-      if(p !== cur) go(p);
+  /* ---------- Coaching: topic list, one speech bubble open at a time ---------- */
+  (function coachList(){
+    var qs = document.querySelectorAll('.ct-q');
+    qs.forEach(function(q){
+      q.addEventListener('click', function(){
+        var open = q.getAttribute('aria-expanded') !== 'true';
+        qs.forEach(function(o){ o.setAttribute('aria-expanded', 'false'); document.getElementById(o.getAttribute('aria-controls')).hidden = true; });
+        if(open){ q.setAttribute('aria-expanded', 'true'); document.getElementById(q.getAttribute('aria-controls')).hidden = false; }
+      });
     });
-    track.addEventListener('scroll', function(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); }, { passive: true });
-    if(window.ResizeObserver) new ResizeObserver(measure).observe(track);
-    window.addEventListener('resize', measure);
-    measure();
   })();
 
   /* ---------- Coaching: book a call ---------- */
@@ -2806,11 +2782,12 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       else if(b.dataset.cbGoto) show(+b.dataset.cbGoto);
     });
     form.addEventListener('submit', function(e){ e.preventDefault(); if(cur < 3 && check(cur)) show(cur + 1); });
-    document.querySelectorAll('[data-book-go]').forEach(function(b){
+    /* "Book a call about this" in a topic bubble ticks that topic and brings up step 1 */
+    document.querySelectorAll('[data-book-topic]').forEach(function(b){
       b.addEventListener('click', function(){
-        toTop();
-        var h = form.querySelector('[data-panel="' + cur + '"] .cb-legend');
-        if(h) h.focus({ preventScroll: true });
+        [].forEach.call(form.querySelectorAll('input[name="topic"]'), function(i){ if(i.value === b.dataset.bookTopic) i.checked = true; });
+        flag('cb-err-1', false);
+        show(1);
       });
     });
   })();
