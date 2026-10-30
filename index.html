@@ -836,7 +836,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-arrow:disabled{opacity:.35;cursor:default}
   .dk-track{flex:1;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
   .dk-track::-webkit-scrollbar{display:none}
-  .dk-step{flex:0 0 100%;min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;overflow-y:auto;overscroll-behavior-y:contain;padding:11px 16px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px}
+  .dk-step{flex:0 0 100%;min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;padding:11px 16px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px}
   .dk-step > *{flex-shrink:0}
   .dk-eyebrow{margin:0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-eyebrow)}
   .dk-h1{margin:0;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:36px;line-height:1;font-weight:500}
@@ -846,8 +846,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-s b{color:var(--c-ink);font-weight:600}
   .dk-role{display:grid;gap:2px}
   .dk-award{display:flex;gap:12px;align-items:center}
-  .dk-award > img,.dk-award > .zoomable{flex:none;width:44%}
-  .dk-award img.cs-img{display:block;width:100%;height:auto;border-radius:8px}
+  .dk-award > img.cs-img{flex:none;display:block;width:44%;min-width:0;height:auto;border-radius:8px}
+  .dk-award > p{flex:1;min-width:0}
   .dk-xs{margin:0;font-size:11px;line-height:1.4;color:var(--c-ink2)}
   .dk-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .dk-card{background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:10px 12px;display:grid;gap:2px;align-content:start;min-width:0}
