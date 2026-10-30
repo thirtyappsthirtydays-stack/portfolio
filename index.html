@@ -465,7 +465,6 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 /* ---------- About ---------- */
 .about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:clamp(32px,6vw,96px);padding-bottom:clamp(56px,8vw,104px)}
 .profile{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--head-h) + 32px);align-self:start;display:grid;gap:22px}
-.profile h1{font-size:var(--fs-h1)}
 .about-photo{display:block;width:clamp(128px,13vw,180px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--rule)}
 .pron{font-size:var(--fs-small);color:var(--ink-2);border-left:2px solid var(--cobalt);padding-left:12px}
 .pron b{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-weight:400;font-size:1.15em;color:var(--ink)}
@@ -1280,7 +1279,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   <div class="wrap about">
     <aside class="profile">
       <img class="about-photo" src="img/about-bengisu.jpg" alt="Bengisu Halezeroğlu" width="180" height="180">
-      <h1 class="display">Bengisu Halezeroğlu</h1>
+      <h1 class="sr-only">Bengisu Halezeroğlu</h1>
       <p class="lead" style="text-wrap:balance">Product Strategist &amp; Senior Product Designer.</p>
       <dl class="facts">
         <div><dt>Email</dt><dd><a class="link" href="mailto:bengisuhalezeroglu@gmail.com">bengisuhalezeroglu@gmail.com</a></dd></div>
