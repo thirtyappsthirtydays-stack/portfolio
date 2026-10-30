@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Figtree:ital,wght@0,300..800;1,300..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&text=roots%20in%20Istanbul&display=swap">
 <style>
 /* Layout: an annotated spec sheet. A left-aligned reading column for words, a wider plate column for the work,
    cobalt hairlines as redlines. Each case study board keeps its own product's look, mounted as a plate on the sheet. */
@@ -123,6 +124,9 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .e-serif{font-family:var(--f-display);font-size-adjust:var(--f-adj)}
 .e-hero{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(56px,7vw,88px)}
 .e-eyebrow .e-nw{white-space:nowrap}
+.e-eyebrow .e-prev{font-style:italic}
+/* "roots in Istanbul" in a script face: normal case, no tracking, larger so it matches the caps */
+.e-eyebrow .e-roots{font-family:Parisienne,"Cormorant Garamond",Georgia,serif;font-size:1.75em;font-weight:400;letter-spacing:0;text-transform:none;line-height:1.3;color:#3F5356}
 .e-eyebrow{margin:0 0 24px;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#4A5D60}
 .e-h1{margin:0;max-width:880px;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-weight:300;font-size:clamp(36px,4.4vw,60px);line-height:1.12;letter-spacing:-.01em}
 .e-h1 > span{display:block}
@@ -135,7 +139,7 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 /* phones: the location gets its own line, and the three values sit side by side */
 @media (max-width:600px){
   .e-eyebrow .e-sep{display:none}.e-eyebrow .e-loc{display:block}
-  .e-eyebrow .e-nw{display:block}.e-eyebrow .e-dot{display:none}
+  .e-eyebrow .e-nw{display:block}.e-eyebrow .e-dot{display:none}.e-eyebrow .e-roots{margin-top:2px}
   .e-values{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .e-values li{gap:6px;padding-top:12px}
   .e-values b{gap:7px;font-size:21px}
@@ -1289,7 +1293,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   <div class="e-bg" aria-hidden="true"><i class="a e-drift"></i><i class="b e-drift slow"></i><i class="c e-drift"></i></div>
 
   <section class="e-in e-hero" aria-labelledby="e-intro">
-    <p class="e-eyebrow e-rise" style="--d:.05s">Product designer &amp; strategist<span class="e-sep"> • </span><span class="e-loc"><span class="e-nw">based in London, UK</span><span class="e-dot">&nbsp;· </span><span class="e-nw">prev. in New York City</span><span class="e-dot">&nbsp;· </span><span class="e-nw">roots in Istanbul</span></span></p>
+    <p class="e-eyebrow e-rise" style="--d:.05s">Product designer &amp; strategist<span class="e-sep"> • </span><span class="e-loc"><span class="e-nw">based in London</span><span class="e-dot">&nbsp;· </span><span class="e-nw e-prev">prev. in New York City</span><span class="e-dot">&nbsp;· </span><span class="e-nw e-roots">roots in Istanbul</span></span></p>
     <h1 id="e-intro" class="e-h1" aria-label="I research, design, build and ship. 10+ years of solving customer and enterprise problems through thoughtful design."><span aria-hidden="true"><span class="e-word" style="--d:0.30s">I</span><span class="e-word" style="--d:0.75s">research,</span><span class="e-word" style="--d:1.20s">design,</span><span class="e-word" style="--d:1.65s">build</span><span class="e-word" style="--d:2.10s">and</span><span class="e-word" style="--d:2.55s">ship.</span></span><span aria-hidden="true" class="e-sub e-rise" style="--d:3.3s">10+ years of solving customer and enterprise problems through thoughtful design.</span></h1>
     <ul class="e-values" aria-label="What I value">
       <li class="e-rise" style="--d:3.9s"><b><i class="e-dot" aria-hidden="true" style="--d:0s;background:#8DB4C7"></i>Clarity</b><span>I turn complex decisions into simple, confident steps.</span></li>
