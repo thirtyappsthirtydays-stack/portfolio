@@ -1,0 +1,178 @@
+<style>
+@media (max-width:640px){
+  .dk-bofa-ratio .eq{display:flex;align-items:center;gap:9px;margin:5px 0 3px}
+  .dk-bofa-ratio .frac{flex:1;min-width:0;display:grid;gap:5px}
+  .dk-bofa-ratio .frac > span{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 6px;padding:6px 8px;border-radius:10px;font-size:12.5px;font-weight:600;line-height:1.25;text-align:center}
+  .dk-bofa-ratio .frac > .top{background:var(--c-tint);border:1px solid var(--c-tint-line);color:var(--c-tint-ink)}
+  .dk-bofa-ratio .frac > .bot{border:1px dashed var(--c-rule2);color:var(--c-ink2)}
+  .dk-bofa-ratio .frac > .ln{height:2px;padding:0;border-radius:1px;background:var(--c-ink)}
+  .dk-bofa-ratio small{font-size:10.5px;font-weight:500}
+  .dk-bofa-ratio .me{font-style:normal;font-size:10px;line-height:1.5;padding:0 7px;border-radius:8px;background:var(--c-dark);color:var(--c-ondark)}
+  .dk-bofa-ratio .eqs{flex:none;font-size:22px;font-weight:300;color:var(--c-ink2)}
+  .dk-bofa-ratio .res{flex:none;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:var(--c-dark);color:var(--c-ondark);font-size:12.5px;font-weight:600;white-space:nowrap}
+  .dk-bofa-flow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 3px;margin-top:4px}
+  .dk-bofa-flow > em{display:inline-flex;align-items:center;gap:3px;font-style:normal;white-space:nowrap}
+  .dk-bofa-flow span{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:999px;background:var(--c-neutral);color:var(--c-ink);font-size:11.5px;font-weight:600;line-height:1.3}
+  .dk-bofa-flow span.on{background:var(--c-dark);color:var(--c-ondark)}
+  .dk-bofa-flow svg{flex:none;color:var(--c-ink2)}
+  .dk-bofa-days{background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:10px 12px;display:grid;gap:5px}
+  .dk-bofa-days .k{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-eyebrow)}
+  .dk-bofa-days .row{display:grid;grid-template-columns:62px repeat(10,minmax(0,1fr));gap:3px;align-items:center}
+  .dk-bofa-days .row > span{font-size:12px;font-weight:600;line-height:1.15;color:var(--c-ink)}
+  .dk-bofa-days .row > span small{display:block;font-size:10px;font-weight:400;color:var(--c-ink2)}
+  .dk-bofa-days i{display:block;box-sizing:border-box;height:18px;border-radius:4px;background:var(--c-neutral);border:1px solid var(--c-rule2)}
+  .dk-bofa-days i.a{background:var(--c-dark);border-color:var(--c-dark)}
+  .dk-bofa-days i.t{background:var(--c-tint);border:1.5px dashed var(--c-tint-line)}
+  .dk-bofa-days .lg{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:10.5px;line-height:1.3;color:var(--c-ink2)}
+  .dk-bofa-days .lg span{display:inline-flex;align-items:center;gap:5px}
+  .dk-bofa-days .lg i{width:10px;height:10px;border-radius:3px}
+}
+</style>
+<div class="dk-track">
+
+<section class="dk-step" data-name="Overview">
+  <p class="dk-eyebrow">Bank of America · Automation · 2016 to 2020</p>
+  <h1 class="dk-h1 long">Capital Management</h1>
+  <p class="dk-p">I mapped a manual, spreadsheet-based calculation and worked with engineers to automate it.</p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">Business goal</span><b>Right, and on time</b><span>Ratios reported monthly inside the bank, quarterly to regulators</span></div>
+    <div class="dk-card"><span class="k">User problem</span><b>Calculating by hand</b><span>Data prep and repeated calculations left less time for analysis</span></div>
+  </div>
+  <div class="dk-zoom" style="--zh:111px;--zw:294%;--zx:-57.17%;--zy:-83.71%" aria-label="Reconciliation: the automated run beside the spreadsheet model"><div class="plate" data-screen="BofaRecon"></div></div>
+  <p class="dk-xs">Screens are concept reconstructions with illustrative figures.</p>
+  <p class="dk-s dk-role"><span><b>My role:</b> Analyst, Enterprise Capital Management: process mapping, requirements, testing the tool’s output</span><span><b>Cross-functional collaboration with:</b> finance and risk teams, and technology partners</span></p>
+  <button type="button" class="dk-go" data-go="1">See how I approached it<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button type="button" class="dk-skip" data-go="6">Or skip to the final designs</button>
+</section>
+
+<section class="dk-step" data-name="Approach">
+  <p class="dk-eyebrow">Approach</p>
+  <h2 class="dk-h2">From rule to working tool</h2>
+  <p class="dk-p">I calculated the capital side of the ratios, so I was the link between those rules and the engineers building the tool.</p>
+  <div class="dk-vdd">
+    <div class="dk-vdd-art" aria-hidden="true">
+      <span class="sp" style="top:0;height:168px;color:#14306D">Manual process</span>
+      <span class="sp" style="top:202px;height:168px;color:#012169">Automated tool</span>
+      <svg width="64" height="370" viewBox="0 0 64 370"><path d="M32 42 L32 186" stroke="#B8C7E8" stroke-width="2"/><path d="M32 186 L32 330" stroke="#012169" stroke-width="2"/><circle cx="32" cy="186" r="4" fill="#012169"/><circle cx="32" cy="42" r="17" fill="#E6ECF8" stroke="#012169" stroke-width="1.2"/><circle cx="32" cy="126" r="17" fill="#E6ECF8" stroke="#012169" stroke-width="1.2"/><circle cx="32" cy="246" r="17" fill="#012169"/><circle cx="32" cy="330" r="17" fill="#012169"/><text x="32" y="46" text-anchor="middle" font-size="11" font-weight="700" fill="#14306D">01</text><text x="32" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#14306D">02</text><text x="32" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">03</text><text x="32" y="334" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">04</text></svg>
+    </div>
+    <div class="dk-vdd-rows">
+      <button type="button" data-go="3"><span class="e">01 · Map</span><b>Mapped the process</b><span>End to end, including where data and handoffs broke down</span></button>
+      <button type="button" data-go="4"><span class="e">02 · Weigh</span><b>Weighed three options</b><span>From tidier spreadsheets to full automation</span></button>
+      <span class="pin"><span class="pill">End-to-end automation</span></span>
+      <button type="button" data-go="5"><span class="e">03 · Build</span><b>Wrote the requirements</b><span>Calculation logic, built into the workflow with engineering</span></button>
+      <button type="button" data-go="6"><span class="e">04 · Test</span><b>Tested the output</b><span>Against the existing reporting, so the definitions stayed accurate</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Context">
+  <p class="dk-eyebrow">Context</p>
+  <h2 class="dk-h2">Capital ratios, every month</h2>
+  <p class="dk-p">Banks report capital ratios to show how financially strong they are. The numbers have to be right, and on time.</p>
+  <div class="dk-card dk-bofa-ratio">
+    <span class="k">A capital ratio</span>
+    <div class="eq">
+      <div class="frac">
+        <span class="top"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M14.5 9.5c-.5-1-1.4-1.5-2.5-1.5-1.5 0-2.5.8-2.5 2 0 2.6 5 1.4 5 4 0 1.2-1 2-2.5 2-1.1 0-2-.5-2.5-1.5M12 6.5V8M12 16v1.5"/></svg>Capital<i class="me">My part</i></span>
+        <span class="ln"></span>
+        <span class="bot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M6 20h12"/><path d="M5 8h14"/><path d="M5 8l-2.5 6h5zM19 8l-2.5 6h5z"/></svg>Risk-weighted assets<small>from another team</small></span>
+      </div>
+      <span class="eqs" aria-hidden="true">=</span>
+      <span class="res"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v9h9"/><path d="M20.5 15.5A9 9 0 1 1 8.5 3.7"/></svg>Capital ratio</span>
+    </div>
+    <span class="d">How much capital a bank holds against the risk it carries. The main one is the CET1 ratio. CET1 (Common Equity Tier 1) is a bank’s core capital, mostly its common shares and retained earnings.</span>
+  </div>
+  <div class="dk-chan">
+    <span><b><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></i>Monthly</b>Reported inside the bank</span>
+    <span><b><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5"/><path d="M5 9v9M10 9v9M14 9v9M19 9v9"/><path d="M3 20h18"/></svg></i>Quarterly</b>Reported to regulators</span>
+    <span><b><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.3l2.4 2.4 4.6-5"/></svg></i>Every figure</b>Checked before it goes out</span>
+  </div>
+  <p class="dk-s"><b>I calculated the capital side each month.</b> The users: capital analysts, and the reporting teams who rely on the numbers.</p>
+</section>
+
+<section class="dk-step" data-name="Problem">
+  <p class="dk-eyebrow">The problem</p>
+  <h2 class="dk-h2">A calculation held together by spreadsheets and handoffs</h2>
+  <p class="dk-s"><b>Five steps, most of them manual</b> · the pain point in each</p>
+  <ul class="dk-qa">
+    <li><span class="who">Gather data</span><span><b>Waiting on handoffs from other teams</b>Inputs from several internal systems and teams</span></li>
+    <li><span class="who">Apply rules</span><span><b>The same calculations, by hand, every month</b>What counts as capital, worked out in spreadsheets</span></li>
+    <li><span class="who">Reconcile</span><span><b>Mismatches found and fixed by hand</b>The sources matched against each other</span></li>
+    <li><span class="who">Validate</span><span><b>Room for error, and operational risk</b>Every result checked before it goes out</span></li>
+    <li><span class="who">Report</span><span><b>Little time left for analysis</b>Monthly inside the bank, quarterly to regulators</span></li>
+  </ul>
+  <div class="dk-card"><span class="k">Problem statement</span><span class="dk-big">Analysts spent much of each cycle preparing data and repeating calculations by hand. That added operational risk and left less time for analysis.</span></div>
+</section>
+
+<section class="dk-step" data-name="Options">
+  <p class="dk-eyebrow">Options</p>
+  <h2 class="dk-h2">From tidier spreadsheets to full automation</h2>
+  <div class="dk-note"><span class="k">How might we</span><b>Automate repetitive calculation workflows so analysts could focus more on analysis and risk insights?</b></div>
+  <p class="dk-s"><b>I weighed three ways to improve the workflow,</b> from the smallest change to the biggest.</p>
+  <ul class="dk-opts">
+    <li><span class="tag no">Not chosen</span><span><b>Standard spreadsheet templates</b>Errors drop gradually. The work stays manual.</span></li>
+    <li><span class="tag no">Not chosen</span><span><b>A central data warehouse</b>Inputs gathered automatically. The calculations stay manual.</span></li>
+    <li><span class="tag yes">Chosen</span><span><b>End-to-end automated calculation</b>Less manual effort, consistent results, and room to grow as requirements change</span></li>
+  </ul>
+  <p class="dk-s"><b>How I measured success</b></p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">For analysts</span><b>Manual effort</b><span>Analyst time spent calculating by hand</span></div>
+    <div class="dk-card"><span class="k">For the business</span><span class="d"><b>Cycle time:</b> working days per cycle</span><span class="d"><b>Accuracy:</b> restatements after a report goes out</span></div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Solution">
+  <p class="dk-eyebrow">Solution</p>
+  <h2 class="dk-h2">The rules, written into a reporting tool</h2>
+  <p class="dk-p">With our technology partners, I defined the logic and data each calculation needed, then built it into an automated reporting tool in MicroStrategy.</p>
+  <div class="dk-2">
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9.5h16M4 15h16M10 4v16"/></svg></i>Calculation logic</b><span>The same steps for computing the ratios, every cycle</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6"/><path d="M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8"/></svg></i>Data integration</b><span>The data sources the calculations need, linked to the tool</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg></i>Workflow automation</b><span>The repeated manual steps run automatically</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i>Validation checks</b><span>Results tested against the official definitions before reporting</span></div>
+  </div>
+  <div class="dk-card"><span class="k">My part: from rule to working tool</span>
+    <div class="dk-bofa-flow">
+      <em><span>A capital rule</span></em>
+      <em><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><span>A written requirement</span></em>
+      <em><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><span>Logic in the tool</span></em>
+      <em><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><span>Checked against the existing numbers</span></em>
+      <em><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><span class="on">The monthly report</span></em>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="The tool">
+  <p class="dk-eyebrow">Inside the tool</p>
+  <h2 class="dk-h2">Built from source feeds, checked line by line</h2>
+  <div class="dk-car" data-dkcar>
+    <div class="dk-car-track">
+      <figure><div class="cs-browser" aria-label="Overview: the quarter-end capital position"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="BofaOverview" data-crop=".6"></div></div><figcaption><b>01 · Overview</b>The quarter-end capital position, built from source feeds. Each feed shows its status, and anything the checks flag blocks sign-off.</figcaption></figure>
+      <figure><div class="cs-browser" aria-label="Rule detail: one capital rule as plain language, logic and test cases"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="BofaRules" data-crop=".6"></div></div><figcaption><b>02 · Rule detail</b>One capital rule in plain language, so analysts and engineers agree on it, then as logic, with every input traceable and test cases.</figcaption></figure>
+      <figure><div class="cs-browser" aria-label="Reconciliation against the spreadsheet model"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="BofaRecon" data-crop=".6"></div></div><figcaption><b>03 · Reconciliation</b>Each figure beside the spreadsheet model, an exception traced through to CET1, and sign-off: prepared, reviewed and approved.</figcaption></figure>
+    </div>
+    <div class="dk-dots"></div>
+  </div>
+  <p class="dk-xs">Concept reconstruction for the portfolio. The screens are reimagined, not the original internal tool, and carry no bank branding. All figures are illustrative. Tap a screen to see all of it.</p>
+</section>
+
+<section class="dk-step" data-name="Results">
+  <p class="dk-eyebrow">Results</p>
+  <h2 class="dk-h2">Faster, consistent, and time back for analysis</h2>
+  <p class="dk-s"><b>For the business</b></p>
+  <div class="dk-stats two">
+    <div><b>10→3</b><span>Days per reporting cycle</span></div>
+    <div><b>0</b><span>Restatements across 48 submissions</span></div>
+  </div>
+  <p class="dk-s"><b>For analysts</b> · 50% less manual calculation work</p>
+  <div class="dk-bofa-days" aria-hidden="true">
+    <span class="k">One reporting cycle, in working days</span>
+    <div class="row"><span>Before<small>Manual</small></span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="row"><span>After<small>Automated</small></span><i class="a"></i><i class="a"></i><i class="a"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i></div>
+    <div class="lg"><span><i></i>Manual calculation</span><span><i class="a"></i>Automated run and review</span><span><i class="t"></i>Time back for analysis</span></div>
+  </div>
+  <div class="dk-note"><span class="k">What I learned</span><b>Automation frees experts to think</b><span>The value was in giving analysts time for analysis and decisions.</span></div>
+  <p class="dk-s"><b>What came next:</b> mapping a process and fixing it with engineers led me to UX, and into product design at Bank of America.</p>
+</section>
+
+</div>

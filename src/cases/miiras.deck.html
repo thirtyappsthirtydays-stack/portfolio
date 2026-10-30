@@ -1,0 +1,184 @@
+<style>
+@media (max-width:640px){
+  .dk-miiras-anat{display:flex !important;gap:12px;align-items:center}
+  .dk-miiras-anat > .cs-phone{--pw:118px;padding:4px;box-shadow:0 10px 24px rgba(20,22,30,.14)}
+  .dk-miiras-anat ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:11.5px;line-height:1.3;color:var(--c-ink2)}
+  .dk-miiras-anat li b{display:block;font-size:12.5px;color:var(--c-ink);font-weight:600}
+  .dk-miiras-anat li.key b{color:var(--c-eyebrow)}
+  .dk-miiras-sw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;font-size:10.5px;line-height:1.3;color:var(--c-ink2)}
+  .dk-miiras-sw > span{display:grid;gap:4px}
+  .dk-miiras-sw i{height:52px;border-radius:10px;border:1px solid transparent}
+  .dk-miiras-sw b{font-size:11.5px;color:var(--c-ink);font-weight:600}
+  .dk-miiras-tints{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
+  .dk-miiras-tints > span{border-radius:12px;padding:8px;min-height:50px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:4px;font-family:Fraunces,Georgia,serif;font-size:13px;line-height:1.15;font-weight:500}
+  .dk-miiras-tints small{font-family:var(--f-text);font-size:10px;line-height:1.2}
+  .dk-miiras-phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0 6px}
+  .dk-miiras-phones figure{margin:0;display:grid;gap:6px;justify-items:center;font-size:11.5px;color:var(--c-ink2);text-align:center}
+  .dk-miiras-phones .cs-phone{--pw:auto;width:100%;padding:4px;box-shadow:0 10px 24px rgba(20,22,30,.14)}
+  .dk-miiras-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .dk-miiras-counts > span{display:grid;gap:1px;align-content:start;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:10px;padding:6px 8px;font-size:10.5px;line-height:1.25;color:var(--c-ink2)}
+  .dk-miiras-counts b{font-size:14px;line-height:1.2;font-weight:700;letter-spacing:-.01em;color:var(--c-ink);white-space:nowrap}
+}
+</style>
+<div class="dk-track">
+
+<section class="dk-step" data-name="Overview">
+  <p class="dk-eyebrow">Founder project · iOS and Android · 2026</p>
+  <h1 class="dk-h1">Miiras</h1>
+  <p class="dk-p">A conversation app that helps families talk about money, care and end-of-life wishes.</p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">Business goal</span><b>Prepare families for the wealth transfer</b><span>$124T is expected to pass between US generations through 2048</span></div>
+    <div class="dk-card"><span class="k">User problem</span><b>Nobody goes first</b><span>80% of the people I interviewed had never discussed inheritance with family</span></div>
+  </div>
+  <div class="dk-zoom" style="--zh:129px;--zw:97%;--zx:1.5%;--zy:-84.7%;--zbg:#F6F3EC" aria-label="Question card"><div class="plate" data-screen="ScreenCardQ3"></div></div>
+  <p class="dk-s dk-role"><span><b>My role:</b> Founder: research, strategy, IA, interaction and visual design, design system and build</span><span><b>Team:</b> solo, building with AI-assisted coding tools</span></p>
+  <button type="button" class="dk-go" data-go="1">See how I approached it<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button type="button" class="dk-skip" data-go="6">Or skip to the final designs</button>
+</section>
+
+<section class="dk-step" data-name="Approach">
+  <p class="dk-eyebrow">Approach</p>
+  <h2 class="dk-h2">The UX Double Diamond</h2>
+  <p class="dk-p">The first diamond moved the problem from storing a family’s wealth information to starting the conversation. The second found the simplest way to start one.</p>
+  <div class="dk-vdd">
+    <div class="dk-vdd-art" aria-hidden="true">
+      <span class="sp" style="top:0;height:168px;color:#3F4B5E">Problem space</span>
+      <span class="sp" style="top:202px;height:168px;color:#5C4413">Solution space</span>
+      <svg width="64" height="370" viewBox="0 0 64 370"><path d="M32 1 L63 84 L32 167 L1 84 Z" fill="#E1E7EF" stroke="#1B2A41" stroke-width="1.2"/><path d="M4 84 L60 84" stroke="#1B2A41" stroke-opacity=".35" stroke-dasharray="3 4"/><path d="M32 167 L32 203" stroke="#1B2A41" stroke-width="1.2"/><circle cx="32" cy="185" r="4" fill="#1B2A41"/><path d="M32 203 L63 286 L32 369 L1 286 Z" fill="#F3EAD6" stroke="#1B2A41" stroke-width="1.2"/><path d="M4 286 L60 286" stroke="#1B2A41" stroke-opacity=".35" stroke-dasharray="3 4"/><text x="32" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#3F4B5E">01</text><text x="32" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#3F4B5E">02</text><text x="32" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#5C4413">03</text><text x="32" y="316" text-anchor="middle" font-size="11" font-weight="700" fill="#5C4413">04</text></svg>
+    </div>
+    <div class="dk-vdd-rows">
+      <button type="button" data-go="2"><span class="e">01 · Open up</span><b>Discover</b><span>24 interviews, 12 families, 15+ products</span></button>
+      <button type="button" data-go="3"><span class="e">02 · Narrow down</span><b>Define</b><span>From “families can’t see their money” to “families don’t talk about it”</span></button>
+      <span class="pin"><span class="pill">The reframe</span></span>
+      <button type="button" data-go="4"><span class="e">03 · Open up</span><b>Develop</b><span>Two concepts, three test rounds</span></button>
+      <button type="button" data-go="6"><span class="e">04 · Narrow down</span><b>Deliver</b><span>10 decks, 100 questions, iOS and Android</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Discover">
+  <p class="dk-eyebrow">01 · Discover</p>
+  <h2 class="dk-h2">Why families keep putting it off</h2>
+  <p class="dk-s">Before designing, I interviewed 12 families, both generations.</p>
+  <div class="dk-stats">
+    <div><b>80%</b><span>Never discussed inheritance with family</span></div>
+    <div><b>97%</b><span>Say these talks matter; about half have had one</span></div>
+    <div><b>13%</b><span>Know what parents own and how it’s shared</span></div>
+  </div>
+  <p class="dk-xs">My interviews · Fidelity · Kiplinger and Morning Consult</p>
+  <div class="dk-teams">
+    <div class="dk-team"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h11v8H8l-3.5 3v-3h-1z"/><path d="M17 9h3.5v8h-1v3l-3-3H11v-2"/></svg></i><span><b>Nobody wants to bring it up</b>Each generation waited for the other to raise it</span></div>
+    <div class="dk-team"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v6.5a2 2 0 0 1-4 0"/></svg></i><span><b>Families want to know they’re prepared</b>Would everyone be okay if something changed?</span></div>
+    <div class="dk-team"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9.5L5 20v-4H4z"/><path d="M10.3 8.7a1.8 1.8 0 1 1 2.4 1.7c-.4.2-.7.6-.7 1v.3"/><path d="M12 13.4v.1"/></svg></i><span><b>Small questions are easier to start with</b>One easy question over dinner usually got an answer</span></div>
+  </div>
+  <div class="dk-note"><span class="k">Insight 4 · The pivot</span><b>Families needed help starting the conversation</b><span>My first concept tracked what a family owns, which a family that has never talked about money can’t fill in.</span></div>
+</section>
+
+<section class="dk-step" data-name="Define">
+  <p class="dk-eyebrow">02 · Define</p>
+  <h2 class="dk-h2">Designing for Talya</h2>
+  <div class="dk-who"><img src="img/talya.jpg" alt="" loading="lazy"><span><b>Talya, 36 · lives a flight away from her parents</b>“I want to know they’ll be okay, without it sounding like I’m asking about the will.”</span></div>
+  <div class="dk-card"><span class="k">Problem statement</span><span class="dk-big">Talya needs a gentle way to start talking with her parents about money, care and their wishes, because waiting for the right moment means the talk happens in a crisis, or not at all.</span></div>
+  <div class="dk-note"><span class="k">How might we</span><b>Make the first question small enough to ask tonight, and the next one easy to follow?</b></div>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">For families</span><b>Usability</b><span>Task completion in moderated tests</span><b>Confidence</b><span>Talking about money, before and after</span></div>
+    <div class="dk-card"><span class="k">For the business</span><b>First sitting</b><span>Families who finish a whole deck</span><b>Coming back</b><span>Families who return for a second deck</span></div>
+  </div>
+  <p class="dk-xs">Proto-persona from research. Stock photo, not a real participant.</p>
+</section>
+
+<section class="dk-step" data-name="Develop">
+  <p class="dk-eyebrow">03 · Develop</p>
+  <h2 class="dk-h2">Two concepts, tested, then distilled</h2>
+  <p class="dk-s">I tested two clickable concepts before building, then simplified the preferred one into cards.</p>
+  <ul class="dk-opts">
+    <li><span class="tag no">Not taken</span><span><b>A · Weekly questions</b>One a week, with a place to log the answer</span></li>
+    <li><span class="tag park">Preferred</span><span><b>B · A worry-led conversation plan</b>Its small-to-deep order carried into the final design</span></li>
+    <li><span class="tag yes">Final</span><span><b>Conversation cards</b>The plan’s order, as decks a family reads aloud together</span></li>
+  </ul>
+  <p class="dk-s"><b>What I cut to ship:</b> the AI practice partner, recordings and saved answers, for privacy and simplicity.</p>
+  <p class="dk-s"><b>Usability testing</b> · 3 rounds, 5 participants each</p>
+  <ul class="dk-qa">
+    <li><span class="who">Round 1</span><span><b>30% task completion</b></span></li>
+    <li><span class="who">After round 1</span><span><b>One card at a time</b>Instead of a list, which people skimmed</span></li>
+    <li><span class="who">After round 2</span><span><b>Progress dots and a clear end</b>So pairs knew when they were done</span></li>
+    <li><span class="who">Round 3</span><span><b>50% task completion</b></span></li>
+  </ul>
+</section>
+
+<section class="dk-step" data-name="Design system">
+  <p class="dk-eyebrow">Design system</p>
+  <h2 class="dk-h2">Every value is the one the app ships with</h2>
+  <p class="dk-p">Two typefaces, a warm palette, a short spacing scale and a handful of components, each built once in code.</p>
+  <div class="dk-miiras-counts"><span><b>2</b>Typefaces</span><span><b>17</b>Text styles</span><span><b>5</b>Area tints</span><span><b>20px</b>Screen margin</span></div>
+  <div class="dk-car" data-dkcar>
+    <div class="dk-car-track">
+      <figure><div class="dk-miiras-anat"><div class="cs-phone" aria-hidden="true"><div class="plate" data-screen="ScreenCardQ3"></div></div><ul>
+        <li><b>Context and progress</b>Area and level in small caps, ten progress segments</li>
+        <li class="key"><b>The question</b>Fraunces 30/36, the largest type on screen</li>
+        <li><b>Who it’s for, and how to ask</b>A white pill on all five tints, with a tip</li>
+        <li><b>One filled button</b>Next is the only navy fill. Swiping works too.</li>
+      </ul></div><figcaption><b>The question comes first on every card</b>It is read aloud, often by someone holding the phone for others.</figcaption></figure>
+      <figure><div class="dk-pat"><div style="display:grid;gap:12px;width:100%">
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px"><span style="display:grid;gap:2px;background:#1B2A41;color:#F6F3EC;border-radius:12px;padding:8px 12px"><span style="font-family:Fraunces,Georgia,serif;font-size:30px;line-height:1;font-weight:500">Aa</span><b style="font-size:12px">Fraunces</b></span><span style="display:grid;gap:2px;background:#fff;border:1px solid #E4DED2;border-radius:12px;padding:8px 12px"><span style="font-family:Figtree,system-ui,sans-serif;font-size:30px;line-height:1;font-weight:600">Aa</span><b style="font-size:12px">Figtree</b></span></div>
+        <span style="font-family:Fraunces,Georgia,serif;font-size:19px;line-height:23px;font-weight:500;color:#1B2A41">Who would you call first with a money question?</span>
+      </div></div><figcaption><b>A serif for questions, a sans for the interface</b>Fraunces for what a family reads aloud, Figtree for what the app says.</figcaption></figure>
+      <figure><div class="dk-pat"><div class="dk-miiras-sw">
+        <span><i style="background:#1B2A41"></i><b>Navy</b>Text and the one filled button</span>
+        <span><i style="background:#F6F3EC;border-color:#D8D1C2"></i><b>Cream</b>The ground on every screen</span>
+        <span><i style="background:#FFFFFF;border-color:#D8D1C2"></i><b>White</b>Cards and outlined buttons</span>
+        <span><i style="background:#C9A04E"></i><b>Gold</b>Logo and progress, as a fill</span>
+      </div></div><figcaption><b>Cream, navy and gold</b>A navy fill means go: only forward actions are filled.</figcaption></figure>
+      <figure><div class="dk-pat"><div class="dk-miiras-tints">
+        <span style="background:#F3EAD6;color:#3B2A08">Starting well<small style="color:#6E5216">L 94</small></span>
+        <span style="background:#E1E7EF;color:#1B2A41">Money now and later<small style="color:#3F4B5E">L 93</small></span>
+        <span style="background:#E2EAE3;color:#1F3326">Health and care<small style="color:#3B5544">L 93</small></span>
+        <span style="background:#EADFD6;color:#3A2A22">Plans and paperwork<small style="color:#64463A">L 91</small></span>
+        <span style="background:#E8E3EF;color:#2E2440">Roles and legacy<small style="color:#56466E">L 92</small></span>
+      </div></div><figcaption><b>Five area tints</b>All between 91 and 94 OKLCH lightness, so no area looks more urgent.</figcaption></figure>
+      <figure><div class="dk-pat"><div style="display:grid;gap:8px;justify-items:center;font-family:Figtree,system-ui,sans-serif">
+        <span style="display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:14px;background:#1B2A41;color:#F6F3EC;font-size:15px;font-weight:600">Start the conversation</span>
+        <span style="display:inline-flex;align-items:center;min-height:46px;padding:0 20px;box-sizing:border-box;border-radius:14px;border:1px solid #D8D1C2;background:#fff;font-size:15px;font-weight:600">Skip for now</span>
+        <span style="display:flex;flex-wrap:wrap;justify-content:center;gap:5px;background:#fff;border-radius:12px;padding:7px 8px"><span style="border-radius:10px;padding:3px 8px;background:#EDE8DD;font-size:11px;line-height:14px;font-weight:600">Not yet</span><span style="border-radius:10px;padding:3px 8px;background:#1B2A41;color:#F6F3EC;font-size:11px;line-height:14px;font-weight:600">Here now</span><span style="border-radius:10px;padding:3px 8px;background:#F3EAD6;color:#5C4413;font-size:11px;line-height:14px;font-weight:600">Talked through</span><span style="border-radius:10px;padding:3px 8px;background:#EADFD6;color:#64463A;font-size:11px;line-height:14px;font-weight:600">Skipped</span><span style="border-radius:10px;padding:3px 8px;background:#fff;border:1px solid #E4DED2;color:#4B5566;font-size:11px;line-height:14px;font-weight:600">New</span></span>
+      </div></div><figcaption><b>Buttons and badges</b>No red or green for good or bad. Status is shown in navy, gold and words.</figcaption></figure>
+      <figure><div class="dk-pat"><div style="display:flex;gap:14px;font-family:Figtree,system-ui,sans-serif">
+        <div style="width:120px;height:150px;box-sizing:border-box;border-radius:18px;padding:11px;background:#E8E3EF;box-shadow:0 10px 20px rgba(27,42,65,.14);transform:rotate(5deg);display:flex;flex-direction:column;gap:6px"><span style="align-self:flex-start;transform:rotate(-10deg);border:2px solid #1B2A41;border-radius:6px;padding:1px 6px;font-size:10px;line-height:13px;font-weight:700;letter-spacing:1px;color:#1B2A41">TALKED</span><span style="margin:auto 0;font-family:Fraunces,Georgia,serif;font-size:13px;line-height:16px;font-weight:500;color:#2E2440">If you needed care, who would you hope would coordinate it?</span></div>
+        <div style="width:120px;height:150px;box-sizing:border-box;border-radius:18px;padding:11px;background:#EADFD6;box-shadow:0 10px 20px rgba(27,42,65,.14);transform:rotate(-5deg);display:flex;flex-direction:column;gap:6px"><span style="align-self:flex-end;transform:rotate(10deg);border:2px solid #6B4A3A;border-radius:6px;padding:1px 6px;font-size:10px;line-height:13px;font-weight:700;letter-spacing:1px;color:#6B4A3A">SKIP</span><span style="margin:auto 0;font-family:Fraunces,Georgia,serif;font-size:13px;line-height:16px;font-weight:500;color:#3A2A22">If we needed your important papers tomorrow, where would we look?</span></div>
+      </div></div><figcaption><b>The question card, swiped</b>Swipe right for talked through, left to skip for now.</figcaption></figure>
+    </div>
+    <div class="dk-dots"></div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Deliver">
+  <p class="dk-eyebrow">04 · Deliver</p>
+  <h2 class="dk-h2">Try the conversation cards app</h2>
+  <p class="dk-p">The real iOS and Android build, running in your browser. No account, and nothing saved.</p>
+  <div class="dk-miiras-phones">
+    <figure><div class="cs-phone" aria-hidden="true"><div class="plate" data-screen="ScreenWelcome"></div></div><figcaption>Welcome</figcaption></figure>
+    <figure><div class="cs-phone" aria-hidden="true"><div class="plate" data-screen="ScreenArea"></div></div><figcaption>Area: two decks</figcaption></figure>
+    <figure><div class="cs-phone" aria-hidden="true"><div class="plate" data-screen="ScreenIntro"></div></div><figcaption>Deck intro</figcaption></figure>
+  </div>
+  <div class="dk-miiras-counts"><span><b>3 taps</b>Home to the first question</span><span><b>5 · 10 · 100</b>Areas, decks, questions</span><span><b>1 step</b>Back goes up one level</span><span><b>0 fields</b>No sign-up</span></div>
+  <a class="dk-go" href="https://getmiiras.com/app/" target="_blank" rel="noopener">Open the live prototype<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+</section>
+
+<section class="dk-step" data-name="Results">
+  <p class="dk-eyebrow">Results</p>
+  <h2 class="dk-h2">Results from testing</h2>
+  <p class="dk-p">Eight families used the app, with interviews before and after.</p>
+  <p class="dk-s"><b>For families</b></p>
+  <div class="dk-stats two">
+    <div><b>8 of 8</b><span>Reported more confidence talking about money</span></div>
+    <div><b>30% → 50%</b><span>Task completion in moderated usability tests, over three rounds</span></div>
+  </div>
+  <p class="dk-s"><b>For the business</b></p>
+  <div class="dk-stats two light">
+    <div><b>8 of 8</b><span>Finished a whole deck in one sitting</span></div>
+    <div><b>8 of 8</b><span>Came back for a second deck</span></div>
+  </div>
+  <div class="dk-note"><span class="k">Outcome</span><b>More confidence and peace of mind</b><span>When talking about money, in interviews before and after using the app</span></div>
+  <div class="dk-card"><span class="k">Next to fix</span><b>The End button</b><span>At 40px, it is the one control under 44px.</span></div>
+</section>
+
+</div>

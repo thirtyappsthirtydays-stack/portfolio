@@ -1,0 +1,153 @@
+<style>
+@media (max-width:640px){
+  .dk-flex-fun{display:grid;grid-template-columns:repeat(var(--k,5),minmax(0,1fr));gap:4px;margin-top:4px}
+  .dk-flex-fun > span{position:relative;display:grid;justify-items:center;align-content:start;gap:4px;text-align:center;font-size:10.5px;line-height:1.2;color:var(--c-ink)}
+  .dk-flex-fun i{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:var(--c-tint);color:var(--c-eyebrow)}
+  .dk-flex-fun > span:not(:last-child)::after{content:"";position:absolute;top:12px;left:calc(50% + 16px);right:calc(-50% + 12px);border-top:1px solid var(--c-rule2)}
+  .dk-flex-fun .on{font-weight:600}
+  .dk-flex-fun .on i{background:var(--c-dark);color:var(--c-ondark)}
+  .dk-flex-warn{display:flex;gap:6px;align-items:flex-start;margin-top:6px;padding-top:7px;border-top:1px solid var(--c-rule);font-size:12px;line-height:1.35;font-weight:600;color:var(--c-low-ink)}
+  .dk-flex-warn svg{flex:none;margin-top:1px}
+  .dk-flex-row{display:flex;justify-content:center;gap:8px;padding:12px 8px;background:var(--c-neutral);border-radius:12px}
+  .dk-flex-row .cs-phone{--pw:29%;padding:4px;box-shadow:0 8px 18px rgba(14,31,59,.16)}
+  .dk-flex-q{display:block;margin-bottom:2px;font-size:12.5px;font-style:italic;line-height:1.35;color:var(--c-eyebrow)}
+  .dk-flex-lbl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;text-align:center;margin-top:-2px}
+  .dk-flex-lbl b{color:var(--c-ink);font-weight:600}
+}
+</style>
+<div class="dk-track">
+
+<section class="dk-step" data-name="Overview">
+  <p class="dk-eyebrow">Fitness startup · Mobile app · 2020</p>
+  <h1 class="dk-h1">FlexIt</h1>
+  <p class="dk-p">I redesigned onboarding for FlexIt’s pay-by-the-minute gym app to explain it before asking for anything.</p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">Business goal</span><b>More accounts</b><span>Turn downloads into members</span></div>
+    <div class="dk-card"><span class="k">User problem</span><b>Sign-up came first</b><span>Asked for an account before they understood the app</span></div>
+  </div>
+  <div class="dk-zoom" style="--zh:146px;--zw:90%;--zx:5%;--zy:-92.8%;--zbg:#C0C5C9" aria-label="Sign-up: Why am I being asked for this?"><div class="plate" data-screen="FxModalPhone"></div></div>
+  <p class="dk-s dk-role"><span><b>My role:</b> Product strategist</span><span><b>Cross-functional collaboration with:</b> the CEO, the CTO, engineering and design</span></p>
+  <button type="button" class="dk-go" data-go="1">See how I approached it<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button type="button" class="dk-skip" data-go="6">Or skip to the final designs</button>
+</section>
+
+<section class="dk-step" data-name="Approach">
+  <p class="dk-eyebrow">Approach</p>
+  <h2 class="dk-h2">The UX Double Diamond</h2>
+  <p class="dk-p">The first diamond found where new users dropped off and why. The second explained the product to them before the sign-up.</p>
+  <div class="dk-vdd">
+    <div class="dk-vdd-art" aria-hidden="true">
+      <span class="sp" style="top:0;height:168px;color:var(--c-ink2)">Problem space</span>
+      <span class="sp" style="top:202px;height:168px;color:var(--c-tint-ink)">Solution space</span>
+      <svg width="64" height="370" viewBox="0 0 64 370"><path d="M32 1 L63 84 L32 167 L1 84 Z" style="fill:var(--c-neutral);stroke:var(--c-dark)" stroke-width="1.2"/><path d="M4 84 L60 84" style="stroke:var(--c-dark)" stroke-opacity=".35" stroke-dasharray="3 4"/><path d="M32 167 L32 203" style="stroke:var(--c-dark)" stroke-width="1.2"/><circle cx="32" cy="185" r="4" style="fill:var(--c-dark)"/><path d="M32 203 L63 286 L32 369 L1 286 Z" style="fill:var(--c-tint);stroke:var(--c-dark)" stroke-width="1.2"/><path d="M4 286 L60 286" style="stroke:var(--c-dark)" stroke-opacity=".35" stroke-dasharray="3 4"/><text x="32" y="62" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-ink2)">01</text><text x="32" y="114" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-ink2)">02</text><text x="32" y="264" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-tint-ink)">03</text><text x="32" y="316" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-tint-ink)">04</text></svg>
+    </div>
+    <div class="dk-vdd-rows">
+      <button type="button" data-go="2"><span class="e">01 · Open up</span><b>Discover</b><span>Onboarding data, UX research and a heuristic review</span></button>
+      <button type="button" data-go="3"><span class="e">02 · Narrow down</span><b>Define</b><span>One insight, three ways to act on it</span></button>
+      <span class="pin"><span class="pill">Core insight</span></span>
+      <button type="button" data-go="4"><span class="e">03 · Open up</span><b>Develop</b><span>The welcome screen, from sketch to final design</span></button>
+      <button type="button" data-go="6"><span class="e">04 · Narrow down</span><b>Deliver</b><span>A welcome carousel, information modals and tooltips</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Discover">
+  <p class="dk-eyebrow">01 · Discover</p>
+  <h2 class="dk-h2">Downloads that never became accounts</h2>
+  <div class="dk-comp">
+    <span class="k">Where new users dropped off</span>
+    <div class="dk-flex-fun">
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M8 11l4 4 4-4"/><path d="M5 19h14"/></svg></i>Download</span>
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></i>Open the app</span>
+      <span class="on"><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></i>Sign-up form</span>
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.3l2.4 2.4 4.6-5"/></svg></i>Account created</span>
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9" width="3" height="6" rx="1"/><rect x="5.5" y="6" width="3.5" height="12" rx="1"/><rect x="15" y="6" width="3.5" height="12" rx="1"/><rect x="18.5" y="9" width="3" height="6" rx="1"/><path d="M9 12h6"/></svg></i>First gym visit</span>
+    </div>
+    <span class="dk-flex-warn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4.5M12 17.3v.2"/></svg>Many left before creating an account, so they never reached a gym.</span>
+  </div>
+  <p class="dk-s"><b>What I found</b> · UX research and a heuristic evaluation</p>
+  <div class="dk-2">
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg></i>Abrupt sign-up</b><span>It felt sudden, with no context</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .9-1 1.6v.4"/><path d="M12 17.2v.3"/></svg></i>Unclear model</b><span>New users didn’t understand how it worked</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg></i>No first step</b><span>Little guidance on how to start</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></i>Hidden features</b><span>Important features weren’t introduced</span></div>
+  </div>
+  <div class="dk-note"><span class="k">Core insight</span><b>Understanding comes before sign-up</b><span>New users needed guidance and reassurance to see the value of FlexIt.</span></div>
+</section>
+
+<section class="dk-step" data-name="Define">
+  <p class="dk-eyebrow">02 · Define</p>
+  <h2 class="dk-h2">Explain FlexIt, then ask for an account</h2>
+  <p class="dk-p">The redesign had to explain the product to someone who had never used it, and keep account creation quick.</p>
+  <div class="dk-card"><span class="k">Problem statement</span><span class="dk-big">First-time users were asked to create an account before they understood what FlexIt does or how to use it.</span></div>
+  <div class="dk-note"><span class="k">How might we</span><b>Help first-time users understand FlexIt and feel confident creating an account?</b></div>
+  <p class="dk-s"><b>How I measured success</b></p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">For users</span><b>Understanding</b><span>New users who understand how paying by the minute works</span></div>
+    <div class="dk-card"><span class="k">For the business</span><b>Sign-up</b><span>Downloads that become accounts</span><b>First visit</b><span>New accounts that make a first gym visit</span></div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Develop">
+  <p class="dk-eyebrow">03 · Develop</p>
+  <h2 class="dk-h2">Three options, one guided onboarding</h2>
+  <p class="dk-p">I compared each way to reduce drop-off against the cause I had found.</p>
+  <ul class="dk-opts">
+    <li><span class="tag no">Not chosen</span><span><b>Simplify the sign-up form</b>No explanation of the product</span></li>
+    <li><span class="tag no">Not chosen</span><span><b>Fewer registration steps</b>No explanation of the product either</span></li>
+    <li><span class="tag yes">Chosen</span><span><b>Guided onboarding</b>Addresses the cause: unclear value and functionality</span></li>
+  </ul>
+  <p class="dk-s"><b>From sketch to final design</b> · usability testing along the way</p>
+  <img class="cs-img" src="img/flexit-fidelity.webp" alt="The welcome screen at three fidelities: a hand-drawn sketch, a greyscale wireframe with a map, and the final navy design with a photo and Create New Account" loading="lazy">
+  <div class="dk-flex-lbl dk-xs"><span><b>Low fidelity</b><br>paper sketch</span><span><b>Mid fidelity</b><br>greyscale wireframe</span><span><b>High fidelity</b><br>final design</span></div>
+</section>
+
+<section class="dk-step" data-name="Principles">
+  <p class="dk-eyebrow">Principles</p>
+  <h2 class="dk-h2">Four rules for the new onboarding</h2>
+  <div class="dk-teams">
+    <div class="dk-team"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></i><span><b>Show the value first</b>What FlexIt offers and how to use it, before the form</span></div>
+    <div class="dk-team"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><span><b>Explain every question</b>Each personal question says why it’s asked</span></div>
+    <div class="dk-team"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v11h-7l-3 4-3-4H4z"/><path d="M8 8.5h8M8 11.5h5"/></svg></i><span><b>Point only to what’s new</b>Tips for the features a first-time user wouldn’t guess</span></div>
+    <div class="dk-team"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c.8-3.4 3.4-5.5 6.5-5.5s5.7 2.1 6.5 5.5"/><path d="M19 8v6M16 11h6"/></svg></i><span><b>Keep sign-up short</b>Ask only for what partner gyms need</span></div>
+  </div>
+  <div class="dk-comp">
+    <span class="k">What the business needed</span>
+    <span class="r"><b>More accounts</b>Turn downloads into members</span>
+    <span class="r"><b>Less early churn</b>Keep new users from leaving early</span>
+    <span class="r"><b>Faster understanding</b>Show how FlexIt works, quickly</span>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Deliver">
+  <p class="dk-eyebrow">04 · Deliver</p>
+  <h2 class="dk-h2">Three changes to onboarding</h2>
+  <p class="dk-p">A welcome carousel, information modals and onboarding tooltips, with fewer onboarding screens overall.</p>
+  <div class="dk-car" data-dkcar>
+    <div class="dk-car-track">
+      <figure><div class="dk-flex-row" role="img" aria-label="Three of the five welcome screens: Pay-By-The-Minute Gym Access, Discover and Check In"><div class="cs-phone"><div class="plate" data-screen="FxWelcome"></div></div><div class="cs-phone"><div class="plate" data-screen="FxDiscover"></div></div><div class="cs-phone"><div class="plate" data-screen="FxCheckIn"></div></div></div><figcaption><span class="dk-flex-q">“What is this app, and how does it work?”</span><b>A welcome carousel</b>Five screens: what FlexIt is, then find, check in, work out and check out. Create New Account stays on every screen.</figcaption></figure>
+      <figure><div class="dk-flex-row" role="img" aria-label="Three Create Account screens, each with a modal titled Why am I being asked for this?"><div class="cs-phone"><div class="plate" data-screen="FxModalPhone"></div></div><div class="cs-phone"><div class="plate" data-screen="FxModalGender"></div></div><div class="cs-phone"><div class="plate" data-screen="FxModalBirth"></div></div></div><figcaption><span class="dk-flex-q">“Why do you need my number, gender and birthday?”</span><b>A reason beside every personal question</b>Gyms need contact details, assign locker rooms, and require members to be 18 or over.</figcaption></figure>
+      <figure><div class="dk-flex-row" role="img" aria-label="Three map screens with tooltips 1 of 5, 2 of 5 and 4 of 5"><div class="cs-phone"><div class="plate" data-screen="FxTipMap"></div></div><div class="cs-phone"><div class="plate" data-screen="FxTipFilter"></div></div><div class="cs-phone"><div class="plate" data-screen="FxTipCheckIn"></div></div></div><figcaption><span class="dk-flex-q">“Where do I start?”</span><b>Tooltips for what’s unique to FlexIt</b>Five steps over the real app: the map and per-minute prices, filters, and the QR check-in. Each one can be closed.</figcaption></figure>
+    </div>
+    <div class="dk-dots"></div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Results">
+  <p class="dk-eyebrow">Results</p>
+  <h2 class="dk-h2">More sign-ups, and far fewer people leaving</h2>
+  <p class="dk-s"><b>For the business</b></p>
+  <div class="dk-stats two">
+    <div><b>+40%</b><span>Account creation</span></div>
+    <div><b>12→25%</b><span>New accounts that made a first gym visit</span></div>
+  </div>
+  <p class="dk-s"><b>For users</b></p>
+  <div class="dk-stats two light">
+    <div><b>−90%</b><span>Drop-off during onboarding</span></div>
+    <div><b>90%+</b><span>Better understanding, trust and ease of use in usability testing</span></div>
+  </div>
+  <div class="dk-note"><span class="k">What I learned</span><b>Onboarding is the first impression</b><span>People leave a useful product when they can’t quickly see how it works.</span></div>
+  <div class="dk-card"><span class="k">Working across teams</span><span class="d">Onboarding data with product stakeholders, feasibility with engineering, and every change checked with users.</span></div>
+</section>
+
+</div>

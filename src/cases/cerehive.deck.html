@@ -1,0 +1,190 @@
+<style>
+@media (max-width:640px){
+  .dk-cerehive-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .dk-cerehive-counts > span{display:grid;gap:1px;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:10px;padding:6px 8px;font-size:10.5px;line-height:1.25;color:var(--c-ink2)}
+  .dk-cerehive-counts b{font-size:17px;line-height:1.1;font-weight:700;color:var(--c-ink);font-variant-numeric:tabular-nums}
+  .dk-cerehive-levels{display:grid;grid-template-columns:52% minmax(0,1fr);gap:10px;align-items:center}
+  .dk-cerehive-levels .cs-browser > .bar{height:16px;gap:4px;padding:0 8px}
+  .dk-cerehive-levels .cs-browser > .bar i{width:5px;height:5px}
+  .dk-cerehive-levels .cs-pin{width:18px;height:18px;font-size:10px}
+  .dk-cerehive-levels ol{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+  .dk-cerehive-levels .zoom-hint{display:none}
+  .dk-cerehive-levels li{display:flex;gap:7px;align-items:flex-start;font-size:11.5px;line-height:1.3;color:var(--c-ink2)}
+  .dk-cerehive-levels li > i{flex:none;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:var(--c-dark);color:var(--c-ondark);font-style:normal;font-size:10px;font-weight:600}
+  .dk-cerehive-levels li b{display:block;font-size:12.5px;color:var(--c-ink);font-weight:600}
+  .dk-cerehive-ramp{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:2px;border-radius:6px;overflow:hidden;width:100%}
+  .dk-cerehive-ramp i{height:24px}
+  .dk-cerehive-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:300px;background:#fff;border:1px solid var(--c-rule);border-radius:12px;padding:14px 12px;font-family:Geist,system-ui,sans-serif;font-size:12px;font-weight:500}
+  .dk-cerehive-pills > span{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:999px}
+  .dk-cerehive-pills > span i{width:6px;height:6px;border-radius:50%}
+  .dk-cerehive-check{display:flex;gap:6px;align-items:flex-start}
+  .dk-cerehive-check::before{content:"";flex:none;width:9px;height:5px;margin:4px 1px 0;border-left:1.6px solid var(--c-eyebrow);border-bottom:1.6px solid var(--c-eyebrow);transform:rotate(-45deg)}
+}
+</style>
+<div class="dk-track">
+
+<section class="dk-step" data-name="Overview">
+  <p class="dk-eyebrow">CereHive · AI recruiting · 2025 to 2026</p>
+  <h1 class="dk-h1">CereHive</h1>
+  <p class="dk-p">An AI-native recruiting platform I designed 0 to 1.</p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">Business goal</span><b>Launch the MVP</b><span>Onboard new clients fast, with few support requests</span></div>
+    <div class="dk-card"><span class="k">User problem</span><b>Hundreds of CVs</b><span>Across 9 tools, with scores she can’t explain</span></div>
+  </div>
+  <div class="dk-zoom" style="--zh:142px;--zw:304%;--zx:-201%;--zy:-73.3%" aria-label="Role workspace: matches"><div class="plate" data-screen="ScreenMatches"></div></div>
+  <p class="dk-xs">Recreated screens. Names and figures in them are fictional.</p>
+  <p class="dk-s dk-role"><span><b>My role:</b> Founding product designer and PM: research, IA, interaction and visual design, design system</span><span><b>Cross-functional collaboration with:</b> 2 co-founders and 4 engineers, at a remote pre-seed startup</span></p>
+  <button type="button" class="dk-go" data-go="1">See how I approached it<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button type="button" class="dk-skip" data-go="6">Or skip to the final designs</button>
+</section>
+
+<section class="dk-step" data-name="Approach">
+  <p class="dk-eyebrow">Approach</p>
+  <h2 class="dk-h2">The UX Double Diamond</h2>
+  <p class="dk-p">The first diamond settled which recruiter problem to solve. The second settled how.</p>
+  <div class="dk-vdd">
+    <div class="dk-vdd-art" aria-hidden="true">
+      <span class="sp" style="top:0;height:168px;color:#4A2A8E">Problem space</span>
+      <span class="sp" style="top:202px;height:168px;color:#71651E">Solution space</span>
+      <svg width="64" height="370" viewBox="0 0 64 370"><path d="M32 1 L63 84 L32 167 L1 84 Z" fill="#ECE5FA" stroke="#5B37A8" stroke-width="1.2"/><path d="M4 84 L60 84" stroke="#5B37A8" stroke-opacity=".35" stroke-dasharray="3 4"/><path d="M32 167 L32 203" stroke="#251548" stroke-width="1.2"/><circle cx="32" cy="185" r="4" fill="#251548"/><path d="M32 203 L63 286 L32 369 L1 286 Z" fill="#F6F4DF" stroke="#5B37A8" stroke-width="1.2"/><path d="M4 286 L60 286" stroke="#5B37A8" stroke-opacity=".35" stroke-dasharray="3 4"/><text x="32" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#4A2A8E">01</text><text x="32" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#4A2A8E">02</text><text x="32" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#71651E">03</text><text x="32" y="316" text-anchor="middle" font-size="11" font-weight="700" fill="#71651E">04</text></svg>
+    </div>
+    <div class="dk-vdd-rows">
+      <button type="button" data-go="2"><span class="e">01 · Open up</span><b>Discover</b><span>8 recruiters, a prototype audit and 2 months of usage data</span></button>
+      <button type="button" data-go="3"><span class="e">02 · Narrow down</span><b>Define</b><span>Find the best match for a role, and say why</span></button>
+      <span class="pin"><span class="pill">Problem statement</span></span>
+      <button type="button" data-go="4"><span class="e">03 · Open up</span><b>Develop</b><span>Three layouts tested, then the hierarchy and design system</span></button>
+      <button type="button" data-go="6"><span class="e">04 · Narrow down</span><b>Deliver</b><span>A role-centred workspace where every score shows its reasons</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Discover">
+  <p class="dk-eyebrow">01 · Discover</p>
+  <h2 class="dk-h2">How recruiters actually fill a role</h2>
+  <p class="dk-s"><b>Research</b> · 8 recruiter interviews, a prototype audit, 20+ support tickets and calls, 2 months of usage data</p>
+  <div class="dk-comp"><span class="k">9 tools to fill one role before CereHive</span><span class="dk-chips"><i>Call</i><i>Shared doc</i><i>ATS</i><i>Indeed</i><i>PDF CVs</i><i>Spreadsheet</i><i>Email</i><i>Calendar</i><i>Slides</i></span></div>
+  <div class="dk-2">
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M3 12h18"/></svg></i>The role is the unit</b><span>The prototype started from all candidates, then filtered to a role</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M10 9.7a2 2 0 1 1 2.7 1.9c-.5.2-.7.6-.7 1.1v.5"/><path d="M12 15.6v.1"/></svg></i>Scores ignored</b><span>When the AI ranked someone 92, recruiters reread the CV to check</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></i>Duplicates</b><span>The ATS, our talent pool and Indeed each held part of the picture</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></i>Context gets lost</b><span>After the shortlist, work moved to email, calendars and spreadsheets</span></div>
+  </div>
+  <div class="dk-note"><span class="k">Talent Acquisition Lead · 200-person SaaS</span><b>“I don’t need AI to pick candidates for me. I need it to show me why someone’s a match so I can defend the shortlist to the hiring manager.”</b></div>
+</section>
+
+<section class="dk-step" data-name="Define">
+  <p class="dk-eyebrow">02 · Define</p>
+  <h2 class="dk-h2">Designing for Priya</h2>
+  <div class="dk-who"><img src="img/e63d9bfaafa82ef67b07e373e84016f8.jpg" alt="" loading="lazy"><span><b>Priya Shah, 34 · Talent Acquisition Lead</b>“Show me why someone is a match, so I can explain it to the hiring manager.”</span></div>
+  <div class="dk-card"><span class="k">Problem statement</span><span class="dk-big">Priya needs to find the best people for each open role quickly, and explain why they are the best, because her credibility with hiring managers rests on the shortlist.</span></div>
+  <div class="dk-note"><span class="k">How might we</span><b>Make the role the home of the work, and make every match explain itself?</b></div>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">For recruiters</span><b>Speed, per role</b><span>Time from opening a role to a shortlist</span><b>Shortlist quality</b><span>Shortlisted people approved for interview</span></div>
+    <div class="dk-card"><span class="k">For the business</span><b>Onboarding time</b><span>From a new client’s start to their first shortlist</span><b>Support</b><span>Support requests per client a month</span></div>
+  </div>
+  <p class="dk-xs">Proto-persona from research. Stock photo, not a real participant.</p>
+</section>
+
+<section class="dk-step" data-name="Develop">
+  <p class="dk-eyebrow">03 · Develop</p>
+  <h2 class="dk-h2">Three layouts for one question</h2>
+  <p class="dk-s">I tested three layouts for a role’s candidates as clickable wireframes with recruiters.</p>
+  <ul class="dk-opts">
+    <li><span class="tag no">Dropped</span><span><b>Table first</b>Reasons hid behind a hover, so recruiters sorted by score and stopped</span></li>
+    <li><span class="tag park">Pipeline tab</span><span><b>Pipeline board</b>Good for moving people between stages, poor for comparing them</span></li>
+    <li><span class="tag yes">Chosen</span><span><b>Ranked list with evidence</b>Recruiters could compare, check and explain in one place</span></li>
+  </ul>
+  <p class="dk-s"><b>Four questions, in the order a recruiter asks them</b></p>
+  <div class="dk-cerehive-levels">
+    <div class="cs-browser" aria-label="Role workspace: matches"><div class="bar"><i></i><i></i><i></i></div><div class="cs-pinned"><div class="plate" data-screen="ScreenMatches" data-crop="0.9"></div><span class="cs-pin" aria-hidden="true" style="left:18.1%;top:9.6%">1</span><span class="cs-pin" aria-hidden="true" style="left:19.3%;top:32.7%">2</span><span class="cs-pin" aria-hidden="true" style="left:72.6%;top:42.5%">3</span><span class="cs-pin" aria-hidden="true" style="left:74.3%;top:94%">4</span></div></div>
+    <ol>
+      <li><i>1</i><span><b>Role and status</b>Where am I, and is this role on track?</span></li>
+      <li><i>2</i><span><b>Ranked list</b>Who is best? A gold score on each line.</span></li>
+      <li><i>3</i><span><b>Evidence</b>Why? Reasons stay open beside it.</span></li>
+      <li><i>4</i><span><b>Action</b>What next? One purple button per view.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Design system">
+  <p class="dk-eyebrow">Design system</p>
+  <h2 class="dk-h2">Purple for actions, gold for AI evidence</h2>
+  <p class="dk-p">Every style is a Figma style and a code token with the same name.</p>
+  <div class="dk-cerehive-counts"><span><b>14</b>Text styles</span><span><b>30</b>Colours in 3 ramps</span><span><b>9</b>Spacing steps</span><span><b>4</b>Radii</span></div>
+  <div class="dk-car" data-dkcar>
+    <div class="dk-car-track">
+      <figure><div class="dk-pat"><div style="display:grid;gap:14px;justify-items:center;font-family:Geist,system-ui,sans-serif"><span style="display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:8px;background:#5B37A8;color:#fff;font-size:14px;font-weight:500">Add to sequence</span><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#FCFAF1;border:1px solid #EDE8C0;color:#524914;font-size:13px;font-weight:500">6 of 6 must-haves</span></div></div><figcaption><b>Two brand colours, one job each</b>Purple for actions. Gold, from the logo, for the AI’s evidence.</figcaption></figure>
+      <figure><div class="dk-pat"><div style="display:grid;gap:6px;width:100%">
+        <div class="dk-cerehive-ramp" role="img" aria-label="Purple ramp"><i style="background:#F6F3FD"></i><i style="background:#ECE5FA"></i><i style="background:#D6C8F2"></i><i style="background:#B59DE4"></i><i style="background:#9273D3"></i><i style="background:#7350BE"></i><i style="background:#5B37A8"></i><i style="background:#4A2A8E"></i><i style="background:#37206A"></i><i style="background:#251548"></i></div>
+        <div class="dk-cerehive-ramp" role="img" aria-label="Gold ramp"><i style="background:#FCFAF1"></i><i style="background:#F6F4DF"></i><i style="background:#EDE8C0"></i><i style="background:#DDD592"></i><i style="background:#C0B34A"></i><i style="background:#AB9E36"></i><i style="background:#8E8029"></i><i style="background:#71651E"></i><i style="background:#524914"></i><i style="background:#352F0D"></i></div>
+        <div class="dk-cerehive-ramp" role="img" aria-label="Neutral ramp, tinted toward purple"><i style="background:#F8F7FA"></i><i style="background:#F0EFF3"></i><i style="background:#E2E0E7"></i><i style="background:#C8C5CF"></i><i style="background:#9A96A3"></i><i style="background:#736E7E"></i><i style="background:#5A5566"></i><i style="background:#3D3948"></i><i style="background:#2A2733"></i><i style="background:#17151E"></i></div>
+      </div></div><figcaption><b>Three ramps, 50 to 900</b>Purple 600+, gold 700+ and neutral 500+ pass AA on white.</figcaption></figure>
+      <figure><div class="dk-pat"><div style="display:grid;gap:10px;justify-items:center"><span style="position:relative;width:64px;height:64px;display:grid;place-items:center;font-family:Geist,system-ui,sans-serif;font-size:24px;font-weight:600;font-variant-numeric:tabular-nums"><svg width="64" height="64" viewBox="0 0 64 64" style="position:absolute;inset:0;transform:rotate(-90deg)" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="#F6F4DF" stroke-width="5"/><circle cx="32" cy="32" r="28" fill="none" stroke="#AB9E36" stroke-width="5" stroke-dasharray="165.4 175.9" stroke-linecap="round"/></svg>94</span><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#F6F4DF;color:#524914;font-family:Geist,system-ui,sans-serif;font-size:13px;font-weight:500">Top match</span></div></div><figcaption><b>Match score</b>The number carries the meaning, so it reads the same in greyscale and to a screen reader.</figcaption></figure>
+      <figure><div class="dk-pat"><div style="display:grid;gap:7px;max-width:260px;background:#fff;border:1px solid #E2E0E7;border-radius:12px;padding:12px 14px;font-family:Geist,system-ui,sans-serif"><span style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5A5566">Why Amara ranks #1</span><span style="font-size:13px;line-height:18px;color:#17151E">Led a card-payments migration at Tallyfin, moving 2M daily transactions to a new ledger</span><span style="font-size:11.5px;color:#5A5566">From CV · Tallyfin, 2021 to now</span><span style="display:flex;flex-wrap:wrap;gap:6px"><span style="display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:4px;border:1px solid #E2E0E7;color:#3D3948;font-size:12px;font-weight:500">Talent pool</span><span style="display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:4px;border:1px solid #E2E0E7;color:#3D3948;font-size:12px;font-weight:500">Client ATS</span></span></div></div><figcaption><b>Reason card</b>A reason always names its source, so recruiters know what to check.</figcaption></figure>
+      <figure><div class="dk-pat"><div class="dk-cerehive-pills">
+        <span style="background:#F0EFF3;color:#3D3948"><i style="background:#736E7E"></i>New</span>
+        <span style="background:#F6F3FD;color:#4A2A8E"><i style="background:#9273D3"></i>Contacted</span>
+        <span style="background:#ECE5FA;color:#37206A"><i style="background:#5B37A8"></i>Screening</span>
+        <span style="background:#D6C8F2;color:#251548"><i style="background:#37206A"></i>Interview</span>
+        <span style="background:#251548;color:#fff"><i style="background:#fff"></i>Offer</span>
+        <span style="background:#E7F4EC;color:#155E3B"><i style="background:#1E7A4C"></i>Hired</span>
+      </div></div><figcaption><b>Stage pills</b>They deepen in purple as a candidate moves forward. Hired is the only green in the product.</figcaption></figure>
+      <figure><div class="dk-pat"><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;font-family:Geist,system-ui,sans-serif;font-size:18px;font-weight:600;text-align:right"><div style="display:grid"><span style="font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5A5566">Proportional</span><span>111</span><span>484</span><span>1,184</span><span>94</span></div><div style="display:grid;font-variant-numeric:tabular-nums;color:#5B37A8"><span style="font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5A5566">Tabular · used</span><span>111</span><span>484</span><span>1,184</span><span>94</span></div></div></div><figcaption><b>Geist, with tabular figures</b>Readable at small sizes, with scores that line up.</figcaption></figure>
+    </div>
+    <div class="dk-dots"></div>
+  </div>
+  <p class="dk-xs">Each Figma component maps one to one to a coded one. The system became the base every later feature was built on.</p>
+</section>
+
+<section class="dk-step" data-name="Deliver">
+  <p class="dk-eyebrow">04 · Deliver</p>
+  <h2 class="dk-h2">The recruiter’s workspace</h2>
+  <p class="dk-p">A role-centred workspace where every score shows its reasons. It launched as CereHive’s MVP.</p>
+  <div class="dk-tabs" data-tabs>
+    <div class="cs-tabs" role="tablist" aria-label="CereHive screens and MVP scope">
+      <button type="button" role="tab" id="chd-t-scr" aria-controls="chd-p-scr">Screens</button>
+      <button type="button" role="tab" id="chd-t-mvp" aria-controls="chd-p-mvp">MVP scope and trade-offs</button>
+    </div>
+    <div class="cs-panels">
+      <div class="cs-panel" role="tabpanel" id="chd-p-scr" aria-labelledby="chd-t-scr">
+        <div class="dk-car" data-dkcar>
+          <div class="dk-car-track">
+            <figure><div class="cs-browser" aria-label="Role workspace: matches"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="ScreenMatches" data-crop=".6"></div></div><figcaption><b>Matches</b>Ranked, with the evidence beside it</figcaption></figure>
+            <figure><div class="cs-browser" aria-label="Candidate: validate the match"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="ScreenCandidate" data-crop=".6"></div></div><figcaption><b>Validate the match</b>Recruiters confirm or correct each must-have</figcaption></figure>
+            <figure><div class="cs-browser" aria-label="Sequences: outreach"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="ScreenSequences" data-crop=".6"></div></div><figcaption><b>Sequences</b>Outreach that quotes the top reason</figcaption></figure>
+            <figure><div class="cs-browser" aria-label="Interviews: flow and feedback"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="ScreenInterviews" data-crop=".6"></div></div><figcaption><b>Interviews</b>Flow and feedback, with one scorecard</figcaption></figure>
+            <figure><div class="cs-browser" aria-label="Sourcing: every source at once"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="ScreenSourcing" data-crop=".6"></div></div><figcaption><b>Sourcing</b>One search across the client’s ATS, CereHive’s talent pool and Indeed</figcaption></figure>
+          </div>
+          <div class="dk-dots"></div>
+        </div>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="chd-p-mvp" aria-labelledby="chd-t-mvp" hidden>
+        <div class="dk-card"><span class="k">In the MVP</span><span class="d dk-cerehive-check">One workspace per role: Matches, Pipeline, Sequences, Interviews and the brief</span><span class="d dk-cerehive-check">One search across the client’s ATS, CereHive’s talent pool and Indeed</span><span class="d dk-cerehive-check">A reason and its source beside every score</span><span class="d dk-cerehive-check">A recruiter check on each must-have</span></div>
+        <div class="dk-card"><span class="k">Trade-offs</span><b>Recruiters confirm every match</b><span>Nobody is rejected automatically, so every shortlist needs a recruiter’s check. In return, she can explain every name on it.</span><b>A ranking that doesn’t learn yet</b><span>Recruiters’ checks don’t change the ranking in the MVP. Using them to tune each role’s ranking is the next step.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Results">
+  <p class="dk-eyebrow">Results</p>
+  <h2 class="dk-h2">What launched, and what it did</h2>
+  <p class="dk-s"><b>For the business</b></p>
+  <div class="dk-stats two">
+    <div><b>$300K</b><span>ARR in 12 months, from 12 SMB and mid-market clients</span></div>
+    <div><b>20→50%</b><span>Demo-to-close conversion</span></div>
+    <div><b>2 → 1 wk</b><span>Onboarding, client start to first shortlist</span></div>
+    <div><b>8 → 4</b><span>Support requests per client a month</span></div>
+  </div>
+  <p class="dk-s"><b>For recruiters</b></p>
+  <div class="dk-stats two light">
+    <div><b>85%</b><span>Shortlisted candidates hiring managers agreed to interview</span></div>
+    <div><b>Week → day</b><span>From opening a role to a shortlist</span></div>
+  </div>
+  <div class="dk-2">
+    <div class="dk-note"><span class="k">What worked</span><b>Reasons next to every score</b><span>Something to check, and to say when a hiring manager asked why this person</span></div>
+    <div class="dk-card"><span class="k">What I’d change</span><b>Hiring managers, earlier</b><span>They joined the research late. I’d bring them in during Discover.</span></div>
+  </div>
+</section>
+
+</div>

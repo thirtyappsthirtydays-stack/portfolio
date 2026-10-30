@@ -1,0 +1,236 @@
+<style>
+@media (max-width:640px){
+  .dk-oc-tabs .cs-panel{gap:8px}
+  .dk-oc-tabs .dk-note{margin-top:2px}
+  .dk-oc-aa{gap:0}
+  .dk-oc-aa .aa{font-size:32px;line-height:1;letter-spacing:-.02em;margin-bottom:6px}
+  .dk-oc-aa.dark{background:var(--c-dark);border-color:var(--c-dark);color:var(--c-ondark)}
+  .dk-oc-aa.dark b + span{color:var(--c-ondark2)}
+  .dk-oc-spec{display:grid;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:4px 12px}
+  .dk-oc-spec > div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:4px 0;border-top:1px solid var(--c-rule)}
+  .dk-oc-spec > div:first-child{border-top:0}
+  .dk-oc-spec .s{color:var(--c-ink);font-family:'Playfair Display',Georgia,serif;white-space:nowrap}
+  .dk-oc-spec .m{flex:none;font-size:10.5px;color:var(--c-ink2);text-align:right}
+  .dk-oc-sw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 8px}
+  .dk-oc-sw > div{display:grid;gap:2px;align-content:start;min-width:0;font-size:11px;line-height:1.3;color:var(--c-ink2)}
+  .dk-oc-sw i{height:38px;border-radius:10px;padding:6px 8px;box-sizing:border-box;display:flex;align-items:flex-end;font-style:normal;font-size:10.5px;font-weight:600;border:1px solid transparent;margin-bottom:3px}
+  .dk-oc-sw b{font-size:12.5px;color:var(--c-ink);font-weight:600}
+  .dk-oc-fix{display:grid;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:4px 12px;font-size:12px;line-height:1.35;color:var(--c-ink)}
+  .dk-oc-fix > div{display:grid;grid-template-columns:minmax(0,1fr) 34px 64px;gap:8px;align-items:baseline;padding:6px 0;border-top:1px solid var(--c-rule)}
+  .dk-oc-fix > div:first-child{border-top:0;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-eyebrow)}
+  .dk-oc-fix .x{color:var(--c-x);font-weight:600}
+  .dk-oc-fix .ok{font-weight:600}
+  .dk-oc-lv{display:flex !important;gap:12px;align-items:center}
+  .dk-oc-lv > .cs-browser{flex:none;width:56%}
+  .dk-oc-lv .cs-browser > .bar{height:18px;padding:0 8px;gap:4px}
+  .dk-oc-lv .cs-browser > .bar i{width:6px;height:6px}
+  .dk-oc-lv .cs-pin{width:15px;height:15px;font-size:9px;box-shadow:0 0 0 1.5px var(--c-surface)}
+  .dk-oc-lv ol{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:11.5px;line-height:1.25;color:var(--c-ink)}
+  .dk-oc-lv ol li{display:flex;gap:6px;align-items:baseline}
+  .dk-oc-lv ol li > span:first-child{flex:none;width:15px;height:15px;border-radius:50%;display:grid;place-items:center;background:var(--c-dark);color:var(--c-ondark);font-size:9px;font-weight:600;transform:translateY(2px)}
+  .dk-oc-ph{flex:none;width:44%;display:flex;align-items:center;justify-content:center;background:var(--c-neutral);border-radius:12px;padding:10px;box-sizing:border-box}
+  .dk-oc-ph .cs-phone{--pw:86px;padding:4px;box-shadow:0 10px 22px rgba(20,22,30,.16)}
+  .dk-oc-chain{display:flex;flex-wrap:wrap;align-items:center;gap:5px 4px;margin:4px 0 2px}
+  .dk-oc-chain .n{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:8px;border:1px solid var(--c-rule);background:var(--c-ground);font-size:11.5px;font-weight:600;color:var(--c-ink);white-space:nowrap}
+  .dk-oc-chain .n svg{color:var(--c-eyebrow)}
+  .dk-oc-chain .g{display:inline-flex;align-items:center;gap:4px}
+  .dk-oc-chain .g > svg{color:var(--c-ink2)}
+  .dk-oc-link{color:var(--c-ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--c-rule2);text-underline-offset:3px}
+}
+</style>
+<div class="dk-track">
+
+<section class="dk-step" data-name="Overview">
+  <p class="dk-eyebrow">Healthcare · Turkish and English · 2026</p>
+  <h1 class="dk-h1 long">Online Consultation</h1>
+  <p class="dk-p">A booking flow I designed and built for a thoracic surgeon: four steps to a paid, scheduled consultation.</p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">Business goal</span><b>More patients, booked online</b><span>Every booking paid, scheduled and prepared</span></div>
+    <div class="dk-card"><span class="k">User problem</span><b>Booking by hand</b><span>One phone number, then records, payment and a time sorted by message</span></div>
+  </div>
+  <div class="dk-zoom" style="--zh:144px;--zw:100%;--zx:0%;--zy:-78.97%" aria-label="Step 1 on a phone"><div class="plate" data-screen="ScreenIntakePhone"></div></div>
+  <p class="dk-xs">Screens recreated from the live site. Patient details are fictional.</p>
+  <p class="dk-s dk-role"><span><b>My role:</b> Solo designer and AI-assisted builder</span><span><b>Client:</b> my father, Prof. Dr. Semih Halezeroğlu</span></p>
+  <button type="button" class="dk-go" data-go="1">See how I approached it<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button type="button" class="dk-skip" data-go="6">Or skip to the final designs</button>
+</section>
+
+<section class="dk-step" data-name="Approach">
+  <p class="dk-eyebrow">Approach</p>
+  <h2 class="dk-h2">The UX Double Diamond</h2>
+  <p class="dk-p">The first diamond found what was broken about booking a second opinion. The second fixed it, one shipped version at a time.</p>
+  <div class="dk-vdd">
+    <div class="dk-vdd-art" aria-hidden="true">
+      <span class="sp" style="top:0;height:168px;color:#2A4F7C">Problem space</span>
+      <span class="sp" style="top:202px;height:168px;color:#7A5A18">Solution space</span>
+      <svg width="64" height="370" viewBox="0 0 64 370"><path d="M32 1 L63 84 L32 167 L1 84 Z" fill="#E3EAF2" stroke="#1B3A5C" stroke-width="1.2"/><path d="M4 84 L60 84" stroke="#1B3A5C" stroke-opacity=".3" stroke-dasharray="3 4"/><path d="M32 167 L32 203" stroke="#1B3A5C" stroke-width="1.2"/><circle cx="32" cy="185" r="4" fill="#1B3A5C"/><path d="M32 203 L63 286 L32 369 L1 286 Z" fill="#F6EEDD" stroke="#1B3A5C" stroke-width="1.2"/><path d="M4 286 L60 286" stroke="#1B3A5C" stroke-opacity=".3" stroke-dasharray="3 4"/><text x="32" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#2A4F7C">01</text><text x="32" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#2A4F7C">02</text><text x="32" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#7A5A18">03</text><text x="32" y="316" text-anchor="middle" font-size="11" font-weight="700" fill="#7A5A18">04</text></svg>
+    </div>
+    <div class="dk-vdd-rows">
+      <button type="button" data-go="2"><span class="e">01 · Open up</span><b>Discover</b><span>A client kickoff, a service audit and 40 reviews</span></button>
+      <button type="button" data-go="3"><span class="e">02 · Narrow down</span><b>Define</b><span>The family that books, and the practice that must be ready</span></button>
+      <span class="pin"><span class="pill">Problem statement</span></span>
+      <button type="button" data-go="4"><span class="e">03 · Open up</span><b>Develop</b><span>How to ask, how records arrive and how money moves</span></button>
+      <button type="button" data-go="6"><span class="e">04 · Narrow down</span><b>Deliver</b><span>Four steps in two languages, wired to his calendar and WhatsApp</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Discover">
+  <p class="dk-eyebrow">01 · Discover</p>
+  <h2 class="dk-h2">How a second opinion got booked before</h2>
+  <div class="dk-comp"><span class="k">The brief, as the client gave it</span><span class="dk-chips"><i>1 · Be found by more patients</i><i>2 · Easier to reach him</i><i>3 · Medical documents online</i><i>4 · Payment into his Turkish account</i></span></div>
+  <p class="dk-s"><b>What I learned</b> · kickoff, service audit, 40 Google reviews</p>
+  <div class="dk-2">
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 19c.8-3 3.2-5 6-5s5.2 2 6 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c2.3.3 4 2 4.5 4.8"/></svg></i>Often not the patient</b><span>Children book for parents, parents for babies</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h11v8H8l-3.5 3v-3h-1z"/><path d="M17 9h3.5v8h-1v3l-3-3H11v-2"/></svg></i>On WhatsApp</b><span>Patients already use it. He prefers its video too.</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 16h5"/></svg></i>Records first</b><span>CT and pathology reports must reach him in time</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5"/><path d="M5 9v9M10 9v9M14 9v9M19 9v9"/><path d="M3 20h18"/></svg></i>A Turkish account</b><span>Familiar and free, but nothing confirms it automatically</span></div>
+  </div>
+  <div class="dk-note"><span class="k">Trust comes first</span><b>“Semih Bey made me feel completely safe. I went into the operation totally at ease.”</b><span>Google review, translated from Turkish</span></div>
+</section>
+
+<section class="dk-step" data-name="Define">
+  <p class="dk-eyebrow">02 · Define</p>
+  <h2 class="dk-h2">Designing for the patient and the surgeon</h2>
+  <div class="dk-2">
+    <div class="dk-who"><img src="img/persona-ayten.jpg" alt="" loading="lazy"><span><b>Ayten, 63</b>Patient. Her son Emre books and pays.</span></div>
+    <div class="dk-who"><img src="img/semih.jpg" alt="" loading="lazy"><span><b>The surgeon</b>Client. Records read, admin done.</span></div>
+  </div>
+  <div class="dk-card"><span class="k">Problem statement</span><span class="dk-big">Ayten’s family needs a clear, trusted way to book him and get her records to him in time. He needs every booking paid, scheduled and prepared.</span></div>
+  <div class="dk-note"><span class="k">How might we</span><b>Make booking so easy that more patients do it, with details, payment and a time in one flow, in their own language?</b></div>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">For families</span><b>Completion</b><span>Finished, out of started</span><b>Records on time</b><span>In 24 hours ahead</span></div>
+    <div class="dk-card"><span class="k">For the practice</span><b>Bookings</b><span>Booked online</span><b>Admin</b><span>Messages per booking</span></div>
+  </div>
+  <p class="dk-xs">Ayten is a composite persona. Stock photo, not a real patient.</p>
+</section>
+
+<section class="dk-step" data-name="Develop">
+  <p class="dk-eyebrow">03 · Develop</p>
+  <h2 class="dk-h2">Three decisions shaped the flow</h2>
+  <p class="dk-p">Several shipped as working versions first, and the client’s feedback decided which stayed.</p>
+  <div class="dk-tabs dk-oc-tabs" data-tabs>
+    <div class="cs-tabs" role="tablist" aria-label="Three decisions">
+      <button type="button" role="tab" id="oc-dt1" aria-controls="oc-dp1">The form</button>
+      <button type="button" role="tab" id="oc-dt2" aria-controls="oc-dp2">Records</button>
+      <button type="button" role="tab" id="oc-dt3" aria-controls="oc-dp3">Payment</button>
+    </div>
+    <div class="cs-panels">
+      <div class="cs-panel" role="tabpanel" id="oc-dp1" aria-labelledby="oc-dt1">
+        <p class="dk-s"><b>How should the form ask?</b> For a relative answering about someone else.</p>
+        <ul class="dk-opts">
+          <li><span class="tag no">Cut</span><span><b>A · Long form</b>Nine fields on one page. It read like a hospital form.</span></li>
+          <li><span class="tag yes">Shipped</span><span><b>B · One question per screen</b>Six questions, with a counter and Enter to continue</span></li>
+          <li><span class="tag park">Side door</span><span><b>C · WhatsApp only</b>Kept as a pre-filled message, on every screen</span></li>
+        </ul>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="oc-dp2" aria-labelledby="oc-dt2" hidden>
+        <p class="dk-s"><b>How do records arrive?</b> They need to reach him before the call.</p>
+        <ul class="dk-opts">
+          <li><span class="tag no">Cut</span><span><b>A · Upload in the form</b>CT and PET-CT files are too large for a web form</span></li>
+          <li><span class="tag no">Cut</span><span><b>B · E-Nabız login</b>A portal password stored in a sheet</span></li>
+          <li><span class="tag yes">Shipped</span><span><b>C · WhatsApp, after booking</b>A list of what to send, at least 24 hours ahead</span></li>
+        </ul>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="oc-dp3" aria-labelledby="oc-dt3" hidden>
+        <p class="dk-s"><b>How does money move?</b> Upfront, into a Turkish account.</p>
+        <ul class="dk-opts">
+          <li><span class="tag no">Not built</span><span><b>A · Card checkout</b>Fees and set-up before the first booking</span></li>
+          <li><span class="tag yes">Shipped</span><span><b>B · Bank transfer, then confirm</b>Fee and IBAN on one screen, then a “sent it?” check</span></li>
+        </ul>
+        <div class="dk-note"><span class="k">Why pay before picking a time</span><b>Every slot in the surgeon’s week belongs to someone who has already paid.</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="dk-card"><span class="k">Layouts that hold Turkish and English</span><b>Neither language is always longer</b><span>So buttons size to their label and headings wrap.</span><b>Capitals need the right language</b><span>Turkish has a dotted İ and a dotless ı, so the language switch also sets lang.</span></div>
+</section>
+
+<section class="dk-step" data-name="Design system">
+  <p class="dk-eyebrow">Design system</p>
+  <h2 class="dk-h2">Tidied from the live stylesheet</h2>
+  <p class="dk-p">I documented the live site’s styles as named tokens.</p>
+  <div class="dk-stats light">
+    <div><b>14</b><span>Text styles, from 23 sizes</span></div>
+    <div><b>22</b><span>Colour tokens, from 64</span></div>
+    <div><b>6</b><span>AA failures fixed</span></div>
+  </div>
+  <div class="dk-tabs dk-oc-tabs" data-tabs>
+    <div class="cs-tabs" role="tablist" aria-label="Design system">
+      <button type="button" role="tab" id="oc-st1" aria-controls="oc-sp1">Type</button>
+      <button type="button" role="tab" id="oc-st2" aria-controls="oc-sp2">Colour</button>
+      <button type="button" role="tab" id="oc-st3" aria-controls="oc-sp3">Contrast</button>
+    </div>
+    <div class="cs-panels">
+      <div class="cs-panel" role="tabpanel" id="oc-sp1" aria-labelledby="oc-st1">
+        <p class="dk-s"><b>Playfair for his voice, DM Sans for the interface.</b> Both draw ç, ğ, ı, İ, ö, ş and ü in every weight used.</p>
+        <div class="dk-2">
+          <div class="dk-card dk-oc-aa dark"><span class="aa" style="font-family:'Playfair Display',Georgia,serif;font-weight:700">Aa</span><b>Playfair Display</b><span>Headings, questions, numerals and quotes</span></div>
+          <div class="dk-card dk-oc-aa"><span class="aa" style="font-family:'DM Sans',system-ui,sans-serif;font-weight:500">Aa</span><b>DM Sans</b><span>Answers, hints, buttons and counters</span></div>
+        </div>
+        <div class="dk-oc-spec">
+          <div><span class="s" style="font-size:20px;font-weight:600">What is the patient’s age?</span><span class="m">question</span></div>
+          <div><span class="s" style="font-size:22px;font-weight:700">01 · ₺15.000</span><span class="m">numeral</span></div>
+        </div>
+        <p class="dk-xs">Prices are written the local way: ₺15.000 in Turkish, €300 in English.</p>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="oc-sp2" aria-labelledby="oc-st2" hidden>
+        <p class="dk-s"><b>Navy for actions, gold for progress.</b> All from the live site. Gold becomes gold-800 when it has to be text.</p>
+        <div class="dk-oc-sw">
+          <div><i style="background:#1B3A5C;color:#fff">AAA</i><b>Navy 700</b>Buttons, headings, the current step</div>
+          <div><i style="background:#C8A96E;color:#1B3A5C">Fill only</i><b>Gold 500</b>Progress, chosen answers, the price</div>
+          <div><i style="background:#F8F6F1;border-color:#DDD6CC;color:#5A6A7A">Ground</i><b>Cream</b>Every page. White lifts cards off it.</div>
+          <div><i style="background:#1A2535;color:#F8F6F1">AAA</i><b>Ink 900</b>Body text</div>
+          <div><i style="background:#7A5A18;color:#fff">AA</i><b>Gold 800</b>Gold text and badges</div>
+          <div><i style="background:#5A6A7A;color:#fff">AA</i><b>Slate 600</b>Secondary text</div>
+        </div>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="oc-sp3" aria-labelledby="oc-st3" hidden>
+        <div class="dk-oc-fix">
+          <div><span>Six fixes to the live site</span><span>Live</span><span>Fixed</span></div>
+          <div><span>Gold buttons: pay, confirm transfer</span><span class="x">2.2</span><span class="ok">5.2 · AA</span></div>
+          <div><span>Secondary text on cream</span><span class="x">4.1</span><span class="ok">5.2 · AA</span></div>
+          <div><span>Summary labels, time-zone note</span><span class="x">2.1</span><span class="ok">5.6 · AA</span></div>
+          <div><span>Step numerals, 48px</span><span class="x">2.1</span><span class="ok">3.7 · large</span></div>
+          <div><span>WhatsApp button</span><span class="x">2.0</span><span class="ok">7.8 · AAA</span></div>
+          <div><span>Answer underline, a UI edge</span><span class="x">2.2</span><span class="ok">3.9 · AA</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Deliver">
+  <p class="dk-eyebrow">04 · Deliver</p>
+  <h2 class="dk-h2">The booking flow, live</h2>
+  <p class="dk-p">Live since spring 2026: four steps from the intro to a paid, scheduled slot.</p>
+  <div class="dk-car" data-dkcar>
+    <div class="dk-car-track">
+      <figure><div class="cs-browser" aria-label="Intro: trust before the form"><div class="bar"><i></i><i></i><i></i></div><div class="plate" data-screen="ScreenIntro" data-crop=".44"></div></div><figcaption><b>Trust before the form</b>The intro page, before the first question</figcaption></figure>
+      <figure class="dk-oc-lv"><div class="cs-browser" aria-label="Question 5 of 6"><div class="bar"><i></i><i></i><i></i></div><div class="cs-pinned"><div class="plate" data-screen="ScreenIntakeQ5"></div><span class="cs-pin" aria-hidden="true" style="left:7.5%;top:14.2%">1</span><span class="cs-pin" aria-hidden="true" style="left:81%;top:24.8%">2</span><span class="cs-pin" aria-hidden="true" style="left:7.5%;top:31.8%">3</span><span class="cs-pin" aria-hidden="true" style="left:7.5%;top:51.3%">4</span><span class="cs-pin" aria-hidden="true" style="left:7.5%;top:72.5%">5</span><span class="cs-pin" aria-hidden="true" style="left:7.5%;top:84.6%">6</span></div></div><figcaption><b>Every screen reads in the same order</b><ol><li><span>1</span><span>Where am I</span></li><li><span>2</span><span>How far into this step</span></li><li><span>3</span><span>The way back</span></li><li><span>4</span><span>What is being asked</span></li><li><span>5</span><span>How to answer</span></li><li><span>6</span><span>What to press</span></li></ol></figcaption></figure>
+      <figure class="dk-oc-lv"><div class="dk-oc-ph"><div class="cs-phone" aria-label="Step 1 on a phone"><div class="plate" data-screen="ScreenIntakePhone" data-crop="2.164"></div></div></div><figcaption><b>Step 1 on a phone</b>One question per screen, with big targets and letter keys. Back sits in the same place on every question.</figcaption></figure>
+    </div>
+    <div class="dk-dots"></div>
+  </div>
+  <div class="dk-card"><span class="k">Behind the scenes</span><b>Each booking confirms itself on WhatsApp</b>
+    <span class="dk-oc-chain"><span class="g"><span class="n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9.5h16M4 15h16M10 4v16"/></svg>Sheet row</span><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="g"><span class="n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>Make</span><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="g"><span class="n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg>Claude writes it</span><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="g"><span class="n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4z"/></svg>Twilio</span><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-4 4v-4H4z"/></svg>WhatsApp</span></span>
+    <span class="d">In the patient’s own language. Cal.com holds his slots and sends emails in both languages.</span></div>
+</section>
+
+<section class="dk-step" data-name="Results">
+  <p class="dk-eyebrow">Results</p>
+  <h2 class="dk-h2">35 consultations booked, with payment as the main drop-off</h2>
+  <p class="dk-s"><b>For the practice</b></p>
+  <div class="dk-stats two">
+    <div><b>35</b><span>Consultations booked since launch</span></div>
+    <div><b>10 → 2</b><span>Average messages the assistant sends per booking</span></div>
+  </div>
+  <p class="dk-s"><b>For families</b></p>
+  <div class="dk-stats two light">
+    <div><b>20%</b><span>Bookings finished, out of forms started</span></div>
+    <div><b>100%</b><span>Bookings with records in at least 24 hours ahead</span></div>
+  </div>
+  <p class="dk-p">One in five people who start a booking finish it. Most who stop leave at the payment step, which comes before the calendar by design.</p>
+  <p class="dk-s"><b>Where it started:</b> app #25 of <a class="dk-oc-link" href="#thirty-apps">30 Apps in 30 Days</a>. Live since spring 2026, with ongoing updates.</p>
+</section>
+
+</div>

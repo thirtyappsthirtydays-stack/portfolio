@@ -1,0 +1,209 @@
+<style>
+@media (max-width:640px){
+  .dk-liv-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:4px}
+  .dk-liv-flow > span{position:relative;display:grid;justify-items:center;align-content:start;gap:4px;text-align:center;font-size:10.5px;line-height:1.2;color:var(--c-ink)}
+  .dk-liv-flow i{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:var(--c-tint);color:var(--c-eyebrow)}
+  .dk-liv-flow > span:not(:last-child)::after{content:"";position:absolute;top:12px;left:calc(50% + 16px);right:calc(-50% + 12px);border-top:1px solid var(--c-rule2)}
+  .dk-liv-flow .on{font-weight:600}
+  .dk-liv-flow .on i{background:var(--c-dark);color:var(--c-ondark)}
+  .dk-liv-sub{display:block;margin-top:6px;padding-top:6px;border-top:1px solid var(--c-rule);font-size:12px;line-height:1.4;color:var(--c-ink2)}
+  .dk-liv-to{display:block;margin-top:1px;color:var(--c-tint-ink)}
+  .dk-liv-to::before{content:"→ ";font-weight:700;color:var(--c-eyebrow)}
+  .dk-liv-crop{height:160px;display:flex;align-items:center;justify-content:center;background:var(--c-tint);border-radius:12px;overflow:hidden}
+  .dk-liv-crop img.cs-img{width:auto;height:100%;object-fit:cover;border-radius:4px}
+  .dk-liv-need > .cs-phone{--pw:40%;padding:4px;box-shadow:none}
+  .dk-liv-k{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-eyebrow)}
+  .dk-stats .dk-liv-k{font-size:10px;color:var(--c-ondark-acc)}
+  .dk-liv-bar{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--c-ink2)}
+  .dk-liv-bar i{flex:1;position:relative;height:5px;border-radius:3px;background:var(--c-neutral);overflow:hidden}
+  .dk-liv-bar i::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p);border-radius:3px;background:#3E8E41}
+  .dk-liv-why{display:grid;gap:2px;margin-top:4px;padding:8px 10px;border-radius:10px;background:var(--c-tint);font-size:12px;line-height:1.4;color:var(--c-tint-ink)}
+  .dk-car-track .dk-liv-why b{font-size:12.5px;color:var(--c-tint-ink)}
+  .dk-liv-row{display:flex;justify-content:center;gap:8px;padding:8px;background:var(--c-tint);border-radius:12px}
+  .dk-liv-row .cs-phone{--pw:25%;padding:3px;box-shadow:0 8px 18px rgba(43,26,39,.16)}
+  .dk-liv-tabs .cs-panel{gap:8px}
+  .dk-liv-ck{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:4px}
+  .dk-liv-ck li{display:flex;gap:6px;align-items:flex-start;font-size:12px;line-height:1.4;color:var(--c-ink)}
+  .dk-liv-ck svg{flex:none;margin-top:2px;color:var(--c-eyebrow)}
+}
+</style>
+<div class="dk-track">
+
+<section class="dk-step" data-name="Overview">
+  <p class="dk-eyebrow">Matchmaking · Website, mobile first · 2020</p>
+  <h1 class="dk-h1">Liv’s Love Pool</h1>
+  <p class="dk-p">A website, sign-up and date feedback loop I designed.</p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">Business goal</span><b>One place to run it</b><span>Sign-ups, profiles and messages, in place of a Google Form</span></div>
+    <div class="dk-card"><span class="k">User problem</span><b>Dating felt impersonal</b><span>Singles wanted a more personal way to date, with no clear way in</span></div>
+  </div>
+  <div class="dk-zoom" style="--zh:141px;--zw:100%;--zx:0%;--zy:-31.8%" aria-label="How it Works, in Olivia’s voice"><div class="plate" data-screen="LvHow"></div></div>
+  <p class="dk-xs">Prototype tested with target users.</p>
+  <p class="dk-s dk-role"><span><b>My role:</b> UX designer and researcher</span><span><b>Cross-functional collaboration with:</b> Olivia Atwood (founder and matchmaker), UX and UI designers, and engineers</span></p>
+  <button type="button" class="dk-go" data-go="1">See how I approached it<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button type="button" class="dk-skip" data-go="6">Or skip to the final designs</button>
+</section>
+
+<section class="dk-step" data-name="Approach">
+  <p class="dk-eyebrow">Approach</p>
+  <h2 class="dk-h2">The UX Double Diamond</h2>
+  <p class="dk-p">The first diamond looked at competitors, Olivia’s clients and dating-app users. The second designed for two people: the single and the matchmaker.</p>
+  <div class="dk-vdd">
+    <div class="dk-vdd-art" aria-hidden="true">
+      <span class="sp" style="top:0;height:168px;color:var(--c-ink2)">Problem space</span>
+      <span class="sp" style="top:202px;height:168px;color:var(--c-tint-ink)">Solution space</span>
+      <svg width="64" height="370" viewBox="0 0 64 370"><path d="M32 1 L63 84 L32 167 L1 84 Z" style="fill:var(--c-neutral);stroke:var(--c-dark)" stroke-width="1.2"/><path d="M4 84 L60 84" style="stroke:var(--c-dark)" stroke-opacity=".35" stroke-dasharray="3 4"/><path d="M32 167 L32 203" style="stroke:var(--c-dark)" stroke-width="1.2"/><circle cx="32" cy="185" r="4" style="fill:var(--c-dark)"/><path d="M32 203 L63 286 L32 369 L1 286 Z" style="fill:var(--c-tint);stroke:var(--c-dark)" stroke-width="1.2"/><path d="M4 286 L60 286" style="stroke:var(--c-dark)" stroke-opacity=".35" stroke-dasharray="3 4"/><text x="32" y="62" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-ink2)">01</text><text x="32" y="114" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-ink2)">02</text><text x="32" y="264" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-tint-ink)">03</text><text x="32" y="316" text-anchor="middle" font-size="11" font-weight="700" style="fill:var(--c-tint-ink)">04</text></svg>
+    </div>
+    <div class="dk-vdd-rows">
+      <button type="button" data-go="2"><span class="e">01 · Open up</span><b>Discover</b><span>Six dating services, and twelve interviews</span></button>
+      <button type="button" data-go="3"><span class="e">02 · Narrow down</span><b>Define</b><span>Two personas, and their needs turned into features</span></button>
+      <span class="pin"><span class="pill">Core insight</span></span>
+      <button type="button" data-go="4"><span class="e">03 · Open up</span><b>Develop</b><span>Paper sketches to high fidelity, tested at each stage</span></button>
+      <button type="button" data-go="6"><span class="e">04 · Narrow down</span><b>Deliver</b><span>Sign-up, My Account and date feedback</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Discover">
+  <p class="dk-eyebrow">01 · Discover</p>
+  <h2 class="dk-h2">A personal service, run from a Google Form</h2>
+  <div class="dk-comp">
+    <span class="k">How it ran</span>
+    <div class="dk-liv-flow">
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".7" fill="currentColor"/></svg></i>Instagram</span>
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></i>Google Form</span>
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></i>Olivia matches by hand</span>
+      <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4 4v-4H4z"/></svg></i>Texts to arrange dates</span>
+    </div>
+    <span class="dk-liv-sub">As it grew, doing it all by hand got harder to scale.</span>
+  </div>
+  <p class="dk-s"><b>6 dating services compared</b> · Hinge, Tinder, Bumble, Match.com, OkCupid, Tawkify</p>
+  <div class="dk-2">
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></i>Mostly mobile</b><span>Mobile only, or fully responsive</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".7" fill="currentColor"/></svg></i>Social media</b><span>Strong social media integration is common</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v12l-4 4H5z"/><path d="M15 20v-4h4"/><path d="M8.5 8.5h7M8.5 12h5"/></svg></i>Few articles</b><span>Newsletters and articles are rare</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></i>Lots of questions</b><span>Long question sets at sign-up are the norm</span></div>
+  </div>
+  <p class="dk-s"><b>12 interviews</b> · 6 of Olivia’s clients, 6 dating-app users</p>
+  <div class="dk-note"><span class="k">Core insight</span><b>Singles want it to feel personal</b></div>
+</section>
+
+<section class="dk-step" data-name="Define">
+  <p class="dk-eyebrow">02 · Define</p>
+  <h2 class="dk-h2">Designing for two people</h2>
+  <div class="dk-2">
+    <div class="dk-who"><img src="img/persona-catherine.jpg" alt="" loading="lazy"><span><b>Catherine, 26</b>Single. The site must feel personal, and earn her trust.</span></div>
+    <div class="dk-who"><img src="img/persona-olivia.jpg" alt="" loading="lazy"><span><b>Olivia</b>Matchmaker. The site must do the admin for her.</span></div>
+  </div>
+  <div class="dk-card"><span class="k">Problem statement</span><span class="dk-big">Singles who want a more personal way to date had no clear way in, and Olivia was managing every sign-up and match by hand.</span></div>
+  <div class="dk-note"><span class="k">How might we</span><b>Help Catherine find a partner while also earning and maintaining her trust?</b></div>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">For singles</span><b>Sign-up completion</b><span>Singles who finish their profile</span><b>Trust</b><span>Understand how it works before signing up</span></div>
+    <div class="dk-card"><span class="k">For the business</span><b>Date feedback</b><span>Dates followed by a feedback form</span><b>Olivia’s time</b><span>Hours she spends on admin each month</span></div>
+  </div>
+  <p class="dk-xs">Catherine is a persona from interviews. Her photo is a stock photo.</p>
+</section>
+
+<section class="dk-step" data-name="Develop">
+  <p class="dk-eyebrow">03 · Develop</p>
+  <h2 class="dk-h2">A full platform, for both sides</h2>
+  <p class="dk-p">Three directions, judged against Catherine’s and Olivia’s needs.</p>
+  <ul class="dk-opts">
+    <li><span class="tag no">Not chosen</span><span><b>A landing page</b>Olivia’s work stays manual</span></li>
+    <li><span class="tag no">Not chosen</span><span><b>A marketing website</b>No sign-up or match management</span></li>
+    <li><span class="tag yes">Chosen</span><span><b>A full platform</b>Sign-up, profiles, match management and a feedback loop, for both sides</span></li>
+  </ul>
+  <p class="dk-s"><b>Sketches to Liv’s own style</b> · usability testing at each stage</p>
+  <div class="dk-car" data-dkcar>
+    <div class="dk-car-track">
+      <figure><div class="dk-liv-crop"><img class="cs-img bare" style="aspect-ratio:575 / 507;object-position:0 50%" src="img/livs-wireframes.webp" alt="The design progression: paper sketches, greyscale mid-fidelity wireframes, then the final pink high-fidelity screens" loading="lazy"></div><figcaption><b>Paper sketches</b>I sketched the site on paper first.</figcaption></figure>
+      <figure><div class="dk-liv-crop"><img class="cs-img bare" style="aspect-ratio:615 / 507;object-position:44% 50%" src="img/livs-wireframes.webp" alt="The design progression: paper sketches, greyscale mid-fidelity wireframes, then the final pink high-fidelity screens" loading="lazy"></div><figcaption><b>Mid fidelity</b>Greyscale wireframes, tested with users.</figcaption></figure>
+      <figure><div class="dk-liv-crop"><img class="cs-img bare" style="aspect-ratio:730 / 507;object-position:100% 50%" src="img/livs-wireframes.webp" alt="The design progression: paper sketches, greyscale mid-fidelity wireframes, then the final pink high-fidelity screens" loading="lazy"></div><figcaption><b>High fidelity</b>Liv’s pink, yellow and hand-drawn look.</figcaption></figure>
+    </div>
+    <div class="dk-dots"></div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Features">
+  <p class="dk-eyebrow">From needs to features</p>
+  <h2 class="dk-h2">Every decision traces to a persona</h2>
+  <ul class="dk-qa">
+    <li><span class="who">Catherine</span><span><b>A bio that shows who she is</b><span class="dk-liv-to">More varied profile prompts and fun facts</span></span></li>
+    <li><span class="who">Catherine</span><span><b>Little information on how matchmaking works</b><span class="dk-liv-to">How It Works, All About Liv and match stories pages</span></span></li>
+    <li><span class="who">Catherine</span><span><b>Dates that are fun</b><span class="dk-liv-to">A page of phone date tips</span></span></li>
+    <li><span class="who">Olivia</span><span><b>Better organisation</b><span class="dk-liv-to">A “How did your date go?” follow-up form</span></span></li>
+  </ul>
+  <div class="dk-comp">
+    <span class="k">What the business needed</span>
+    <span class="r"><b>Structured sign-up</b>In place of the Google Form</span>
+    <span class="r"><b>Tools for Olivia</b>Profiles and messages in one place</span>
+    <span class="r"><b>A real web presence</b>Beyond social media</span>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Deliver">
+  <p class="dk-eyebrow">04 · Deliver</p>
+  <h2 class="dk-h2">A sign-up in Olivia’s own voice</h2>
+  <div class="dk-tabs dk-liv-tabs" data-tabs>
+    <div class="cs-tabs" role="tablist" aria-label="Liv’s Love Pool sign-up and My Account">
+      <button type="button" role="tab" id="lv-t-sign" aria-controls="lv-p-sign">Sign-up</button>
+      <button type="button" role="tab" id="lv-t-acct" aria-controls="lv-p-acct">Matches and feedback</button>
+    </div>
+    <div class="cs-panels">
+      <div class="cs-panel" role="tabpanel" id="lv-p-sign" aria-labelledby="lv-t-sign">
+        <div class="dk-car" data-dkcar>
+          <div class="dk-car-track">
+            <figure class="dk-need dk-liv-need"><div class="cs-phone" role="img" aria-label="How it Works screen"><div class="plate" data-screen="LvHow"></div></div><figcaption><span class="dk-liv-k">Before sign-up</span><b>How It Works first</b>Fill out the form, get on the waitlist, and what happens after.</figcaption></figure>
+            <figure class="dk-need dk-liv-need"><div class="cs-phone" role="img" aria-label="Create Account, 20%"><div class="plate" data-screen="LvAcct20"></div></div><figcaption><span class="dk-liv-bar" style="--p:20%"><i></i>20%</span><b>The basics</b>Name, phone number and age (21+)<span class="dk-liv-why"><b>Every question explained</b>The phone number goes to your match and no one else, because first dates are phone calls.</span></figcaption></figure>
+            <figure class="dk-need dk-liv-need"><div class="cs-phone" role="img" aria-label="Create Account, 40%"><div class="plate" data-screen="LvAcct40"></div></div><figcaption><span class="dk-liv-bar" style="--p:40%"><i></i>40%</span><b>Who you are</b>City, gender, who you’d like to meet</figcaption></figure>
+            <figure class="dk-need dk-liv-need"><div class="cs-phone" role="img" aria-label="Create Account, 60%"><div class="plate" data-screen="LvAcct60"></div></div><figcaption><span class="dk-liv-bar" style="--p:60%"><i></i>60%</span><b>Three fun facts</b>What Olivia matches on<span class="dk-liv-why"><b>Fun facts as the profile</b>Three prompts in place of a standard bio.</span></figcaption></figure>
+            <figure class="dk-need dk-liv-need"><div class="cs-phone" role="img" aria-label="Create Account, 80%"><div class="plate" data-screen="LvAcct80"></div></div><figcaption><span class="dk-liv-bar" style="--p:80%"><i></i>80%</span><b>A bit of history</b>First time? Who referred you?</figcaption></figure>
+            <figure class="dk-need dk-liv-need"><div class="cs-phone" role="img" aria-label="Code of Conduct, 85%"><div class="plate" data-screen="LvConduct"></div></div><figcaption><span class="dk-liv-bar" style="--p:85%"><i></i>85%</span><b>Code of Conduct</b>Read and sign before joining<span class="dk-liv-why"><b>A Code of Conduct to sign</b>Olivia’s way of making sure everyone is kind.</span></figcaption></figure>
+            <figure class="dk-need dk-liv-need"><div class="cs-phone" role="img" aria-label="You’re in, 100%"><div class="plate" data-screen="LvIn"></div></div><figcaption><span class="dk-liv-bar" style="--p:100%"><i></i>100%</span><b>You’re in</b>A note from Olivia on what happens next</figcaption></figure>
+          </div>
+          <div class="dk-dots"></div>
+        </div>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="lv-p-acct" aria-labelledby="lv-t-acct" hidden>
+        <div class="dk-comp">
+          <span class="k">The feedback loop</span>
+          <div class="dk-liv-flow">
+            <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></i>A match from Olivia</span>
+            <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg></i>Phone date</span>
+            <span><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></i>Date feedback</span>
+            <span class="on"><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.7-1.5"/></svg></i>Next match unlocked</span>
+          </div>
+          <span class="dk-liv-sub">It also gives Olivia what she needs to match better.</span>
+        </div>
+        <div class="dk-car" data-dkcar>
+          <div class="dk-car-track">
+            <figure><div class="dk-liv-row" role="img" aria-label="My Account: Catherine’s profile, the Matches tab with James and a locked next match, and James’s match details with a Date Feedback button"><div class="cs-phone"><div class="plate" data-screen="LvProfile"></div></div><div class="cs-phone"><div class="plate" data-screen="LvMatches"></div></div><div class="cs-phone"><div class="plate" data-screen="LvMatch"></div></div></div><figcaption><b>My Account</b>Profile, matches and match details. The next match stays locked until the feedback is in.</figcaption></figure>
+            <figure><div class="dk-liv-row" role="img" aria-label="The Feedback form asking who the date was with and how it went, then a Thanks screen with links to the podcast and match stories"><div class="cs-phone"><div class="plate" data-screen="LvFeedback"></div></div><div class="cs-phone"><div class="plate" data-screen="LvThanks"></div></div></div><figcaption><b>Date feedback</b>Two questions, then thanks, and Olivia’s podcast and match stories while you wait.</figcaption></figure>
+          </div>
+          <div class="dk-dots"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Results">
+  <p class="dk-eyebrow">Results</p>
+  <h2 class="dk-h2">More personal than swiping</h2>
+  <p class="dk-p">In usability testing, people responded well to the guided sign-up and the personal tone.</p>
+  <div class="dk-stats two">
+    <div><span class="dk-liv-k">For singles</span><b>90%</b><span>Of singles who started signing up finished their profile</span></div>
+    <div><span class="dk-liv-k">For Olivia</span><b>40→10 h</b><span>Olivia’s admin time each month</span></div>
+  </div>
+  <div class="dk-card"><span class="k">What testers said</span>
+    <ul class="dk-liv-ck">
+      <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>The profile prompts felt more meaningful than dating-app profiles</li>
+      <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>How It Works built trust and made the process clear</li>
+      <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>The date feedback loop felt engaging, and kept people accountable</li>
+      <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>The whole experience felt more personal than swipe-based apps</li>
+    </ul>
+  </div>
+  <div class="dk-note"><span class="k">What I learned</span><b>Design for both sides</b><span>Designing for Catherine and Olivia together improved the experience for both.</span></div>
+</section>
+
+</div>

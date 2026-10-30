@@ -1,0 +1,265 @@
+<style>
+@media (max-width:640px){
+  .dk-yol-q{margin:0;font-size:13px;line-height:1.4;font-style:italic;color:var(--c-ink)}
+  .dk-yol-rules{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:3px 14px}
+  .dk-yol-rules li{display:flex;gap:5px;align-items:baseline;font-size:12px;line-height:1.35;font-weight:600;color:var(--c-ink)}
+  .dk-yol-rules .n{flex:none;font-size:10px;font-weight:700;color:var(--c-eyebrow)}
+  .dk-yol-opts{display:grid;gap:6px}
+  .dk-yol-opts > div{display:flex;gap:10px;align-items:center;background:var(--c-surface);border:1px solid var(--c-rule);border-radius:12px;padding:6px 10px;font-size:12px;line-height:1.3;color:var(--c-ink2)}
+  .dk-yol-opts > div.on{background:var(--c-dark);border-color:var(--c-dark);color:var(--c-ondark2)}
+  .dk-yol-opts svg{flex:none;display:block;width:27px;height:45px}
+  .dk-yol-opts > div > span{display:grid;gap:1px;min-width:0}
+  .dk-yol-opts .e{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-ink2)}
+  .dk-yol-opts .on .e{color:var(--c-ondark-acc)}
+  .dk-yol-opts b{font-size:13.5px;line-height:1.25;font-weight:600;color:var(--c-ink)}
+  .dk-yol-opts .on b{color:var(--c-ondark)}
+  .dk-yol-lv{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+  .dk-yol-lv li{display:flex;gap:8px;align-items:baseline;padding:4px 8px;border-radius:8px;font-size:12px;line-height:1.35;color:var(--c-ink2)}
+  .dk-yol-lv li.am{background:var(--c-tint);color:var(--c-tint-ink)}
+  .dk-yol-lv .n{flex:none;width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;align-self:center;font-size:10px;font-weight:700;background:var(--c-neutral);color:var(--c-ink)}
+  .dk-yol-lv li.am .n{background:#FFB020;color:#14161A}
+  .dk-yol-lv b{font-weight:600;color:var(--c-ink)}
+  .dk-yol-tabs .cs-tabs{gap:6px}
+  .dk-yol-tabs .cs-tabs button{padding:0 11px}
+  .dk-yol-sw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px}
+  .dk-yol-sw > div{display:grid;gap:2px;align-content:start;font-size:11px;line-height:1.3;color:var(--c-ink2);min-width:0}
+  .dk-yol-sw i{height:30px;border-radius:9px;padding:0 8px;display:flex;align-items:center;font-style:normal;font-size:10.5px;font-weight:600;margin-bottom:2px}
+  .dk-yol-sw b{font-size:13px;color:var(--c-ink);font-weight:600}
+  .dk-yol-type{background:#171A21;border-radius:12px;padding:8px 12px;display:grid;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif}
+  .dk-yol-type > div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:4px 0;border-top:1px solid #2B303B;color:#F4F6FA}
+  .dk-yol-type > div:first-child{border-top:0}
+  .dk-yol-type small{flex:none;font-family:var(--f-text);font-size:10.5px;color:#AEB5C2}
+  .dk-yol-comp{height:176px;display:flex;align-items:center;justify-content:center;background:var(--c-neutral);border-radius:12px;padding:12px;box-sizing:border-box;overflow:hidden}
+  .dk-yol-comp > .cs-card{width:240px;max-width:100%;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif}
+  .dk-yol-tr{list-style:none;margin:0;padding:0;display:grid}
+  .dk-yol-tr li{display:grid;gap:1px;padding:5px 0;border-top:1px solid var(--c-rule);font-size:11.5px;line-height:1.35;color:var(--c-ink2)}
+  .dk-yol-tr li:first-child{border-top:0;padding-top:0}
+  .dk-yol-tr b{font-size:13px;font-weight:600;color:var(--c-eyebrow)}
+  .dk-yol-tr small{font-size:11px;color:var(--c-ink2)}
+  .dk-yol-tr small em{font-style:normal;font-weight:600;color:var(--c-ink)}
+  .dk-yol-shot{display:flex !important;gap:12px;align-items:center}
+  .dk-yol-shot > .dk-diagram{flex:none}
+  .dk-yol-shot figcaption{display:grid;gap:4px;align-content:center}
+  .dk-yol-shot .t{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-eyebrow)}
+  .dk-yol-shot .tr{font-size:11.5px;color:var(--c-ink2)}
+  .dk-yol-shot .pp{display:grid;gap:1px;margin-top:4px;padding-top:6px;border-top:1px solid var(--c-rule)}
+  .dk-yol-shot .pp i{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-ink2)}
+  .dk-yol-shot .pp span{font-size:12px;color:var(--c-ink)}
+  .dk-yol-z{box-shadow:none;border-radius:0;overflow:visible}
+  .dk-yol-z .zoom-hint{right:6px;bottom:6px;padding:5px 8px;font-size:11px}
+  .dk-yol-z > .cs-phone{--pw:148px;padding:5px;box-shadow:none}
+  .dk-yol-dev{display:grid;gap:10px}
+  .dk-yol-dev figure{margin:0;display:grid;gap:6px}
+  .dk-yol-dev > figure:first-child > .dk-yol-z{width:90%;justify-self:center}
+  .dk-yol-dev .cs-car{width:100%;padding:6px;border-radius:14px;box-shadow:none}
+  .dk-yol-dev .cs-car > .plate{border-radius:9px}
+  .dk-yol-dev .w{display:flex;gap:12px;align-items:center}
+  .dk-yol-dev .cs-phone.watch{--pw:74px;padding:6px;box-shadow:none}
+  .dk-yol-dev .w .zoom-hint{font-size:0;gap:0;padding:5px;right:2px;bottom:2px}
+  .dk-yol-dev figcaption{font-size:12px;line-height:1.4;color:var(--c-ink2)}
+  .dk-yol-dev figcaption b{display:block;font-size:13.5px;color:var(--c-ink);font-weight:600}
+}
+</style>
+<div class="dk-track">
+
+<section class="dk-step" data-name="Overview">
+  <p class="dk-eyebrow">Independent concept · Navigation · 2026</p>
+  <h1 class="dk-h1">Yol Arkadaşı</h1>
+  <p class="dk-p">A navigation concept for Istanbul drivers: directions you can trust, even when the map is wrong.</p>
+  <div class="dk-2">
+    <div class="dk-card"><span class="k">Business goal</span><b>A self-correcting map</b><span>Driver reports fix a wrong turn for everyone, within days</span></div>
+    <div class="dk-card"><span class="k">User problem</span><b>Wrong at the turn</b><span>Streets change faster than the map, and some mistakes can’t be undone</span></div>
+  </div>
+  <div class="dk-zoom" style="--zh:106px;--zw:97%;--zx:1.5%;--zy:-1%;--zbg:#15181E" aria-label="An uncertain turn"><div class="plate" data-screen="BelirsizDonus"></div></div>
+  <p class="dk-xs">Not affiliated with any navigation provider. The interface is in Turkish.</p>
+  <p class="dk-s dk-role"><span><b>My role:</b> Product designer, solo: research, interaction and visual design, Turkish UX writing</span><span><b>Context:</b> self-initiated concept, with feedback from Istanbul drivers</span></p>
+  <button type="button" class="dk-go" data-go="1">See how I approached it<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <button type="button" class="dk-skip" data-go="6">Or skip to the final designs</button>
+</section>
+
+<section class="dk-step" data-name="Approach">
+  <p class="dk-eyebrow">Approach</p>
+  <h2 class="dk-h2">The UX Double Diamond</h2>
+  <p class="dk-p">The first diamond found where directions break in Istanbul. The second decided how the app behaves when it isn’t sure.</p>
+  <div class="dk-vdd">
+    <div class="dk-vdd-art" aria-hidden="true">
+      <span class="sp" style="top:0;height:168px;color:#1A4FD6">Problem space</span>
+      <span class="sp" style="top:202px;height:168px;color:#5C3B00">Solution space</span>
+      <svg width="64" height="370" viewBox="0 0 64 370"><path d="M32 1 L63 84 L32 167 L1 84 Z" fill="#E6EDFC" stroke="#1A4FD6" stroke-width="1.2"/><path d="M4 84 L60 84" stroke="#1A4FD6" stroke-opacity=".3" stroke-dasharray="3 4"/><path d="M32 167 L32 203" stroke="#171A21" stroke-width="1.2"/><circle cx="32" cy="185" r="4" fill="#171A21"/><path d="M32 203 L63 286 L32 369 L1 286 Z" fill="#FFF1D6" stroke="#1A4FD6" stroke-width="1.2"/><path d="M4 286 L60 286" stroke="#1A4FD6" stroke-opacity=".3" stroke-dasharray="3 4"/><text x="32" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#1A4FD6">01</text><text x="32" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#1A4FD6">02</text><text x="32" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#5C3B00">03</text><text x="32" y="316" text-anchor="middle" font-size="11" font-weight="700" fill="#5C3B00">04</text></svg>
+    </div>
+    <div class="dk-vdd-rows">
+      <button type="button" data-go="2"><span class="e">01 · Open up</span><b>Discover</b><span>Four failure patterns, a rush-hour route audit and driver interviews</span></button>
+      <button type="button" data-go="3"><span class="e">02 · Narrow down</span><b>Define</b><span>A persona, six principles and four confidence levels</span></button>
+      <span class="pin"><span class="pill">Problem statement</span></span>
+      <button type="button" data-go="4"><span class="e">03 · Open up</span><b>Develop</b><span>Three ways to handle a doubtful turn, one reading order</span></button>
+      <button type="button" data-go="6"><span class="e">04 · Narrow down</span><b>Deliver</b><span>One drive across iPhone, the car display and Apple Watch</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Discover">
+  <p class="dk-eyebrow">01 · Discover</p>
+  <h2 class="dk-h2">Where directions break in Istanbul</h2>
+  <p class="dk-p">Istanbul’s roads change faster than map data, and its layout punishes small mistakes.</p>
+  <div class="dk-stats">
+    <div><b>6.39M</b><span>Vehicles, about one in five in Türkiye</span></div>
+    <div><b>62%</b><span>Average congestion in 2025</span></div>
+    <div><b>112 h</b><span>Lost per driver at rush hour in 2025</span></div>
+  </div>
+  <p class="dk-xs">Sources: TÜİK, May 2026. TomTom Traffic Index, Istanbul, 2025.</p>
+  <p class="dk-s"><b>What I found</b> · desk research, a rush-hour route audit and driver interviews</p>
+  <div class="dk-2">
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></i>Map lags the street</b><span>New medians and banned turns reach the map late</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-6M12 9V3"/><path d="M5 5h11l3 2-3 2H5z"/><path d="M19 11H8l-3 2 3 2h11z"/></svg></i>Signs and landmarks</b><span>Drivers navigate by them, like Levent · Maslak</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg></i>Parallel roads</b><span>GPS mixes up main and service roads (yan yol)</span></div>
+    <div class="dk-card"><b class="t"><i class="ic" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4.5M12 17.3v.2"/></svg></i>No undo</b><span>Miss a Bosphorus exit and you may be committed to a crossing</span></div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Define">
+  <p class="dk-eyebrow">02 · Define</p>
+  <h2 class="dk-h2">Designing for Elif</h2>
+  <div class="dk-who"><img src="img/persona-elif.jpg" alt="" loading="lazy"><span><b>Elif Arslan, 36</b>Product lead · lives in Moda, works in Levent</span></div>
+  <p class="dk-yol-q">“Tell me what I’ll see at the turn, and what to do if I can’t make it.”</p>
+  <div class="dk-card"><span class="k">Problem statement</span><span class="dk-big">Elif needs directions she can trust on streets that change faster than the map, because near the Bosphorus one wrong turn can commit her to the wrong crossing.</span></div>
+  <div class="dk-note"><span class="k">How might we</span><b>Make the app honest about what it doesn’t know, and ready for the moment the map is wrong?</b></div>
+  <p class="dk-s"><b>Six principles</b></p>
+  <ul class="dk-yol-rules">
+    <li><span class="n">01</span>Use local words and landmarks</li>
+    <li><span class="n">02</span>Say when the app is unsure</li>
+    <li><span class="n">03</span>Plan B before the junction</li>
+    <li><span class="n">04</span>No tapping while moving</li>
+    <li><span class="n">05</span>Flag choices that can’t be undone</li>
+    <li><span class="n">06</span>Private by default</li>
+  </ul>
+  <p class="dk-xs">Proto-persona. Stock photo, not a real participant.</p>
+</section>
+
+<section class="dk-step" data-name="Develop">
+  <p class="dk-eyebrow">03 · Develop</p>
+  <h2 class="dk-h2">Three ways to handle a doubtful turn</h2>
+  <p class="dk-s">The hardest moment to design. I sketched three behaviours and judged each against the principles.</p>
+  <div class="dk-yol-opts">
+    <div><svg viewBox="0 0 90 150" aria-hidden="true" style="color:var(--c-ink2)"><rect x="1" y="1" width="88" height="148" rx="14" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="34" y="7" width="22" height="4" rx="2" fill="currentColor" opacity=".35"/><rect x="8" y="16" width="74" height="22" rx="5" fill="currentColor" opacity=".12"/><path d="M15 31v-7h5M17.5 21.5L20 24l-2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="27" y="22" width="30" height="5" rx="2.5" fill="currentColor" opacity=".7"/><rect x="27" y="30" width="20" height="3" rx="1.5" fill="currentColor" opacity=".4"/><path d="M8 96h74M30 44v94M62 44v94" stroke="currentColor" stroke-width="5" opacity=".1"/><path d="M46 138V96H30" fill="none" stroke="#1F5EFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 91l8 10M42 91l-8 10" stroke="#C6331F" stroke-width="2.2" stroke-linecap="round"/><rect x="8" y="122" width="74" height="16" rx="5" fill="currentColor" opacity=".12"/><circle cx="18" cy="130" r="3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 2"/><rect x="26" y="128.5" width="34" height="3" rx="1.5" fill="currentColor" opacity=".55"/></svg><span><span class="e">Option A · Breaks 02 and 03</span><b>Stay silent, reroute after</b>She finds out at the junction</span></div>
+    <div><svg viewBox="0 0 90 150" aria-hidden="true" style="color:var(--c-ink2)"><rect x="1" y="1" width="88" height="148" rx="14" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="34" y="7" width="22" height="4" rx="2" fill="currentColor" opacity=".35"/><rect x="8" y="16" width="74" height="22" rx="5" fill="currentColor" opacity=".12"/><path d="M15 31v-7h5M17.5 21.5L20 24l-2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="27" y="22" width="30" height="5" rx="2.5" fill="currentColor" opacity=".7"/><rect x="27" y="30" width="20" height="3" rx="1.5" fill="currentColor" opacity=".4"/><path d="M8 96h74M30 44v94M62 44v94" stroke="currentColor" stroke-width="5" opacity=".1"/><path d="M46 138V96H30" fill="none" stroke="#1F5EFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/><rect x="10" y="56" width="70" height="52" rx="7" style="fill:var(--c-surface)" stroke="currentColor" stroke-width="1"/><rect x="17" y="64" width="50" height="4" rx="2" fill="currentColor" opacity=".75"/><rect x="17" y="72" width="38" height="4" rx="2" fill="currentColor" opacity=".75"/><rect x="17" y="86" width="26" height="14" rx="4" fill="#1F5EFF"/><rect x="47" y="86" width="26" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/></svg><span><span class="e">Option B · Breaks 04</span><b>Ask the driver</b>A question at speed is a distraction</span></div>
+    <div class="on"><svg viewBox="0 0 90 150" aria-hidden="true" style="color:var(--c-ondark)"><rect x="1" y="1" width="88" height="148" rx="14" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="34" y="7" width="22" height="4" rx="2" fill="currentColor" opacity=".35"/><rect x="8" y="16" width="74" height="22" rx="5" fill="currentColor" opacity=".12"/><path d="M15 31v-7h5M17.5 21.5L20 24l-2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="27" y="22" width="30" height="5" rx="2.5" fill="currentColor" opacity=".7"/><rect x="27" y="30" width="20" height="3" rx="1.5" fill="currentColor" opacity=".4"/><rect x="8" y="42" width="30" height="8" rx="3" fill="#FFB020"/><rect x="42" y="44.5" width="30" height="3" rx="1.5" fill="currentColor" opacity=".5"/><rect x="8" y="54" width="54" height="3" rx="1.5" fill="#FFB020"/><rect x="62" y="54" width="20" height="3" rx="1.5" fill="#3D7BFF"/><path d="M8 96h74M30 62v76M62 62v76" stroke="currentColor" stroke-width="5" opacity=".1"/><path d="M46 138V96H30" fill="none" stroke="#3D7BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M46 96V66" fill="none" stroke="#FFB020" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 5"/><rect x="8" y="118" width="74" height="22" rx="5" fill="#FFB020" opacity=".22" stroke="#FFB020" stroke-width="1"/><rect x="13" y="123" width="24" height="3" rx="1.5" fill="#FFB020"/><rect x="13" y="130" width="52" height="3" rx="1.5" fill="currentColor" opacity=".7"/></svg><span><span class="e">Option C · Chosen · Meets 02, 03 and 04</span><b>Show the evidence, prepare Plan B</b>Says the turn is in doubt, shows why, and has a fallback ready</span></div>
+  </div>
+  <p class="dk-s"><b>Four confidence levels,</b> one behaviour each</p>
+  <ul class="dk-yol-lv">
+    <li><span class="n">1</span><span><b>Sure</b> · one instruction, the sign and the lanes</span></li>
+    <li><span class="n">2</span><span><b>Unsure where you are</b> · both instructions, by road</span></li>
+    <li class="am"><span class="n">3</span><span><b>Doubtful turn</b> · an amber chip, the evidence and Plan B</span></li>
+    <li><span class="n">4</span><span><b>Confirmed closed</b> · the turn leaves the map</span></li>
+  </ul>
+  <p class="dk-s"><b>One reading order on every driving screen:</b> what to do, how sure, why, where, what if, when.</p>
+</section>
+
+<section class="dk-step" data-name="Visual language">
+  <p class="dk-eyebrow">Visual language and Turkish</p>
+  <h2 class="dk-h2">Blue for the route, amber for doubt</h2>
+  <p class="dk-p">Two colours carry the meaning, eight components cover every screen, and every string was written in Turkish first.</p>
+  <div class="dk-tabs dk-yol-tabs" data-tabs>
+    <div class="cs-tabs" role="tablist" aria-label="Visual language">
+      <button type="button" role="tab" id="yk-t1" aria-controls="yk-p1">Colour and type</button>
+      <button type="button" role="tab" id="yk-t2" aria-controls="yk-p2">Components</button>
+      <button type="button" role="tab" id="yk-t3" aria-controls="yk-p3">Turkish</button>
+    </div>
+    <div class="cs-panels">
+      <div class="cs-panel" role="tabpanel" id="yk-p1" aria-labelledby="yk-t1" style="gap:8px">
+        <div class="dk-yol-sw">
+          <div><i style="background:linear-gradient(90deg,#1F5EFF 50%,#3D7BFF 50%);color:#fff">Day · Night</i><b>Blue</b>Route, manoeuvre, primary button. 5.1:1 with white.</div>
+          <div><i style="background:linear-gradient(90deg,#FFB020 50%,#FFF1D6 50%);color:#14161A">Fill · Tint</i><b>Amber</b>Doubt and Plan B only. 10.1:1 with dark text.</div>
+          <div><i style="background:#0B6B3A;color:#fff">Otoyol</i><b>Green</b>Motorway signs only.</div>
+          <div><i style="background:linear-gradient(90deg,#171A21 50%,#F2F3F5 50%);color:#fff">Night · Day</i><b>Neutrals</b>Secondary text 7.5:1 at night, 6.1:1 by day.</div>
+        </div>
+        <div class="dk-yol-type" lang="tr">
+          <div><span style="font-size:26px;line-height:1.1;font-weight:700">200 m</span><small lang="en">32 · Bold</small></div>
+          <div><span style="font-size:17px;font-weight:600">Sola dön · Gonca Sk.</span><small lang="en">18 to 22 · Semibold</small></div>
+          <div><span style="font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FFB020">B planı hazır</span><small lang="en">11.5 · Heavy · +1</small></div>
+        </div>
+        <p class="dk-xs">Set in SF Pro, which draws ğ, ş, ı and İ.</p>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="yk-p2" aria-labelledby="yk-t2" hidden style="gap:8px">
+        <div class="dk-car" data-dkcar>
+          <div class="dk-car-track">
+            <figure><div class="dk-yol-comp" lang="tr"><div class="cs-card dark" style="padding:16px;gap:4px"><span style="font-size:30px;line-height:1;font-weight:700">200 m</span><span style="font-size:18px;font-weight:600">Sola dön · Gonca Sk.</span></div></div><figcaption><b>Manoeuvre card</b>Always at the top of a driving screen</figcaption></figure>
+            <figure><div class="dk-yol-comp" lang="tr"><div class="cs-card dark" style="padding:14px 16px;gap:4px"><span style="font-size:11px;font-weight:800;letter-spacing:1px;color:#AEB5C2">ANA YOLDAYSAN</span><span style="font-size:16px;font-weight:600">Sağ şeritte kal</span><span style="font-size:11px;font-weight:800;letter-spacing:1px;color:#AEB5C2;margin-top:4px">YAN YOLDAYSAN</span><span style="font-size:16px;font-weight:600">Işıklardan sonra sola</span></div></div><figcaption><b>Hedged instruction</b>Only when position is uncertain</figcaption></figure>
+            <figure><div class="dk-yol-comp" lang="tr"><div class="cs-card dark" style="padding:16px;gap:8px"><span style="align-self:flex-start;padding:3px 10px;border-radius:8px;background:#FFB020;color:#14161A;font-size:13px;font-weight:700">Belirsiz dönüş</span><span style="font-size:13px;line-height:1.4;color:#D5DAE3">6 sürücü “dönüş yok” dedi, 2 sürücü sorunsuz döndü.</span><span style="display:flex;height:6px;border-radius:3px;overflow:hidden"><i style="width:75%;background:#FFB020"></i><i style="width:25%;background:#3D7BFF"></i></span></div></div><figcaption><b>Doubt chip and evidence</b>Two words, then what drivers reported</figcaption></figure>
+            <figure><div class="dk-yol-comp" lang="tr"><div class="cs-card dark" style="padding:16px;gap:6px"><span style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;font-weight:800;letter-spacing:1px;color:#FFB020">B PLANI HAZIR</span><span style="font-size:13px;font-weight:700;color:#FFB020">+3 dk</span></span><span style="font-size:14px;line-height:1.4">Dönüş kapalıysa düz devam et, 300 m sonra ışıklardan U dönüşü yap.</span></div></div><figcaption><b>Plan B card</b>One sentence and its cost, before the junction</figcaption></figure>
+            <figure><div class="dk-yol-comp" lang="tr"><div class="cs-card dark" style="padding:16px;gap:4px"><span style="font-size:15px;font-weight:600">“Dönüş yok” dedin</span><span style="font-size:13px;color:#AEB5C2">Varınca kısaca soracağız.</span></div></div><figcaption><b>Voice capture</b>Repeats what it heard, asks nothing while moving</figcaption></figure>
+            <figure><div class="dk-yol-comp" lang="tr"><div class="cs-card" style="padding:16px;gap:8px"><span style="font-size:15px;font-weight:600;line-height:1.3">Gonca Sokak’a sola dönüş kapalı mıydı?</span><span style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:6px 10px;border-radius:10px;background:#1F5EFF;color:#fff;font-size:13px;font-weight:600">Evet, refüj vardı</span><span style="padding:6px 10px;border-radius:10px;border:1px solid #C9CED6;font-size:13px;font-weight:600">Hayır, kaçırdım</span></span></div></div><figcaption><b>Post-trip question</b>Two answers, a way out, and how close the fix is (7/10)</figcaption></figure>
+          </div>
+          <div class="dk-dots"></div>
+        </div>
+        <p class="dk-xs">Eight parts, each with one job and one rule for when it appears. Plus the sign panel and lane guidance.</p>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="yk-p3" aria-labelledby="yk-t3" hidden style="gap:6px">
+        <ul class="dk-yol-tr">
+          <li><b lang="tr">Zorlu’dan · Zorlu Center’ın · Gonca Sokak’a</b><span>Case endings follow how the name is said.</span><small><em>Build:</em> store suffix forms with each place.</small></li>
+          <li><b lang="tr">BELİRSİZ DÖNÜŞ · B PLANI</b><span>An English locale uppercases “belirsiz” as BELIRSIZ, a different word.</span><small><em>Build:</em> uppercase with tr-TR, never the default.</small></li>
+          <li><b lang="tr">2,1 km · 08:53 · ₺59</b><span>Decimal comma, 24-hour clock and the lira sign.</span><small><em>Build:</em> format every number, time and price with tr-TR.</small></li>
+          <li><b lang="tr">Sola dön</b><span>Informal sen, the way a passenger gives directions.</span><small><em>Build:</em> screen and voice share one register.</small></li>
+          <li><b lang="tr">yan yol · refüj · Avrupa Yakası · HGS</b><span>The drivers’ words for service road, median, European side and toll tag.</span><small><em>Build:</em> one glossary for UI writers and voice.</small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Deliver">
+  <p class="dk-eyebrow">04 · Deliver</p>
+  <h2 class="dk-h2">The same drive on phone, car display and watch</h2>
+  <p class="dk-s">A morning drive from Moda to Levent: six moments on iPhone, then the doubtful turn on the car display and Apple Watch.</p>
+  <div class="dk-tabs" data-tabs>
+    <div class="cs-tabs" role="tablist" aria-label="Yol Arkadaşı on iPhone, car display and watch">
+      <button type="button" role="tab" id="yk-t-ph" aria-controls="yk-p-ph">iPhone</button>
+      <button type="button" role="tab" id="yk-t-car" aria-controls="yk-p-car">Car and watch</button>
+    </div>
+    <div class="cs-panels">
+      <div class="cs-panel" role="tabpanel" id="yk-p-ph" aria-labelledby="yk-t-ph">
+        <div class="dk-car" data-dkcar>
+          <div class="dk-car-track">
+            <figure class="dk-yol-shot"><div class="dk-diagram dk-yol-z"><div class="cs-phone"><div class="plate" data-screen="Rota"></div></div></div><figcaption><span class="t">08:15 · Moda</span><b>Choosing a route</b><span class="tr" lang="tr">01 Rota seçimi</span><span class="pp"><i>Pain point</i><span>Time is the only comparison</span></span><span class="pp"><i>Design</i><span>Compare crossings</span></span></figcaption></figure>
+            <figure class="dk-yol-shot"><div class="dk-diagram dk-yol-z"><div class="cs-phone"><div class="plate" data-screen="YanYol"></div></div></div><figcaption><span class="t">08:30 · Altunizade</span><b>Main road or service road?</b><span class="tr" lang="tr">02 Ana yol mu, yan yol mu?</span><span class="pp"><i>Pain point</i><span>The blue dot jumps between roads</span></span><span class="pp"><i>Design</i><span>Both instructions</span></span></figcaption></figure>
+            <figure class="dk-yol-shot"><div class="dk-diagram dk-yol-z"><div class="cs-phone"><div class="plate" data-screen="Tabela"></div></div></div><figcaption><span class="t">08:44 · Zincirlikuyu</span><b>Follow the sign</b><span class="tr" lang="tr">03 Tabelayı takip et</span><span class="pp"><i>Pain point</i><span>A street name she can’t see</span></span><span class="pp"><i>Design</i><span>Mirror the sign</span></span></figcaption></figure>
+            <figure class="dk-yol-shot"><div class="dk-diagram dk-yol-z"><div class="cs-phone"><div class="plate" data-screen="BelirsizDonus"></div></div></div><figcaption><span class="t">08:51 · Levent</span><b>An uncertain turn</b><span class="tr" lang="tr">04 Belirsiz dönüş</span><span class="pp"><i>Pain point</i><span>A turn across a median</span></span><span class="pp"><i>Design</i><span>Flag the doubt</span></span></figcaption></figure>
+            <figure class="dk-yol-shot"><div class="dk-diagram dk-yol-z"><div class="cs-phone"><div class="plate" data-screen="BPlani"></div></div></div><figcaption><span class="t">08:52 · Levent</span><b>Plan B, ready before the junction</b><span class="tr" lang="tr">05 B planı</span><span class="pp"><i>Pain point</i><span>“Rerouting…” mid-junction</span></span><span class="pp"><i>Design</i><span>Plan B, calmly</span></span></figcaption></figure>
+            <figure class="dk-yol-shot"><div class="dk-diagram dk-yol-z"><div class="cs-phone"><div class="plate" data-screen="Bildir"></div></div></div><figcaption><span class="t">08:56 · Office</span><b>Fix the map, after parking</b><span class="tr" lang="tr">06 Haritayı düzelt</span><span class="pp"><i>Pain point</i><span>No way to say the turn didn’t exist</span></span><span class="pp"><i>Design</i><span>Two questions</span></span></figcaption></figure>
+          </div>
+          <div class="dk-dots"></div>
+        </div>
+      </div>
+      <div class="cs-panel" role="tabpanel" id="yk-p-car" aria-labelledby="yk-t-car" hidden>
+        <div class="dk-yol-dev">
+          <figure><div class="dk-diagram dk-yol-z" aria-label="Car display: the doubtful turn"><div class="cs-car"><div class="plate" data-screen="AracEkrani"></div></div></div><figcaption><b>Car display</b>The doubtful turn, at arm’s length</figcaption></figure>
+          <figure class="w"><div class="dk-diagram dk-yol-z" aria-label="Apple Watch: the doubtful turn"><div class="cs-phone watch"><div class="plate" data-screen="Saat"></div></div></div><figcaption><b>Apple Watch</b>A tap on the wrist</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dk-step" data-name="Results">
+  <p class="dk-eyebrow">Results</p>
+  <h2 class="dk-h2">What success would look like</h2>
+  <p class="dk-p">This is a concept, so these are targets for a three-month pilot on a few Istanbul corridors.</p>
+  <div class="dk-glance">
+    <span class="k">For drivers</span>
+    <div class="dk-stats two">
+      <div><b>−30%</b><span>Reroutes after an instruction the street didn’t allow</span></div>
+      <div><b>60%</b><span>Of blocked turns handled by a prepared Plan B</span></div>
+    </div>
+  </div>
+  <div class="dk-glance">
+    <span class="k">For the business</span>
+    <div class="dk-stats two light">
+      <div><b>35%</b><span>Of trips with the post-trip questions answered</span></div>
+      <div><b>&lt; 3 days</b><span>From the first report to a corrected map</span></div>
+    </div>
+  </div>
+  <div class="dk-note"><span class="k">What worked</span><b>Showing both instructions when unsure</b><span>Both instructions, or the evidence behind a doubt, made the app’s uncertain moments clear to drivers.</span></div>
+  <p class="dk-s"><b>What I’d test first:</b> are two instructions calm, or confusing? In a parked car, phone mounted.</p>
+  <p class="dk-s"><b>What’s next:</b> extend the confidence model to street markets and match days.</p>
+</section>
+
+</div>
