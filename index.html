@@ -532,11 +532,58 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .coach-list p,.coach-list .case-links{grid-column:2;max-width:40rem}
 .coach-list p{color:var(--ink-2)}
 .coach-list .case-links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:var(--fs-small)}
-.coach-cta{display:grid;gap:14px;justify-items:start;margin-top:clamp(40px,6vw,64px);padding:clamp(22px,3vw,32px);border:1px solid var(--rule);border-radius:16px;background:var(--surface)}
-.coach-cta h2{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:1.875rem;letter-spacing:-.01em;line-height:1.1}
-.coach-cta p{color:var(--ink-2);max-width:36rem}
+/* Book a call: three steps in one card; the calendar step embeds the scheduler */
+.coach-book{margin-top:clamp(40px,6vw,64px);padding:clamp(22px,3vw,32px);border:1px solid var(--rule);border-radius:16px;background:var(--surface);scroll-margin-top:calc(var(--head-h) + 20px)}
+.cb-head{display:grid;gap:10px;margin-bottom:24px}
+.cb-head h2{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:1.875rem;letter-spacing:-.01em;line-height:1.1}
+.cb-head > p{color:var(--ink-2);max-width:36rem}
+.cb-steps{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:6px;font-size:var(--fs-small);color:var(--ink-2)}
+.cb-steps li{display:flex;align-items:center;gap:8px}
+.cb-steps .d{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1px solid var(--rule);font-size:var(--fs-xs);font-weight:600;font-variant-numeric:tabular-nums}
+.cb-steps li[aria-current="step"]{color:var(--ink);font-weight:600}
+.cb-steps li[aria-current="step"] .d{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.cb-steps li.done .d{background:var(--cobalt-soft);border-color:var(--cobalt-soft);color:var(--cobalt)}
+.cb-panel{display:grid;gap:16px;padding-top:20px;border-top:1px solid var(--rule)}
+.cb-panel[hidden]{display:none}
+.cb-legend{font-weight:600;font-size:1.0625rem;line-height:1.4}
+.cb-legend span{font-weight:400;color:var(--ink-2);font-size:var(--fs-small)}
+.cb-legend:focus{outline:none}
+.cb-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cb-topic{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--paper);font-size:var(--fs-small);line-height:1.45;cursor:pointer;transition:border-color .2s,background .2s}
+.cb-topic input{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:var(--cobalt);cursor:pointer}
+.cb-topic:hover{border-color:color-mix(in srgb,var(--cobalt) 45%,var(--rule))}
+.cb-topic:has(input:checked){border-color:var(--cobalt);background:var(--cobalt-soft)}
+.cb-topic:has(input:focus-visible){outline:2px solid var(--cobalt);outline-offset:2px}
+.cb-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+.cb-field{display:grid;gap:6px;align-content:start;min-width:0}
+.cb-field.cb-wide{grid-column:1 / -1}
+.cb-field label{font-size:var(--fs-small);font-weight:600}
+.cb-field label em{font-style:normal;font-weight:400;color:var(--ink-2)}
+.cb-field input,.cb-field textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;font-size:16px;line-height:1.45}
+.cb-field textarea{resize:vertical;min-height:76px}
+.cb-field input:focus-visible,.cb-field textarea:focus-visible{outline:2px solid var(--cobalt);outline-offset:1px;border-color:var(--cobalt)}
+.cb-field [aria-invalid="true"]{border-color:#B3261E}
+.cb-hint{font-size:var(--fs-xs);color:var(--ink-2)}
+.cb-err{font-size:var(--fs-xs);font-weight:600;color:#B3261E}
+:root[data-theme="dark"] .cb-err{color:#FFB4AB}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cb-err{color:#FFB4AB}}
+.cb-acts{display:flex;flex-wrap:wrap;gap:10px}
+.cb-sum{font-size:var(--fs-small);color:var(--ink-2)}
+.cb-sum b{color:var(--ink);font-weight:600}
+.cb-edit{border:0;background:none;padding:0;color:var(--cobalt);font-size:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cb-cal{min-height:120px;border-radius:12px;overflow:hidden}
+.cb-cal.cb-mail{display:grid;gap:14px;justify-items:start;min-height:0;overflow:visible}
+.cb-cal.loading{display:grid;align-content:start;justify-items:center;min-height:520px;border:1px dashed var(--rule);color:var(--ink-2);font-size:var(--fs-small)}
+.cb-cal > div{width:100%}
+.cb-wait{padding:24px;text-align:center;max-width:28rem}
+.cb-alt{font-size:var(--fs-small);color:var(--ink-2)}
+.cb-alt:empty{display:none}
 @media (max-width:640px){
   .coach-list > li{grid-template-columns:1.75rem minmax(0,1fr);padding:18px 0}
+  .coach-book{margin-inline:calc(-1 * clamp(4px,2vw,12px));padding:20px 16px}
+  .cb-topics,.cb-fields{grid-template-columns:minmax(0,1fr)}
+  .cb-steps{gap:6px 14px}
+  .cb-acts .btn{flex:1;justify-content:center}
 }
 
 /* ---------- Footer ---------- */
@@ -1472,9 +1519,8 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
       <dl class="facts">
         <div><dt>For</dt><dd>Aspiring and junior product talent</dd></div>
         <div><dt>Languages</dt><dd>English and Turkish, both native</dd></div>
-        <div><dt>Email</dt><dd><a class="link" href="mailto:bengisuhalezeroglu@gmail.com?subject=Coaching">bengisuhalezeroglu@gmail.com</a></dd></div>
       </dl>
-      <a class="btn" href="mailto:bengisuhalezeroglu@gmail.com?subject=Coaching"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Email me about coaching</a>
+      <button type="button" class="btn" data-book-go><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Book a call</button>
     </aside>
 
     <div>
@@ -1509,23 +1555,58 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
           </li>
           <li>
             <span class="n" aria-hidden="true">06</span>
-            <h3>Using AI as a designer</h3>
-            <p>Bringing AI tools into research, design and prototyping. I build working prototypes with Claude Code and other AI tools, built 30 apps in 30 days, and wrote my MSc thesis on how product managers use AI.</p>
-            <div class="case-links"><a class="link" href="#thirty-apps">Read the 30 Apps case study</a></div>
-          </li>
-          <li>
-            <span class="n" aria-hidden="true">07</span>
-            <h3>Designing AI-powered products</h3>
-            <p>Designing products with AI at their core: what the AI does, how people check and correct it, and how to build trust in its results. I took CereHive, an AI-native recruiting platform, from 0 to 1.</p>
-            <div class="case-links"><a class="link" href="#cerehive">Read the CereHive case study</a></div>
+            <h3>AI &amp; Design</h3>
+            <p>Using AI tools in your own research, design and prototyping, and designing products with AI at their core: what the AI does, how people check its results and how to earn their trust. I built 30 apps in 30 days with AI coding tools, took CereHive, an AI-native recruiting platform, from 0 to 1, and wrote my MSc thesis on how product managers use AI.</p>
+            <div class="case-links"><a class="link" href="#thirty-apps">Read the 30 Apps case study</a><a class="link" href="#cerehive">Read the CereHive case study</a></div>
           </li>
         </ol>
       </section>
 
-      <section class="coach-cta" aria-labelledby="coach-cta-t">
-        <h2 id="coach-cta-t">Get in touch</h2>
-        <p>Email me a few lines about where you are now and what you'd like help with.</p>
-        <a class="btn" href="mailto:bengisuhalezeroglu@gmail.com?subject=Coaching"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Email me about coaching</a>
+      <section class="coach-book" id="coach-book" aria-labelledby="cb-title">
+        <div class="cb-head">
+          <h2 id="cb-title">Book a call</h2>
+          <p>Tell me what you'd like help with and a little about yourself, then pick a time that suits you.</p>
+          <ol class="cb-steps">
+            <li data-step="1" aria-current="step"><span class="d" aria-hidden="true">1</span>What you need</li>
+            <li data-step="2"><span class="d" aria-hidden="true">2</span>About you</li>
+            <li data-step="3"><span class="d" aria-hidden="true">3</span>Pick a time</li>
+          </ol>
+        </div>
+        <form class="cb-form" id="cb-form" novalidate>
+          <div class="cb-panel" data-panel="1" role="group" aria-labelledby="cb-l1">
+            <h3 class="cb-legend" id="cb-l1" tabindex="-1">What would you like help with? <span>Choose one or more.</span></h3>
+            <div class="cb-topics" id="cb-topics" aria-describedby="cb-err-1">
+              <label class="cb-topic"><input type="checkbox" name="topic" value="Higher education applications in the US or UK"><span>Higher education applications in the US or UK</span></label>
+              <label class="cb-topic"><input type="checkbox" name="topic" value="Career transition"><span>Career transition</span></label>
+              <label class="cb-topic"><input type="checkbox" name="topic" value="Breaking into product design &amp; strategy"><span>Breaking into product design &amp; strategy</span></label>
+              <label class="cb-topic"><input type="checkbox" name="topic" value="Product design &amp; strategy interviews"><span>Product design &amp; strategy interviews</span></label>
+              <label class="cb-topic"><input type="checkbox" name="topic" value="Portfolio review"><span>Portfolio review</span></label>
+              <label class="cb-topic"><input type="checkbox" name="topic" value="AI &amp; Design"><span>AI &amp; Design</span></label>
+            </div>
+            <p class="cb-err" id="cb-err-1" hidden>Choose at least one topic.</p>
+            <div class="cb-acts"><button type="button" class="btn" data-cb-next>Continue</button></div>
+          </div>
+
+          <div class="cb-panel" data-panel="2" role="group" aria-labelledby="cb-l2" hidden>
+            <h3 class="cb-legend" id="cb-l2" tabindex="-1">About you</h3>
+            <div class="cb-fields">
+              <div class="cb-field"><label for="cb-name">Name</label><input id="cb-name" name="name" autocomplete="name" maxlength="80" required aria-describedby="cb-name-e"><p class="cb-err" id="cb-name-e" hidden>Add your name.</p></div>
+              <div class="cb-field"><label for="cb-email">Email</label><input id="cb-email" name="email" type="email" autocomplete="email" maxlength="120" required aria-describedby="cb-email-e"><p class="cb-err" id="cb-email-e" hidden>Add an email address I can reach you at.</p></div>
+              <div class="cb-field cb-wide"><label for="cb-about">Where you are now</label><textarea id="cb-about" name="about" rows="3" maxlength="600" required aria-describedby="cb-about-h cb-about-e"></textarea><p class="cb-hint" id="cb-about-h">What you study or do now, and where you're based.</p><p class="cb-err" id="cb-about-e" hidden>Add a line or two about where you are now.</p></div>
+              <div class="cb-field cb-wide"><label for="cb-goal">What you'd like from the call <em>optional</em></label><textarea id="cb-goal" name="goal" rows="3" maxlength="600"></textarea></div>
+              <div class="cb-field cb-wide"><label for="cb-link">LinkedIn or portfolio link <em>optional</em></label><input id="cb-link" name="link" type="url" inputmode="url" autocomplete="url" maxlength="200"></div>
+            </div>
+            <div class="cb-acts"><button type="button" class="btn ghost" data-cb-back>Back</button><button type="button" class="btn" data-cb-next>Pick a time</button></div>
+          </div>
+
+          <div class="cb-panel" data-panel="3" role="group" aria-labelledby="cb-l3" hidden>
+            <h3 class="cb-legend" id="cb-l3" tabindex="-1">Pick a time</h3>
+            <p class="cb-sum"><span id="cb-sum"></span> <button type="button" class="cb-edit" data-cb-goto="1">Change</button></p>
+            <div class="cb-cal" id="cb-cal" aria-live="polite"></div>
+            <p class="cb-alt" id="cb-alt"></p>
+            <div class="cb-acts"><button type="button" class="btn ghost" data-cb-back>Back</button></div>
+          </div>
+        </form>
       </section>
     </div>
   </div>
@@ -2448,6 +2529,143 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     else { if(homeSeen) home.classList.add('e-played'); pauseStory(); }
     window.scrollTo(0, 0);
   }
+
+  /* ---------- Coaching: book a call ---------- */
+  /* The scheduler for step 3. Set ONE of these:
+     cal: the Cal.com link without the domain, e.g. "bengisu/coaching" (from https://cal.com/bengisu/coaching)
+     calendly: the full Calendly event URL, e.g. "https://calendly.com/bengisu/coaching"
+     With neither set, step 3 sends the request by email instead. */
+  var BOOK = { cal: '', calendly: '' };
+  (function bookCall(){
+    var form = document.getElementById('cb-form'); if(!form) return;
+    var sec = document.getElementById('coach-book');
+    var panels = form.querySelectorAll('.cb-panel'), steps = sec.querySelectorAll('.cb-steps li');
+    var F = { name: document.getElementById('cb-name'), email: document.getElementById('cb-email'), about: document.getElementById('cb-about'), goal: document.getElementById('cb-goal'), link: document.getElementById('cb-link') };
+    var cur = 1, shownKey = null, calReady = false;
+    /* no scheduler yet: say what step 3 really does */
+    if(!BOOK.cal && !BOOK.calendly){
+      steps[2].lastChild.textContent = 'Send request';
+      document.getElementById('cb-l3').textContent = 'Send your request';
+      form.querySelector('[data-panel="2"] [data-cb-next]').textContent = 'Continue';
+      sec.querySelector('.cb-head > p').textContent = "Tell me what you'd like help with and a little about yourself, and I'll reply with times for a call.";
+    }
+    function reduce(){ return matchMedia('(prefers-reduced-motion: reduce)').matches; }
+    function v(k){ return F[k].value.trim(); }
+    function topics(){ return [].map.call(form.querySelectorAll('input[name="topic"]:checked'), function(i){ return i.value; }); }
+    function toTop(){ sec.scrollIntoView({ behavior: reduce() ? 'auto' : 'smooth', block: 'start' }); }
+    function show(n){
+      cur = n;
+      panels.forEach(function(p){ p.hidden = +p.dataset.panel !== n; });
+      steps.forEach(function(s){
+        var k = +s.dataset.step;
+        if(k === n) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current');
+        s.classList.toggle('done', k < n);
+      });
+      if(n === 3) calendar();
+      var h = form.querySelector('[data-panel="' + n + '"] .cb-legend');
+      if(h) h.focus({ preventScroll: true });
+      var top = sec.getBoundingClientRect().top;
+      if(top < 0 || top > innerHeight * .5) toTop();
+    }
+    function flag(id, bad, el){
+      document.getElementById(id).hidden = !bad;
+      if(el) el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+      return bad;
+    }
+    var emailOk = function(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); };
+    function check(n){
+      if(n === 1){
+        var none = flag('cb-err-1', !topics().length);
+        if(none) form.querySelector('input[name="topic"]').focus();
+        return !none;
+      }
+      if(n === 2){
+        var first = null;
+        if(flag('cb-name-e', !v('name'), F.name)) first = first || F.name;
+        if(flag('cb-email-e', !emailOk(v('email')), F.email)) first = first || F.email;
+        if(flag('cb-about-e', !v('about'), F.about)) first = first || F.about;
+        if(first){ first.focus(); return false; }
+      }
+      return true;
+    }
+    /* clear a message as soon as it's fixed */
+    form.addEventListener('change', function(e){ if(e.target.name === 'topic' && topics().length) flag('cb-err-1', false); });
+    form.addEventListener('input', function(e){
+      var el = e.target; if(el.getAttribute('aria-invalid') !== 'true') return;
+      var ok = el === F.email ? emailOk(el.value.trim()) : !!el.value.trim();
+      if(ok) flag(el.getAttribute('aria-describedby').split(' ').pop(), false, el);
+    });
+    function notes(){
+      var t = ['Topics: ' + topics().join('; '), 'Where I am now: ' + v('about')];
+      if(v('goal')) t.push("What I'd like from the call: " + v('goal'));
+      if(v('link')) t.push('LinkedIn or portfolio: ' + v('link'));
+      return t.join('\n\n');
+    }
+    function isDark(){
+      var t = document.documentElement.dataset.theme;
+      return t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+    function calSnippet(){
+      /* Cal.com's embed loader: queues calls until embed.js arrives */
+      (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    }
+    function calendar(){
+      var box = document.getElementById('cb-cal'), alt = document.getElementById('cb-alt');
+      var name = v('name'), email = v('email'), note = notes();
+      document.getElementById('cb-sum').innerHTML = 'Your call: ' + topics().map(function(t){ return '<b>' + esc(t) + '</b>'; }).join(', ') + '.';
+      var key = JSON.stringify([BOOK, name, email, note]);
+      if(key === shownKey) return;
+      shownKey = key; box.innerHTML = ''; alt.innerHTML = ''; box.classList.remove('loading', 'cb-mail');
+      if(BOOK.cal || BOOK.calendly){
+        var url = BOOK.cal
+          ? 'https://cal.com/' + BOOK.cal + '?' + new URLSearchParams({ name: name, email: email, notes: note })
+          : BOOK.calendly + (BOOK.calendly.indexOf('?') < 0 ? '?' : '&') + new URLSearchParams({ name: name, email: email, a1: note });
+        alt.innerHTML = 'Calendar not showing? <a class="link" target="_blank" rel="noopener" href="' + esc(url) + '">Open it in a new tab</a>';
+        var wait = document.createElement('p'), frame = document.createElement('div');
+        wait.className = 'cb-wait'; wait.textContent = 'Loading the calendar…';
+        box.classList.add('loading'); box.append(wait, frame);
+        var slow = setTimeout(function(){ wait.textContent = 'The calendar is taking a while. You can open it in a new tab with the link below.'; }, 12000);
+        var ready = function(){ clearTimeout(slow); box.classList.remove('loading'); wait.remove(); };
+        /* the scheduler draws into an iframe: clear the message once it has loaded */
+        new MutationObserver(function(m, o){ var f = frame.querySelector('iframe'); if(f){ o.disconnect(); f.addEventListener('load', ready); } }).observe(frame, { childList: true, subtree: true });
+        if(BOOK.cal){
+          frame.style.width = '100%';
+          var theme = isDark() ? 'dark' : 'light';
+          calSnippet();
+          if(!calReady){
+            Cal('init', 'coaching', { origin: 'https://cal.com' });
+            Cal.ns.coaching('ui', { theme: theme, hideEventTypeDetails: false, layout: 'month_view', cssVarsPerTheme: { light: { 'cal-brand': '#10162A' }, dark: { 'cal-brand': '#E8ECF6' } } });
+            calReady = true;
+          }
+          Cal.ns.coaching('on', { action: 'linkReady', callback: ready });
+          Cal.ns.coaching('inline', { elementOrSelector: frame, calLink: BOOK.cal, config: { layout: 'month_view', theme: theme, name: name, email: email, notes: note } });
+        } else {
+          frame.style.cssText = 'min-width:280px;height:700px';
+          var go = function(){ Calendly.initInlineWidget({ url: BOOK.calendly, parentElement: frame, prefill: { name: name, email: email, customAnswers: { a1: note } } }); };
+          if(window.Calendly) go();
+          else { var s = document.createElement('script'); s.src = 'https://assets.calendly.com/assets/external/widget.js'; s.async = true; s.onload = go; document.head.appendChild(s); }
+        }
+      } else {
+        var body = 'Hi Bengisu,\n\nI would like to book a coaching call.\n\nName: ' + name + '\nEmail: ' + email + '\n\n' + note;
+        box.classList.add('cb-mail');
+        box.innerHTML = '<p class="cb-sum">This opens your email app with everything above filled in. I’ll reply with times for a call.</p><a class="btn" href="mailto:bengisuhalezeroglu@gmail.com?subject=' + encodeURIComponent('Coaching call') + '&body=' + encodeURIComponent(body) + '">Send my request</a>';
+      }
+    }
+    form.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      if(b.hasAttribute('data-cb-next')){ if(check(cur)) show(cur + 1); }
+      else if(b.hasAttribute('data-cb-back')) show(cur - 1);
+      else if(b.dataset.cbGoto) show(+b.dataset.cbGoto);
+    });
+    form.addEventListener('submit', function(e){ e.preventDefault(); if(cur < 3 && check(cur)) show(cur + 1); });
+    document.querySelectorAll('[data-book-go]').forEach(function(b){
+      b.addEventListener('click', function(){
+        toTop();
+        var h = form.querySelector('[data-panel="' + cur + '"] .cb-legend');
+        if(h) h.focus({ preventScroll: true });
+      });
+    });
+  })();
 
   /* ---------- Copy email ---------- */
   var cp = document.getElementById('copy-email');
