@@ -89,7 +89,7 @@ button{font:inherit;color:inherit}
 .prose p + p{margin-top:1em}
 .display{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-weight:400;letter-spacing:-.015em;line-height:1.05;text-wrap:balance;font-optical-sizing:auto}
 .section-title{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:var(--fs-h2);line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
-.section-title,.card-name,.case-section > .wide > h2,.pager .nm,.cv-section > h2{font-weight:400}
+.section-title,.card-name,.case-section > .wide > h2,.pager .nm,.cv-section > h2,.cv-head > h2{font-weight:400}
 .phasebar .ttl{font-weight:600}
 .link{color:var(--cobalt);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .link:hover{text-decoration-thickness:2px}
@@ -473,7 +473,10 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .facts dt{color:var(--ink-2);font-size:var(--fs-xs);font-weight:600}
 .facts a{overflow-wrap:anywhere}
 .cv-section + .cv-section{margin-top:clamp(40px,6vw,64px)}
-.cv-section > h2{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:1.875rem;letter-spacing:-.01em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.cv-section > h2,.cv-head > h2{font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:1.875rem;letter-spacing:-.01em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.cv-head{display:flex;align-items:center;justify-content:space-between;gap:12px 16px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.cv-head > h2{margin:0;padding:0;border:0}
+@media (max-width:480px){.cv-dl .cv-meta{display:none}}
 .xp{list-style:none;display:grid;gap:32px}
 .xp > li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px}
 .xp h3{font-weight:600;font-size:1.0625rem}
@@ -487,7 +490,6 @@ html.is-calm .site-foot{border-top-color:rgba(30,50,54,.12);color:#4A5D60}
 .skills{display:grid;gap:14px;max-width:42rem}
 .skills b{font-weight:600}
 .cv-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.profile .cv-dl{justify-self:start}
 .cv-dl .cv-meta{font-weight:400;opacity:.72}
 /* ---------- Contact ---------- */
 .contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);padding-bottom:clamp(56px,10vw,120px);align-items:end}
@@ -1287,12 +1289,14 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
         <div><dt>Based in</dt><dd>London, UK. Turkish and US dual citizen</dd></div>
         <div><dt>Languages</dt><dd>English and Turkish, both native</dd></div>
       </dl>
-      <a class="btn cv-dl" href="BH_CV.pdf" download="BH_CV.pdf"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 19h14"/></svg>Download CV <span class="cv-meta">PDF, 2 pages</span></a>
     </aside>
 
     <div>
       <section class="cv-section">
-        <h2>Profile</h2>
+        <div class="cv-head">
+          <h2>Profile</h2>
+          <a class="btn cv-dl" href="BH_CV.pdf" download="BH_CV.pdf"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 19h14"/></svg>Download CV <span class="cv-meta">PDF, 2 pages</span></a>
+        </div>
         <div class="prose">
           <p>Strategist and designer who enjoys making complex problems simple. I combine user-centered design, strategic thinking and a curiosity for emerging technology to create intuitive digital experiences that work for both people and businesses.</p>
           <p>I’m particularly interested in fintech, B2B SaaS and AI-powered products, where thoughtful design can make complex workflows clearer, more useful and more human.</p>
