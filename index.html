@@ -2278,7 +2278,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
     openViewer({w: w, h: h, title: label || img.alt || 'Screen', css: 'img{display:block;width:100%;height:100%}', html: '<img src="' + (img.currentSrc || img.src) + '" alt="">'});
   }
   function zoomables(scope, d){
-    scope.querySelectorAll('.cs-browser, .cs-laptop > .scr').forEach(function(fr){
+    scope.querySelectorAll('.cs-browser, .cs-laptop > .scr, .dk-diagram').forEach(function(fr){
       if(fr.closest('.bproto, .mcar, .dk-art')) return;
       var p = fr.querySelector('.plate[data-screen]'), img = p ? null : fr.querySelector('img');
       var label = fr.getAttribute('aria-label') || (fr.closest('[aria-label]') || {getAttribute: function(){ return ''; }}).getAttribute('aria-label') || (p && p.getAttribute('aria-label')) || '';
