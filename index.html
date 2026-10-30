@@ -854,7 +854,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-arrow:disabled{opacity:.35;cursor:default}
   .dk-track{flex:1;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
   .dk-track::-webkit-scrollbar{display:none}
-  .dk-step{flex:0 0 100%;min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;padding:11px 16px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px}
+  .dk-step{position:relative;flex:0 0 100%;min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;padding:11px 16px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px}
   .dk-step > *{flex-shrink:0}
   .dk-eyebrow{margin:0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-eyebrow)}
   .dk-h1{margin:0;font-family:var(--f-display);font-size-adjust:var(--f-adj);font-size:36px;line-height:1;font-weight:500}
@@ -864,8 +864,6 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-s{margin:2px 0 0;font-size:12.5px;line-height:1.4;color:var(--c-ink2)}
   .dk-s b{color:var(--c-ink);font-weight:600}
   .dk-role{display:grid;gap:2px}
-  .dk-art.sm{width:60%}
-  .dk-art > img.ph{position:absolute;right:-2%;bottom:0;width:24%;height:auto;filter:drop-shadow(0 8px 16px rgba(14,31,59,.18))}
   .dk-range .r{display:flex;align-items:center;gap:8px;font-size:12px;white-space:nowrap;padding:3px 6px;margin:0 -6px;border-radius:8px}
   .dk-range .r i{flex:none;width:84px;font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c-ink2)}
   .dk-range .r b{flex:1;min-width:0;font-size:13px;overflow:hidden;text-overflow:ellipsis}
@@ -923,9 +921,20 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-note .k{color:var(--c-ondark-acc)}
   .dk-note b{font-size:14px;line-height:1.35;font-weight:600}
   .dk-note b + span{font-size:12.5px;line-height:1.4;color:var(--c-ondark2)}
-  .dk-art{position:relative;width:70%;margin:0 auto;padding:0 0 10px}
-  .dk-art .cs-browser{width:calc(100% - 24px)}
-  .dk-art .cs-phone{position:absolute;right:0;bottom:0;--pw:24%;padding:4px}
+  /* Overview mockup: takes the height left on the step. Web screens (with a phone) scale to fit;
+     phone-only cases show their phones as wide as they go, cut off at the bottom. */
+  .dk-art{position:relative;flex:1 1 0;min-height:130px;width:100%;margin:2px 0;padding:0;container-type:size;display:flex;align-items:center;justify-content:center}
+  .dk-art-in{position:relative;flex:none;width:min(100cqw, calc((100cqh - var(--c,14px)) / var(--k,.6)));padding-bottom:var(--ob,0px)}
+  .dk-art-in > .cs-browser{width:var(--bw,100%);border-radius:8px;box-shadow:0 8px 22px rgba(20,22,30,.12)}
+  .dk-art .cs-browser > .bar{height:12px;padding:0 6px;gap:3px}
+  .dk-art .cs-browser > .bar i{width:4px;height:4px}
+  .dk-art-in > .cs-phone{position:absolute;right:0;bottom:0;width:var(--pw2,26%);padding:1%;box-shadow:0 8px 22px rgba(20,22,30,.22)}
+  .dk-art-in > img.ph{position:absolute;right:0;bottom:0;width:var(--pw2,26%);height:auto;filter:drop-shadow(0 8px 16px rgba(14,31,59,.2))}
+  .dk-art-in > img.full{display:block;width:100%;height:auto}
+  .dk-art.phones{align-items:flex-start;overflow:hidden;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+  .dk-art.phones .dk-art-in{width:100%;display:flex;justify-content:center;gap:var(--pg,4%);padding:2px 0 0}
+  .dk-art.phones .cs-phone{position:static;flex:none;width:var(--pw2,40%);padding:1.2%;box-shadow:none}
+  .dk-art.phones .cs-phone.back{margin-top:8%}
   .dk-facts{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:12.5px;line-height:1.35}
   .dk-facts dt{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-ink2)}
   .dk-facts dd{margin:2px 0 0}
@@ -974,7 +983,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   .dk-opts .tag{flex:none;width:76px;box-sizing:border-box;text-align:center;font-size:10.5px;font-weight:700;padding:3px 0;border-radius:999px;border:1px solid var(--c-rule2);color:var(--c-ink2);margin-top:1px}
   .dk-opts .tag.yes{background:var(--c-dark);border-color:var(--c-dark);color:var(--c-ondark)}
   .dk-car{display:grid;gap:8px;min-width:0}
-  .dk-car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;gap:0}
+  .dk-car-track{position:relative;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;gap:0}
   .dk-car-track::-webkit-scrollbar{display:none}
   .dk-car-track > figure{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;display:grid;gap:8px;align-content:start}
   .dk-car-track figcaption{font-size:12px;line-height:1.4;color:var(--c-ink2)}
@@ -1848,7 +1857,7 @@ dialog.viewer::backdrop{background:rgba(8,10,18,.6)}
   if(sortSel) sortSel.addEventListener('change', function(){ workSort = sortSel.value; cards(); });
 
   /* ---------- Case study page ---------- */
-  var CASE_V = {"bofa-complaints": "2748c3ff72", "bofa": "227d30941d", "cerehive": "6af477fe47", "consultation": "f861ba3533", "flexit": "9a2d8c4c9c", "livs-love-pool": "9ef0aa051d", "miiras": "b32efb7698", "self-invest": "6943b2c5ff", "thirty-apps": "05f6eb8cc9", "wealth-builder": "e0d655ecc8", "yol": "49d628b3cf"}; /* case-versions */
+  var CASE_V = {"bofa-complaints": "ac99c897cc", "bofa": "e819ca6a0d", "cerehive": "d85acc0de1", "consultation": "0242b784f3", "flexit": "ce7b9e1dfe", "livs-love-pool": "2a6cdf1f4b", "miiras": "76f7b38c80", "self-invest": "d8ac9451d1", "thirty-apps": "5fc5f67508", "wealth-builder": "632bf10a6d", "yol": "2e7df16972"}; /* case-versions */
   var current = null, DATA = {}, pending = {};
   window.__caseLoaded = function(d){
     /* a case file newer than this page means the browser kept an old copy of the page (GitHub Pages lets it for ten minutes):
