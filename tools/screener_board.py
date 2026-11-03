@@ -55,7 +55,7 @@ def header():
     items = ''.join(f'<span>{n}</span>' for n in nav)
     return (
         f'<div style="height:62px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 48px">'
-        f'<span style="font-size:30px;line-height:1;font-weight:800;letter-spacing:-.04em;color:{BLUE}">citi</span>'
+        '<img src="img/logo-citi.png" width="237" height="136" alt="Citi" style="display:block;height:34px;width:auto">'
         f'<span style="display:flex;gap:28px;color:{INK2};font-size:9px;font-weight:600;letter-spacing:.06em">'
         f'<span style="display:flex;flex-direction:column;align-items:center;gap:3px">{icon(USER,20,INK2,1.5)}PROFILE</span>'
         f'<span style="display:flex;flex-direction:column;align-items:center;gap:3px">{icon(PIN,20,INK2,1.5)}ATM / BRANCH</span></span></div>'
